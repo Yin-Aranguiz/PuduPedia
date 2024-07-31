@@ -7,7 +7,7 @@ import NavBar from './NavBar';
 
 // importa las imágenes desde la misma carpeta
 import image1 from './landingpage1.png';
-import image2 from './landingpage2.jpg';
+import image2 from './landingpage2.png';
 import image3 from './landingpage3.jpg';
 import imageTitle from './landingtitle.svg';
 
@@ -17,7 +17,7 @@ import imageTitle from './landingtitle.svg';
 const images = [
   image1,
   image2,
-  image3,
+  image3
 ];
 
 const LandingPage = () => {
@@ -55,9 +55,6 @@ const LandingPage = () => {
       <div className="section section-2">
         <img src={image2} alt='image2' className='static-image' />
         <Infoboxes/>
-      </div>
-      <div className="section section-3">
-        <img src={image3} alt='image3' className='static-image' /> 
         <Footer/>
       </div>
     </div>

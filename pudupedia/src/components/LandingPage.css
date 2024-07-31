@@ -41,8 +41,9 @@
   position: relative;
 }
 
-.section-2, .section-3 {
-   
+.section-2{
+    width: auto;
+    height: auto;
   position: relative; /* Permite que los infoboxes se posicionen encima de la sección */
   z-index: 1; /* Asegura que los infoboxes se muestren encima de otros elementos si es necesario */
 }
