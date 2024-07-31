@@ -5,8 +5,8 @@
   padding: 0;
 }
 body {
-  background-color: rgb(97, 120, 153);
-  background-image: url(como-se-formo-la-cordillera-de-los-andes-geologa-chilena-revela-la-clave-1682001328214_1280.jpg);
+  background-color: rgb(148, 148, 148);
+  
   background-size: cover;
 }
 .puduLogo {
@@ -31,7 +31,6 @@ body {
   width: 25px;
   height: 25px;
 }
-
 .miscContainer {
   display: flex;
   justify-content: flex-start;
