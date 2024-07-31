@@ -36,6 +36,7 @@ const Footer = () => {
             </a>
           </h1>
           <button className='Footer-button'>
+          
             C O M P A R T E
           </button>
         </div>
