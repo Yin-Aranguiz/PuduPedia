@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import LandingPage from './components/LandingPage';
 import Header from './components/Header';
@@ -6,8 +6,8 @@ import Header from './components/Header';
 function App() {
   return (
     <ApiProvider>
-      <Header/>
-    <LandingPage />
+        <Header/>
+        <LandingPage />
     </ApiProvider>
   );
 }
