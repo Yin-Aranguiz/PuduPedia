@@ -1,0 +1,150 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Reinicio de márgenes y rellenos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos generales */
+.puduLogo {
+  width: 215px;
+  height: 75px;
+}
+
+.headerContainer {
+  background: linear-gradient(to top, rgba(24, 48, 49, 0), rgba(24, 48, 49, 1));
+  display: flex;
+  align-items: center; /* Ajustado para centrar verticalmente */
+  max-width: 100%;
+  height: 120px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Estilos de íconos */
+.shareIcon, .searchIcon {
+  width: 25px;
+  height: 25px;
+}
+
+/* Contenedor de elementos en el header */
+.miscContainer {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  width: fit-content;
+  padding: 40px 30px;
+  margin-left: auto;
+}
+
+/* Contenedor para el botón de búsqueda y el botón de compartir */
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Botón de compartir */
+.shareButton {
+  display: flex;
+  padding-right: 50px;
+  margin-top: 6px;
+  transition: transform 0.3s ease; /* Añade una transición suave */
+}
+
+/* Contenedor del botón de búsqueda */
+.searchContainer {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo del botón de búsqueda */
+.searchButton {
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+  margin-top: 6px;
+}
+
+/* Estilo del ícono de búsqueda */
+.searchIcon {
+  width: 24px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Estilo del cuadro de búsqueda */
+.searchInput {
+  position: absolute;
+  right: calc(100% + 10px); /* Ajusta la posición del input para que esté a la izquierda del ícono */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar el cuadro de búsqueda y mover el botón de compartir al pasar el mouse sobre el contenedor de botones */
+.buttonsWrapper:hover .searchInput {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-10px); /* Ajusta la posición del input */
+}
+
+.buttonsWrapper:hover .shareButton {
+  transform: translateX(-210px); /* Ajusta el desplazamiento del shareButton */
+}
+
+/* Otros estilos para los elementos */
+.languageToggle {
+  display: flex;
+  padding-right: 50px;
+  padding-top: 7px;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+}
+
+.loginTab {
+  display: flex;
+  padding-right: 5px;
+}
+
+.loginTab img {
+  object-fit: cover;
+  width: 45px;
+  height: 45px;
+  margin-top: -6px;
+}
+
+.loginTab p {
+  padding-top: 8px;
+  padding-right: 8px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.logoContainer {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 28px;
+}
+
+.logoContainer p {
+  padding-left: 5px;
+  height: 60px;
+  font-size: large;
+  font-family: "Inter", sans-serif;
+}
+
+.logoContainer:hover, .languageToggle:hover, .loginTab:hover, .shareButton:hover, .searchButton:hover {
+  cursor: pointer;
+}
