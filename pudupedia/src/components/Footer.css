@@ -2,7 +2,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: white;
-}  
+}
 
 /* Container for the app to ensure the footer sticks to the bottom */
 .app-container {
@@ -25,7 +25,7 @@ body {
     border-top: 1px solid rgba(4, 5, 5, 0.8); /* Borde con color #040505 y 80% de opacidad */
     width: auto;
     text-align: center;
-    border-radius: 20px; /* Ajusta el valor para mayor o menor redondeo */
+    border-radius: 20px 20px 0 0; /* Ajusta el valor para mayor o menor redondeo */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra sutil */
     position: absolute; /* Hace que el footer esté encima de otros elementos */
     bottom: 0; /* Asegura que el footer esté en la parte inferior */
@@ -43,6 +43,7 @@ body {
 .Forus p {
     margin: 10px 0; /* Ajusta el margen superior e inferior como necesites */
     text-align: justify;
+    
 }
 
 /* Header styles */
@@ -54,22 +55,32 @@ h1, h3 {
 
 /* Button styling */
 .Footer-button {
-    background-color: transparent; /* Fondo transparente para el botón */
+    background-color: rgba(255, 255, 255, 0.192); /* Fondo transparente para el botón */
     color: white;
-    border: 2px solid white; /* Recuadro blanco */
+    border: 2px solid rgba(255, 255, 255, 0.205); /* Recuadro blanco */
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 110px; /* Con el segundo modifico el ancho del boton*/
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
     margin-bottom: 10px;
     outline: none;
     font-family: 'Open Sans', sans-serif; /* Asegura que el botón use la misma tipografía */
+  
+}
+/* Contenedor del botón compartido */
+.Share-button {
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+}
+/* Espacio entre la imagen y el texto */
+.Share-button p {
+    margin-left: 10px; /* Ajusta el margen izquierdo del párrafo */
 }
 
 .Footer-button:hover {
-    background-color: white; /* Cambia el fondo al pasar el cursor */
-    color: #007bff; /* Cambia el color del texto al pasar el cursor */
+    background-color: rgb(255, 255, 255); /* Cambia el fondo al pasar el cursor */
+    color: #000000; /* Cambia el color del texto al pasar el cursor */
 }
 
 /* Link styling */

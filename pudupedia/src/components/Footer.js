@@ -3,6 +3,7 @@ import './Footer.css';
 import logoUrl from './pudupedia_logo_sized2.png';
 import twitterLogoUrl from './Twitter.png';
 import phoneLogoUrl from './Phone.png';
+import shareIcon from './shareIcon.png'
 
 const Footer = () => {
   return (
@@ -32,12 +33,14 @@ const Footer = () => {
         <div className='Logo'>
           <h1>
             <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-              <img src={logoUrl} alt="Logo" style={{ width: '350px', height: 'auto' }} />
+              <img src={logoUrl} alt="Logo" style={{ width: '250px', height: 'auto' }} />
             </a>
           </h1>
           <button className='Footer-button'>
-          
-            C O M P A R T E
+            <div className='Share-button'>
+            <img src={shareIcon} alt='Share' style={{ width: '24px', height: 'auto' }}/>
+            <p>C O M P A R T E</p>
+            </div>
           </button>
         </div>
       </div>
@@ -46,4 +49,3 @@ const Footer = () => {
 }
 
 export default Footer;
-
