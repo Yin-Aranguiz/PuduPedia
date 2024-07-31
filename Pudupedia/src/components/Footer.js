@@ -5,6 +5,7 @@ const Footer = () => {
   const logoUrl = '/logoPudu.png'; // Ruta desde la carpeta public
   const twitterLogoUrl = '/Twitter.png'; // Asegúrate de tener esta imagen en tu proyecto
   const phoneLogoUrl = '/Phone.png'; // Asegúrate de tener esta imagen en tu proyecto
+  const loveLogoUrl = '/Love.png'; //Love
 
   return (
     <div className='app-container'>
@@ -12,13 +13,11 @@ const Footer = () => {
       <div className='Footer'>
         <div className='Forus'>
           <h1>
-            Sobre    nosotros
+            S o b r e &nbsp; n o s o t r o s
           </h1>
           <p>
-            Somos un grupo de desarrolladores que busca 
-            visibilizar los ecosistemas terrestres en Chile, con el 
-            fin de mapear especies de flora y fauna y sus 
-            respectivos parques de la naturaleza.
+            Somos un grupo de desarrolladores que busca visibilizar los ecosistemas terrestres en Chile, con el 
+            fin de mapear especies de flora y fauna y sus respectivos parques de la naturaleza.
           </p> 
         </div>
         <div className='ContactUs'>
@@ -40,7 +39,8 @@ const Footer = () => {
               <img src={logoUrl} alt="Logo" style={{ width: '350px', height: 'auto' }} />
             </a>
           </h1>
-          <button className='Footer-button'>
+          <button className='Footer-button'> 
+              <img src={loveLogoUrl} alt='Donar' style={{width: 'auto', height: 'auto' }}/>
             C O M P A R T E
           </button>
         </div>
