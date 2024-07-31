@@ -38,10 +38,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .section-2, .section-3 {
-  background-color: #f0f0f0; 
+   
+  position: relative; /* Permite que los infoboxes se posicionen encima de la sección */
+  z-index: 1; /* Asegura que los infoboxes se muestren encima de otros elementos si es necesario */
 }
 
 .static-image {

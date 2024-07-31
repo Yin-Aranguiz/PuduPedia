@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './LandingPage.css';
+import Footer from './Footer';
+import Infoboxes from './Infoboxes';
+import NavBar from './NavBar';
+
 
 // importa las imágenes desde la misma carpeta
 import image1 from './landingpage1.png';
 import image2 from './landingpage2.jpg';
 import image3 from './landingpage3.jpg';
 import imageTitle from './landingtitle.svg';
+
+
 
 // define las imágenes en el array images
 const images = [
@@ -32,6 +38,7 @@ const LandingPage = () => {
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
     // para presionar el botón, pasa lo mismo que en el intervalo cada 3 segundos, se cambia la imagen según el índice
+    
   };
 
   return (
@@ -43,14 +50,18 @@ const LandingPage = () => {
       >
         <img src={imageTitle} alt='title' className='title-image' />
         <button className="next-button" onClick={handleNextImage}></button>
+        <NavBar/>
       </div>
       <div className="section section-2">
         <img src={image2} alt='image2' className='static-image' />
+        <Infoboxes/>
       </div>
       <div className="section section-3">
-        <img src={image3} alt='image3' className='static-image' />
+        <img src={image3} alt='image3' className='static-image' /> 
+        <Footer/>
       </div>
     </div>
+    
   );
 };
 
