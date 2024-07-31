@@ -6,7 +6,7 @@
     align-items: flex-start; /* Para alinear las infoboxes al inicio */
     gap: 20px; /* Espacio entre las infoboxes */
     padding: 20px; /* Opcional: para añadir un poco de padding alrededor */
-    background-color: #001227;
+    background-color: #5487ff;
 }
 
 .infobox {
@@ -15,7 +15,7 @@
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
-    background-color: #6d6d6d34;
+    background-color: #d5f0ff4e;
     position: relative;
 }
 
