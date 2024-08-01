@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './NavBar.css'
+import MenuImg from './menuIcon.png'
 
 const NavBar = () => {
     const [visible, setVisible] = useState(false)
@@ -25,7 +26,7 @@ const NavBar = () => {
             <button className='button'
                 onMouseEnter={isVisible}
                 onMouseLeave={notVisible}>
-                
+                <img src={MenuImg} alt='Menu' className='menuHamburguer'/>
             </button>
             
             {visible && <div className="navBarItems" onMouseEnter={isVisible} onMouseLeave={notVisible}>

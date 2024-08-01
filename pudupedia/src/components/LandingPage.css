@@ -59,5 +59,7 @@
   height: 500px;
 }
 
-/* aaa */
+.Navbar{
+  position: fixed;
+}
 
