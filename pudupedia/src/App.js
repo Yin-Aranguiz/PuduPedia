@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-// import LandingPage from './Components/LandingPage';
-// import GamePage from './Components/GamePage';
+// import LandingPage from './Components/Landing/LandingPage';
+// import GamePage from './Components/Games/GamePage';
 
 
 
