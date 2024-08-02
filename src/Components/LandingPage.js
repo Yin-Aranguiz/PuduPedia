@@ -3,7 +3,7 @@ import './LandingPage.css';
 import Footer from './Footer';
 import Infoboxes from './Infoboxes';
 import NavBar from './NavBar';
-
+import Header from './Header';
 
 // importa las imágenes desde la misma carpeta
 import image1 from './landingpage1.png';
@@ -27,16 +27,22 @@ const LandingPage = () => {
 
 
   useEffect(() => {
+    // Una función llamada handleScroll que se ejecutará cada vez que el usuario haga scroll
     const handleScroll = () => {
-      // Cambia el estado si el scroll es mayor a una cantidad específica (por ejemplo, 100px)
+      // Cambia el estado isScrolled a true si el usuario ha hecho scroll más de 100px, de lo contrario lo cambia a false
       setIsScrolled(window.scrollY > 100);
     };
-
+    // Se añade un event listener al evento 'scroll' del objeto window. 
+    // Esto significa que cada vez que el usuario haga scroll, se ejecutará la función handleScroll
     window.addEventListener('scroll', handleScroll);
+  
+    // Función de limpieza que se ejecutará cuando el componente se desmonte.
+    // Elimina el event listener para evitar posibles problemas de rendimiento o errores
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // useEffect se encarga de configurar y limpiar el intervalo (sin esto, las imágenes cambian muy rápido, pero aún no lo entiendo al 100%)
+  // El array vacío [] significa que este efecto solo se ejecutará una vez
+  
+  // useEffect se encarga de configurar y limpiar el intervalo
   useEffect(() => {
     if (!isScrolled) {
       const interval = setInterval(() => {
@@ -47,7 +53,7 @@ const LandingPage = () => {
 
       return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonte
     }
-  }, [isScrolled]);  // El array vacío [] asegura que el efecto solo se ejecute una vez
+  }, [isScrolled]);
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -57,6 +63,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
+      <Header />
       <div //section-1
         className="background-image"
         style={{ backgroundImage: `url(${images[isScrolled ? 0 : currentImageIndex]})` }}
@@ -71,7 +78,7 @@ const LandingPage = () => {
         <img src={image2} alt='image2' className='static-image' />
         <Infoboxes />
         <Footer />
-      </div>
+      </div> 
     </div>
 
   );
@@ -79,3 +86,4 @@ const LandingPage = () => {
 
 
 export default LandingPage;
+
