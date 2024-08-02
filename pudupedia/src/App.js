@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './Components/LandingPage';
-import Header from './Components/Header';
+// import LandingPage from './Components/LandingPage';
+// import GamePage from './Components/GamePage';
+import GamePage from './Components/GamePage';
+
 
 function App() {
   return (
     <React.StrictMode>
-      <Header />
-      <LandingPage />
+      <GamePage/>
     </React.StrictMode>
 
   );

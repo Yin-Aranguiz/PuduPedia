@@ -1,0 +1,19 @@
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    margin-top: 100vh;
+    margin-bottom: -100vh;
+}
+
+.gallery img {
+    height: 300px; 
+    width: 500px; 
+    margin: -10px -10px; 
+    will-change: transform;
+    z-index: 1000;
+}
+

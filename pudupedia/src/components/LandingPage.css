@@ -45,13 +45,13 @@
     width: auto;
     height: auto;
   position: relative; /* Permite que los infoboxes se posicionen encima de la sección */
-  z-index: 1; /* Asegura que los infoboxes se muestren encima de otros elementos si es necesario */
+  z-index: 1; 
 }
 
 .static-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+   
 }
 
 .title-image {

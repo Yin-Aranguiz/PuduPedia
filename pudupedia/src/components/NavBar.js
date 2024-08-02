@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './NavBar.css'
-import MenuImg from './menuIcon.png'
+import './NavBar.css';
+import MenuImg from './menuIcon.png';
 
 const NavBar = () => {
     const [visible, setVisible] = useState(false)
