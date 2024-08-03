@@ -168,7 +168,7 @@ const TriviaGame = () => {
 
     return (
         <div className='TriviaGame'>
-            <Header/>
+            <Header className="color"/>
             <h1>TRIVIA SOBRE ANIMALES ENDÉMICOS DE CHILE</h1>
             <img src={imagePudu} alt='Pudu' width={200} className='Pudu'></img>
             {!startGame && !finished && (

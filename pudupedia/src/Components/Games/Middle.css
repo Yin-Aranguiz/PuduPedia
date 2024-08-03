@@ -9,7 +9,15 @@ body {
   position: absolute; 
   top: 15vh;
   left: 50vh;
-  z-index: 0; /* La imagen rotativa estará detrás de los otros elementos */
+  z-index: -10; /* La imagen rotativa estará detrás de los otros elementos */
+}
+
+.gameTitle {
+  margin-top: 350px;
+  margin-left: 510px;
+  margin-bottom: 0;
+  width: 400px;
+  height: 200px;
 }
 
 /* Animación de rotación */

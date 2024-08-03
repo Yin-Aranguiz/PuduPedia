@@ -34,7 +34,7 @@ body.app-container {
 }
 
 .Footer.transformed {
-    transform: translateY(910px);
+    transform: translateY(700px);
 }
 
 /* Styling for each section within the footer */

@@ -114,6 +114,10 @@
   font-style: italic;
 }
 
+.languageToggle p.color, .loginTab p.color {
+  color: white;
+}
+
 .loginTab {
   display: flex;
   padding-right: 5px;
