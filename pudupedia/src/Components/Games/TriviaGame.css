@@ -48,7 +48,7 @@
     margin: 5px auto;
 }
 
-.TriviaGame p {
+.TriviaGame.paragraph p {
     color: #0e0d0d;
     font-size: 1rem;
 }

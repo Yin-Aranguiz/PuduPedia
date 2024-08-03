@@ -184,13 +184,13 @@ const TriviaGame = () => {
                             </button>
                         ))}
                     </div>
-                    <div>
+                    <div className='paragraph'>
                         <p>Puntuación: {score}</p>
                     </div>
                 </div>
             )}
             {finished && (
-                <div>
+                <div className='paragraph'>
                     <h3>Juego finalizado</h3>
                     <p>Resultados: {winMessage}</p>
                     <p>Puntuación: {score}</p>

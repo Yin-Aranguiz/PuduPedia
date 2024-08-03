@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+.languageToggle p.color, .loginTab p.color {
+  color: white;
+}
+
 /* Reinicio de márgenes y rellenos */
 .headerContainer * {
   margin: 0;
@@ -114,9 +118,7 @@
   font-style: italic;
 }
 
-.languageToggle p.color, .loginTab p.color {
-  color: white;
-}
+
 
 .loginTab {
   display: flex;
@@ -153,6 +155,7 @@
 .logoContainer:hover, .languageToggle:hover, .loginTab:hover, .shareButton:hover, .searchButton:hover {
   cursor: pointer;
 }
+
 .languageToggle p {
   color: white;
 }
