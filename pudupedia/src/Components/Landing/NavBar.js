@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
-import MenuImg from './menuIcon.png';
+
 
 const NavBar = () => {
     const [visible, setVisible] = useState(false)
@@ -11,14 +12,14 @@ const NavBar = () => {
     const notVisible = () => {
         setVisible(false)
     }
-    const fondo = (state)=>{
-        if (state===false){
+    const fondo = (state) => {
+        if (state === false) {
             return 'none'
-        }else if (state===true){
+        } else if (state === true) {
             return 'background'
         }
 
-        
+
     }
     return (
         <div className={`allItemsNavBar ${fondo(visible)}`}>
@@ -26,15 +27,15 @@ const NavBar = () => {
             <button className='button'
                 onMouseEnter={isVisible}
                 onMouseLeave={notVisible}>
-                <img src={MenuImg} alt='Menu' className='menuHamburguer'/>
             </button>
-            
+
             {visible && <div className="navBarItems" onMouseEnter={isVisible} onMouseLeave={notVisible}>
-                <a href="#"><div className="circle"></div>Chile</a>
-                <a href="#"><div className="circle"></div>Vida Silvestre</a>
-                <a href="#"><div className="circle"></div>Parques</a>
-                <a href="#"><div className="circle"></div>Juegos</a>
-                <a href="#"><div className="circle"></div>Quienes Somos</a>
+                <Link to="/"><div className="circle"></div>Inicio</Link>
+                <Link to="/chile"><div className="circle"></div>Chile</Link>
+                <Link to="/vida-silvestre"><div className="circle"></div>Vida Silvestre</Link>
+                <Link to="/parques"><div className="circle"></div>Parques</Link>
+                <Link to="/juegos"><div className="circle"></div>Juegos</Link>
+                <Link to="/quienes-somos"><div className="circle"></div>Quienes Somos</Link>
             </div>}
         </div>
     );

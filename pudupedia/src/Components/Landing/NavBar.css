@@ -15,6 +15,12 @@
     height: 50px;
     width: 50px;
     background-color: rgba(48, 47, 47, 0.158);
+    border-radius: 50%;
+}
+.button::after {
+  content: '>';
+  color: #ddd;
+  font-size: 2rem;
 }
 
 .button:hover{
@@ -23,7 +29,7 @@
 }
 .allItemsNavBar.background{
     cursor: pointer;
-    background-color: rgba(192, 188, 188, 0.195);
+    background-color: rgba(1, 4, 2, 0.63);
     width: 45vh;
     left: 0;
 }
@@ -62,9 +68,3 @@
   margin-left: -37px;
   position: absolute;
 }
- 
-.menuHamburguer{
-  height: 20px;
-    width: 20px;
-}
-

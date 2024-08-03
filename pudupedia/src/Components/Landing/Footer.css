@@ -1,5 +1,5 @@
 /* General body styling */
-body {
+body.app-container {
     font-family: 'Open Sans', sans-serif;
     color: white;
 }
@@ -19,8 +19,8 @@ body {
     padding: 20px;
     background: linear-gradient(
         to bottom, /* Degradado de arriba hacia abajo */
-        rgba(15, 63, 84, 0.8), /* Color #0F3F54 con 80% de opacidad */
-        rgba(4, 5, 5, 0.8) /* Color #040505 con 80% de opacidad */
+        rgba(36, 39, 39, 0.8), /* Color #0F3F54 con 80% de opacidad */
+        rgba(0, 0, 0, 0.8) /* Color #040505 con 80% de opacidad */
     );
     border-top: 1px solid rgba(4, 5, 5, 0.8); /* Borde con color #040505 y 80% de opacidad */
     width: auto;
@@ -33,6 +33,10 @@ body {
     z-index: 10; /* Asegura que el footer esté encima de otros elementos */
 }
 
+.Footer.transformed {
+    transform: translateY(910px);
+}
+
 /* Styling for each section within the footer */
 .Forus, .ContactUs, .Logo {
     flex: 1;
@@ -43,11 +47,12 @@ body {
 .Forus p {
     margin: 10px 0; /* Ajusta el margen superior e inferior como necesites */
     text-align: justify;
+    color: white;
     
 }
 
 /* Header styles */
-h1, h3 {
+.app-container.h1, h3 {
     margin: 0 0 10px;
     padding: 20px;
     
@@ -59,14 +64,14 @@ h1, h3 {
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.205); /* Recuadro blanco */
     border-radius: 5px;
-    padding: 10px 110px; /* Con el segundo modifico el ancho del boton*/
+    padding: 5px 100px; /* Con el segundo modifico el ancho del boton*/
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
     margin-bottom: 10px;
+    margin-left: 45px;
     outline: none;
     font-family: 'Open Sans', sans-serif; /* Asegura que el botón use la misma tipografía */
-  
 }
 /* Contenedor del botón compartido */
 .Share-button {
@@ -76,25 +81,29 @@ h1, h3 {
 /* Espacio entre la imagen y el texto */
 .Share-button p {
     margin-left: 10px; /* Ajusta el margen izquierdo del párrafo */
+    color: white;
 }
 
 .Footer-button:hover {
     background-color: rgb(255, 255, 255); /* Cambia el fondo al pasar el cursor */
     color: #000000; /* Cambia el color del texto al pasar el cursor */
 }
+.Footer-button:hover p {
+    color: black;
+}
 
 /* Link styling */
-a {
+.Footer a {
     color: white;
     text-decoration: none;
 }
 
-a:hover {
+.Footer a:hover {
     text-decoration: underline;
 } 
 
 /* Image styling */
-img {
+.Footer img {
     display: block;
     margin: 0 auto;
 }
@@ -105,11 +114,19 @@ img {
     flex-direction: column;
     align-items: center;
 }
-
+.ContactUs h1 {
+    color: rgb(255, 255, 255);
+}
+.Forus h1 {
+    color: white;
+}
 .Contact-item {
     display: flex;
     align-items: center;
     margin: 10px 0;
+}
+.Contact-item p {
+    color: white;
 }
 
 .Contact-logo {

@@ -10,6 +10,7 @@
     /* Espacio entre las infoboxes */
     padding: 20px;
     position: absolute;
+    margin-top: -50vh;
 
 }
 
@@ -21,7 +22,10 @@
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
-    background-color: #6d6d6d8e;
+    background-color: #363535c0;
+    background: linear-gradient(rgba(29, 29, 30, 0.8),
+            rgba(0, 0, 0, 0.4)
+        );
     position: relative;
 }
 

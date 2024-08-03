@@ -1,129 +1,92 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Gallery.css';
+import TriviaImg from './TriviaGame.jpg';
 
 const Gallery = () => {
-  // Declara un componente funcional llamado Gallery.
-  
-  const galleryRef = useRef(null);
-  // Crea una referencia (galleryRef) para acceder al DOM del contenedor de la galería.
+  const [scrollPosition, setScrollPosition] = useState(0); // Define el estado para la posición de desplazamiento inicial.
 
   useEffect(() => {
-    // useEffect se ejecuta después de que el componente se monta.
-    
+    const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería usando una clase CSS.
+
     const handleScroll = () => {
-      // Declara una función para manejar el evento de desplazamiento.
-      if (galleryRef.current) {
-        // Verifica si galleryRef.current existe (es decir, si el DOM está cargado).
-        
-        const scrollLeft = galleryRef.current.scrollLeft;
-        // Obtiene la posición actual de desplazamiento horizontal.
-        
-        const width = galleryRef.current.clientWidth;
-        // Obtiene el ancho del contenedor de la galería.
-        
-        const center = scrollLeft + width / 2;
-        // Calcula el centro visible de la galería.
-        
-        Array.from(galleryRef.current.children).forEach((img) => {
-          // Convierte los hijos de galleryRef.current en un array y recorre cada imagen.
-          
-          const imgCenter = img.offsetLeft + img.clientWidth / 2;
-          // Calcula el centro de cada imagen.
-          
-          const distance = Math.abs(center - imgCenter);
-          // Calcula la distancia entre el centro visible y el centro de la imagen.
-          
-          const scale = Math.max(1 - distance / (width / 2), 0.7);
-          // Calcula el factor de escala basado en la distancia. Las imágenes cerca del centro se escalan más.
-          
-          img.style.transform = `scale(${scale})`;
-          // Aplica la escala calculada a la imagen.
-        });
-      }
+      setScrollPosition(gallery.scrollLeft); // Actualiza el estado de la posición de desplazamiento horizontal.
     };
 
     const handleWheel = (e) => {
-      // Declara una función para manejar el evento de rueda del mouse.
-      if (galleryRef.current) {
-        // Verifica si galleryRef.current existe.
-        
-        const scrollSpeed = 7; // Ajusta la velocidad del scroll
-        galleryRef.current.scrollLeft += e.deltaY * scrollSpeed;
-        // Ajusta el desplazamiento horizontal basado en el movimiento de la rueda del mouse.
-        
-        e.preventDefault(); // Evita el desplazamiento vertical predeterminado
-        // Previene el comportamiento predeterminado del scroll vertical.
-      }
+      e.preventDefault(); // Previene el comportamiento predeterminado del desplazamiento vertical.
+      gallery.scrollLeft += e.deltaY * 7; // Ajusta el desplazamiento horizontal según el movimiento de la rueda del mouse.
     };
 
     const smoothScroll = () => {
-      // Declara una función para manejar el ajuste suave del desplazamiento.
-      if (galleryRef.current) {
-        // Verifica si galleryRef.current existe.
-        
-        const gallery = galleryRef.current;
-        const itemWidth = gallery.children[0].clientWidth;
-        // Obtiene el ancho de un elemento hijo (asumiendo que todos los elementos tienen el mismo ancho).
-        
-        const itemCount = gallery.children.length / 2;
-        // Calcula la cantidad de elementos (asumiendo que hay duplicados en la galería).
-        
-        const scrollWidth = gallery.scrollWidth;
-        // Obtiene el ancho total del contenido desplazable.
-        
-        // Verifica si el scroll está fuera de rango y ajusta.
-        if (gallery.scrollLeft < itemWidth) {
-          gallery.scrollLeft = scrollWidth / 3;
-        } else if (gallery.scrollLeft > (itemCount * itemWidth * 2)) {
-          gallery.scrollLeft = scrollWidth / 3;
-        }
+      const itemWidth = gallery.children[0]?.clientWidth || 0; // Obtiene el ancho del primer hijo (imagen) o 0 si no existe.
+      const itemCount = gallery.children.length / 2; // Calcula el número de elementos en la galería, asumiendo duplicados.
+      const scrollWidth = gallery.scrollWidth; // Obtiene el ancho total del contenido desplazable.
+
+      // Ajusta el desplazamiento horizontal si está fuera de rango.
+      if (gallery.scrollLeft < itemWidth) {
+        gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es menor que el ancho de un ítem.
+      } else if (gallery.scrollLeft > itemCount * itemWidth * 2) {
+        gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es mayor que el ancho total de los ítems.
       }
     };
 
-    const gallery = galleryRef.current;
-    gallery.addEventListener('scroll', handleScroll);
-    gallery.addEventListener('wheel', handleWheel);
-    // Añade los manejadores de eventos para el desplazamiento y la rueda del mouse al contenedor de la galería.
+    gallery.addEventListener('scroll', handleScroll); // Añade un evento para manejar el desplazamiento.
+    gallery.addEventListener('wheel', handleWheel); // Añade un evento para manejar el desplazamiento con la rueda del mouse.
 
-    const interval = setInterval(smoothScroll, 50); // Ajusta el intervalo para mejor rendimiento
-    // Configura un intervalo para llamar a la función smoothScroll cada 50 ms para ajustar el desplazamiento.
+    const interval = setInterval(smoothScroll, 50); // Configura un intervalo para ajustar el desplazamiento suavemente cada 50 ms.
 
     return () => {
-      gallery.removeEventListener('scroll', handleScroll);
-      gallery.removeEventListener('wheel', handleWheel);
-      clearInterval(interval);
-      // Limpia los manejadores de eventos y el intervalo cuando el componente se desmonte.
+      gallery.removeEventListener('scroll', handleScroll); // Limpia el manejador de eventos de desplazamiento al desmontar el componente.
+      gallery.removeEventListener('wheel', handleWheel); // Limpia el manejador de eventos de la rueda del mouse.
+      clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta.
     };
-  }, []);
-  // El array vacío [] asegura que useEffect se ejecute solo una vez, al montar el componente.
+  }, []); // El array vacío asegura que useEffect se ejecute solo una vez al montar el componente.
+
+  useEffect(() => {
+    const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería nuevamente.
+
+    Array.from(gallery.children).forEach((img) => { // Recorre cada imagen en la galería.
+      const imgCenter = img.offsetLeft + img.clientWidth / 2; // Calcula el centro de la imagen.
+      const center = scrollPosition + gallery.clientWidth / 2; // Calcula el centro visible de la galería.
+      const distance = Math.abs(center - imgCenter); // Calcula la distancia entre el centro visible y el centro de la imagen.
+      const scale = Math.max(1 - distance / (gallery.clientWidth / 2), 0.6); // Calcula el factor de escala basado en la distancia.
+      img.style.transform = `scale(${scale})`; // Aplica la escala a la imagen.
+      img.style.transition = `transform 0.5s ease;`
+    });
+  }, [scrollPosition]); // Este useEffect se ejecuta cada vez que cambia la posición de desplazamiento.
+
+  const images = [
+    { src: 'https://via.placeholder.com/500x250?text=Image+1', alt: '1', id: '1' },
+    { src: 'https://via.placeholder.com/500x250?text=Image+2', alt: '2', id: '2'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+3', alt: '3', id: '3'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+4', alt: '4', id: '4'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+5', alt: '5', id: '5'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+6', alt: '6', id: '6'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+7', alt: '7', id: '7'},
+    { src: TriviaImg, alt: '8', id: '8'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+9', alt: '9', id: '9'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+10', alt: '10', id: '10'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+11', alt: '11', id: '11'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+12', alt: '12', id: '12'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+13', alt: '13', id: '13'},
+    { src: TriviaImg, alt: '14', id: '14'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+15', alt: '15', id: '15'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+16', alt: '16', id: '16'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+17', alt: '17', id: '17'},
+    { src: 'https://via.placeholder.com/500x250?text=Image+18', alt: '18', id: '18'}
+  ];
 
   return (
-    <div className="gallery" ref={galleryRef}>
-      {/* Renderiza el contenedor de la galería con la referencia galleryRef */}
-      {Array.from({ length: 6 }, (_, i) => (
-        <img
-          key={i}
-          src={`https://via.placeholder.com/500x250?text=Image+${i + 1}`} 
-          alt={`Image ${i + 1}`}
-        />
+    <div className="gallery">
+      {images.map((imageGame) => (
+        <Link key={imageGame.id} to={`/image/${imageGame.id}`}>
+          <img
+            src={imageGame.src} 
+            alt={imageGame.alt} 
+          />
+        </Link>
       ))}
-      {/* Renderiza 6 imágenes con URLs de imagen de marcador de posición */}
-      {Array.from({ length: 6 }, (_, i) => (
-        <img
-          key={i + 6}
-          src={`https://via.placeholder.com/500x250?text=Image+${i + 1}`} 
-          alt={`Image ${i + 1}`}
-        />
-      ))}
-      {/* Renderiza otras 6 imágenes con URLs de imagen de marcador de posición */}
-      {Array.from({ length: 6 }, (_, i) => (
-        <img
-          key={i + 12}
-          src={`https://via.placeholder.com/500x250?text=Image+${i + 1}`} 
-          alt={`Image ${i + 1}`}
-        />
-      ))}
-      {/* Renderiza otras 6 imágenes con URLs de imagen de marcador de posición */}
     </div>
   );
 };

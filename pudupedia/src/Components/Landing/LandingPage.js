@@ -25,7 +25,6 @@ const LandingPage = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
   useEffect(() => {
     // Una función llamada handleScroll que se ejecutará cada vez que el usuario haga scroll
     const handleScroll = () => {
@@ -48,30 +47,38 @@ const LandingPage = () => {
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length); // el índice vuelve a 0 después de llegar al final de la lista
         // El índice comienza en 0 y aumenta con el tiempo para mostrar la siguiente imagen.
-        // el nuevo índice debe dar módulo 0 con la logintud de las imágenes para no pasarse a índices que no existen
+        // el nuevo índice debe dar módulo 0 con la longitud de las imágenes para no pasarse a índices que no existen
       }, 3000); // Cambia la imagen cada 3 segundos (3000ms)
 
       return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonte
     }
   }, [isScrolled]);
 
-  const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    // para presionar el botón, pasa lo mismo que en el intervalo cada 3 segundos, se cambia la imagen según el índice
-
+  const handleDotClick = (index) => {
+    setCurrentImageIndex(index);
+    // Cambia la imagen al índice del punto clicado
   };
 
   return (
-    <div className="landing-page">
+    <div className="landing-page"> 
       <Header />
       <div //section-1
         className="background-image"
         style={{ backgroundImage: `url(${images[isScrolled ? 0 : currentImageIndex]})` }}
-      // la imagen de fondo es la que tenga el índice actual
+        // la imagen de fondo es la que tenga el índice actual
       >
         <img src={imageTitle} alt='title' className='title-image' />
-        <button className="next-button" onClick={handleNextImage}></button>
 
+        <div className="dots-container">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${currentImageIndex === index ? 'active' : ''}`}
+              onClick={() => handleDotClick(index)}
+            />
+          ))}
+        </div>
+        {/* Añadido el contenedor de puntos */}
       </div>
       <NavBar />
       <div className="section section-2">
@@ -80,9 +87,7 @@ const LandingPage = () => {
         <Footer />
       </div> 
     </div>
-
   );
 };
-
 
 export default LandingPage;

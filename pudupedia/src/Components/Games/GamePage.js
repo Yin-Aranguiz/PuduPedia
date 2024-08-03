@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../Landing/Header';
-// import Footer from './Footer';
+import Footer from '../Landing/Footer';
 import Gallery from './Gallery';
 import Middle from './Middle';
-// import InfoGame from './InfoGame';
 import NavBar from '../Landing/NavBar'
+import InfoGame from './InfoGame';
+import '../Landing/Footer.css'
+
 
 const GamePage = () => {
    
@@ -14,6 +16,8 @@ const GamePage = () => {
             <Middle />
             <NavBar/>
             <Gallery />
+            <InfoGame/>
+            <Footer className="transformed"/>
         </div>
     );
 }

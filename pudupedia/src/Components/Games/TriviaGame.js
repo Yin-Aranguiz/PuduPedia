@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import './TriviaGame.css';
 import imagePudu from './puduTrivia.jpg';
+import Header from '../Landing/Header';
 
 const TriviaGame = () => {
     const allQuestions = [
@@ -167,8 +168,9 @@ const TriviaGame = () => {
 
     return (
         <div className='TriviaGame'>
-            <h1>JUEGO DE TRIVIA SOBRE ANIMALES ENDÉMICOS DE CHILE</h1>
-            <img src={imagePudu} alt='Pudu' width={200}></img>
+            <Header/>
+            <h1>TRIVIA SOBRE ANIMALES ENDÉMICOS DE CHILE</h1>
+            <img src={imagePudu} alt='Pudu' width={200} className='Pudu'></img>
             {!startGame && !finished && (
                 <button className='buttonStart' onClick={StartGame}>Iniciar Juego</button>
             )}

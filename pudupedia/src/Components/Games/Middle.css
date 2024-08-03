@@ -1,51 +1,15 @@
-.top-section {
-  position: relative; 
-  align-items: center;
-  padding: 20px;
-  margin-bottom: -250px;
-  width: 0%;
+body {
+  background: linear-gradient(to right, rgba(1, 22, 1, 0.801), rgba(9, 59, 9, 0.5), rgba(25, 150, 25, 0));
+  background-color: rgb(19, 105, 19);
 }
 
 .rotating-image {
-  width: 100vh; 
+  width: 90vh; 
   animation: rotate 20s linear infinite;
   position: absolute; 
-  top: 0;
-  left: 44vh;
-  z-index: 1; /* La imagen rotativa estará detrás de los otros elementos */
-}
-
-.main-title {
-  position: absolute; /* Posiciona el título sobre la imagen rotativa */
-  top: 895%; /* Ajusta la posición vertical del título */
-  left: 94vh; /* Ajusta la posición horizontal del título */
-  transform: translate(-50%, -50%); /* Centra el título en la pantalla */
-  z-index: 2; /* Asegura que el título esté sobre la imagen rotativa */
-  color: black; 
-  font-size: 60px;
-}
-
-.title-container {
-  position: absolute; /* Posiciona el contenedor del título sobre la imagen rotativa */
-  top: 160%; /* Ajusta la posición vertical del contenedor del título */
-  transform: translateX(-50%); /* Centra el contenedor horizontalmente */
-  z-index: 2; /* Asegura que el contenedor del título esté sobre la imagen rotativa */
-  width: 100%;
-  
-}
-
-.list {
-  padding: 0;
-  margin-top: 20vh;
-  margin-left: 150vh;
-  width: 300px;
-  text-decoration:underline;
-  color: black;
-}
-
-.list li {
-  margin: 5px auto;
-  font-size: 20px;
+  top: 15vh;
+  left: 50vh;
+  z-index: 0; /* La imagen rotativa estará detrás de los otros elementos */
 }
 
 /* Animación de rotación */

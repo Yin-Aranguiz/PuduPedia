@@ -2,18 +2,24 @@
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    white-space: nowrap;
     width: 100%;
     position: relative;
-    margin-top: 100vh;
+    margin-top: 110vh;
     margin-bottom: -100vh;
 }
 
 .gallery img {
-    height: 300px; 
-    width: 500px; 
-    margin: -10px -10px; 
+    border-radius: 10%;
+    height: 400px; 
+    width: 600px; 
+    margin: 0px -10px 150px -100px; 
     will-change: transform;
     z-index: 1000;
+}
+
+.gallery img:hover {
+    transform: scale(0.9);
+    border-radius: 10%;
+    transition: transform 0.5s ease;
 }
 
