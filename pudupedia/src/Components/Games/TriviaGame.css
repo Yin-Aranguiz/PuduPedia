@@ -48,9 +48,13 @@
     margin: 5px auto;
 }
 
-.TriviaGame.paragraph p {
+.paragraph p {
     color: #0e0d0d;
     font-size: 1rem;
+}
+
+.paragraph h3 {
+    color: #e6e610;
 }
 
 .finished {
