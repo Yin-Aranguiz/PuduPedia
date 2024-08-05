@@ -1,10 +1,17 @@
 // Juego de Trivia:
 // 20 preguntas en total
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './TriviaGame.css';
 import imagePudu from './puduTrivia.jpg';
 import Header from '../Landing/Header';
+// import Footer from '../Landing/Footer';
+
+import hoverSound from './selectChoiceTrivia.mp3';
+import winSound from './winGameTrivia.mp3';
+import loseSound from './loseGameTrivia.mp3';
+import backgroundMusic from './MusicTrivia.MP3';
+import tryAgainSound from './failureTrivia.mp3';
 
 const TriviaGame = () => {
     const allQuestions = [
@@ -110,12 +117,32 @@ const TriviaGame = () => {
         }
     ];
 
+  
     const [questions, setQuestions] = useState([]);
     const [actualQuestion, setActualQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [startGame, setStartGame] = useState(false);
     const [finished, setFinished] = useState(false);
     const [winMessage, setWinMessage] = useState('');
+    const [musicPlaying, setMusicPlaying] = useState(false);
+
+    const hoverSoundRef = useRef(null);
+    const winSoundRef = useRef(null);
+    const loseSoundRef = useRef(null);
+    const tryAgainSoundRef = useRef(null);
+    const backgroundMusicRef = useRef(null);
+
+    useEffect(() => {
+        // Inicia la música en el montaje si está activada
+        if (musicPlaying) {
+            backgroundMusicRef.current.play();
+        }
+
+        return () => {
+            // Asegúrate de pausar la música cuando el componente se desmonte
+            backgroundMusicRef.current.pause();
+        };
+    }, [musicPlaying]);
 
     useEffect(() => {
         if (finished) {
@@ -124,46 +151,68 @@ const TriviaGame = () => {
     }, [finished, score]);
 
     const handleWin = (score) => {
-        if (score === 10) {
+        if (score === 5) {
+            winSoundRef.current.play();
             setWinMessage('¡Ganaste!');
-        } else if (score < 10) {
-            setWinMessage('¡Sigue intentando!');
+        } else if (score <= 0) {
+            loseSoundRef.current.play();
+            setWinMessage('Perdiste. Tu puntaje es 0.');
         } else {
-            setWinMessage('...');
+            tryAgainSoundRef.current.play();
+            setWinMessage('¡Sigue intentando!');
         }
+        backgroundMusicRef.current.pause();
+        setMusicPlaying(false);
     };
 
     const StartGame = () => {
-        // Barajar las preguntas para mostrar una al azar al iniciar el juego
-        const questionsShuffled = [...allQuestions].sort(() => Math.random() - 0.5);
-        // Math.random() devuelve un valor entre 0 (inclusive) y 1 (exclusivo),
-        // - 0.5: de esta manera puede devolver valores positivos o negativos con igual probabilidad
+        const questionsShuffled = [...allQuestions].sort(() => Math.random() - 0.5).slice(0, 5);
         setQuestions(questionsShuffled);
         setActualQuestion(0);
         setScore(0);
         setStartGame(true);
         setFinished(false);
         setWinMessage('');
+        // Reproduce la música si está activada
+        if (musicPlaying) {
+            backgroundMusicRef.current.play();
+        }
     };
 
     const handleAnswer = (answer) => {
-        // Verifica si la pregunta actual está dentro del rango de preguntas disponibles
+        // Reproduce el sonido al hacer clic en una opción
+        hoverSoundRef.current.play();
+
         if (actualQuestion < questions.length) {
             const correctAnswer = questions[actualQuestion].answer;
             if (answer === correctAnswer) {
                 setScore(prevScore => prevScore + 1);
             } else {
-                setScore(prevScore => prevScore - 1);
+                setScore(prevScore => prevScore - 1); // Resta un punto en caso de error
+                if (score <= 0) {
+                    setFinished(true);
+                    backgroundMusicRef.current.pause();
+                    return; // Sale de la función si se pierde
+                }
             }
 
-            // Comprueba si la pregunta actual es la última en la lista de preguntas
             if (actualQuestion === questions.length - 1) {
                 setFinished(true);
                 setStartGame(false);
+                backgroundMusicRef.current.pause();
             } else {
                 setActualQuestion(prevQuestion => prevQuestion + 1);
             }
         }
+    };
+
+    const toggleMusic = () => {
+        if (musicPlaying) {
+            backgroundMusicRef.current.pause();
+        } else {
+            backgroundMusicRef.current.play();
+        }
+        setMusicPlaying(!musicPlaying);
     };
 
     return (
@@ -171,6 +220,14 @@ const TriviaGame = () => {
             <Header className="color"/>
             <h1>TRIVIA SOBRE ANIMALES ENDÉMICOS DE CHILE</h1>
             <img src={imagePudu} alt='Pudu' width={200} className='Pudu'></img>
+            <button onClick={toggleMusic}>
+                {musicPlaying ? 'Parar Música' : 'Reproducir Música'}
+            </button>
+            <audio ref={backgroundMusicRef} src={backgroundMusic} loop />
+            <audio ref={hoverSoundRef} src={hoverSound} />
+            <audio ref={winSoundRef} src={winSound} />
+            <audio ref={loseSoundRef} src={loseSound} />
+            <audio ref={tryAgainSoundRef} src={tryAgainSound} />
             {!startGame && !finished && (
                 <button className='buttonStart' onClick={StartGame}>Iniciar Juego</button>
             )}
@@ -179,7 +236,10 @@ const TriviaGame = () => {
                     <h3>{questions[actualQuestion].question}</h3>
                     <div className='options'>
                         {questions[actualQuestion].options.map((option, index) => (
-                            <button key={index} onClick={() => handleAnswer(option)}>
+                            <button
+                                key={index}
+                                onClick={() => handleAnswer(option)}
+                            >
                                 {option}
                             </button>
                         ))}
@@ -202,4 +262,3 @@ const TriviaGame = () => {
 };
 
 export default TriviaGame;
-

@@ -21,7 +21,7 @@
     margin-bottom: 15px;
 }
 
-.buttonStart, .options button {
+.buttonStart, .options button, .TriviaGame button {
     background-color: #deffcadd;
     color: #0f2403;
     border: none;
@@ -33,7 +33,7 @@
     transition: background-color 0.3s;
 }
 
-.buttonStart:hover, .options button:hover {
+.buttonStart:hover, .options button:hover, .TriviaGame button:hover {
     background-color: #e6e610;
 }
 
@@ -56,15 +56,18 @@
 .finished {
     margin-top: 20px;
 }
-.questions h3{
+
+.questions h3 {
     color: rgb(48, 65, 4);
 }
+
 .Pudu {
     display: flex;
     margin-left: 25vh;
     margin-bottom: 5vh;
     border-radius: 10%;
 }
+
 .Pudu:hover {
     transform: scale(0.9);
     transition: transform 0.5s ease;

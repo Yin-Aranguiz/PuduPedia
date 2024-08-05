@@ -16,6 +16,9 @@ const Gallery = () => {
     const handleWheel = (e) => {
       e.preventDefault(); // Previene el comportamiento predeterminado del desplazamiento vertical.
       gallery.scrollLeft += e.deltaY * 7; // Ajusta el desplazamiento horizontal según el movimiento de la rueda del mouse.
+      // dice cuántos píxeles se han desplazado horizontalmente el contenido de un elemento que tiene un desbordamiento horizontal (scroll).
+      // deltaY es una propiedad del objeto del evento wheel en JavaScript que representa el cambio en el desplazamiento de la rueda del mouse a lo largo del eje Y (vertical)
+    // *7 para ajustar la velocidad del desplazamiento horizontal
     };
 
     const smoothScroll = () => {
@@ -41,7 +44,7 @@ const Gallery = () => {
       gallery.removeEventListener('wheel', handleWheel); // Limpia el manejador de eventos de la rueda del mouse.
       clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta.
     };
-  }, []); // El array vacío asegura que useEffect se ejecute solo una vez al montar el componente.
+  }, []);
 
   useEffect(() => {
     const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería nuevamente.
