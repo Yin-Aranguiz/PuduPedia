@@ -13,7 +13,6 @@ function App() {
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/juegos" element={<GamePage />} />
-                <Route path="/trivia" element={<TriviaGame />} />
                 <Route path="/image/:id" element={<TriviaGame />} />
             </Routes>
         </Router>
