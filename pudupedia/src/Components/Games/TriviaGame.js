@@ -116,8 +116,7 @@ const TriviaGame = () => {
             answer: "Tortuga de Juan Fernández"
         }
     ];
-
-
+    
     const [questions, setQuestions] = useState([]);
     const [actualQuestion, setActualQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -159,7 +158,7 @@ const TriviaGame = () => {
             setWinMessage('¡Ganaste!');
         } else if (score <= 0) {
             loseSoundRef.current.play();
-            setWinMessage('Perdiste. Tu puntaje es 0.');
+            setWinMessage('Perdiste.');
         } else {
             tryAgainSoundRef.current.play();
             setWinMessage('¡Sigue intentando!');

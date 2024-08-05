@@ -22,7 +22,6 @@ body.app-container {
         rgba(36, 39, 39, 0.8), /* Color #0F3F54 con 80% de opacidad */
         rgba(0, 0, 0, 0.8) /* Color #040505 con 80% de opacidad */
     );
-    border-top: 1px solid rgba(4, 5, 5, 0.8); /* Borde con color #040505 y 80% de opacidad */
     width: auto;
     text-align: center;
     border-radius: 20px 20px 0 0; /* Ajusta el valor para mayor o menor redondeo */
