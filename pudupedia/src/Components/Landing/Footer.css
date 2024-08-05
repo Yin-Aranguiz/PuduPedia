@@ -37,6 +37,10 @@ body.app-container {
     transform: translateY(700px);
 }
 
+.Footer.transformed2 {
+    transform: translateY(600px);
+}
+
 /* Styling for each section within the footer */
 .Forus, .ContactUs, .Logo {
     flex: 1;

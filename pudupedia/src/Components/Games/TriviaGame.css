@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.TriviaGame h1 {
+.TriviaGame.title h1 {
     color: #121111;
     font-size: 2rem;
     margin-bottom: 20px;
@@ -21,7 +21,7 @@
     margin-bottom: 15px;
 }
 
-.buttonStart, .options button, .TriviaGame button {
+.buttonStart, .buttonTrivia {
     background-color: #deffcadd;
     color: #0f2403;
     border: none;
@@ -33,7 +33,7 @@
     transition: background-color 0.3s;
 }
 
-.buttonStart:hover, .options button:hover, .TriviaGame button:hover {
+.buttonStart:hover, .options.buttonTrivia:hover, .TriviaGame.buttonTrivia:hover {
     background-color: #e6e610;
 }
 
