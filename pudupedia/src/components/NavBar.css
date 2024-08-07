@@ -1,29 +1,25 @@
-
+body{
+    background-image:url(https://img.freepik.com/free-photo/tropical-green-leaves-background_53876-88891.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721865600&semt=ais_user) ;
+}
 .allItemsNavBar {
-    position: fixed; /* Fija la posición al borde de la ventana */
-    top: 0px; /* Empuja el contenedor hacia el borde superior */
-    left: 50px; /* Empuja el contenedor hacia el borde izquierdo */
-    width: 240px; /* Ajusta el ancho según sea necesario */
-    height: 100vh; /* Ocupa toda la altura de la ventana */
     display: flex;
-    align-items: center; /* Centra verticalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido dentro del contenedor */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
     padding-left: 10px; /* Espaciado opcional a la izquierda */
     box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño del contenedor */
-   
+    width: 240px;
   }
 .allItemsNavBar button {
-    height: 450px;
-    width: 1px;
-    background-color: rgba(48, 47, 47, 0.055);
-    position:absolute;
+    height: 250px;
     
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .button:hover{
     cursor: pointer;
     
 }
 .allItemsNavBar.background{
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
 
@@ -31,36 +27,13 @@
     display: flex;
     flex-direction: column; /* Apila los elementos verticalmente */
     cursor: pointer;
-    margin-top: 50px;
-    
     
   }
-  .navBarItems:hover{
-    background-color: rgba(235, 230, 230, 0.086);
-    width: 170px;
-  }
+  
 .navBarItems a {
-    margin-bottom: 50px; /* Espacio entre los enlaces */
-    
-    margin-left: 30px;
+    margin-bottom: 30px; /* Espacio entre los enlaces */
+    margin-bottom: 30px;
+    margin-left: 20px;
     text-decoration: none; /* Quita el subrayado del enlace */
-    color: white; 
+    color: black; 
 }
-.navBarItems a:hover{
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
-     
-    transform-origin: left;
-}
-.circle {
-  width: 15px;
-  height: 15px;
-  background-color: rgba(255, 255, 255, 0.318);
-  border-radius: 50%;
-  margin-right: 0px;
-  margin-left: -37px;
-  position: absolute;
-}
-
-
-
