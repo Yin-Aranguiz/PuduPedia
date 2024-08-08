@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../duckies"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Script"
+	}
+}

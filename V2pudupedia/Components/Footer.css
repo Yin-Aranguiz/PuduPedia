@@ -1,0 +1,108 @@
+/* General body styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+/* Container for the app to ensure the footer sticks to the bottom */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+
+}
+
+/* Footer container styling */
+.Footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: linear-gradient(
+        to bottom, /* Degradado de arriba hacia abajo */
+        rgba(15, 63, 84, 0.8), /* Color #0F3F54 con 80% de opacidad */
+        rgba(4, 5, 5, 0.8) /* Color #040505 con 80% de opacidad */
+    );
+    border-top: 1px solid rgba(4, 5, 5, 0.8); /* Borde con color #040505 y 80% de opacidad */
+    width: auto;
+    text-align: center;
+    border-radius: 20px; /* Ajusta el valor para mayor o menor redondeo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra sutil */
+    position: absolute; /* Hace que el footer esté encima de otros elementos */
+    bottom: 0; /* Asegura que el footer esté en la parte inferior */
+    left: 0; /* Asegura que el footer se alinee con el borde izquierdo */
+    z-index: 10; /* Asegura que el footer esté encima de otros elementos */
+}
+
+/* Styling for each section within the footer */
+.Forus, .ContactUs, .Logo {
+    flex: 1;
+    margin: 0 10px;
+}
+
+/* Increase margin for p elements in the Forus section */
+.Forus p {
+    margin: 10px 0; /* Ajusta el margen superior e inferior como necesites */
+    text-align: justify;
+}
+
+/* Header styles */
+h1, h3 {
+    margin: 0 0 10px;
+    padding: 20px;
+    
+}
+
+/* Button styling */
+.Footer-button {
+    background-color: transparent; /* Fondo transparente para el botón */
+    color: white;
+    border: 2px solid white; /* Recuadro blanco */
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    outline: none;
+    font-family: 'Open Sans', sans-serif; /* Asegura que el botón use la misma tipografía */
+}
+
+.Footer-button:hover {
+    background-color: white; /* Cambia el fondo al pasar el cursor */
+    color: #007bff; /* Cambia el color del texto al pasar el cursor */
+}
+
+/* Link styling */
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Image styling */
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Contact section styling */
+.ContactUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.Contact-logo {
+    width: 24px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+}

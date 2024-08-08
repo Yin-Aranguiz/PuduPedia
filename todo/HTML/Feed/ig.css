@@ -1,0 +1,22 @@
+#instagram {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(241, 255, 255);
+
+}
+#instagram {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+.perfil {
+    margin: 20px 0; /* Añade margen arriba y abajo para separar del resto de elementos */
+    display: flex; /* Centra la imagen dentro del contenedor del perfil */
+    align-items: center;
+}
+
+}
+.icons{
+    margin: 20%;
+    display: flex;
+    justify-content: sp;
+}

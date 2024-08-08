@@ -1,0 +1,43 @@
+body {
+
+    font-family: Arial, sans-serif; /* Fuente para todo el cuerpo del documento */
+    background-image: url("https://images.pexels.com/photos/593158/pexels-photo-593158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"); /* Color de fondo */
+    margin: auto; /* Elimina el margen exterior */
+    padding: auto; /* Elimina el relleno exterior */
+    border: 3px solid rgb(221, 218, 218)
+}
+.container{
+    background-color: rgb(246, 246, 246);
+    
+}
+.payment { 
+    background-color: #d3d3d3; /* Color plomo */
+    margin: 10px; /* Márgenes pequeños */
+    padding: 20px; /* Espaciado interno */
+    border: 3px solid #b0b0b0; /* Borde gris */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border-radius: 10px;
+}
+.error {
+    color:rgb(234, 234, 234);
+    margin: 10px;
+    background-color: rgb(196, 106, 106);
+    border: 10px solid rgb(173, 108, 108);
+    border-radius: 10px;
+}
+.card{
+    display: flex;
+  justify-content:space-between
+}
+.names{
+    display: flex;
+    justify-content: space-between;
+}
+.location{
+    display: flex;
+    justify-content: space-between;
+}
+.message input{
+    padding: 30px;
+    display: flex; justify-content:space-around;
+}

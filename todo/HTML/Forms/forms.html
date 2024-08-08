@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="payment">
+        <h1>Payment form example</h1>
+        </div>
+        <div class="error">
+            <P>Some fields are missing</P>
+        </div>
+        <div class="card">
+            <p>Card # <input type="number" placeholder="XXXXXXXXXXXXXXXX" />
+                cvc #<input type="number" placeholder="0000" />
+                Amount $ <input type="number" placeholder="Amount"/>
+            </p>
+        </div>
+        <div class="names">
+            <p>First name: <input type="text" name="Name"/>
+                Last name: <input type="text" name="Name" />
+            </p>
+        </div>
+        <div class="location">
+            <p>City: <input type="text" name="City">
+                State: <input type="text" name="State" placeholder="Pick a state"> 
+                Postal code: <input type="number" name="postal_code">
+            </p>
+        </div>
+        <div class="tarjet">
+            <p> We accept: <input type="checkbox" name="color[]" value="green" /> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmA0N-YXTQHwErPV3tsTEaDVZEkX_LmKG1uQ&s" width="20px"> 
+                <input type="checkbox" name="color[]" value="green" /> <img src="https://e7.pngegg.com/pngimages/130/79/png-clipart-mastercard-credit-card-mastercard-logo-love-text.png" width="20px">
+                <input type="checkbox" name="color[]" value="green" /> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9K40pIfvpMWF-yHBYy9KeU9T8k5bNNcnCog&s" width="20px">
+                <input type="checkbox" name="color[]" value="green" />  <img src="https://suscripciondigital.latercera.com/images/mercadopago.png" width="20px">
+            </p>
+        </div>
+        <div class="message">
+            <p>Message <input type="text" /></p>
+        </div>
+        <div class="Send">
+            <p><input type="submit" value="Send"
+            /></p>
+        </div>
+        <div class="cancel">
+            <p><input type="submit" value="Cancel"/></p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!--1. Debes asegurarte de que todas las entradas se utilicen correctamente: entradas de tipo fecha, email, número, texto, etc.
+2. Practica tus habilidades de Flexbox
+3. También debes asegurarte de prevenir y validar el formulario de todas las formas en que HTML5 te permite (campos obligatorios, formatos, etc.).
+4. Usa el <input type=“date”>, no intentes implementar tu propio calendario de selección de fecha.
+5. crea una estrategia de diseño dibujando todos los cuadros <div> que puedas identificar, concéntrate particularmente en los divs que están colocados horizontalmente en la misma línea porque requerirán usar display: flex.  -->

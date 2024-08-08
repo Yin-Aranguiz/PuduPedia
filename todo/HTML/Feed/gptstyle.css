@@ -1,0 +1,94 @@
+/* Estilos generales para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif; /* Fuente para todo el cuerpo del documento */
+    background-color: #fafafa; /* Color de fondo */
+    margin: 0; /* Elimina el margen exterior */
+    padding: 0; /* Elimina el relleno exterior */
+}
+
+/* Contenedor principal de Instagram */
+#instagram {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Margen automático para centrar */
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 20px; /* Relleno interno */
+}
+
+/* Sección del perfil */
+.perfil {
+    display: flex; /* Utiliza Flexbox para alinear elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Imagen de perfil */
+.perfil img {
+    width: 40px; /* Ancho de la imagen */
+    height: 40px; /* Alto de la imagen */
+    border-radius: 50%; /* Hace la imagen circular */
+    margin-right: 10px; /* Margen derecho para separación */
+}
+
+/* Sección de fondo */
+.background {
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Imagen de fondo */
+.background img {
+    width: 100%; /* Ancho completo dentro del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Contenedor de íconos */
+.icons {
+    display: flex; /* Utiliza Flexbox para alinear elementos */
+    justify-content: space-between; /* Distribuye los íconos de manera uniforme */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Íconos */
+.icons img {
+    width: 40px; /* Ancho de los íconos */
+    height: 40px; /* Alto de los íconos */
+}
+
+/* Ícono de guardado */
+.saved_icon {
+    text-align: right; /* Alineación a la derecha */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Sección de likes */
+.likes {
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+/* Texto de likes */
+.likes p {
+    margin: 0; /* Elimina el margen */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #888; /* Color del texto */
+}
+
+/* Sección de descripción */
+.description {
+    line-height: 1.6; /* Altura de línea */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+}
+
+/* Texto de descripción */
+.description p {
+    margin: 0; /* Elimina el margen */
+}
+
+/* Estilos adicionales para texto en negrita */
+b {
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del texto */
+}
+

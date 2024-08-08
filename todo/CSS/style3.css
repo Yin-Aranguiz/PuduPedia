@@ -1,0 +1,15 @@
+/* CSS/poke3.css */
+body {
+    background-image: url('Background.jpg');
+}
+.pokedex{
+    display: flex;
+    justify-content:end; 
+}
+
+#Tipo-planta{
+    background-color: brown ; 
+}
+.pokemon {
+    margin-right: 100px;
+}
