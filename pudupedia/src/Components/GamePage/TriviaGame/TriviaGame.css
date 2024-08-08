@@ -1,0 +1,78 @@
+.TriviaGame {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 30vh auto;
+    padding: 20px;
+    max-width: 600px;
+    background: linear-gradient(135deg, #91ff00a5, #55700b);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.TriviaGame.title h1 {
+    color: #121111;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.TriviaGame h3 {
+    color: #555;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.buttonStart, .buttonTrivia {
+    background-color: #deffcadd;
+    color: #0f2403;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.buttonStart:hover, .options.buttonTrivia:hover, .TriviaGame.buttonTrivia:hover {
+    background-color: #e6e610;
+}
+
+.options {
+    margin: 20px 0;
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 5px auto;
+}
+
+.paragraph p {
+    color: #0e0d0d;
+    font-size: 1rem;
+}
+
+.paragraph h3 {
+    color: #e6e610;
+}
+
+.finished {
+    margin-top: 20px;
+}
+
+.questions h3 {
+    color: rgb(48, 65, 4);
+}
+
+.Pudu {
+    display: flex;
+    margin-left: 25vh;
+    margin-bottom: 5vh;
+    border-radius: 10%;
+}
+
+.Pudu:hover {
+    transform: scale(0.9);
+    transition: transform 0.5s ease;
+}
