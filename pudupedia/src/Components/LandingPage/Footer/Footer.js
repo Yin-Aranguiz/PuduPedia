@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import logoUrl from './pudupedia_logo_sized2.png';
+import logoUrl from '../Header/pudupedia_logo_sized2.png';
 import twitterLogoUrl from './Twitter.png';
 import phoneLogoUrl from './Phone.png';
 import shareIcon from './shareIcon.png'

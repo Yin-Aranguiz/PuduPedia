@@ -4,8 +4,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './TriviaGame.css';
 import imagePudu from './puduTrivia.jpg';
-import Header from '../Landing/Header';
-import Footer from '../Landing/Footer';
+import Header from '../../LandingPage/Header/Header';
+import Footer from '../../LandingPage/Footer/Footer';
 
 import hoverSound from './selectChoiceTrivia.mp3';
 import winSound from './winGameTrivia.mp3';

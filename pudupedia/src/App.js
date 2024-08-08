@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './Components/Landing/LandingPage';
-import GamePage from './Components/Games/GamePage';
-import TriviaGame from './Components/Games/TriviaGame';
-import NavBar from './Components/Landing/NavBar';
+import LandingPage from './Components/LandingPage/LandingPage';
+import GamePage from './Components/GamePage/GamePage';
+import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
+import NavBar from './Components/LandingPage/Navbar/NavBar';
 
 function App() {
     return (

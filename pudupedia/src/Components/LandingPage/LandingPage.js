@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './LandingPage.css';
-import Footer from './Footer';
-import Infoboxes from './Infoboxes';
-import NavBar from './NavBar';
-import Header from './Header';
+import Footer from './Footer/Footer';
+import Infoboxes from './Infoboxes/Infoboxes';
+import NavBar from './Navbar/NavBar';
+import Header from './Header/Header';
 
 // importa las imágenes desde la misma carpeta
 import image1 from './landingpage1.png';

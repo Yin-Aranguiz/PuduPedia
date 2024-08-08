@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Gallery.css';
-import TriviaImg from './TriviaGame.jpg';
+import TriviaImg from '../TriviaGame/TriviaGame.jpg';
 
 const Gallery = () => {
   const [scrollPosition, setScrollPosition] = useState(0); // Define el estado para la posición de desplazamiento inicial.
