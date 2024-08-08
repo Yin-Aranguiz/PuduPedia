@@ -1,0 +1,29 @@
+@keyframes slideInFromRight {
+    from {
+      transform: translateX(100%); /* Empieza fuera de la vista, hacia la derecha */
+      opacity: 0; /* Empieza completamente transparente */
+    }
+    to {
+      transform: translateX(0); /* Termina en su posición original */
+      opacity: 1; /* Termina completamente visible */
+    }
+  }
+  
+  .boxStyle {
+    background: linear-gradient(
+      rgba(54, 53, 53, 0.8),
+      rgba(54, 53, 53, 0.6)
+    );
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 250px;
+    max-height: 600px;
+    margin-left: auto;
+    margin-right: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    position: relative; /* Asegura que la animación funcione correctamente */
+    top: -120vh;
+    animation: slideInFromRight 0.5s ease forwards; /* Aplica la animación */
+  }
