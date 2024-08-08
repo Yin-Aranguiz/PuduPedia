@@ -1,0 +1,27 @@
+.gallery {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 450px;
+    position: relative;
+    margin-top: 25vh;
+    margin-bottom: -5vh;
+    
+}
+
+.gallery img {
+    border-radius: 10%;
+    height: 400px; 
+    width: 600px; 
+    margin: 0px -10px 150px -100px; 
+    will-change: transform;
+    z-index: 1000;
+}
+
+.gallery img:hover {
+    transform: scale(0.9);
+    border-radius: 10%;
+    transition: transform 0.5s ease;
+}
+
