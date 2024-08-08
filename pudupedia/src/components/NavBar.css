@@ -16,6 +16,7 @@
     width: 1px;
     background-color: rgba(48, 47, 47, 0.055);
     position:absolute;
+   
     
 }
 .button:hover{
@@ -61,6 +62,3 @@
   margin-left: -37px;
   position: absolute;
 }
-
-
-
