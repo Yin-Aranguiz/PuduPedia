@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Gallery.css';
-import TriviaImg from '../TriviaGame/TriviaGame.jpg';
+import TriviaImg from '../TriviaGame/PuduReading.jpg';
 
 const Gallery = () => {
   const [scrollPosition, setScrollPosition] = useState(0); // Define el estado para la posición de desplazamiento inicial.
@@ -15,7 +15,7 @@ const Gallery = () => {
 
     const handleWheel = (e) => {
       e.preventDefault(); // Previene el comportamiento predeterminado del desplazamiento vertical.
-      gallery.scrollLeft += e.deltaY * 7; // Ajusta el desplazamiento horizontal según el movimiento de la rueda del mouse.
+      gallery.scrollLeft += e.deltaY * 5; // Ajusta el desplazamiento horizontal según el movimiento de la rueda del mouse.
       // dice cuántos píxeles se han desplazado horizontalmente el contenido de un elemento que tiene un desbordamiento horizontal (scroll).
       // deltaY es una propiedad del objeto del evento wheel en JavaScript que representa el cambio en el desplazamiento de la rueda del mouse a lo largo del eje Y (vertical)
     // *7 para ajustar la velocidad del desplazamiento horizontal
@@ -87,6 +87,7 @@ const Gallery = () => {
           <img
             src={imageGame.src} 
             alt={imageGame.alt} 
+            className='circle'
           />
         </Link>
       ))}
