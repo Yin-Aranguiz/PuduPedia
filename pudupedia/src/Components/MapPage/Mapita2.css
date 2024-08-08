@@ -14,7 +14,7 @@
 }
   /* Estilo base para las rutas del mapa (paths) */
   path {
-    fill: #10b39a; /* Color de relleno por defecto */
+    fill: #30BE96; /* Color de relleno por defecto */
     stroke: #000000; /* Color del borde */
     stroke-width: 1px; /* Grosor del borde */
     transition: fill 0.3s ease, stroke-width 0.3s ease; /* Transición suave para el cambio de color y borde */
@@ -22,7 +22,7 @@
   
   /* Estilo cuando el mouse está sobre una zona */
   path:hover {
-    fill: #05ff82; /* Color de relleno al hacer hover */
+    fill: #D6FF7F; /* Color de relleno al hacer hover */
     stroke-width: 2px; /* Grosor del borde al hacer hover */
   }
   /* Estilos específicos para cada zona del mapa */
