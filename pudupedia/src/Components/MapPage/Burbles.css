@@ -1,0 +1,90 @@
+.radial-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.larger-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite que los eventos pasen a los elementos debajo */
+}
+
+.menu-item {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; /* Inicialmente oculto */
+  opacity: 0; /* Inicialmente oculto por opacidad */
+  transition: opacity 0.3s ease-in-out; /* Transición para la opacidad */
+}
+
+.menu-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Transición para el hover */
+}
+
+.larger-area.active .menu-item {
+  visibility: visible; /* Mostrar cuando se activa */
+  opacity: 1; /* Mostrar cuando se activa por opacidad */
+}
+
+.larger-area.active .menu-item.bounce {
+  animation: bounceIn 1s ease forwards; /* Aplicar animación de rebote */
+}
+
+.menu-item:nth-child(1) {
+  animation-delay: 0.1s; /* Retraso para el efecto secuencial */
+}
+.menu-item:nth-child(2) {
+  animation-delay: 0.2s; /* Retraso para el efecto secuencial */
+}
+.menu-item:nth-child(3) {
+  animation-delay: 0.3s; /* Retraso para el efecto secuencial */
+}
+.menu-item:nth-child(4) {
+  animation-delay: 0.4s; /* Retraso para el efecto secuencial */
+}
+.menu-item:nth-child(5) {
+  animation-delay: 0.5s; /* Retraso para el efecto secuencial */
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.menu-item img:hover {
+  transform: scale(1.2);  /* Aumentar la escala al hacer hover */
+} 

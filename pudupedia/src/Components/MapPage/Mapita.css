@@ -22,9 +22,9 @@
   
   /* Estilo cuando el mouse está sobre una zona */
   path:hover {
-    fill: #D6FF7F; /* Color de relleno al hacer hover */
-    stroke-width: 2px; /* Grosor del borde al hacer hover */
-  }
+    fill: #D6FF7F; 
+   stroke-width: 2px; 
+  } 
   /* Estilos específicos para cada zona del mapa */
 
   /* Estilos adicionales para el mapa */
@@ -41,3 +41,5 @@
     fill: #000000;
   }
   
+  
+ 
