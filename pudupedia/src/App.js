@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
 // import Burbles from './Components/MapPage/Burbles';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import LandingPage from './Components/LandingPage/LandingPage';
@@ -20,6 +21,7 @@ function App() {
         // </Router>
         
     //    <Burbles />
+    <PuduHierbaPuma />
     );
 }
 

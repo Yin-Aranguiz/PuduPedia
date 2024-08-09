@@ -10,7 +10,6 @@ const Mapita = ({ onMacrozoneClick }) => {
             return;
         }
 
-        // Asegúrate de que event.target sea el SVG path
         if (event.target instanceof SVGPathElement) {
             const bounds = event.target.getBoundingClientRect();
             onMacrozoneClick(macrozone, {
