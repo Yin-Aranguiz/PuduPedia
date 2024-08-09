@@ -17,11 +17,11 @@ function App() {
         //         <Route path="/" element={<LandingPage />} />
         //         <Route path="/juegos" element={<GamePage />} />
         //         <Route path="/image/:id" element={<TriviaGame />} />
+                
         //     </Routes>
         // </Router>
-        
-    //    <Burbles />
-    <PuduHierbaPuma />
+        <PuduHierbaPuma />
+    
     );
 }
 

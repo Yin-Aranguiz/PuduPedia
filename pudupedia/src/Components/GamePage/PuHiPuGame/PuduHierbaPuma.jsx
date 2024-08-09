@@ -8,6 +8,9 @@ import clickSound from './click.mp3';
 import drawSound from './empate.mp3';
 import './PuduHierbaPuma.css';
 
+import Header from '../../LandingPage/Header/Header';
+import Footer from '../../LandingPage/Footer/Footer';
+
 const hands = {
     puma: rockImg,
     hierba: paperImg,
@@ -90,6 +93,8 @@ const PuduHierbaPuma = () => {
  
     return (
         <div id="game-container">
+            <Header />
+            
             <h1>¡Pudú, Hierba o Puma!</h1>
             {!animating && result === null ? (
                 <div id="choices">
@@ -141,6 +146,7 @@ const PuduHierbaPuma = () => {
                     )}
                 </div>
             )}
+            <Footer className={'transformed'}/>
         </div>
     );
 };

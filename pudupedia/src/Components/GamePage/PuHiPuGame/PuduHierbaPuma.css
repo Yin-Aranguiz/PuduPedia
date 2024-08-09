@@ -7,6 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    margin-top: 20vh;
 }
 
 /* Configura el contenedor principal para usar flexbox y centrar el contenido */
