@@ -1,45 +1,41 @@
 /* Estilo base para el contenedor del mapa */
 .map-container {
     position: relative;
-    
-  }
-  
+}
+
+/* Estilo para el SVG del mapa */
 #map {
     transform: rotate(270deg);
     height: 150vh;
     width: 60vh;
-    margin-left: 70vh ;
+   
     overflow: visible;
-    margin-top: -20vh;
 }
-  /* Estilo base para las rutas del mapa (paths) */
-  path {
+
+/* Estilo base para las rutas del mapa (paths) */
+path {
     fill: #30BE96; /* Color de relleno por defecto */
     stroke: #000000; /* Color del borde */
     stroke-width: 1px; /* Grosor del borde */
     transition: fill 0.3s ease, stroke-width 0.3s ease; /* Transición suave para el cambio de color y borde */
-  }
-  
-  /* Estilo cuando el mouse está sobre una zona */
-  path:hover {
-    fill: #D6FF7F; 
-   stroke-width: 2px; 
-  } 
-  /* Estilos específicos para cada zona del mapa */
+}
 
-  /* Estilos adicionales para el mapa */
-  svg {
+/* Estilo cuando el mouse está sobre una macrozona */
+path.macrozone:hover {
+    fill: #D6FF7F; 
+    stroke-width: 2px; 
+}
+
+/* Estilos adicionales para el mapa */
+svg {
     display: block;
     max-width: 100%;
     height: auto;
-  }
-  
-  /* Opcional: Estilo para etiquetas o nombres de las zonas */
-  .text-label {
+}
+
+/* Opcional: Estilo para etiquetas o nombres de las zonas */
+.text-label {
     font-size: 12px;
     text-anchor: middle;
     fill: #000000;
-  }
-  
-  
- 
+}
