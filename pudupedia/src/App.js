@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-// import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
-import Burbles from './Components/MapPage/Burbles';
+import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
+// import Burbles from './Components/MapPage/Burbles';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import LandingPage from './Components/LandingPage/LandingPage';
 // import GamePage from './Components/GamePage/GamePage';
@@ -20,8 +20,7 @@ function App() {
                 
         //     </Routes>
         // </Router>
-        // <PuduHierbaPuma />
-        <Burbles />
+        <PuduHierbaPuma />
     
     );
 }
