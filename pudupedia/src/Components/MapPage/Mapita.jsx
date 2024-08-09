@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Mapita.css';
 
-const Mapita = ({ onMacrozoneClick }) => {
+const Mapita = ({ onMacrozoneClick}) => {
     const [hoveredMacrozone, setHoveredMacrozone] = useState(null);
 
     const handleClick = (macrozone, event) => {
@@ -40,6 +40,7 @@ const Mapita = ({ onMacrozoneClick }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 161.1 707.5"
             >
+               
                 {/* Macrozona Norte */}
                 <g
                     className={`macrozone ${hoveredMacrozone === 'MacroZonaNorte' ? 'highlight' : ''}`}
@@ -67,8 +68,9 @@ const Mapita = ({ onMacrozoneClick }) => {
                         id="macrozona-norte-region4"
 
                     />
+                    
                 </g>
-
+              
                 {/* Macrozona Centro */}
                 <g
                     className={`macrozone ${hoveredMacrozone === 'MacroZonaCentro' ? 'highlight' : ''}`}

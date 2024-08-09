@@ -29,9 +29,16 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    
     transition: transform 0.3s ease-in-out; /* Transición para el hover */
+    margin-bottom: -320vh;
+    margin-left: -15vh;
 }
-
+/* Estilo para las imágenes dentro de los elementos del menú */
+.larger-area.active .menu-item:hover {
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out; /* Transición para el hover */
+}
 /* Estilo cuando el menú se activa */
 .larger-area.active .menu-item {
     visibility: visible; /* Mostrar cuando se activa */
@@ -76,16 +83,4 @@
     }
 }
 
-/* Estilo para el botón de cierre */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
 
