@@ -7,7 +7,6 @@
 /* Estilo para el área más grande que contiene el menú */
 .larger-area {
     position: absolute;
-    pointer-events: none; /* Permite que los eventos pasen a los elementos debajo */
 }
 
 /* Estilo para los elementos del menú */
