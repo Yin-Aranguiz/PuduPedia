@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import InfoBoxes from  './components/infoboxes';
+//import InfoBoxes from  './components/infoboxes';
+import App from './components/app';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
- 
-<InfoBoxes/> 
+
+<App/>
 
   </React.StrictMode>
 );
