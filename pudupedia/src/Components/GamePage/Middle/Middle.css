@@ -1,0 +1,13 @@
+body {
+  background: linear-gradient(to right, rgba(1, 22, 1, 0.801), rgba(9, 59, 9, 0.5), rgba(25, 150, 25, 0));
+  background-color: rgb(1, 22, 15);
+}
+
+.gameTitle {
+  margin-top: 100px;
+  margin-left: 60vh;
+  margin-bottom: 0;
+  width: 600px;
+  height: 200px;
+}
+
