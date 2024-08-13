@@ -1,7 +1,7 @@
 /* Estilo base para el contenedor del mapa */
 .map-container {
     position: relative;
-    margin-left: 60vh;
+    margin-left: 70vh;
      margin-bottom: -350vh;
     
 }
@@ -28,7 +28,7 @@ svg {
     display: block;
     max-width: 100%;
     height: auto;
-    fill: #0ccca2; 
+    fill: #30BE96; 
     stroke: #000000; /* Color del borde */
     stroke-width: 1px; 
 }

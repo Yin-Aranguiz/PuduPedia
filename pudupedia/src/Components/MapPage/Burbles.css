@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 /* Estilo base para el menú radial */
 .radial-menu {
     position: relative;
@@ -28,10 +30,8 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    
-    transition: transform 0.3s ease-in-out; /* Transición para el hover */
-    margin-bottom: -320vh;
-    margin-left: -15vh;
+    margin-bottom: -380vh;
+    /* margin-left: -10vh; */
 }
 /* Estilo para las imágenes dentro de los elementos del menú */
 .larger-area.active .menu-item:hover {
@@ -82,4 +82,17 @@
     }
 }
 
-
+.macrozone-name {
+   position: absolute;
+    font-size: 2rem; /* Ajusta el tamaño de la fuente */
+    color: #D6FF7F; /* Cambia el color según tu diseño */
+    margin-top: 30vh;
+    margin-left: 65vh;
+    font-family:'Open Sans', sans-serif;
+    font-size: 3.5rem;
+    text-shadow: 
+        4px 2px 0 #30be96e1, /* Borde rojo (ajusta el color y el tamaño) */
+        -1px -1px 0 #23a17d,
+        1px -1px 0 #0e644c,
+        -1px 1px 0 #043326;
+  }

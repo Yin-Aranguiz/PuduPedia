@@ -35,7 +35,7 @@ const PuduHierbaPuma = () => {
             clickSoundEffect.play();
     
             let index = 0;
-            const options = ['puma', 'hierba', 'pudu'];
+            const options = ['puma', 'hierba venenosa', 'pudu'];
             const startIndex = options.indexOf(computerChoice);
             const interval = setInterval(() => {
                 index = (index + 1) % 3;
@@ -69,8 +69,8 @@ const PuduHierbaPuma = () => {
             return "Empate";
         } else if (
             (userChoice === 'puma' && computerChoice === 'pudu') ||
-            (userChoice === 'hierba' && computerChoice === 'puma') ||
-            (userChoice === 'pudu' && computerChoice === 'hierba')
+            (userChoice === 'hierba venenosa' && computerChoice === 'puma') ||
+            (userChoice === 'pudu' && computerChoice === 'hierba venenosa')
         ) {
             return "¡Ganaste!";
         } else {
@@ -102,9 +102,9 @@ const PuduHierbaPuma = () => {
                         <img src={hands.puma} alt="Puma" width="100" />
                         <p>Puma</p>
                     </button>
-                    <button className="choice-button" onClick={() => playGame('hierba')}>
+                    <button className="choice-button" onClick={() => playGame('hierba venenosa')}>
                         <img src={hands.hierba} alt="Hierba" width="100" />
-                        <p>Hierba</p>
+                        <p>Hierba venenosa</p>
                     </button>
                     <button className="choice-button" onClick={() => playGame('pudu')}>
                         <img src={hands.pudu} alt="Pudu" width="100" />

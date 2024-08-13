@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Mapita.css';
+import './Map.css';
 
 const Mapita = ({ onMacrozoneClick}) => {
     const [hoveredMacrozone, setHoveredMacrozone] = useState(null);

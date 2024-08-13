@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Gallery.css';
 import TriviaImg from '../TriviaGame/PuduReading.jpg';
+import PuhipuImg from '../PuHiPuGame/pudu.jpg'
 
 const Gallery = () => {
   const [scrollPosition, setScrollPosition] = useState(0); // Define el estado para la posición de desplazamiento inicial.
@@ -34,10 +35,10 @@ const Gallery = () => {
       }
     };
 
-    gallery.addEventListener('scroll', handleScroll); // Añade un evento para manejar el desplazamiento.
-    gallery.addEventListener('wheel', handleWheel); // Añade un evento para manejar el desplazamiento con la rueda del mouse.
+    gallery.addEventListener('scroll', handleScroll); // evento para manejar el desplazamiento.
+    gallery.addEventListener('wheel', handleWheel); // evento para manejar el desplazamiento con la rueda del mouse.
 
-    const interval = setInterval(smoothScroll, 50); // Configura un intervalo para ajustar el desplazamiento suavemente cada 50 ms.
+    const interval = setInterval(smoothScroll, 50); // intervalo para ajustar el desplazamiento cada 50 ms.
 
     return () => {
       gallery.removeEventListener('scroll', handleScroll); // Limpia el manejador de eventos de desplazamiento al desmontar el componente.
@@ -67,14 +68,14 @@ const Gallery = () => {
     { src: 'https://via.placeholder.com/500x250?text=Image+5', alt: '5', id: '5'},
     { src: 'https://via.placeholder.com/500x250?text=Image+6', alt: '6', id: '6'},
     { src: 'https://via.placeholder.com/500x250?text=Image+7', alt: '7', id: '7'},
-    { src: TriviaImg, alt: '8', id: '8'},
-    { src: 'https://via.placeholder.com/500x250?text=Image+9', alt: '9', id: '9'},
+    { src: TriviaImg, alt: '8', id: '8', link: 'https://www.example.com'}, //es necesario configurar los links con backend
+    { src: PuhipuImg, alt: '9', id: '9', link: 'https://www.example.com'},
     { src: 'https://via.placeholder.com/500x250?text=Image+10', alt: '10', id: '10'},
     { src: 'https://via.placeholder.com/500x250?text=Image+11', alt: '11', id: '11'},
     { src: 'https://via.placeholder.com/500x250?text=Image+12', alt: '12', id: '12'},
     { src: 'https://via.placeholder.com/500x250?text=Image+13', alt: '13', id: '13'},
-    { src: TriviaImg, alt: '14', id: '14'},
-    { src: 'https://via.placeholder.com/500x250?text=Image+15', alt: '15', id: '15'},
+    { src: TriviaImg, alt: '14', id: '14', link: 'https://www.example.com'},
+    { src: PuhipuImg, alt: '15', id: '15', link: 'https://www.example.com'},
     { src: 'https://via.placeholder.com/500x250?text=Image+16', alt: '16', id: '16'},
     { src: 'https://via.placeholder.com/500x250?text=Image+17', alt: '17', id: '17'},
     { src: 'https://via.placeholder.com/500x250?text=Image+18', alt: '18', id: '18'}
@@ -82,17 +83,22 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      {images.map((imageGame) => (
-        <Link key={imageGame.id} to={`/image/${imageGame.id}`}>
-          <img
-            src={imageGame.src} 
-            alt={imageGame.alt} 
-            className='circle'
-          />
-        </Link>
-      ))}
-    </div>
-  );
+    {images.map((imageGame) => (
+      <a
+        key={imageGame.id}
+        href={imageGame.link} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+      >
+        <img
+          src={imageGame.src} 
+          alt={imageGame.alt} 
+          className='circle'
+        />
+      </a>
+    ))}
+  </div>
+);
 };
 
 export default Gallery;
