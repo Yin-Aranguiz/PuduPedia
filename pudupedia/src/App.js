@@ -6,6 +6,7 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import GamePage from './Components/GamePage/GamePage';
 // import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
 import NavBar from './Components/LandingPage/Navbar/NavBar';
+import AboutUs from './Components/AboutUsPage/AboutUs'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
                 <Route path="/juegos" element={<GamePage />} />
                 {/* <Route path="/trivia/:id" element={<TriviaGame />} /> */}
                 <Route path="/vida-silvestre" element={<Burbles />} />
-                {/* <Route path="/puduGame/:id" element={<PuduHierbaPuma />} /> */}
+                {/* <Route path="/puduGame/:id" element={<PuduHierbaPuma />} /> */} 
+                <Route path='/quienes-somos' element={<AboutUs />} />
             </Routes>
         </Router>
 

@@ -8,7 +8,8 @@ body.app-container {
 .app-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    min-height: 100vh;
+    /* Asegura que el contenedor ocupe toda la altura de la ventana */
 
 }
 
@@ -17,81 +18,110 @@ body.app-container {
     display: flex;
     justify-content: space-around;
     padding: 20px;
-    background: linear-gradient(
-        to bottom, /* Degradado de arriba hacia abajo */
-        rgba(36, 39, 39, 0.8), /* Color #0F3F54 con 80% de opacidad */
-        rgba(0, 0, 0, 0.8) /* Color #040505 con 80% de opacidad */
-    );
+    background: linear-gradient(to bottom,
+            /* Degradado de arriba hacia abajo */
+            rgba(36, 39, 39, 0.8),
+            /* Color #0F3F54 con 80% de opacidad */
+            rgba(0, 0, 0, 0.8)
+            /* Color #040505 con 80% de opacidad */
+        );
     width: auto;
     text-align: center;
-    border-radius: 20px 20px 0 0; /* Ajusta el valor para mayor o menor redondeo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: agrega una sombra sutil */
-    position: absolute; /* Hace que el footer esté encima de otros elementos */
-    bottom: 0; /* Asegura que el footer esté en la parte inferior */
-    left: 0; /* Asegura que el footer se alinee con el borde izquierdo */
-    z-index: 10; /* Asegura que el footer esté encima de otros elementos */
+    border-radius: 20px 20px 0 0;
+    /* Ajusta el valor para mayor o menor redondeo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Opcional: agrega una sombra sutil */
+    position: absolute;
+    /* Hace que el footer esté encima de otros elementos */
+    bottom: 0;
+    /* Asegura que el footer esté en la parte inferior */
+    left: 0;
+    /* Asegura que el footer se alinee con el borde izquierdo */
+    z-index: 10;
+    /* Asegura que el footer esté encima de otros elementos */
 }
 
 .Footer.transformed {
     transform: translateY(700px);
-    
+
 }
 
 .Footer.transformed2 {
     transform: translateY(600px);
 }
 
+.Footer.transformed3 {
+    transform: translateY(0vh);
+    position: relative;
+    
+}
+
 /* Styling for each section within the footer */
-.Forus, .ContactUs, .Logo {
+.Forus,
+.ContactUs,
+.Logo {
     flex: 1;
     margin: 0 10px;
 }
 
 /* Increase margin for p elements in the Forus section */
 .Forus p {
-    margin: 10px 0; /* Ajusta el margen superior e inferior como necesites */
+    margin: 10px 0;
+    /* Ajusta el margen superior e inferior como necesites */
     text-align: justify;
     color: white;
-    
+
 }
 
 /* Header styles */
-.app-container.h1, h3 {
+.app-container.h1,
+h3 {
     margin: 0 0 10px;
     padding: 20px;
-    
+
 }
 
 /* Button styling */
 .Footer-button {
-    background-color: rgba(255, 255, 255, 0.192); /* Fondo transparente para el botón */
+    background-color: rgba(255, 255, 255, 0.192);
+    /* Fondo transparente para el botón */
     color: white;
-    border: 2px solid rgba(255, 255, 255, 0.205); /* Recuadro blanco */
+    border: 2px solid rgba(255, 255, 255, 0.205);
+    /* Recuadro blanco */
     border-radius: 5px;
-    padding: 5px 100px; /* Con el segundo modifico el ancho del boton*/
+    padding: 5px 100px;
+    /* Con el segundo modifico el ancho del boton*/
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
     margin-bottom: 10px;
     margin-left: 45px;
     outline: none;
-    font-family: 'Open Sans', sans-serif; /* Asegura que el botón use la misma tipografía */
+    font-family: 'Open Sans', sans-serif;
+    /* Asegura que el botón use la misma tipografía */
 }
+
 /* Contenedor del botón compartido */
 .Share-button {
     display: flex;
-    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    align-items: center;
+    /* Alinea la imagen y el texto verticalmente */
 }
+
 /* Espacio entre la imagen y el texto */
 .Share-button p {
-    margin-left: 10px; /* Ajusta el margen izquierdo del párrafo */
+    margin-left: 10px;
+    /* Ajusta el margen izquierdo del párrafo */
     color: white;
 }
 
 .Footer-button:hover {
-    background-color: rgb(255, 255, 255); /* Cambia el fondo al pasar el cursor */
-    color: #000000; /* Cambia el color del texto al pasar el cursor */
+    background-color: rgb(255, 255, 255);
+    /* Cambia el fondo al pasar el cursor */
+    color: #000000;
+    /* Cambia el color del texto al pasar el cursor */
 }
+
 .Footer-button:hover p {
     color: black;
 }
@@ -104,7 +134,7 @@ body.app-container {
 
 .Footer a:hover {
     text-decoration: underline;
-} 
+}
 
 /* Image styling */
 .Footer img {
@@ -118,23 +148,29 @@ body.app-container {
     flex-direction: column;
     align-items: center;
 }
+
 .ContactUs h1 {
     color: rgb(255, 255, 255);
 }
+
 .Forus h1 {
     color: white;
 }
+
 .Contact-item {
     display: flex;
     align-items: center;
     margin: 10px 0;
 }
+
 .Contact-item p {
     color: white;
 }
 
 .Contact-logo {
-    width: 24px; /* Ajusta el tamaño según sea necesario */
+    width: 24px;
+    /* Ajusta el tamaño según sea necesario */
     height: auto;
-    margin-right: 10px; /* Espacio entre el logo y el texto */
+    margin-right: 10px;
+    /* Espacio entre el logo y el texto */
 }

@@ -123,3 +123,9 @@ const Burbles = () => {
 };
 
 export default Burbles;
+
+
+// array para fauna (el actual de las img) y para fauna
+// estado de isFauna como true
+// lógica para el botón de cambiar de un estado a otro
+// función que va a manejar el botón, se cierran las burbujas, se muestra el otro array
