@@ -1,0 +1,123 @@
+.button {
+  --dark-sky: #313032;
+  --moon: #aeaaae;
+  --light-sky: #8f44fd;
+  --sun: #f7f7f7;
+  display: inline-block;
+  position: relative;
+  border-radius: 5em;
+  cursor: pointer;
+  width: 175px;
+  height: 80px;
+  overflow: hidden;
+  scale: 0.7;
+  transition: all 0.5s;
+  margin-top: 310vh;
+  margin-left: 150vh;
+  z-index: 1000;
+}
+
+.button .back {
+  background-image: linear-gradient(147deg, #402565 40% , #30be96  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.button .checkbox {
+  opacity: 0;
+}
+
+.button .checkbox:checked ~ .back {
+  background-image: linear-gradient(147deg, #402565 , #30be96 60%);
+
+}
+
+.button .checkbox:checked ~ .animals {
+  transform: translateX(24px);
+  opacity: 0;
+}
+
+.button .checkbox:checked ~ .plants {
+  transform: translateX(24px);
+
+  opacity: 1;
+}
+
+.button .animals {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+
+  height: 60px;
+  fill: #ffffff;
+  transition: 1s;
+  overflow: visible;
+}
+
+.button .plants {
+  position: absolute;
+  left: 97px;
+  top: 20px;
+  height: 53px;
+  fill: #ffffff;
+  transition: 1s;
+  opacity: 0;
+  overflow: visible;
+}
+
+/* Ajusta el tamaño del contenedor del checkbox 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 600px; /* Aumenta este valor para hacer el switch más grande 
+  height: 30px; /* Aumenta este valor para hacer el switch más grande 
+}
+
+/* Ajusta el tamaño del "back" del checkbox 
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+/* Ajusta el tamaño de los iconos SVG 
+.moon, .sun {
+  position: absolute;
+  width: 20px; /* Aumenta este valor para agrandar el ícono 
+  height: 20px; /* Aumenta este valor para agrandar el ícono 
+  transition: all 0.3s;
+}
+
+/* Opcional: Ajusta el tamaño del checkbox real 
+.checkbox {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+/* Estilos para cuando el checkbox está seleccionado 
+.checkbox:checked ~ .back {
+  background-color: #4CAF50; /* Color cuando está activado 
+}
+
+.checkbox:checked ~ .sun {
+  transform: translateX(30px); /* Ajusta este valor según el tamaño del switch 
+}
+
+.checkbox:not(:checked) ~ .moon {
+  transform: translateX(-30px); /* Ajusta este valor según el tamaño del switch 
+}
+*/

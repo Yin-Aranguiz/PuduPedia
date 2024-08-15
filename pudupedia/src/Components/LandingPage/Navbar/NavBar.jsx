@@ -24,7 +24,7 @@ const NavBar = () => {
     return (
         <div className={`allItemsNavBar ${fondo(visible)}`}>
 
-            <button className='button'
+            <button className='button-navbar'
                 onMouseEnter={isVisible}
                 onMouseLeave={notVisible}>
             </button>

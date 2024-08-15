@@ -17,13 +17,13 @@
     background-color: rgba(48, 47, 47, 0.158);
     border-radius: 50%;
 }
-.button::after {
+.button-navbar::after {
   content: '>';
   color: #ddd;
   font-size: 2rem;
 }
 
-.button:hover{
+.button-navbar:hover{
     cursor: pointer;
     background-color: rgba(106, 102, 102, 0.308);
 }

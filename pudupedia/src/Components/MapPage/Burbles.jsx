@@ -7,6 +7,7 @@ import guina from './Guiña.jpg';
 import pudu from './PuduComiendo.jpg';
 import Header from '../LandingPage/Header/Header';
 import Footer from '../LandingPage/Footer/Footer';
+import Buttons from './Buttons'
 
 const Burbles = () => {
   const [activeMacrozone, setActiveMacrozone] = useState(null);
@@ -16,11 +17,11 @@ const Burbles = () => {
 
   // Definición de imágenes para cada macrozona
   const macrozoneImages = {
-    norte: [pudu, pudu, pudu, pudu, pudu],
-    centro: [chucao, chucao, chucao, chucao, chucao],
-    centroSur: [imagePuduReading, imagePuduReading, imagePuduReading, imagePuduReading, imagePuduReading],
+    norte: [pudu, pudu, pudu, pudu, guina],
+    centro: [chucao, chucao, chucao, chucao, guina],
+    centroSur: [imagePuduReading, imagePuduReading, imagePuduReading, imagePuduReading, guina],
     sur: [guina, guina, guina, guina, guina],
-    austral: [pudu, pudu, chucao, chucao, guina]
+    austral: [pudu, pudu, chucao, guina, guina]
   };
 
 
@@ -48,12 +49,14 @@ const Burbles = () => {
       }
 
       const numBubbles = images.length;
-      const angleStep = (2 * Math.PI) / numBubbles;
-      const radius = 25;
+      // const angleStep = (2 * Math.PI) / numBubbles;
+      const angleStep = (Math.PI) / (numBubbles -1);
+      const radius = 20;
 
       const newBubbles = [];
       for (let i = 0; i < numBubbles; i++) {
         const angle = i * angleStep;
+        
         const x = macrozoneBounds.x + (macrozoneBounds.width / 2) + (radius * Math.cos(angle) * 7);
         const y = macrozoneBounds.y + (macrozoneBounds.height / 2) - (radius * Math.sin(angle) * 7) + window.scrollY;
         newBubbles.push({ x, y, image: images[i], key: `${macrozone}-${i}` });
@@ -113,6 +116,7 @@ const Burbles = () => {
           </>
         )}
       </div>
+      <Buttons />
       <Footer className={'transformed'} />
     </div>
   );
