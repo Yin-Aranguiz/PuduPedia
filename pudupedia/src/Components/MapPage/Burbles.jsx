@@ -116,6 +116,7 @@ const Burbles = () => {
           </>
         )}
       </div>
+      
       <Buttons />
       <Footer className={'transformed'} />
     </div>

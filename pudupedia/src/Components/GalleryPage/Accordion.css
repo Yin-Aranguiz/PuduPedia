@@ -1,0 +1,50 @@
+.accordion {
+  background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 16px 16px 0 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion-button {
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.accordion-button:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.accordion-content {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.accordion-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}

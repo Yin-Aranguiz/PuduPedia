@@ -28,8 +28,9 @@ const Header = ({ className = '' }) => {
             <p>Español | Inglés</p>
           </div>
           <div className="loginTab">
-          
+          <a href="/signlog" target="_blank" rel="noopener noreferrer">
             <p>L O G I N</p>
+            </a>
             <a href="/signlog" target="_blank" rel="noopener noreferrer">
             <img src={user_icon} alt="user_icon" className="userIcon"></img>
             </a>
