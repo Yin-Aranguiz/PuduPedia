@@ -97,7 +97,7 @@ const Bubbles = () => {
 
   return ( 
     <div className="radial-menu">
-      <Header className='backOff'/>
+      <Header className={'backOff'}/>
       <div className='bubble'>
       <h1 className="macrozone-name">RUTA ENDÉMICA </h1>
       <Map onMacrozoneClick={handleMacrozoneClick} />
