@@ -7,10 +7,13 @@ import { parksInfo } from './Parksinfo';
 
 const Card = ({ title, region, description, backgroundImage }) => (
   <div className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
-    <div className="card-content">
+   <div className="blurredBackground">
+   
+     <div className="card-content">
       <h2>{title}</h2>
       <h3>{region}</h3>
       <p>{description}</p>
+     </div>
     </div>
   </div>
 );
@@ -30,7 +33,7 @@ const CardParkPage = () => {
       {parksInfo.map((park, index) => (
         <SwiperSlide key={index}>
           <Card
-            title={park.nombre}
+            title={park.title}
             region={park.region}
             description={park.description}
             backgroundImage={park.backgroundImage}

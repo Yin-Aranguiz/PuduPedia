@@ -10,17 +10,18 @@ import CardParkPage from './components/ParksPage/ParksPage';
 //import LandingPage from './Components/LandingPage/LandingPage';
 //import GamePage from './Components/GamePage/GamePage';
 //import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
-//import NavBar from './Components/LandingPage/Navbar/NavBar';
+
 
 function App() {
     return (
        
 
+        <div>
 
         <CardParkPage/>
-        //     <div className="App">
-        //         <GalleryPage animal={animales.pudu} />
-        //     </div>
+
+        </div>
+        
          );
 }
 
