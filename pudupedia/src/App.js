@@ -1,5 +1,6 @@
 import React from 'react';
 import GalleryPage from './components/GalleryPage/GalleryPage';
+import { animales } from './components/GalleryPage/animales'
 //import './components/GalleryPage/App.css';
 //import Accordion from './components/GalleryPage/Accordion';
 //import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
@@ -10,13 +11,13 @@ import GalleryPage from './components/GalleryPage/GalleryPage';
 //import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
 //import NavBar from './Components/LandingPage/Navbar/NavBar';
 
-
- const App = () => {
-     return (
-        
-<GalleryPage/>
-            );
-         };
+function App() {
+    return (
+       
+        <div className="App">
+            <GalleryPage animal={animales.pudu} />
+        </div>
+    );
+}
 
 export default App;
-

@@ -22,16 +22,17 @@ const AccordionItem = ({ title, content }) => {
     );
 };
 
-const Accordion = () => {
+const Accordion = ({ animal }) => {
     return (
         <div className="accordion">
-          <div className='titulo'><p>PUDÚ </p> </div>
-            <AccordionItem title="- Vive en" content="Bosques templados del sur de Chile, desde la región de Los Ríos hasta Aysén" />
-            <AccordionItem title="- Reproducción" content="La hembra da a luz a una cría después de un período de gestación de aproximadamente 210 día" />
-            <AccordionItem title="- Alimentación" content="Hojas, cortezas, frutas y brotes de arbustos y árboles" />
-            <AccordionItem title="- Hábitat" content="Bosques templados lluviosos y densos, con abundante vegetación" />
-            <AccordionItem title="- Peligro de la especie" content="Vulnerable, según la UICN" />
-            {/* Agrega más elementos aquí si es necesario */}
+            <div className='titulo'><p>{animal.nombre.toUpperCase()}</p></div>
+            {animal.info.map((item, index) => (
+                <AccordionItem 
+                    key={index}
+                    title={item.title}
+                    content={item.content}
+                />
+            ))}
         </div>
     );
 };

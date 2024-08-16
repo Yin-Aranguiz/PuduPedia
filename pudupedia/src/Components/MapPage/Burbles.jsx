@@ -16,7 +16,7 @@ const Burbles = () => {
 
   // Definición de imágenes para cada macrozona
   const macrozoneImages = {
-    norte: [pudu, pudu, pudu, pudu, pudu], 
+    norte: [pudu, pudu, pudu, pudu, pudu], //podria ser por indice del archivo animales.js c:
     centro: [chucao, chucao, chucao, chucao, chucao],
     centroSur: [imagePuduReading, imagePuduReading, imagePuduReading, imagePuduReading, imagePuduReading],
     sur: [guina, guina, guina, guina, guina],
