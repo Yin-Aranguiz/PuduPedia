@@ -1,17 +1,19 @@
 import React from "react";
 import './Buttons.css'
 
-function Buttons (){
+function Buttons ({ onToggle }){
 
-
+  const handleToggle = (event) => {
+    onToggle(event.target.checked);
+}
 
     return(
     <div >
         <label className="button">
-            <input type="checkbox" class="checkbox" />
-            <div class="back"></div>
+            <input type="checkbox" className="checkbox" onChange={handleToggle} />
+            <div className="back"></div>
             <svg
-              class="animals"
+              className="animals"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
             >
@@ -21,7 +23,7 @@ function Buttons (){
               ></path>
             </svg>
             <svg
-              class="plants"
+              className="plants"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
