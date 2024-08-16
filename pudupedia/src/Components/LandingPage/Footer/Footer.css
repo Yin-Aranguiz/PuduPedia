@@ -1,5 +1,5 @@
 /* General body styling */
-body.app-container {
+body.app-container { 
     font-family: 'Open Sans', sans-serif;
     color: white;
 }
@@ -42,7 +42,7 @@ body.app-container {
 }
 
 .Footer.transformed {
-    transform: translateY(700px);
+    transform: translateY(800px);
 
 }
 

@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 body {
-  background: linear-gradient(to right, rgba(1, 22, 1, 0.801), rgba(9, 59, 9, 0.5), rgba(25, 150, 25, 0));
+  background: linear-gradient(to right, rgba(1, 22, 16, 0.801), rgba(2, 113, 65, 0.5), rgba(25, 150, 25, 0));
   background-color: rgb(1, 22, 15);
 }
 
 .gameTitle {
-  margin-top: 100px;
-  margin-left: 60vh;
-  margin-bottom: 0;
+  margin-top: -30px;
+  margin-left: 80vh;
+  margin-bottom: 5vh;
   width: 600px;
-  height: 200px;
+  height: auto;
+  color: rgb(0, 255, 174);
+  text-shadow: 
+  4px 2px 0 #1f8a6ce1, 
+  -1px -1px 0 #178d6c,
+  1px -1px 0 #0e644c,
+  -1px 1px 0 #043326;
+  font-size: 4rem;
+  font-family:'Open Sans', sans-serif;
+}
+
+.top-section{
+  margin-top: 200px;
+  
 }
 

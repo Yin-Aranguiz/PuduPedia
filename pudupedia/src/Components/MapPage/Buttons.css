@@ -12,7 +12,7 @@
   overflow: hidden;
   scale: 0.7;
   transition: all 0.5s;
-  margin-top: 310vh;
+  margin-top: 300vh;
   margin-left: 150vh;
   z-index: 1000;
 }
@@ -69,55 +69,3 @@
   overflow: visible;
 }
 
-/* Ajusta el tamaño del contenedor del checkbox 
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 600px; /* Aumenta este valor para hacer el switch más grande 
-  height: 30px; /* Aumenta este valor para hacer el switch más grande 
-}
-
-/* Ajusta el tamaño del "back" del checkbox 
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #ccc;
-  border-radius: 15px;
-  transition: background-color 0.3s;
-}
-
-/* Ajusta el tamaño de los iconos SVG 
-.moon, .sun {
-  position: absolute;
-  width: 20px; /* Aumenta este valor para agrandar el ícono 
-  height: 20px; /* Aumenta este valor para agrandar el ícono 
-  transition: all 0.3s;
-}
-
-/* Opcional: Ajusta el tamaño del checkbox real 
-.checkbox {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
-  cursor: pointer;
-}
-
-/* Estilos para cuando el checkbox está seleccionado 
-.checkbox:checked ~ .back {
-  background-color: #4CAF50; /* Color cuando está activado 
-}
-
-.checkbox:checked ~ .sun {
-  transform: translateX(30px); /* Ajusta este valor según el tamaño del switch 
-}
-
-.checkbox:not(:checked) ~ .moon {
-  transform: translateX(-30px); /* Ajusta este valor según el tamaño del switch 
-}
-*/

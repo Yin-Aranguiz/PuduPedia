@@ -1,8 +1,8 @@
 
   .boxStyle {
     background: linear-gradient(
-      rgba(0, 255, 179, 0.459),
-      rgba(0, 0, 0, 0.548)
+      rgba(0, 255, 179, 0.695),
+      rgba(0, 0, 0, 0.75)
     );
     color: white;
     padding: 20px;
@@ -13,5 +13,5 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     position: relative;
-    top: -30vh;
+    top: -50vh;
   }

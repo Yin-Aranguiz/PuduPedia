@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './Gallery.css';
 import TriviaImg from '../TriviaGame/PuduReading.jpg';
 import PuhipuImg from '../PuHiPuGame/pudu.jpg'
@@ -16,34 +16,34 @@ const Gallery = () => {
 
     const handleWheel = (e) => {
       e.preventDefault(); // Previene el comportamiento predeterminado del desplazamiento vertical.
-      gallery.scrollLeft += e.deltaY * 5; // Ajusta el desplazamiento horizontal según el movimiento de la rueda del mouse.
+      gallery.scrollLeft += e.deltaY * 6; // Ajusta el desplazamiento horizontal según el movimiento de la rueda del mouse.
       // dice cuántos píxeles se han desplazado horizontalmente el contenido de un elemento que tiene un desbordamiento horizontal (scroll).
       // deltaY es una propiedad del objeto del evento wheel en JavaScript que representa el cambio en el desplazamiento de la rueda del mouse a lo largo del eje Y (vertical)
     // *7 para ajustar la velocidad del desplazamiento horizontal
     };
 
-    const smoothScroll = () => {
-      const itemWidth = gallery.children[0]?.clientWidth || 0; // Obtiene el ancho del primer hijo (imagen) o 0 si no existe.
-      const itemCount = gallery.children.length / 2; // Calcula el número de elementos en la galería, asumiendo duplicados.
-      const scrollWidth = gallery.scrollWidth; // Obtiene el ancho total del contenido desplazable.
+    // const smoothScroll = () => {
+    //   const itemWidth = gallery.children[0]?.clientWidth || 0; // Obtiene el ancho del primer hijo (imagen) o 0 si no existe.
+    //   const itemCount = gallery.children.length / 2; // Calcula el número de elementos en la galería, asumiendo duplicados.
+    //   const scrollWidth = gallery.scrollWidth; // Obtiene el ancho total del contenido desplazable.
 
-      // Ajusta el desplazamiento horizontal si está fuera de rango.
-      if (gallery.scrollLeft < itemWidth) {
-        gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es menor que el ancho de un ítem.
-      } else if (gallery.scrollLeft > itemCount * itemWidth * 2) {
-        gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es mayor que el ancho total de los ítems.
-      }
-    };
+    //   // Ajusta el desplazamiento horizontal si está fuera de rango.
+    //   // if (gallery.scrollLeft < itemWidth) {
+    //   //   gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es menor que el ancho de un ítem.
+    //   // } else if (gallery.scrollLeft > itemCount * itemWidth * 2) {
+    //   //   gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es mayor que el ancho total de los ítems.
+    //   // }
+    // };
 
     gallery.addEventListener('scroll', handleScroll); // evento para manejar el desplazamiento.
     gallery.addEventListener('wheel', handleWheel); // evento para manejar el desplazamiento con la rueda del mouse.
 
-    const interval = setInterval(smoothScroll, 50); // intervalo para ajustar el desplazamiento cada 50 ms.
+    // const interval = setInterval(smoothScroll, 50); // intervalo para ajustar el desplazamiento cada 50 ms.
 
     return () => {
       gallery.removeEventListener('scroll', handleScroll); // Limpia el manejador de eventos de desplazamiento al desmontar el componente.
       gallery.removeEventListener('wheel', handleWheel); // Limpia el manejador de eventos de la rueda del mouse.
-      clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta.
+      // clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta.
     };
   }, []);
 
@@ -68,7 +68,7 @@ const Gallery = () => {
     { src: 'https://via.placeholder.com/500x250?text=Image+5', alt: '5', id: '5'},
     { src: 'https://via.placeholder.com/500x250?text=Image+6', alt: '6', id: '6'},
     { src: 'https://via.placeholder.com/500x250?text=Image+7', alt: '7', id: '7'},
-    { src: TriviaImg, alt: '8', id: '8', link: 'https://www.example.com'}, //es necesario configurar los links con backend
+    { src: TriviaImg, alt: '8', id: '8', link: 'https://www.example.com'}, 
     { src: PuhipuImg, alt: '9', id: '9', link: 'https://www.example.com'},
     { src: 'https://via.placeholder.com/500x250?text=Image+10', alt: '10', id: '10'},
     { src: 'https://via.placeholder.com/500x250?text=Image+11', alt: '11', id: '11'},

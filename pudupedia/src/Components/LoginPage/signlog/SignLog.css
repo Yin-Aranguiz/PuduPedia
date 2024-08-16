@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-* {
+.login * {
 	box-sizing: border-box;
 	font-family: "Open sans", sans-serif;
 }
 .login { 
-  /* background: linear-gradient(10deg, rgb(74, 129, 83), rgb(35, 70, 57)); */
 	background-image: url(park.jpg);
 	object-fit: cover;
 	display: flex;
@@ -12,8 +11,8 @@
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Open sans', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
+	height: 110vh;
+	margin: -20px 0 0px;
 }
 
 .login h1 {
@@ -26,18 +25,6 @@
 	color: #FFFFFF;
 	margin-bottom: 10px;
 	text-shadow: 0 5px 10px rgb(8, 39, 23);
-}
-
-.login h2 {
-	text-align: center;
-}
-
-.login p {
-	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
 }
 
 .login span {
@@ -80,13 +67,13 @@
 	border-color: #FFFFFF;
 	box-shadow: 0 5px 10px rgb(8, 39, 23);
 }
-button:hover {
+.login button:hover {
 	cursor: pointer;
 	background-color: rgb(37, 133, 85);
 	border: 1px solid rgb(37, 133, 85);
 	transition: 0.3s ease;
 }
-.signUp, .signIn {
+.signUp, .signIn, .ghost {
 	border-radius: 20px;
 	border: 1px solid rgb(21, 75, 48);
 	background-color: rgb(21, 75, 48);
@@ -168,7 +155,7 @@ button:hover {
 .signUpContainer {
 	left: 0;
 	width: 50%;
-	opacity: 0;
+	opacity: 0; 
 	z-index: 1;
 }
 
@@ -257,7 +244,5 @@ button:hover {
 .container.rightPanelActive .overlayRight {
 	transform: translateX(20%);
 } 
-
-
 
 

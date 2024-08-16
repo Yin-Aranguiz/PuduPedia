@@ -118,8 +118,6 @@
   font-style: italic;
 }
 
-
-
 .loginTab {
   display: flex;
   padding-right: 5px;
@@ -169,4 +167,8 @@
 }
 .loginTab p {
   color: white;
+}
+
+.backOff {
+  transform: translateY(150px);
 }

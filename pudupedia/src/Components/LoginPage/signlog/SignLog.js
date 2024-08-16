@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './SignLog.css';
+import Header from '../../LandingPage/Header/Header';
+import Footer from '../../LandingPage/Footer/Footer';
 
 const SignAndLog = () => {
 	const [isSignUp, setIsSignUp] = useState(false);
@@ -18,7 +20,7 @@ const SignAndLog = () => {
 	const [confirm, setConfirm] = useState("");
 
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e) => { 
 		e.preventDefault();
 		console.log(
 			username,
@@ -30,6 +32,7 @@ const SignAndLog = () => {
 
 	return (
 		<div className='login'>
+			<Header />
 			<div className={`container ${isSignUp ? 'rightPanelActive' : ''}`}>
 				<div className="formContainer signUpContainer">
 					<form action="#" method='get'>

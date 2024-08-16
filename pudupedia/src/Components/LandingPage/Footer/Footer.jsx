@@ -5,7 +5,7 @@ import twitterLogoUrl from './Twitter.png';
 import phoneLogoUrl from './Phone.png';
 import shareIcon from './shareIcon.png'
 
-const Footer = ({ className }) => {
+const Footer = ({ className }) => { 
   return (
     <div className={`Footer ${className || ''}`}>
       <div className='Forus'>

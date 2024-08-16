@@ -39,36 +39,35 @@ const Bubbles = () => {
   const handleMacrozoneClick = (macrozone, macrozoneBounds) => {
     console.log('Macrozone:', macrozone);
     console.log('Macrozone Bounds:', macrozoneBounds);
-
+  
     if (!macrozoneBounds) {
       console.error('macrozoneBounds is undefined:', macrozone);
       return;
     }
-
+  
     // Verifica si la macrozona activa es la misma que la clickeada
     if (activeMacrozone === macrozone) {
       // Alterna la visibilidad si la misma macrozona es clickeada
       setVisibility(!visibility);
     } else {
       const images = isFauna ? macrozoneImagesFauna[macrozone] : macrozoneImagesFlora[macrozone];
-
+  
       if (!Array.isArray(images) || images.length === 0) {
         console.error('No valid images found for macrozone:', macrozone);
         return;
       }
-
-      const numBubbles = images.length;
-      const angleStep = (Math.PI) / (numBubbles - 1);
-      const radius = 20;
-
+  
       const newBubbles = [];
-      for (let i = 0; i < numBubbles; i++) {
-        const angle = i * angleStep;
-        const x = macrozoneBounds.x + (macrozoneBounds.width / 2) + (radius * Math.cos(angle) * 7);
-        const y = macrozoneBounds.y + (macrozoneBounds.height / 2) - (radius * Math.sin(angle) * 7) + window.scrollY;
+      const startX = 100; // Posición inicial X debajo del título
+      const startY = 200; // Posición inicial Y debajo del título
+      const spacing = 100; // Espacio entre burbujas
+  
+      for (let i = 0; i < images.length; i++) {
+        const x = startX + i * spacing; // Espacio horizontal entre burbujas
+        const y = startY; // Mantiene las burbujas en la misma fila
         newBubbles.push({ x, y, image: images[i], key: `${macrozone}-${i}` });
       }
-
+  
       setBubbles(newBubbles);
       setActiveMacrozone(macrozone);
       setVisibility(true);
@@ -96,22 +95,25 @@ const Bubbles = () => {
     handleCloseBubbles(); // Cierra las burbujas actuales
   };
 
-  return (
+  return ( 
     <div className="radial-menu">
-      <Header />
+      <Header className='backOff'/>
+      <div className='bubble'>
       <h1 className="macrozone-name">RUTA ENDÉMICA </h1>
       <Map onMacrozoneClick={handleMacrozoneClick} />
       <div className={`larger-area ${visibility ? 'active' : ''}`}>
-
         {visibility && (
           <>
-
             {bubbles.map((bubble, index) => (
-              <div
-                key={bubble.key}
-                className={`menu-item ${visibility ? 'bounce' : ''}`}
-                style={{ left: `${bubble.x}px`, top: `${bubble.y}px` }}
-              >
+               <div
+               key={bubble.key}
+               className={`menu-item ${visibility ? 'bounce' : ''}`}
+               style={{
+                 left: `${bubble.x}px`,
+                 top: `${bubble.y}px`,
+                 animationDelay: `${index * 100}ms`, // Aplica un retardo de 500ms por burbuja
+               }}
+             >
                 <img
                   src={bubble.image}
                   alt={`Imagen ${index + 1}`}
@@ -128,9 +130,10 @@ const Bubbles = () => {
           </>
         )}
       </div>
-
+        
       <Buttons onToggle={toggleFaunaFlora} />
       <Footer className={'transformed'} />
+      </div>
     </div>
   );
 };

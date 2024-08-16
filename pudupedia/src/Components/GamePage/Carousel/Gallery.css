@@ -1,8 +1,8 @@
 
 .gallery img {
   border-radius: 50%;
-  height: 600px; 
-  width: 600px; 
+  height: 400px; 
+  width: 400px; 
   margin: 0px 0px -100px -100px; 
   will-change: transform;
   z-index: 1000;
