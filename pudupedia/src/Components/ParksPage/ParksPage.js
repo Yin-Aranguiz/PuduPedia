@@ -7,10 +7,11 @@ import { parksInfo } from './Parksinfo';
 
 const Card = ({ title, region, description, backgroundImage }) => (
   <div className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    
+          <h2>{title}</h2>
    <div className="blurredBackground">
-   
      <div className="card-content">
-      <h2>{title}</h2>
+
       <h3>{region}</h3>
       <p>{description}</p>
      </div>
