@@ -6,7 +6,7 @@ const GalleryPage = ({ animal }) => {
     return (
         <div className="app-container">
             <div className="image">
-                <img src={animal.imagen} alt={`Imagen de ${animal.nombre}`} />
+                <img src={animal.imagen} alt={`Imagen de ${animal.nombre}`} /> {/* imagen de animal */}
             </div>
             
             <div className="accordion-wrapper">

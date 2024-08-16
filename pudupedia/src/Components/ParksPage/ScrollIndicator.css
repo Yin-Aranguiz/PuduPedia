@@ -1,0 +1,25 @@
+/* ScrollIndicator.css */
+
+.scroll-indicator {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10; /* Añadir z-index para asegurarse de que esté encima de las tarjetas */
+}
+
+  
+  .scroll-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.507);
+    border-radius: 50%;
+  }
+  
+  .scroll-dot.active {
+    background-color: rgb(0, 230, 210); /* Cambia este color según tus preferencias */
+    
+  }

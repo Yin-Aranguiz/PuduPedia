@@ -1,6 +1,7 @@
 import React from 'react';
-import GalleryPage from './components/GalleryPage/GalleryPage';
-import { animales } from './components/GalleryPage/animales'
+//import GalleryPage from './components/GalleryPage/GalleryPage';
+import CardParkPage from './components/ParksPage/ParksPage';
+//import { animales } from './components/GalleryPage/animales'
 //import './components/GalleryPage/App.css';
 //import Accordion from './components/GalleryPage/Accordion';
 //import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
@@ -14,10 +15,13 @@ import { animales } from './components/GalleryPage/animales'
 function App() {
     return (
        
-        <div className="App">
-            <GalleryPage animal={animales.pudu} />
-        </div>
-    );
+
+
+        <CardParkPage/>
+        //     <div className="App">
+        //         <GalleryPage animal={animales.pudu} />
+        //     </div>
+         );
 }
 
 export default App;
