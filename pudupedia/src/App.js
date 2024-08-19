@@ -11,7 +11,7 @@ import NavBar from './Components/LandingPage/Navbar/NavBar';
 import AboutUs from './Components/AboutUsPage/AboutUs';
 import SignLog from './Components/LoginPage/signlog/SignLog';
 // import AppGallery from './Components/GalleryPage/AppGallery';
-
+import ParksPage from './Components/ParksPage/ParksPage';
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
                <Route path="/juegos" element={<GamePage />} />
                {/* <Route path="/trivia/:id" element={<TriviaGame />} /> */}
                <Route path="/vida-silvestre" element={<Bubbles />} /> 
+               <Route path='/parques' element={<ParksPage/>} />
                {/* <Route path="/puduGame/:id" element={<PuduHierbaPuma />} /> */} 
                <Route path='/quienes-somos' element={<AboutUs />} />
                <Route path="/signlog" element={<SignLog />} />
