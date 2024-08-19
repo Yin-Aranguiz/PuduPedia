@@ -19,7 +19,7 @@ import musicGame from './musiquitaPunshi.MP3';
 
 const Memopudu = () => {
     const [time, setTime] = useState(60);
-    const [interval, setInterval] = useState(null);
+    const intervalRef = useRef(null);
     const [lockBoard, setLockBoard] = useState(true);
     const [firstCard, setFirstCard] = useState(null);
     const [matchedCards, setMatchedCards] = useState([]);
@@ -29,7 +29,6 @@ const Memopudu = () => {
     const tableroRef = useRef(null);
     const audioRef = useRef(null);
     const musicButtonRef = useRef(null);
-    const [intervalId, setIntervalId] = useState(null);
 
     const animales = [
         imgExample,
@@ -48,7 +47,12 @@ const Memopudu = () => {
         img14Example,
         img15Example
     ];
+    // Para depuración
+    useEffect(() => {
+        console.log('Memopudu component mounted');
+    }, []);
 
+    // Función para barajar las cartas
     const shuffle = (array) => {
         let currentIndex = array.length, randomIndex;
 
@@ -62,13 +66,14 @@ const Memopudu = () => {
         return array;
     };
 
+    // Función para reproducir la música de fondo
     const playMusic = () => {
         if (audioRef.current.paused) {
             audioRef.current.play();
             musicButtonRef.current.textContent = 'Parar Sonido';
         }
     };
-
+    // Función para parar la música de fondo
     const stopMusic = () => {
         if (!audioRef.current.paused) {
             audioRef.current.pause();
@@ -76,7 +81,7 @@ const Memopudu = () => {
             musicButtonRef.current.textContent = 'Reproducir Sonido';
         }
     };
-
+    // Función para el click del botón que maneja la música
     const handleMusicButtonClick = () => {
         if (audioRef.current.paused) {
             playMusic();
@@ -84,7 +89,7 @@ const Memopudu = () => {
             stopMusic();
         }
     };
-
+    // Función para reconocer si el audio está corriendo al cargar la página o no
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.play().catch(error => {
@@ -98,25 +103,33 @@ const Memopudu = () => {
         };
     }, []);
 
+    // Función para comenzar el contador del tiempo
     const startCounter = () => {
-        console.log('startCounter running')
-        const intervalId = setInterval(() => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+        intervalRef.current = setInterval(() => {
             setTime(prev => {
                 const newTime = prev - 1;
                 console.log('newTime:', newTime);
-                if (newTime <= 0) {
-                    clearInterval(intervalId);
+
+                if (newTime === 0) {
+                    clearInterval(intervalRef.current);
+                    intervalRef.current = null;
                     showResult('fin-malo');
                     return 0;
                 }
+
                 updateCounter(newTime);
                 return newTime;
             });
         }, 1000);
-        setIntervalId(intervalId);
+        console.log('Interval ID:', intervalRef.current);
     };
 
+    // Función para actualizar el texto del contador en pantalla
     const updateCounter = (time) => {
+        console.log('Updating counter with time:', time);
         const tiempoElement = document.getElementById('tiempo');
         if (!tiempoElement) {
             console.error("El elemento con el ID 'tiempo' no existe en el DOM");
@@ -128,14 +141,17 @@ const Memopudu = () => {
         tiempoElement.textContent = `Tiempo: ${minutes < 10 ? `0${minutes}` : minutes}:${formatSeconds}`;
     };
 
+    // Función para detener el contador
     const stopCounter = () => {
-        if (intervalId) {
-            clearInterval(intervalId);
-            setIntervalId(null);
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
         }
         setTime(60);
+        updateCounter(60);
     };
 
+    // Función para manejar cómo se muestran los resultados
     const showResult = (state) => {
         const result = document.getElementById('resultado');
         switch (state) {
@@ -149,7 +165,7 @@ const Memopudu = () => {
                 break;
             case 'fin-bueno':
                 setLockBoard(true);
-                clearInterval(interval);
+                clearInterval(intervalRef.current);
                 result.classList.remove('hidden');
                 result.classList.add('animate');
                 result.textContent = '¡GANASTE!';
@@ -172,12 +188,12 @@ const Memopudu = () => {
                 break;
         }
     };
-
+    // Función para añadir la animación a los resultados
     const animationWin = () => {
         const result = document.getElementById('resultado');
         result.classList.add('animacionWin');
     };
-
+    // Función que maneja lo que sucede al hacer click en una casilla
     const handleCardClick = (e) => {
         if (lockBoard || !gameStarted) return;
 
@@ -219,22 +235,23 @@ const Memopudu = () => {
             }
         }
     };
-
+    // Función para resetear las casillas a su posición original (no mostrar imágenes)
     const resetCards = () => {
         setFirstCard(null);
         setLockBoard(false);
     };
-
+    // Función para manejar los botones de dificultad
     const handleDifficultyClick = (difficulty) => {
         resetBoard(difficulty);
+        updateCounter(60);
     };
-
+    // Función para manejar cómo se muestran las imágenes según la dificultad
     const generateAnimalImages = (difficulty) => {
         const pairs = animales.slice(0, Math.ceil(difficulty / 2));
         const images = [...pairs, ...pairs.slice(0, difficulty - pairs.length)];
         return shuffle(images);
     };
-
+    // Función para resetear el tablero
     const resetBoard = (difficulty) => {
         stopCounter();
         setactualDifficulty(difficulty);
@@ -254,19 +271,24 @@ const Memopudu = () => {
             }
         });
     };
-
+    // Función para comenzar el juego
     const startGame = () => {
-        if (animalImages.length === 0) return;
+        console.log('Starting game...');
+        if (animalImages.length === 0) {
+            console.log('No animal images available.');
+            return;
+        }
+        console.log('Animal images available:', animalImages);
         setGameStarted(true);
         startCounter();
         showResult('inicio');
         setLockBoard(false);
         resetCards();
     };
-
+    // Función para cancelar el juego
     const cancelGame = () => {
-        if (interval) {
-            clearInterval(interval);
+        if (intervalRef) {
+            clearInterval(intervalRef);
             setInterval(null);
         }
 
@@ -285,7 +307,7 @@ const Memopudu = () => {
         resetCards();
         resetBoard(actualDifficulty);
     };
-
+    // Función para generar nuevas imágenes de animales según la dificultad
     useEffect(() => {
         setAnimalImages(generateAnimalImages(actualDifficulty));
     }, [actualDifficulty]);
@@ -294,7 +316,7 @@ const Memopudu = () => {
         <div className='memopudu'>
             <h1 className='title'>Memopudú</h1>
             <h3 id="tiempo">Tiempo: 01:00</h3>
-            <h2 className= 'description'>¡Encuentra todos los pares antes de que pase 1 minuto!</h2>
+            <h2 className='description'>¡Encuentra todos los pares antes de que pase 1 minuto!</h2>
             <div className="controls">
                 <button onClick={handleMusicButtonClick} ref={musicButtonRef}>
                     Parar Sonido
