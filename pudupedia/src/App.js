@@ -1,4 +1,4 @@
-import Application from './Components/GamePage/Carousel/Carousel';
+// import Application from './Components/GamePage/Carousel/Carousel';
 import React from 'react';
 // import Memopudu from './Components/GamePage/MemoPudu/Memopudu';
 // import InfoMap from './Components/MapPage/InfoMap';
@@ -6,7 +6,7 @@ import React from 'react';
 // import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import LandingPage from './Components/LandingPage/LandingPage';
-// import GamePage from './Components/GamePage/GamePage';
+import GamePage from './Components/GamePage/GamePage';
 // import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
 // import NavBar from './Components/LandingPage/Navbar/NavBar';
 // import AboutUs from './Components/AboutUsPage/AboutUs';
@@ -30,7 +30,7 @@ function App() {
         //        <Route path="/signlog" element={<SignLog />} />
         //    </Routes>
         // </Router>
-        <Application />
+        <GamePage />
         
         
        

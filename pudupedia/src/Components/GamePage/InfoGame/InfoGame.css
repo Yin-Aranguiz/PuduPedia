@@ -1,17 +1,42 @@
 
-  .boxStyle {
-    background: linear-gradient(
-      rgba(0, 255, 179, 0.695),
-      rgba(0, 0, 0, 0.75)
-    );
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 100vh;
-    max-height: 600px;
-    margin-left: 50vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    position: relative;
-    top: -50vh;
-  }
+.parent {
+  background-color: rgba(128, 126, 126, 0.212);
+  margin: 20vh auto;
+  border-radius: 10px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.185);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(5px); 
+  position: relative; 
+  color: white;
+  padding: 20px;
+  max-width: 100vh;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  top: 40vh;
+  margin-bottom: 50vh;
+}
+.parent:hover{
+  box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
+}
+
+.boxStyle {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 20px; /* Espacio entre las columnas */
+  grid-template-rows: auto auto; /* Dos filas: una para el encabezado, otra para el contenido */
+}
+
+.boxStyle h1 {
+  grid-column: span 2; /* El encabezado ocupa ambas columnas */
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center; /* Centra el texto dentro del encabezado */
+}
+
+.boxStyle p {
+  margin: 0; /* Elimina márgenes para un mejor control del espaciado */
+}
+  

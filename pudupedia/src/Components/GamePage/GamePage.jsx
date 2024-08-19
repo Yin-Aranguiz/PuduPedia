@@ -1,21 +1,20 @@
 import React from 'react';
 import Header from '../LandingPage/Header/Header';
-import Gallery from './Carousel/Gallery';
 import Middle from './Middle/Middle';
-import NavBar from '../LandingPage/Navbar/NavBar'
 import InfoGame from './InfoGame/InfoGame';
-import '../LandingPage/Footer/Footer.css'
+import '../LandingPage/Footer/Footer.css';
+import Carousel from './Carousel/Carousel';
+
 
 
 
 const GamePage = () => {
    
     return (
-        <div>
+        <div className='allGame'>
             <Header />
             <Middle />
-            <NavBar/>
-            <Gallery />
+            <Carousel />
             <InfoGame/>
         </div>
     );

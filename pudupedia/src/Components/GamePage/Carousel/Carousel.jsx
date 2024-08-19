@@ -3,15 +3,15 @@ import './Carousel.scss';
 
 const Application = () => {
     const [items] = useState([
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg',
-        'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg'
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page1' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page2' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page3' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page4' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page5' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page6' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page7' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page8' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page9' }
     ]);
     const [active, setActive] = useState(0);
     const [direction, setDirection] = useState('');
@@ -36,13 +36,12 @@ const Application = () => {
             else if (i >= items.length) index = i % items.length;
 
             const level = active - i;
-            result.push(<Item key={index} src={items[index]} level={level} />);
+            result.push(<Item key={index} src={items[index].src} url={items[index].url} level={level} />);
         }
         return result;
     };
 
     return (
-        
         <div id="carousel" className="noselect">
             <div className="arrow arrow-left" onClick={moveLeft}>
                 &larr;
@@ -54,14 +53,19 @@ const Application = () => {
                 &rarr;
             </div>
         </div>
-        
     );
 };
 
-const Item = ({ src, level }) => {
+const Item = ({ src, url, level }) => {
     const className = `item level${level}`;
-    return <div className={className}><img src={src} alt={`Item ${level}`} /></div>;
+    return (
+        <div className={className}>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+                <img src={src} alt={`Item ${level}`} />
+            </a>
+        </div>
+    );
 };
-export default Application;
 
+export default Application;
 
