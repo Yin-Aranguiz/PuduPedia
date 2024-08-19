@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+#carousel {
+    position: absolute;
+    height: 200px;
+    width: 810px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 1s ease, opacity 1s ease;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #ffffff;
+    line-height: 25px;
+    margin-top: 85px;
+    z-index: 1000;
+}
+
+.arrow-right {
+    left: 780px;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    position: absolute;
+    transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s, background-color 1s;
+    border-radius: 10px;
+}
+.item img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.level-2 {
+    height: 150px;
+    width: 110px;
+    line-height: 150px;
+    left: 650px;
+    margin-top: 25px;
+}
+
+.level-1 {
+    height: 180px;
+    width: 130px;
+    line-height: 180px;
+    left: 500px;
+    margin-top: 10px;
+}
+
+.level0 {
+    height: 200px;
+    width: 150px;
+    line-height: 200px;
+    left: 330px;
+}
+
+.level1 {
+    height: 180px;
+    width: 130px;
+    line-height: 180px;
+    margin-top: 10px;
+    left: 180px;
+}
+
+.level2 {
+    height: 150px;
+    width: 110px;
+    line-height: 150px;
+    margin-top: 25px;
+    left: 50px;
+}
+
+/* Transiciones para movimientos hacia la izquierda */
+.carousel-items.left-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.carousel-items.left-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-items.left-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-items.left-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+/* Transiciones para movimientos hacia la derecha */
+.carousel-items.right-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.carousel-items.right-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-items.right-exit {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.carousel-items.right-exit-active {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

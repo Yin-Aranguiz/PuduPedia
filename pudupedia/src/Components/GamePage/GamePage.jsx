@@ -7,6 +7,7 @@ import InfoGame from './InfoGame/InfoGame';
 import '../LandingPage/Footer/Footer.css'
 
 
+
 const GamePage = () => {
    
     return (

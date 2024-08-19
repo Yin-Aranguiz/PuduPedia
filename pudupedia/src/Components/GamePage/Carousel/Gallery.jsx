@@ -21,20 +21,6 @@ const Gallery = () => {
       // deltaY es una propiedad del objeto del evento wheel en JavaScript que representa el cambio en el desplazamiento de la rueda del mouse a lo largo del eje Y (vertical)
     // *7 para ajustar la velocidad del desplazamiento horizontal
     };
-
-    // const smoothScroll = () => {
-    //   const itemWidth = gallery.children[0]?.clientWidth || 0; // Obtiene el ancho del primer hijo (imagen) o 0 si no existe.
-    //   const itemCount = gallery.children.length / 2; // Calcula el número de elementos en la galería, asumiendo duplicados.
-    //   const scrollWidth = gallery.scrollWidth; // Obtiene el ancho total del contenido desplazable.
-
-    //   // Ajusta el desplazamiento horizontal si está fuera de rango.
-    //   // if (gallery.scrollLeft < itemWidth) {
-    //   //   gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es menor que el ancho de un ítem.
-    //   // } else if (gallery.scrollLeft > itemCount * itemWidth * 2) {
-    //   //   gallery.scrollLeft = scrollWidth / 3; // Ajusta si el desplazamiento es mayor que el ancho total de los ítems.
-    //   // }
-    // };
-
     gallery.addEventListener('scroll', handleScroll); // evento para manejar el desplazamiento.
     gallery.addEventListener('wheel', handleWheel); // evento para manejar el desplazamiento con la rueda del mouse.
 
