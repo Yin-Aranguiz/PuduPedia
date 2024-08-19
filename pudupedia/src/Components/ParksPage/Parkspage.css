@@ -57,7 +57,7 @@
 
   }
 
-Color de la línea */
+/* Color de la línea  */
 
   
   .social-icons {
@@ -75,11 +75,11 @@ Color de la línea */
 
   }
   
-  h2, h3 {
+  .titlePark, .titleRegion {
     margin: 0;
   }
   
-  h2 {
+ .titlePark {
     text-shadow: 3px -3px 12px rgba(0, 6, 39, 0.692);
     margin-top: 50px;
     margin-left: 30px;
@@ -91,7 +91,7 @@ Color de la línea */
     
   }
   
-  h3 {
+ .titleRegion {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -100,7 +100,7 @@ Color de la línea */
     
   }
   
-  p {
+  .descriptionPark {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     margin: 0;

@@ -30,9 +30,6 @@ function App() {
            </Routes>
         </Router>
         
-        // <AppGallery />
-        // <Memopudu />
-        // <Bubbles />
         
         
        

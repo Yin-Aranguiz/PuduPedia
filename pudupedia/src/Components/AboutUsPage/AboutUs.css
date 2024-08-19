@@ -11,33 +11,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 170px;
+  
 }
 .whoAreWe {
   margin-right: 10px;
   margin-left: -280px;
   font-size: x-large;
-  /*background: linear-gradient(to bottom, rgb(22, 13, 32), rgb(22, 173, 166, .1));*/
-  /*background-color: black;*/
   background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
   padding-top: 25px;
   padding-left: 50px;
   border-radius: 10px;
   height: 435px;
   width: 700px;
+  margin-bottom: 130px;
 }
 .whoAreWe:hover {
   box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
 }
 .misionAndVision {
   margin-right: -300px;
+  margin-bottom: 130px;
 }
 .mision {
   padding-bottom: 20px;
   padding: 20px 30px;
   border-radius: 10px;
-  /*background: linear-gradient(to bottom, rgb(22, 13, 32), rgb(22, 173, 166, .1));*/
-  /*background-color: black;*/
   background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
   margin-bottom: 10px;
 }
@@ -45,10 +43,8 @@
   box-shadow: rgb(0, 179, 134) 0.2px 0.5px 3px 3px;
 }
 .vision {
-  /*background: linear-gradient(to top, rgb(22, 13, 32), rgb(22, 173, 166, .1));*/
   padding: 20px 30px;
   border-radius: 10px;
-  /*background-color: rgba(0, 0, 0, .8);*/
   background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
 }
 .vision:hover {
@@ -70,7 +66,7 @@
 }
 
 .teamTitle {
-  margin-top: 100px;
+  margin-top: 120px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -78,6 +74,7 @@
 }
 .title {
   font-size: xx-large;
+  color: #fff;
 }
 .teamContainer {
   display: flex;
@@ -95,17 +92,17 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.1));
-  /*background-color: rgba(0, 0, 0, .4);*/
   border-radius: 10px;
   text-align: center;
   width: 240px;
   height: 350px;
   margin: 10px 5px;
   padding-top: 30px;
-  margin-bottom: 250px;
+  margin-bottom: 130px;
 }
 .memberContainer:hover {
   transform: scale(1.03);
+  transition: transform 0.5s ease;
   box-shadow: 0.2px -1px 3px 3px rgb(0, 179, 134)
 }
 .name {
@@ -139,14 +136,6 @@
 }
 .linkName:hover {
   text-decoration: underline;
-}
-
-.all {
-  z-index: -1000;
-  position: absolute;
-  margin:0;
-  background-image: url(chucaoGray.jpg);
-  background-size: cover;
 }
 
 .bg {

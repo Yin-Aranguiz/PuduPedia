@@ -9,12 +9,12 @@ import Header from '../LandingPage/Header/Header';
 const Card = ({ title, region, description, backgroundImage }) => (
   <div className="card" style={{ backgroundImage: `url(${backgroundImage})` }}>
 
-    <h2>{title}</h2>
+    <h2 className='titlePark'>{title}</h2>
     <div className="blurredBackground">
       <div className="card-content">
 
-        <h3>{region}</h3>
-        <p>{description}</p>
+        <h3 className='titleRegion'>{region}</h3>
+        <p className='descriptionPark'>{description}</p>
       </div>
     </div>
   </div>
