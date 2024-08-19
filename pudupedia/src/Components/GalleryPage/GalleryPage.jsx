@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Accordion from './Accordion';
 import Header from '../LandingPage/Header/Header';
-import Footer from '../LandingPage/Footer/Footer';
+
 
 const GalleryPage = ({ animal }) => {
     return (
@@ -15,7 +15,7 @@ const GalleryPage = ({ animal }) => {
             <div className="accordion-wrapper">
                 <Accordion animal={animal} />
             </div>
-            <Footer className={'transformed'}/>
+          
         </div>
     );
 };

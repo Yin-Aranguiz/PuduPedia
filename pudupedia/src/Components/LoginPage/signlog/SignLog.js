@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './SignLog.css';
 import Header from '../../LandingPage/Header/Header';
-import Footer from '../../LandingPage/Footer/Footer';
 
 const SignAndLog = () => {
 	const [isSignUp, setIsSignUp] = useState(false);

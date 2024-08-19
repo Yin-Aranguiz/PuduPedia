@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Map.css';
+import Header from '../LandingPage/Header/Header';
 
-
-const Mapita = ({ onMacrozoneClick}) => {
+const Map = ({ onMacrozoneClick}) => {
     const [hoveredMacrozone, setHoveredMacrozone] = useState(null);
 
     const handleClick = (macrozone, event) => {
@@ -34,6 +34,7 @@ const Mapita = ({ onMacrozoneClick}) => {
 
     return (
         <div className="map-container">
+            <Header className={'backOff'}/>
             <svg
                 onClick={(e) => handleClick('macrozone', e)}
                 version="1.1"
@@ -174,4 +175,4 @@ const Mapita = ({ onMacrozoneClick}) => {
     );
 };
 
-export default Mapita;
+export default Map;

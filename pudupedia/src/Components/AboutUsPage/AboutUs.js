@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
 import Header from '../LandingPage/Header/Header';
-import Footer from '../LandingPage/Footer/Footer';
+
 import userIcon from './user-icon-placeholder.png';
 import LinkedLogo from './LinkedIn_logo.png';
 import GitHubLogo from './GitHub_Logo.png';
@@ -146,7 +146,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <Footer className="transformed3" />
+        
       </div>
     </div>
   )

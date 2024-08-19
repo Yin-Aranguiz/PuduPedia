@@ -7,9 +7,9 @@ import guina from './Guiña.jpg';
 import pudu from './PuduComiendo.jpg';
 import picoDeLoro from './picoDeLoro.jpg';
 import ananuca from './ananuca.jpg';
-import Header from '../LandingPage/Header/Header';
-import Footer from '../LandingPage/Footer/Footer';
+
 import Buttons from './Buttons'
+import InfoMap from './InfoMap';
 
 const Bubbles = () => {
   const [activeMacrozone, setActiveMacrozone] = useState(null);
@@ -97,7 +97,7 @@ const Bubbles = () => {
 
   return ( 
     <div className="radial-menu">
-      <Header className={'backOff'}/>
+      
       <div className='bubble'>
       <h1 className="macrozone-name">RUTA ENDÉMICA </h1>
       <Map onMacrozoneClick={handleMacrozoneClick} />
@@ -130,10 +130,9 @@ const Bubbles = () => {
           </>
         )}
       </div>
-        
       <Buttons onToggle={toggleFaunaFlora} />
-      <Footer className={'transformed'} />
       </div>
+      <InfoMap />
     </div>
   );
 };

@@ -170,5 +170,6 @@
 }
 
 .backOff {
-  transform: translateY(150px);
+  transform: translateY(145px) translateX(-70vh);
+  width: 190vh;
 }
