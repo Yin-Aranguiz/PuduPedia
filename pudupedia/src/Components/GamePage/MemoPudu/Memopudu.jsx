@@ -15,21 +15,21 @@ import img12Example from './bosque.jpg';
 import img13Example from './chincol.jpg';
 import img14Example from './pudu.jpg';
 import img15Example from './puma.jpg';
-import casillaGirada from './casillaGirada.jpeg';
-import musicGame from './alavrg.mp3';
+import musicGame from './musiquitaPunshi.MP3';
 
 const Memopudu = () => {
-    const [tiempoRestante, setTiempoRestante] = useState(60);
-    const [intervalo, setIntervalo] = useState(null);
+    const [time, setTime] = useState(60);
+    const [interval, setInterval] = useState(null);
     const [lockBoard, setLockBoard] = useState(true);
     const [firstCard, setFirstCard] = useState(null);
     const [matchedCards, setMatchedCards] = useState([]);
     const [animalImages, setAnimalImages] = useState([]);
-    const [dificultadActual, setDificultadActual] = useState(9); // Nivel fácil por defecto
+    const [actualDifficulty, setactualDifficulty] = useState(12); // Nivel fácil por defecto
     const [gameStarted, setGameStarted] = useState(false);
     const tableroRef = useRef(null);
     const audioRef = useRef(null);
     const musicButtonRef = useRef(null);
+    const [intervalId, setIntervalId] = useState(null);
 
     const animales = [
         imgExample,
@@ -62,26 +62,26 @@ const Memopudu = () => {
         return array;
     };
 
-    const reproducirMusica = () => {
+    const playMusic = () => {
         if (audioRef.current.paused) {
             audioRef.current.play();
             musicButtonRef.current.textContent = 'Parar Sonido';
         }
     };
-    
-    const detenerMusica = () => {
+
+    const stopMusic = () => {
         if (!audioRef.current.paused) {
             audioRef.current.pause();
             audioRef.current.currentTime = 0;
             musicButtonRef.current.textContent = 'Reproducir Sonido';
         }
     };
-    
+
     const handleMusicButtonClick = () => {
         if (audioRef.current.paused) {
-            reproducirMusica();
+            playMusic();
         } else {
-            detenerMusica();
+            stopMusic();
         }
     };
 
@@ -98,93 +98,100 @@ const Memopudu = () => {
         };
     }, []);
 
-    const iniciarContador = () => {
-        const intervaloId = setInterval(() => {
-            setTiempoRestante(prev => {
-                const nuevoTiempo = prev - 1;
-                if (nuevoTiempo <= 0) {
-                    clearInterval(intervaloId);
-                    mostrarResultado('fin-malo');
+    const startCounter = () => {
+        console.log('startCounter running')
+        const intervalId = setInterval(() => {
+            setTime(prev => {
+                const newTime = prev - 1;
+                console.log('newTime:', newTime);
+                if (newTime <= 0) {
+                    clearInterval(intervalId);
+                    showResult('fin-malo');
                     return 0;
                 }
-                actualizarContador(nuevoTiempo);
-                return nuevoTiempo;
+                updateCounter(newTime);
+                return newTime;
             });
         }, 1000);
-        setIntervalo(intervaloId);
-    };
-    
-    const actualizarContador = (tiempo) => {
-        const minutos = Math.floor(tiempo / 60);
-        const segundos = tiempo % 60;
-        const formatoSegundos = segundos < 10 ? `0${segundos}` : segundos;
-        document.getElementById('tiempo').textContent = `Tiempo: ${minutos < 10 ? `0${minutos}` : minutos}:${formatoSegundos}`;
+        setIntervalId(intervalId);
     };
 
-    const detenerContador = () => {
-        if (intervalo) {
-            clearInterval(intervalo);
-            setIntervalo(null);
+    const updateCounter = (time) => {
+        const tiempoElement = document.getElementById('tiempo');
+        if (!tiempoElement) {
+            console.error("El elemento con el ID 'tiempo' no existe en el DOM");
+            return;
         }
-        setTiempoRestante(60);
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        const formatSeconds = seconds < 10 ? `0${seconds}` : seconds;
+        tiempoElement.textContent = `Tiempo: ${minutes < 10 ? `0${minutes}` : minutes}:${formatSeconds}`;
     };
 
-    const mostrarResultado = (estado) => {
-        const resultado = document.getElementById('resultado');
-        switch (estado) {
+    const stopCounter = () => {
+        if (intervalId) {
+            clearInterval(intervalId);
+            setIntervalId(null);
+        }
+        setTime(60);
+    };
+
+    const showResult = (state) => {
+        const result = document.getElementById('resultado');
+        switch (state) {
             case 'inicio':
-                resultado.textContent = '¡COMIENZA EL JUEGO!';
-                resultado.classList.remove('hidden');
+                result.classList.remove('hidden');
+                result.textContent = '¡COMIENZA EL JUEGO!';
+                setLockBoard(false);
                 setTimeout(() => {
-                    resultado.classList.add('hidden');
-                }, 2000);
+                    result.classList.add('hidden');
+                }, 500);
                 break;
             case 'fin-bueno':
                 setLockBoard(true);
-                clearInterval(intervalo);
-                resultado.textContent = '¡GANASTE!';
-                resultado.classList.remove('hidden');
-                resultado.classList.add('animate');
+                clearInterval(interval);
+                result.classList.remove('hidden');
+                result.classList.add('animate');
+                result.textContent = '¡GANASTE!';
                 setTimeout(() => {
-                    resultado.classList.add('hidden');
-                    resultado.classList.remove('animate');
-                }, 2000);
+                    result.classList.add('hidden');
+                    result.classList.remove('animate');
+                }, 1000);
                 break;
             case 'fin-malo':
                 setLockBoard(true);
-                resultado.textContent = '¡PERDISTE!';
-                resultado.classList.remove('hidden');
-                resultado.classList.add('animate');
+                result.classList.remove('hidden');
+                result.classList.add('animate');
+                result.textContent = '¡PERDISTE!';
                 setTimeout(() => {
-                    resultado.classList.add('hidden');
-                    resultado.classList.remove('animate');
-                }, 2000);
+                    result.classList.add('hidden');
+                    result.classList.remove('animate');
+                }, 1000);
                 break;
             default:
                 break;
         }
     };
 
-    const animacionGanar = () => {
-        const resultado = document.getElementById('resultado');
-        resultado.classList.add('animacionWin');
+    const animationWin = () => {
+        const result = document.getElementById('resultado');
+        result.classList.add('animacionWin');
     };
 
-    const manejarCardClick = (e) => {
+    const handleCardClick = (e) => {
         if (lockBoard || !gameStarted) return;
-    
+
         const card = e.currentTarget;
         const cardImage = card.querySelector('img');
-    
+
         if (card === firstCard || card.classList.contains('matched')) return;
-    
-        card.classList.add('flipped');
+
         cardImage.classList.remove('hidden');
-    
+        card.classList.add('flipped');
+
         if (!firstCard) {
             setFirstCard(card);
         } else {
-            setLockBoard(true);
             const secondCard = card;
 
             if (firstCard.dataset.animal === secondCard.dataset.animal) {
@@ -193,10 +200,11 @@ const Memopudu = () => {
                 setMatchedCards(prev => [...prev, firstCard, secondCard]);
                 resetCards();
 
-                if (matchedCards.length + 2 === dificultadActual) {
+                if (matchedCards.length + 2 === actualDifficulty) {
                     setTimeout(() => {
-                        mostrarResultado('fin-bueno');
-                        animacionGanar();
+                        showResult('fin-bueno');
+                        animationWin();
+                        setLockBoard(true);
                     }, 300);
                 }
             } else {
@@ -206,36 +214,37 @@ const Memopudu = () => {
                     firstCard.querySelector('img').classList.add('hidden');
                     secondCard.querySelector('img').classList.add('hidden');
                     resetCards();
-                }, 1000);
+                    setLockBoard(false);
+                }, 600);
             }
         }
     };
-    
+
     const resetCards = () => {
         setFirstCard(null);
         setLockBoard(false);
     };
 
-    const manejarDifficultyClick = (dificultad) => {
-        resetTablero(dificultad);
+    const handleDifficultyClick = (difficulty) => {
+        resetBoard(difficulty);
     };
 
-    const generateAnimalImages = (dificultad) => {
-        const pairs = animales.slice(0, Math.ceil(dificultad / 2));
-        const images = [...pairs, ...pairs.slice(0, dificultad - pairs.length)];
+    const generateAnimalImages = (difficulty) => {
+        const pairs = animales.slice(0, Math.ceil(difficulty / 2));
+        const images = [...pairs, ...pairs.slice(0, difficulty - pairs.length)];
         return shuffle(images);
     };
 
-    const resetTablero = (dificultad) => {
-        detenerContador();
-        setDificultadActual(dificultad);
-        setAnimalImages(generateAnimalImages(dificultad));
+    const resetBoard = (difficulty) => {
+        stopCounter();
+        setactualDifficulty(difficulty);
+        setAnimalImages(generateAnimalImages(difficulty));
         setLockBoard(true);
         setGameStarted(false);
         setMatchedCards([]);
         document.getElementById('resultado').textContent = '';
         document.getElementById('resultado').classList.add('hidden');
-        
+
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.classList.remove('flipped', 'matched');
@@ -246,69 +255,70 @@ const Memopudu = () => {
         });
     };
 
-    const empezarJuego = () => {
+    const startGame = () => {
         if (animalImages.length === 0) return;
         setGameStarted(true);
-        iniciarContador();
-        mostrarResultado('inicio');
-        setLockBoard(false); 
+        startCounter();
+        showResult('inicio');
+        setLockBoard(false);
         resetCards();
     };
-    
-    const cancelarJuego = () => {
-        if (intervalo) {
-            clearInterval(intervalo);
-            setIntervalo(null);
+
+    const cancelGame = () => {
+        if (interval) {
+            clearInterval(interval);
+            setInterval(null);
         }
-    
-        setTiempoRestante(60);
-        actualizarContador(60); 
-    
+
+        setTime(60);
+        updateCounter(60);
+
         setLockBoard(true);
         setGameStarted(false);
-    
-        const resultadoElement = document.getElementById('resultado');
-        if (resultadoElement) {
-            resultadoElement.textContent = '';
-            resultadoElement.classList.add('hidden');
+
+        const resultElement = document.getElementById('resultado');
+        if (resultElement) {
+            resultElement.textContent = '';
+            resultElement.classList.add('hidden');
         }
-    
+
         resetCards();
-        resetTablero(dificultadActual);
+        resetBoard(actualDifficulty);
     };
 
     useEffect(() => {
-        setAnimalImages(generateAnimalImages(dificultadActual));
-    }, [dificultadActual]);
+        setAnimalImages(generateAnimalImages(actualDifficulty));
+    }, [actualDifficulty]);
 
     return (
-        <div>
-            <h1>Memopudú</h1>
+        <div className='memopudu'>
+            <h1 className='title'>Memopudú</h1>
             <h3 id="tiempo">Tiempo: 01:00</h3>
+            <h2 className= 'description'>¡Encuentra todos los pares antes de que pase 1 minuto!</h2>
             <div className="controls">
                 <button onClick={handleMusicButtonClick} ref={musicButtonRef}>
-                    Controlar Sonido
+                    Parar Sonido
                 </button>
                 <div className="difficulty-buttons">
-                    <button onClick={() => manejarDifficultyClick(9)}>Fácil</button>
-                    <button onClick={() => manejarDifficultyClick(12)}>Medio</button>
-                    <button onClick={() => manejarDifficultyClick(18)}>Difícil</button>
+                    <button onClick={() => handleDifficultyClick(12)}>Fácil</button>
+                    <button onClick={() => handleDifficultyClick(18)}>Medio</button>
+                    <button onClick={() => handleDifficultyClick(24)}>Difícil</button>
                 </div>
-                <button onClick={empezarJuego} disabled={gameStarted}>Iniciar Juego</button>
-                <button onClick={cancelarJuego}>Cancelar Juego</button>
+                <button onClick={startGame} disabled={gameStarted}>Iniciar Juego</button>
+                <button onClick={cancelGame}>Cancelar Juego</button>
             </div>
-            <div className={`board ${dificultadActual === 9 ? 'easy' : dificultadActual === 12 ? 'medium' : 'hard'}`} ref={tableroRef}>
+            <div className={`board ${actualDifficulty === 12 ? 'easy' : actualDifficulty === 18 ? 'medium' : 'hard'}`} ref={tableroRef}>
                 {animalImages.map((animal, index) => (
                     <div
                         key={index}
                         className={`card ${lockBoard ? 'lock' : ''}`}
                         data-animal={animal}
-                        onClick={manejarCardClick}
+                        onClick={handleCardClick}
                     >
                         <div className="card-inner">
                             <div className="card-front"></div>
                             <div className="card-back">
-                                <img src={animal} alt="animal" className="hidden" />
+                                <img src={animal} alt="animal" />
                             </div>
                         </div>
                     </div>
