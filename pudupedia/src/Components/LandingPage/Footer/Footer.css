@@ -34,6 +34,7 @@ body.app-container {
 
 .Footer.transformed {
     transform: translateY(700px);
+    
 }
 
 .Footer.transformed2 {

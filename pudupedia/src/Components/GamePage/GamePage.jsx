@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../LandingPage/Header/Header';
 import Footer from '../LandingPage/Footer/Footer';
-import Gallery from '../GamePage/Carousel/Gallery';
-import Middle from '../GamePage/Middle/Middle';
+import Gallery from './Carousel/Gallery';
+import Middle from './Middle/Middle';
 import NavBar from '../LandingPage/Navbar/NavBar'
-import InfoGame from '../GamePage/InfoGame/InfoGame';
+import InfoGame from './InfoGame/InfoGame';
 import '../LandingPage/Footer/Footer.css'
 
 
