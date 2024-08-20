@@ -41,21 +41,6 @@ body.app-container {
     /* Asegura que el footer esté encima de otros elementos */
 }
 
-.Footer.transformed {
-    transform: translateY(800px);
-
-}
-
-.Footer.transformed2 {
-    transform: translateY(600px);
-}
-
-.Footer.transformed3 {
-    transform: translateY(0vh);
-    position: relative;
-    
-}
-
 /* Styling for each section within the footer */
 .Forus,
 .ContactUs,

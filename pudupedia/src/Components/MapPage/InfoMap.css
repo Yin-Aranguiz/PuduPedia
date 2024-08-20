@@ -30,9 +30,9 @@
 
 .info-map ul {
     list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-    width: 100%;
+    padding: 0px;
+    margin: 0px 20px 10px 0px;
+    width: 90vh;
     gap: 10px;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,6 @@
 
 .info-map li {
     display: flex;
-    
     align-items: center;
     width: 100%;
     font-size: 1.1rem;
@@ -59,8 +58,6 @@
 .info-map li a {
     color: #000;
     text-decoration: none;
-    
-    
 }
 
 .info-map li a:hover {
@@ -72,7 +69,8 @@
     margin-top: 20px;
     margin-bottom: 10px;
     text-align: left;
-    width: 100%;
+    width: auto;
+    
     font-size: 1.4rem;
     color: #d8f5f3;
     border-bottom: 1px solid #ccc;

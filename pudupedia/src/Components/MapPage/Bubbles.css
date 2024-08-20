@@ -4,9 +4,40 @@
 .radial-menu {
     position: relative;
     cursor: pointer;
-    
+    width: 100%;
+    overflow: hidden;
 }
 
+.backg {
+    animation:slide 7s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(21, 122, 63) 50%, rgb(7, 88, 49) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.3;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .backg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:14s;
+  }
+  
+  .backg3 {
+    animation-duration:15s;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+  
 /* Estilo para el área más grande que contiene el menú */
 .larger-area {
     position: absolute;
@@ -116,15 +147,15 @@
     position: absolute;
     font-size: 2rem;
     /* Ajusta el tamaño de la fuente */
-    color: #D6FF7F;
+    color: #381269;
     /* Cambia el color según tu diseño */
     margin-top: 40vh;
     margin-left: 65vh;
     font-family: 'Open Sans', sans-serif;
     font-size: 3.5rem;
     text-shadow:
-        4px 2px 0 #30be96e1,
-        -1px -1px 0 #23a17d,
-        1px -1px 0 #0e644c,
-        -1px 1px 0 #043326;
+        4px 2px 0 #8530bee1,
+        -1px -1px 0 #6423a1,
+        1px -1px 0 #000907,
+        -1px 1px 0 #000302;
 }
