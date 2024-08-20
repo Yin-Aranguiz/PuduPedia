@@ -118,8 +118,6 @@
   font-style: italic;
 }
 
-
-
 .loginTab {
   display: flex;
   padding-right: 5px;
@@ -136,6 +134,14 @@
   padding-top: 8px;
   padding-right: 8px;
   font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+
+.loginTab a {
+  padding-top: 8px;
+  padding-right: 8px;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
 }
 
 .logoContainer {
@@ -161,4 +167,9 @@
 }
 .loginTab p {
   color: white;
+}
+
+.backOff {
+  transform: translateY(148px) translateX(-70vh);
+  width: 191.5vh;
 }

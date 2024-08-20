@@ -1,23 +1,23 @@
 import React from 'react';
 import Header from '../LandingPage/Header/Header';
-import Footer from '../LandingPage/Footer/Footer';
-import Gallery from './Carousel/Gallery';
-import Middle from './Middle/Middle';
-import NavBar from '../LandingPage/Navbar/NavBar'
 import InfoGame from './InfoGame/InfoGame';
-import '../LandingPage/Footer/Footer.css'
+import '../LandingPage/Footer/Footer.css';
+import Carousel from './Carousel/Carousel';
+import './GamePage.css';
+
 
 
 const GamePage = () => {
-   
+
     return (
-        <div>
+        <div className='allGame'>
+            <div class="backg"></div>
+            <div class="backg backg2"></div>
+            <div class="backg backg3"></div>
             <Header />
-            <Middle />
-            <NavBar/>
-            <Gallery />
-            <InfoGame/>
-            <Footer className="transformed"/>
+            <h1 className='gameTitle'>JUEGOS</h1>
+            <Carousel />
+            <InfoGame />
         </div>
     );
 }

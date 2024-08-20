@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+<<<<<<< HEAD
 * {
 	box-sizing: border-box;
 	font-family: "Open sans", sans-serif;
 }
 body {
   /* background: linear-gradient(10deg, rgb(74, 129, 83), rgb(35, 70, 57)); */
+=======
+.login * {
+	box-sizing: border-box;
+	font-family: "Open sans", sans-serif;
+}
+.login { 
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	background-image: url(park.jpg);
 	object-fit: cover;
 	display: flex;
@@ -12,11 +20,19 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Open sans', sans-serif;
+<<<<<<< HEAD
 	height: 100vh;
 	margin: -20px 0 50px;
 }
 
 h1 {
+=======
+	height: 110vh;
+	margin: -20px 0 0px;
+}
+
+.login h1 {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	font-weight: bold;
 	margin: 0;
 	color: #ffffff;
@@ -28,6 +44,7 @@ h1 {
 	text-shadow: 0 5px 10px rgb(8, 39, 23);
 }
 
+<<<<<<< HEAD
 h2 {
 	text-align: center;
 }
@@ -45,16 +62,31 @@ span {
 }
 
 a {
+=======
+.login span {
+	font-size: 12px;
+}
+
+.login a {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	color: #ffffff;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
+<<<<<<< HEAD
 a:hover {
 	text-decoration: underline;
 }
 
 button {
+=======
+.login a:hover {
+	text-decoration: underline;
+}
+
+.login button {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	border-radius: 20px;
 	border: 1px solid rgb(21, 75, 48);
 	background-color: rgb(21, 75, 48);
@@ -67,6 +99,7 @@ button {
 	transition: transform 80ms ease-in;
 }
 
+<<<<<<< HEAD
 button:active {
 	transform: scale(0.95);
 }
@@ -76,17 +109,36 @@ button:focus {
 }
 
 button.ghost {
+=======
+.login button:active {
+	transform: scale(0.95);
+}
+
+.login button:focus {
+	outline: none;
+}
+
+.login button.ghost {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	background-color: transparent;
 	border-color: #FFFFFF;
 	box-shadow: 0 5px 10px rgb(8, 39, 23);
 }
+<<<<<<< HEAD
 button:hover {
+=======
+.login button:hover {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	cursor: pointer;
 	background-color: rgb(37, 133, 85);
 	border: 1px solid rgb(37, 133, 85);
 	transition: 0.3s ease;
 }
+<<<<<<< HEAD
 .signUp, .signIn {
+=======
+.signUp, .signIn, .ghost {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	border-radius: 20px;
 	border: 1px solid rgb(21, 75, 48);
 	background-color: rgb(21, 75, 48);
@@ -114,7 +166,11 @@ button:hover {
 	border-color: #FFFFFF;
 }
 
+<<<<<<< HEAD
 form {
+=======
+.login form {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	background-image: url(anagallis\ arvensishue.jpg);
 	background-color: #70c4a1;
 	display: flex;
@@ -126,7 +182,11 @@ form {
 	text-align: center;
 }
 
+<<<<<<< HEAD
 input {
+=======
+.login input {
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	background-color: #ffffff;
 	border: none;
 	padding: 12px 15px;
@@ -168,7 +228,11 @@ input {
 .signUpContainer {
 	left: 0;
 	width: 50%;
+<<<<<<< HEAD
 	opacity: 0;
+=======
+	opacity: 0; 
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 	z-index: 1;
 }
 
@@ -256,8 +320,12 @@ input {
 
 .container.rightPanelActive .overlayRight {
 	transform: translateX(20%);
+<<<<<<< HEAD
 }
 
 
+=======
+} 
+>>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 
 
