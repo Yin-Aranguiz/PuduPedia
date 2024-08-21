@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.sidebar {
+  position: absolute;
+  top: 60px;
+  left: -15vw;
+  height: 470px;
+  width: 150px;
+  margin-top: 140px;
+  transition: left 0.3s ease-in-out;
+  background: linear-gradient(105deg, rgb(64,116,255,0.7), rgb(48,189,149, 0.7));
+  z-index: 5;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+.sidebarToggle {
+  position: absolute;
+  top: 20%;
+  right: 1285px;
+  height: 50px;
+  width: 50px;
+  z-index: 6;
+  margin-top: 140px;
+  transition: right 0.3s ease-in-out;
+  background: linear-gradient(105deg, rgb(64,116,255,0.8), rgb(48,189,149, 0.8));
+  border: none;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.sidebar.open {
+  left: 0;
+  width: 150px;
+  transition: left 0.3s ease-in-out;
+}
+.sidebar.open ~ .sidebarToggle {
+  right: 1127px; /* Button moves to stay in line with the sidebar */
+  transition: right 0.3s ease-in-out;
+}
+.navBarItems {
+  display: flex;
+  flex-direction: column; /* Apila los elementos verticalmente */
+  cursor: pointer;
+  margin-top: 50px;
+  transition: left 0.3s ease-in-out;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navBarItems a {
+  margin-bottom: 40px; /* Espacio entre los enlaces */ 
+  margin-left: 60px;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: white; 
+  transition: left 0.3s ease-in-out
+}
+.navBarItems a:hover{
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+  transform-origin: left;
+}
+.navBarItems.open {
+  left: 15vw;
+}
