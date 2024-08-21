@@ -1,4 +1,3 @@
-
 import React from 'react';
 // import Memopudu from './Components/GamePage/MemoPudu/Memopudu';
 // import InfoMap from './Components/MapPage/InfoMap';
@@ -13,6 +12,7 @@ import AboutUs from './Components/AboutUsPage/AboutUs';
 import SignLog from './Components/LoginPage/signlog/SignLog';
 // import AppGallery from './Components/GalleryPage/AppGallery';
 import ParksPage from './Components/ParksPage/ParksPage';
+// import ApiRequest from './Components/NoticesPage/ApiRequest';
 
 
 function App() {
@@ -30,10 +30,10 @@ function App() {
                <Route path="/signlog" element={<SignLog />} />
            </Routes>
         </Router>
-        
-        
-        
-       
+
+        // <ApiRequest />
+
+
     );
 }
 
