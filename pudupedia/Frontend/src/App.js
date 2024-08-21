@@ -1,18 +1,12 @@
 import React from 'react';
-// import Memopudu from './Components/GamePage/MemoPudu/Memopudu';
-// import InfoMap from './Components/MapPage/InfoMap';
-import Bubbles from './Components/MapPage/Bubbles';
-// import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
+import Bubbles from './components/MapPage/Bubbles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './Components/LandingPage/LandingPage';
-import GamePage from './Components/GamePage/GamePage';
-// import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
-import NavBar from './Components/LandingPage/Navbar/NavBar';
-import AboutUs from './Components/AboutUsPage/AboutUs';
-import SignLog from './Components/LoginPage/signlog/SignLog';
-// import AppGallery from './Components/GalleryPage/AppGallery';
-import ParksPage from './Components/ParksPage/ParksPage';
-// import ApiRequest from './Components/NoticesPage/ApiRequest';
+import LandingPage from './components/LandingPage/LandingPage';
+import GamePage from './components/GamePage/GamePage';
+import NavBar from './components/LandingPage/Navbar/NavBar';
+import AboutUs from './components/AboutUsPage/AboutUs';
+import SignLog from './components/LoginPage/signlog/SignLog';
+import ParksPage from './components/ParksPage/ParksPage';
 
 
 function App() {
