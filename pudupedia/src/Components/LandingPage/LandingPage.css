@@ -52,11 +52,11 @@
   width: 15px; /* Tamaño del punto */
   height: 15px;
   border-radius: 50%; /* Hace el punto redondo */
-  background-color: rgb(84, 83, 83); /* Color del punto */
+  background-color: rgba(0, 0, 0, 0.5); /* Color del punto */
   cursor: pointer; /* Cambia el cursor cuando se pasa sobre el punto */
   transition: background-color 0.3s; /* Transición suave para el color */
 }
 
 .dot.active {
-  background-color: rgb(255, 252, 252); /* Color del punto cuando está activo */
+  background-color: #4074ff; /* Color del punto cuando está activo */
 }

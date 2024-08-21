@@ -14,7 +14,8 @@
 .allItemsNavBar button {
     height: 50px;
     width: 50px;
-    background-color: rgba(48, 47, 47, 0.158);
+    background: linear-gradient(105deg, #4074ff, #30bd95);
+    /*background-color: rgba(48, 47, 47, 0.158);*/
     border-radius: 50%;
 }
 .button-navbar::after {
@@ -25,11 +26,13 @@
 
 .button-navbar:hover{
     cursor: pointer;
-    background-color: rgba(106, 102, 102, 0.308);
+    /*background-color: rgba(106, 102, 102, 0.308);*/
+    background: linear-gradient(105deg, #4074ff, #30bd95);
 }
 .allItemsNavBar.background{
     cursor: pointer;
-    background-color: rgba(1, 4, 2, 0.63);
+    /*background-color: rgba(1, 4, 2, 0.63);*/
+    background: linear-gradient(105deg, #4074ff, #30bd95);
     width: 45vh;
     left: 0;
 }
@@ -59,11 +62,18 @@
     transition: transform 0.5s ease;
     transform-origin: left;
 }
-.circle {
+/*.circle {
   width: 15px;
   height: 15px;
   background-color: rgba(255, 255, 255, 0.318);
   border-radius: 50%;
+  margin-right: 0px;
+  margin-left: -37px;
+  position: absolute;
+}*/
+.circle >img {
+  width: 15px;
+  height: 15px;
   margin-right: 0px;
   margin-left: -37px;
   position: absolute;

@@ -1,72 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-<<<<<<< HEAD
-* {
-=======
 .AboutUsPage * {
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   color: #fff;
 }
-<<<<<<< HEAD
-.Footer.transformed {
-  position: relative;
-  margin-top: -878px;
-}
-=======
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 .aboutUsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  margin-top: 170px;
-=======
   
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 }
 .whoAreWe {
   margin-right: 10px;
   margin-left: -280px;
   font-size: x-large;
-<<<<<<< HEAD
-  /*background: linear-gradient(to bottom, rgb(22, 13, 32), rgb(22, 173, 166, .1));*/
-  /*background-color: black;*/
-=======
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
   padding-top: 25px;
   padding-left: 50px;
   border-radius: 10px;
   height: 435px;
   width: 700px;
-<<<<<<< HEAD
-=======
   margin-bottom: 130px;
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 }
 .whoAreWe:hover {
   box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
 }
 .misionAndVision {
   margin-right: -300px;
-<<<<<<< HEAD
-=======
   margin-bottom: 130px;
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 }
 .mision {
   padding-bottom: 20px;
   padding: 20px 30px;
   border-radius: 10px;
-<<<<<<< HEAD
-  /*background: linear-gradient(to bottom, rgb(22, 13, 32), rgb(22, 173, 166, .1));*/
-  /*background-color: black;*/
-=======
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
   margin-bottom: 10px;
 }
@@ -74,15 +43,8 @@
   box-shadow: rgb(0, 179, 134) 0.2px 0.5px 3px 3px;
 }
 .vision {
-<<<<<<< HEAD
-  /*background: linear-gradient(to top, rgb(22, 13, 32), rgb(22, 173, 166, .1));*/
   padding: 20px 30px;
   border-radius: 10px;
-  /*background-color: rgba(0, 0, 0, .8);*/
-=======
-  padding: 20px 30px;
-  border-radius: 10px;
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
 }
 .vision:hover {
@@ -104,11 +66,7 @@
 }
 
 .teamTitle {
-<<<<<<< HEAD
-  margin-top: 100px;
-=======
   margin-top: 120px;
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   margin-bottom: 50px;
   display: flex;
   align-items: center;
@@ -116,21 +74,14 @@
 }
 .title {
   font-size: xx-large;
-<<<<<<< HEAD
-=======
   color: #fff;
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 }
 .teamContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-<<<<<<< HEAD
-.Icon {
-=======
 .memberContainer .Icon {
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   width: 150px;
   height: 150px;
   border-radius: 100%;
@@ -141,28 +92,17 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.1));
-<<<<<<< HEAD
-  /*background-color: rgba(0, 0, 0, .4);*/
-=======
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   border-radius: 10px;
   text-align: center;
   width: 240px;
   height: 350px;
   margin: 10px 5px;
   padding-top: 30px;
-<<<<<<< HEAD
-  margin-bottom: 250px;
-}
-.memberContainer:hover {
-  transform: scale(1.03);
-=======
   margin-bottom: 130px;
 }
 .memberContainer:hover {
   transform: scale(1.03);
   transition: transform 0.5s ease;
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   box-shadow: 0.2px -1px 3px 3px rgb(0, 179, 134)
 }
 .name {
@@ -181,11 +121,7 @@
   height: 35px;
   margin-right: 5px;
 }
-<<<<<<< HEAD
-a, .linkName {
-=======
 .links a, .linkName {
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
   color: #fff;
   text-decoration: none;
   display: block;
@@ -202,15 +138,6 @@ a, .linkName {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
-body {
-  margin:0;
-  background-image: url(chucaoGray.jpg);
-  background-size: cover;
-}
-
-=======
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 .bg {
   animation:slide 7s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(21, 122, 63) 50%, rgb(7, 88, 49) 50%);
@@ -232,13 +159,10 @@ body {
   animation-duration:15s;
 }
 
-<<<<<<< HEAD
-=======
 .AboutUsPage {
   margin-bottom: -20vh;
   
 }
->>>>>>> 3f3ef9a7448f5bb5a9910c9564dad9e5a6894226
 
 @keyframes slide {
   0% {
