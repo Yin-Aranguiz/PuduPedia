@@ -66,7 +66,7 @@ const AboutUs = () => {
           </div>
           <div className='memberContainer'>
             <div className='picAndName'>
-              <img src={userIcon} className='Icon'></img>
+              <img src='https://i.imgur.com/jl2c8s6.png' className='Icon'></img>
               <p className='name'>Cristián Venegas</p>
             </div>
             <div className='links'>

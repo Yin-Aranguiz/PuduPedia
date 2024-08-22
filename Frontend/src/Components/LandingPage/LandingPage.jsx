@@ -6,8 +6,8 @@ import NavBar from './Navbar/NavBar';
 import Header from './Header/Header';
 
 // importa las imágenes desde la misma carpeta
-import image1 from './landingpage1.png';
-import image2 from './landingpage2.png';
+import image1 from './landingpage1.jpg';
+import image2 from './landingpage2.jpg';
 import image3 from './landingpage3.jpg';
 import imageTitle from './landingtitle.svg';
 

@@ -247,6 +247,7 @@
   margin-bottom: -10vh; 
 }
 
+
 /* Cambiar la anchura de la barra de desplazamiento */
 ::-webkit-scrollbar {
   width: 10px;

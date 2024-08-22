@@ -30,9 +30,11 @@
 }
 
 .title-image {
-  width: 1000px;
-  height: 500px;
+  width: 1500px;
+  height: 800px;
+  
 }
+
 
 .Navbar {
   position: fixed;

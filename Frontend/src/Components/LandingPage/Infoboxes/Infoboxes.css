@@ -6,9 +6,8 @@
     /* Para distribuir el espacio entre las infoboxes */
     align-items: flex-start;
     /* Para alinear las infoboxes al inicio */
-    gap: 20px;
     /* Espacio entre las infoboxes */
-    padding: 20px;
+    padding: 200px;
     position: absolute;
     margin-top: -50vh;
 
@@ -17,41 +16,41 @@
 .infobox {
     flex: 1;
     /* Para que todas las infoboxes tengan el mismo ancho */
-    max-width: 25%;
+    max-width: 30%;
     /* Ajusta el porcentaje según tus necesidades */
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 40px;
-    background-color: #363535c0;
-    background: linear-gradient(rgba(29, 29, 30, 0.8),
-            rgba(0, 0, 0, 0.4)
-        );
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.107);
     position: relative;
 }
 
 .infobox h2 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
     margin-bottom: 10px;
     margin-left: 20px;
-    color: #333;
-    /* Cambia este valor al color que desees para los títulos */
     padding-left: 20px;
     /* Para espacio entre el texto y la línea */
     position: relative;
     /* Necesario para la pseudo-clase */
-    color: #ffffff
+    text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+    color: #ffffff 
+    
 }
 
 .infobox h2::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 250%;
-    transform: translateY(-50%);
-    width: 2px;
+    top: 76%;
+    transform: translateY(-80%);
+    width: 5px;
     /* Ancho de la línea */
-    height: 450%;
+    height: 70%;
     /* Altura de la línea */
     background-color: #ffffff;
     /* Color de la línea */
@@ -64,6 +63,9 @@
     text-align: justify;
     margin-left: 40px;
     margin-right: 40px;
-    color: #ffffff
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 8px rgba(0, 5, 29, 0.922);
+    color: #ffffff;
         /* color del parrafo */
 }
+
