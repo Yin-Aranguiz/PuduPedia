@@ -220,8 +220,8 @@
 
 .aboutUsBackground {
   position: absolute;
-  background-image: url(https://i.imgur.com/RF4KJ5d.jpeg);
-  background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-image: url(https://caminandesagencia.com/wp-content/uploads/2023/05/IMG_20190914_144512-scaled.jpg);
+  background-size: 110%; /* Ajusta la imagen para cubrir todo el contenedor */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center;
   z-index: -10;
@@ -252,7 +252,7 @@
   width: 10px;
   height: 10px;
 }
-/* Cambiar el color de fondo de la barra de desplazamiento */
+/* Cambiar el color de fondo de la barra de desplazamiento holi c: yey*/
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0); /* Color de la pista (fondo de la barra) */
 }
