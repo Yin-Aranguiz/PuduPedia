@@ -31,28 +31,31 @@
   font-weight: bold;
   padding-bottom: 5px;
 }
+.sidebarToggle:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
 .sidebar.open {
   left: 0;
   width: 150px;
   transition: left 0.3s ease-in-out;
 }
 .sidebar.open ~ .sidebarToggle {
-  right: 1127px; /* Button moves to stay in line with the sidebar */
+  right: 1127px;
   transition: right 0.3s ease-in-out;
 }
 .navBarItems {
   display: flex;
-  flex-direction: column; /* Apila los elementos verticalmente */
+  flex-direction: column;
   cursor: pointer;
   margin-top: 50px;
   transition: left 0.3s ease-in-out;
   font-family: 'Open Sans', sans-serif;
 }
-
 .navBarItems a {
-  margin-bottom: 40px; /* Espacio entre los enlaces */ 
+  margin-bottom: 40px;
   margin-left: 60px;
-  text-decoration: none; /* Quita el subrayado del enlace */
+  text-decoration: none;
   color: white; 
   transition: left 0.3s ease-in-out
 }
@@ -63,4 +66,10 @@
 }
 .navBarItems.open {
   left: 15vw;
+}
+.circle >img {
+  width: 24px;
+  height: 24px;
+  margin-left: -37px;
+  position: absolute;
 }

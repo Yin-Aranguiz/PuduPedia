@@ -1,21 +1,27 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import game from './game.png'
+import home from './home.png'
+import tree from './tree.png'
+import puma from './puma.png'
+import news from './news.png'
+import about from './about.png'
 
 const SideBar = ({ isOpen, scrollPosition }) => {
   const sidebarClass = isOpen ? 'sidebar open' : 'sidebar';
   const sidebarStyle = {
-    top: `${scrollPosition}px`  // Adjusts the sidebar position based on scroll
+    top: `${scrollPosition}px`
   };
 
   return (
     <div className={sidebarClass} style={sidebarStyle}>
       <div className="navBarItems">
-        <Link to="/"><div className="circle"><img src='https://cdn-icons-png.flaticon.com/512/25/25694.png'/></div>Inicio</Link>
-        <Link to="/chile"><div className="circle"><img src='https://static.thenounproject.com/png/3391157-200.png'/></div>Noticias</Link>
-        <Link to="/vida-silvestre"><div className="circle"></div>Vida Silvestre</Link>
-        <Link to="/parques"><div className="circle"></div>Parques</Link>
-        <Link to="/juegos"><div className="circle"></div>Juegos</Link>
-        <Link to="/quienes-somos"><div className="circle"></div>Quienes Somos</Link>
+        <Link to="/"><div className="circle"><img src={home}/></div>Inicio</Link>
+        <Link to="/chile"><div className="circle"><img src={news}/></div>Noticias</Link>
+        <Link to="/vida-silvestre"><div className="circle"><img src={puma}/></div>Vida Silvestre</Link>
+        <Link to="/parques"><div className="circle"><img src={tree}/></div>Parques</Link>
+        <Link to="/juegos"><div className="circle"><img src={game}/></div>Juegos</Link>
+        <Link to="/quienes-somos"><div className="circle"><img src={about}/></div>Quienes Somos</Link>
       </div>
       
     </div>

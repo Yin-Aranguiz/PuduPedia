@@ -24,16 +24,16 @@ export default function Navbar() {
       setScrollPosition(Math.min(window.scrollY, maxScroll));
     };
 
-    // Inicializa el límite al cargar el componente
+    
     updateMaxScroll();
     
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', updateMaxScroll); // Actualiza el límite en caso de cambio de tamaño
+    window.addEventListener('resize', updateMaxScroll); 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', updateMaxScroll);
     };
-  }, [maxScroll]); // Dependencia añadida para actualizar cuando cambie maxScroll
+  }, [maxScroll]); 
 
   const buttonStyle = {
     top: `${scrollPosition}px`,
