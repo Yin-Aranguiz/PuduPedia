@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SignLog.css';
 import Header from '../../LandingPage/Header/Header';
+import { Link } from 'react-router-dom';
 
 const SignAndLog = () => {
 	const [isSignUp, setIsSignUp] = useState(false);
@@ -13,20 +14,60 @@ const SignAndLog = () => {
 		setIsSignUp(false);
 	};
 
-	const [username, setUsername] = useState("");
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirm, setConfirm] = useState("");
+	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [confirm, setConfirm] = useState('');
 
 
-	const handleSubmit = (e) => { 
+	const handleSubmitRegister = async (e) => {
 		e.preventDefault();
-		console.log(
-			username,
-			email,
-			password,
-			confirm,
-		);
+		try{
+			const response = await fetch('http://localhost:3001/user', {
+				method: 'POST',
+				headers: {
+					'Content-Type' : 'application/json'
+				},
+				body: JSON.stringify({ username, email, password })
+			});
+			// usar useHistory para redirigir a la landingPage luego del registro
+			if (response.ok){
+				const data = await response.json();
+				alert('Usuario registrado con éxito. ¡Bienvenido a pudupedia!', `Datos: ${data}`);
+			} else{
+				const errorData = await response.json();
+				alert('Error al crear al usuario', `Error: ${errorData.error}`)
+			}
+
+		}catch(error){
+			console.error('Error al crear al usuario', error);
+		}
+	};
+
+	const handleSubmitLogin = async (e) => {
+		e.preventDefault();
+
+		try{
+			const response = await fetch('http://localhost:3001/user/login', {
+				method: 'POST',
+				headers: {
+					'Content-Type' : 'application/json'
+				},
+				body: JSON.stringify({ username, email, password })
+			});
+
+			if (response.ok){
+				const data = await response.json();
+				alert('Sesión iniciada', `Datos: ${data}`);
+			} else{
+				const errorData = await response.json();
+				alert('Error al ingresar a la cuenta', `Error: ${errorData.error}`)
+			}
+			
+		}catch(error){
+			console.error('Error al iniciar sesión', error);
+		}
+
 	};
 
 	return (
@@ -85,7 +126,7 @@ const SignAndLog = () => {
 							className="signUp"
 							type="submit"
 							value="submit"
-							onClick={(e) => handleSubmit(e)}
+							onClick={(e) => handleSubmitRegister(e)}
 						>Crear Cuenta</button>
 					</form>
 				</div>
@@ -115,12 +156,12 @@ const SignAndLog = () => {
 							placeholder="Contraseña"
 							required
 						/>
-						<a href="#">¿Olvidaste tu Contraseña?</a>
+						<Link to="/forgot-password">¿Olvidaste tu Contraseña?</Link>
 						<button
 							className="signIn"
 							type="submit"
 							value="submit"
-							onClick={(e) => handleSubmit(e)}
+							onClick={(e) => handleSubmitLogin(e)}
 						>Ingresar</button>
 					</form>
 				</div>
