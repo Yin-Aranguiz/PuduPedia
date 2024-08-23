@@ -26,16 +26,16 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  margin-bottom: 10vh;
 }
 .section3:hover{
   box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
 }
 
 .boxStyle {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
+  
   gap: 20px; 
-  grid-template-rows: auto auto; 
+  
 }
 
 .boxStyle h1 {
@@ -46,10 +46,15 @@
 .boxStyle p { 
   text-align: justify;
 }
-  
+
+.boxStyle h3 { 
+  text-align: justify;
+  margin-bottom: auto;
+}
+
 .section1 {
   background-color: rgba(128, 126, 126, 0.212);
-  margin: 0vh 5vh auto 10vh;
+  margin: 0vh 5vh 10vh 10vh;
   border-radius: 10px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.185);
   backdrop-filter: blur(20px);
@@ -71,7 +76,7 @@
 
 .section2 {
   background-color: rgba(128, 126, 126, 0.212);
-  margin: 0vh 10vh auto 5vh;
+  margin: 0vh 10vh 10vh 5vh;
   border-radius: 10px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.185);
   backdrop-filter: blur(20px);

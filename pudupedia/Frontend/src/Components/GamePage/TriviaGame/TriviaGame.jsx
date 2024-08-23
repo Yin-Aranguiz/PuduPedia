@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './TriviaGame.css';
 import imagePudu from './puduTrivia.jpg';
 import Header from '../../LandingPage/Header/Header';
-import Footer from '../../LandingPage/Footer/Footer';
+
 
 import hoverSound from './selectChoiceTrivia.mp3';
 import winSound from './winGameTrivia.mp3';
@@ -219,6 +219,7 @@ const TriviaGame = () => {
     return (
         <div className='TriviaGame'>
             <Header className="color" />
+            <div className='trivia'>
             <h1 className='title'>TRIVIA SOBRE ANIMALES ENDÉMICOS DE CHILE</h1>
             <img src={imagePudu} alt='Pudu' width={200} className='Pudu'></img>
             <button onClick={toggleMusic} className='buttonTrivia'>
@@ -259,7 +260,7 @@ const TriviaGame = () => {
                     <button onClick={StartGame} className='buttonTrivia'>Jugar de nuevo</button>
                 </div>
             )}
-            <Footer className={`transformed2`} />
+           </div>
         </div>
     );
 };
