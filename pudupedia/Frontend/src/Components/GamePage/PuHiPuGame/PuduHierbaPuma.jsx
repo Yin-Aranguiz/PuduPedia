@@ -9,16 +9,15 @@ import drawSound from './empate.mp3';
 import './PuduHierbaPuma.css';
 
 import Header from '../../LandingPage/Header/Header';
-import Footer from '../../LandingPage/Footer/Footer';
 
 const hands = {
     puma: rockImg,
-    hierba: paperImg,
+    'hierba venenosa': paperImg,
     pudu: scissorsImg
 };
 
 const getRandomChoice = () => {
-    const options = ['puma', 'hierba', 'pudu'];
+    const options = ['puma', 'hierba venenosa', 'pudu'];
     return options[Math.floor(Math.random() * options.length)];
 };
 
@@ -28,6 +27,14 @@ const PuduHierbaPuma = () => {
     const [result, setResult] = useState(null);
     const [animating, setAnimating] = useState(false);
     const [gameEnded, setGameEnded] = useState(false);
+
+    useEffect(() => {
+        // Precargar imágenes
+        Object.values(hands).forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
 
     useEffect(() => {
         if (animating) {
@@ -40,7 +47,7 @@ const PuduHierbaPuma = () => {
             const interval = setInterval(() => {
                 index = (index + 1) % 3;
                 setComputerChoice(options[(startIndex + index) % 3]);
-            }, 300);
+            }, 300); 
     
             setTimeout(() => {
                 clearInterval(interval);
@@ -59,10 +66,9 @@ const PuduHierbaPuma = () => {
     
                 setAnimating(false);
                 setGameEnded(true); 
-            }, 2000);
+            }, 2500); 
         }
     }, [animating, userChoice, gameEnded]);
-    
 
     const determineWinner = (userChoice, computerChoice) => {
         if (userChoice === computerChoice) {
@@ -77,6 +83,7 @@ const PuduHierbaPuma = () => {
             return "Perdiste";
         }
     };
+
     const playGame = (choice) => {
         setUserChoice(choice);
         setAnimating(true);
@@ -99,15 +106,15 @@ const PuduHierbaPuma = () => {
             {!animating && result === null ? (
                 <div id="choices">
                     <button className="choice-button" onClick={() => playGame('puma')}>
-                        <img src={hands.puma} alt="Puma" width="100" />
+                        <img className='imageChoice' src={hands.puma} alt="Puma" width="100" />
                         <p>Puma</p>
                     </button>
                     <button className="choice-button" onClick={() => playGame('hierba venenosa')}>
-                        <img src={hands.hierba} alt="Hierba" width="100" />
+                        <img className='imageChoice' src={hands['hierba venenosa']} alt="Hierba venenosa" width="100" />
                         <p>Hierba venenosa</p>
                     </button>
                     <button className="choice-button" onClick={() => playGame('pudu')}>
-                        <img src={hands.pudu} alt="Pudu" width="100" />
+                        <img className='imageChoice' src={hands.pudu} alt="Pudu" width="100" />
                         <p>Pudu</p>
                     </button>
                 </div>
@@ -116,20 +123,20 @@ const PuduHierbaPuma = () => {
                     {animating ? (
                         <div id="hands-results">
                             <div id="user-hand">
-                                <img src={hands[userChoice]} width="100" alt="Elección del Usuario" />
+                                <img className='imageChoice' src={hands[userChoice]} width="100" alt="Elección del Usuario" />
                             </div>
                             <div id="computer-hand">
-                                <img src={hands[computerChoice]} width="100" alt="Elección de la Computadora" />
+                                <img className='imageChoice' src={hands[computerChoice]} width="100" alt="Elección de la Computadora" />
                             </div>
                         </div>
                     ) : (
                         <div id="result-container">
                             <div id="hands-results">
                                 <div id="user-hand">
-                                    <img src={hands[userChoice]} width="100" alt="Elección del Usuario" />
+                                    <img className='imageChoice' src={hands[userChoice]} width="100" alt="Elección del Usuario" />
                                 </div>
                                 <div id="computer-hand">
-                                    <img src={hands[computerChoice]} width="100" alt="Elección de la Computadora" />
+                                    <img className='imageChoice' src={hands[computerChoice]} width="100" alt="Elección de la Computadora" />
                                 </div>
                             </div>
                             <div id="result-text">
@@ -146,7 +153,6 @@ const PuduHierbaPuma = () => {
                     )}
                 </div>
             )}
-            <Footer className={'transformed'}/>
         </div>
     );
 };

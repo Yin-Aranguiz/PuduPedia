@@ -1,18 +1,7 @@
-
-/* Asegúrate de que el body tenga un height de 100vh para centrar el contenido verticalmente */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    margin-top: 20vh;
-}
-
 /* Configura el contenedor principal para usar flexbox y centrar el contenido */
 #game-container {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center; /* Centra horizontalmente el contenido */
     text-align: center;
@@ -22,6 +11,9 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px;
     width: 800px; /* Fixed width to prevent resizing */
+    margin-top: 20vh;
+    font-family: Arial, sans-serif;
+    margin-left: 40vh;
 }
 
 .choice-button {
@@ -32,12 +24,12 @@ body {
     background-color: #021628;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10%;
     text-align: center; /* Center content inside button */
 }
 
 .choice-button:hover {
-    background-color: #1662b9;
+    background-color: #0692c9;
 }
 
 #results {
@@ -101,11 +93,12 @@ body {
 }
 
 #play-again:hover {
-    background-color: #1657b9; /* Change color on hover */
+    background-color: #10ae99; /* Change color on hover */
 }
 
-img {
-    display: block; /* Elimina el espacio adicional que puede causar el texto alternativo */
+.imageChoice {
+    /* /* display: block;  */
+    /* Elimina el espacio adicional que puede causar el texto alternativo */ 
     width: 200px;
     height: 200px;
     border-radius: 10px;

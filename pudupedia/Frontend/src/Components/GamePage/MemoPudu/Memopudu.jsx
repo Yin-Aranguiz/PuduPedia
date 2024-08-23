@@ -15,7 +15,7 @@ import img12Example from './bosque.jpg';
 import img13Example from './chincol.jpg';
 import img14Example from './pudu.jpg';
 import img15Example from './puma.jpg';
-import musicGame from './musiquitaPunshi.MP3';
+import musicGame from './memoPuduMusic.mp3';
 
 const Memopudu = () => {
     const [time, setTime] = useState(60);
@@ -92,6 +92,7 @@ const Memopudu = () => {
     // Función para reconocer si el audio está corriendo al cargar la página o no
     useEffect(() => {
         if (audioRef.current) {
+            audioRef.current.loop = true; // Activar el bucle infinito
             audioRef.current.play().catch(error => {
                 console.error("Error playing audio:", error);
             });
@@ -155,14 +156,6 @@ const Memopudu = () => {
     const showResult = (state) => {
         const result = document.getElementById('resultado');
         switch (state) {
-            case 'inicio':
-                result.classList.remove('hidden');
-                result.textContent = '¡COMIENZA EL JUEGO!';
-                setLockBoard(false);
-                setTimeout(() => {
-                    result.classList.add('hidden');
-                }, 500);
-                break;
             case 'fin-bueno':
                 setLockBoard(true);
                 clearInterval(intervalRef.current);
@@ -193,52 +186,67 @@ const Memopudu = () => {
         const result = document.getElementById('resultado');
         result.classList.add('animacionWin');
     };
+
     // Función que maneja lo que sucede al hacer click en una casilla
-    const handleCardClick = (e) => {
-        if (lockBoard || !gameStarted) return;
+const handleCardClick = (e) => {
+    if (lockBoard || !gameStarted) return;
 
-        const card = e.currentTarget;
-        const cardImage = card.querySelector('img');
+    const card = e.currentTarget;
+    const cardImage = card.querySelector('img');
 
-        if (card === firstCard || card.classList.contains('matched')) return;
+    // Prevenir que se seleccione la misma carta o una que ya está emparejada
+    if (card === firstCard || card.classList.contains('matched')) return;
+   
+    cardImage.classList.remove('hidden');
+    card.classList.add('flipped');
 
-        cardImage.classList.remove('hidden');
-        card.classList.add('flipped');
 
-        if (!firstCard) {
-            setFirstCard(card);
-        } else {
-            const secondCard = card;
+    if (!firstCard) {
+        setFirstCard(card); // Selecciona la primera carta
+    } else {
+        const secondCard = card;
 
-            if (firstCard.dataset.animal === secondCard.dataset.animal) {
-                firstCard.classList.add('matched');
-                secondCard.classList.add('matched');
-                setMatchedCards(prev => [...prev, firstCard, secondCard]);
-                resetCards();
+        if (firstCard.dataset.animal === secondCard.dataset.animal) {
+            // Si las cartas coinciden
+            firstCard.classList.add('matched');
+            secondCard.classList.add('matched');
+            setMatchedCards(prev => [...prev, firstCard, secondCard]);
 
-                if (matchedCards.length + 2 === actualDifficulty) {
-                    setTimeout(() => {
-                        showResult('fin-bueno');
-                        animationWin();
-                        setLockBoard(true);
-                    }, 300);
-                }
-            } else {
+            resetCards();
+            setLockBoard(false); // Desbloquea el tablero después de encontrar un par
+
+            if (matchedCards.length + 2 === actualDifficulty) {
                 setTimeout(() => {
-                    firstCard.classList.remove('flipped');
-                    secondCard.classList.remove('flipped');
-                    firstCard.querySelector('img').classList.add('hidden');
-                    secondCard.querySelector('img').classList.add('hidden');
-                    resetCards();
+                    showResult('fin-bueno');
+                    animationWin();
                     setLockBoard(false);
-                }, 600);
+                }, 300);
             }
+        } else {
+            // Si las cartas no coinciden, se ocultan
+            setTimeout(() => {
+                firstCard.classList.remove('flipped');
+                secondCard.classList.remove('flipped');
+                firstCard.querySelector('img').classList.add('hidden');
+                secondCard.querySelector('img').classList.add('hidden');
+                resetCards();
+                setLockBoard(false); // Desbloquea el tablero después de ocultar las cartas
+            }, 500); // Tiempo para que el jugador vea las cartas antes de ocultarlas
+        
         }
-    };
+    }
+
+};
+
     // Función para resetear las casillas a su posición original (no mostrar imágenes)
     const resetCards = () => {
         setFirstCard(null);
         setLockBoard(false);
+        // No ocultar las cartas emparejadas
+        document.querySelectorAll('.card:not(.matched)').forEach(card => {
+            card.classList.remove('flipped');
+            card.querySelector('img').classList.add('hidden');
+        });
     };
     // Función para manejar los botones de dificultad
     const handleDifficultyClick = (difficulty) => {
@@ -261,7 +269,7 @@ const Memopudu = () => {
         setMatchedCards([]);
         document.getElementById('resultado').textContent = '';
         document.getElementById('resultado').classList.add('hidden');
-
+    
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.classList.remove('flipped', 'matched');
@@ -273,6 +281,7 @@ const Memopudu = () => {
     };
     // Función para comenzar el juego
     const startGame = () => {
+        cancelGame();
         console.log('Starting game...');
         if (animalImages.length === 0) {
             console.log('No animal images available.');
@@ -281,7 +290,7 @@ const Memopudu = () => {
         console.log('Animal images available:', animalImages);
         setGameStarted(true);
         startCounter();
-        showResult('inicio');
+        
         setLockBoard(false);
         resetCards();
     };
@@ -327,7 +336,7 @@ const Memopudu = () => {
                     <button onClick={() => handleDifficultyClick(24)}>Difícil</button>
                 </div>
                 <button onClick={startGame} disabled={gameStarted}>Iniciar Juego</button>
-                <button onClick={cancelGame}>Cancelar Juego</button>
+                <button className='cancel' onClick={cancelGame}>Cancelar Juego</button>
             </div>
             <div className={`board ${actualDifficulty === 12 ? 'easy' : actualDifficulty === 18 ? 'medium' : 'hard'}`} ref={tableroRef}>
                 {animalImages.map((animal, index) => (
