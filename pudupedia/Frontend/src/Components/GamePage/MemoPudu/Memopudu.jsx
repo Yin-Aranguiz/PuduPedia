@@ -205,7 +205,6 @@ const handleCardClick = (e) => {
         setFirstCard(card); // Selecciona la primera carta
     } else {
         const secondCard = card;
-        setLockBoard(true); // Bloquea el tablero al seleccionar la segunda carta
 
         if (firstCard.dataset.animal === secondCard.dataset.animal) {
             // Si las cartas coinciden
@@ -243,6 +242,11 @@ const handleCardClick = (e) => {
     const resetCards = () => {
         setFirstCard(null);
         setLockBoard(false);
+        // No ocultar las cartas emparejadas
+        document.querySelectorAll('.card:not(.matched)').forEach(card => {
+            card.classList.remove('flipped');
+            card.querySelector('img').classList.add('hidden');
+        });
     };
     // Función para manejar los botones de dificultad
     const handleDifficultyClick = (difficulty) => {
@@ -265,7 +269,7 @@ const handleCardClick = (e) => {
         setMatchedCards([]);
         document.getElementById('resultado').textContent = '';
         document.getElementById('resultado').classList.add('hidden');
-
+    
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             card.classList.remove('flipped', 'matched');
@@ -277,6 +281,7 @@ const handleCardClick = (e) => {
     };
     // Función para comenzar el juego
     const startGame = () => {
+        cancelGame();
         console.log('Starting game...');
         if (animalImages.length === 0) {
             console.log('No animal images available.');
@@ -331,7 +336,7 @@ const handleCardClick = (e) => {
                     <button onClick={() => handleDifficultyClick(24)}>Difícil</button>
                 </div>
                 <button onClick={startGame} disabled={gameStarted}>Iniciar Juego</button>
-                <button onClick={cancelGame}>Cancelar Juego</button>
+                <button className='cancel' onClick={cancelGame}>Cancelar Juego</button>
             </div>
             <div className={`board ${actualDifficulty === 12 ? 'easy' : actualDifficulty === 18 ? 'medium' : 'hard'}`} ref={tableroRef}>
                 {animalImages.map((animal, index) => (

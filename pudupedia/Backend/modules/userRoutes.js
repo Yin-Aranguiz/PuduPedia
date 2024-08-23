@@ -12,6 +12,7 @@ router.post('/login', loginUser);
 router.post('/forgot-password', forgotPassword);
 
 // // Ruta para restablecer la contraseña usando el token:
+// :token para capturar un parámetro dinámico en la URL
 router.post('/reset-password/:token', resetPassword);
 
 module.exports = router;

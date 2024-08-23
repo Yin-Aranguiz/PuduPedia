@@ -11,10 +11,17 @@ const ResetPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (password.length < 8) {
+            setError('La contraseña debe tener al menos 8 caracteres.');
+            return;
+        }
+
         if (password !== confirmPassword) {
             setError('Las contraseñas no coinciden.');
             return;
         }
+
         try {
             const response = await fetch(`http://localhost:3001/reset-password/${token}`, {
                 method: 'POST',
@@ -27,7 +34,7 @@ const ResetPassword = () => {
             if (response.ok) {
                 setSuccess(true);
                 setError('');
-                // Redirige a la landingPage
+                // Redirige a la página de inicio
                 navigate('/');
             } else {
                 const errorData = await response.json();
@@ -51,6 +58,7 @@ const ResetPassword = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    minLength="8"
                 />
                 <input
                     type="password"
@@ -58,6 +66,7 @@ const ResetPassword = () => {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
+                    minLength="8"
                 />
                 <button type="submit">Restablecer Contraseña</button>
             </form>

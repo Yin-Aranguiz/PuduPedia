@@ -2,10 +2,10 @@ const pool = require('../server'); // Conexión a la base de datos de server.js
 
 // función addUser para añadir el usuario a la base de datos, 
 const addUser = async (user) => {
-    const { email, user_password, username } = user;
+    const { email, password, username } = user;
     // Realizar la consulta
-    const query = 'INSERT INTO users (email, user_password, username) VALUES ($1, $2, $3) RETURNING *';
-    const values = [email, user_password, username];
+    const query = 'INSERT INTO users (email, password, username) VALUES ($1, $2, $3) RETURNING *';
+    const values = [email, password, username];
     // Ejecutar la consulta
     const result = await pool.query(query, values);
     return result.rows[0];
@@ -27,18 +27,38 @@ const updateUser = async (user) => {
     return result.rows[0];
 };
 
+// Función para eliminar un usuario de la base de datos por su ID
+const deletedUser = async (userId) => {
+    const client = await pool.connect();
+    try {
+        // Comienza una transacción
+        await client.query('BEGIN');
 
-// función deleteUserById para borrar al usuario de la base de datos
-// Realizar la consulta para eliminar el usuario basado en el ID: DELETE FROM users WHERE id = $1
-// Ejecutar la consulta
-// Manejar errores
-// exportar la función
+        // Elimina el usuario de la tabla `users` usando el ID proporcionado
+        const deleteQuery = 'DELETE FROM users WHERE id = $1 RETURNING *';
+        const result = await client.query(deleteQuery, [userId]);
 
+        // Verifica si el usuario fue eliminado
+        if (result.rowCount === 0) {
+            throw new Error('Usuario no encontrado');
+        }
 
+        // Confirma la transacción
+        await client.query('COMMIT');
+        return result.rows[0]; // Devuelve el usuario eliminado 
+    } catch (error) {
+        // Revierte la transacción en caso de error
+        await client.query('ROLLBACK');
+        throw error;
+    } finally {
+        client.release();
+    }
+};
 
 
 module.exports = {
     addUser,
     findUser,
-    updateUser
+    updateUser,
+    deletedUser
 };

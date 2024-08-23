@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
-const { addUser, findUser, updateUser } = require('../db/userModel');
+const { addUser, findUser, updateUser, deletedUser } = require('../db/userModel');
 
 // Controlador para registro de usuario
 const registerUser = async (req, res) => {
@@ -46,7 +46,8 @@ const loginUser = async (req, res) => {
             return res.status(403).send('Credenciales inválidas');
         }
 
-        // Genera el token de acceso
+        // Genera el token de acceso, 
+        // El servidor verifica el token cuando se recibe en futuras solicitudes mediante la clave secreta (JWT_SECRET).
         const accessToken = jwt.sign(
             { username: user.username },
             process.env.JWT_SECRET || 'default_secret_key',
@@ -111,7 +112,7 @@ const resetPassword = async (req, res) => {
     const { password } = req.body;
 
     try {
-        // Verifica el token usando JWT. Decodifica el token y obtiene el email del payload.
+        // Verifica el token usando JWT. Decodifica el token y obtiene el email 
         const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret_key');
 
         // Busca al usuario en la base de datos usando el email obtenido del token decodificado.
@@ -144,24 +145,51 @@ const resetPassword = async (req, res) => {
 };
 
 // Controlador para eliminar cuenta de usuario
-    // importar la función para eliminar al usuario de la base de datos
-        // Verifica el token de autenticación del usuario
-        
-        // Obtiene el ID del usuario de la solicitud
-        
-        // Busca el usuario en la base de datos
-        
+const deleteUser = async (req, res) => {
+    // Verifica el token de autenticación del usuario
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Token de autenticación no proporcionado.' });
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    try {
+        // Decodifica el token para obtener el ID del usuario
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret_key');
+        const userId = decoded.id;
+
+        // Busca el usuario en la base de datos usando el ID obtenido del token
+        const user = await findUserById(userId);
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado.' });
+        }
+
         // Elimina el usuario de la base de datos
-        
+        await deletedUser(userId);
+
         // Responde con un mensaje de éxito
-       
-        // Maneja errores del servidor (try catch)
+        res.status(200).json({ message: 'Cuenta de usuario eliminada con éxito.' });
+    } catch (error) {
+        // Maneja errores del servidor
+        console.error('Error al eliminar cuenta:', error);
+        res.status(500).json({ message: 'Error en el servidor al intentar eliminar la cuenta.' });
+    }
+};
 
-
+const handleLogout = () => {
+    // Elimina el token de localStorage
+    localStorage.removeItem('accessToken');
+    // Redirige al usuario a la página de login
+    window.location.href = '/login'; 
+    res.status(200).send('Cierre de sesión exitoso');
+};
 
 module.exports = {
     registerUser,
     loginUser,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    deleteUser,
+    handleLogout
 };

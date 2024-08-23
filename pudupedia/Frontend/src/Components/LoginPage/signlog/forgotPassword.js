@@ -5,10 +5,13 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+
         try {
             const response = await fetch('http://localhost:3001/forgot-password', {
                 method: 'POST',
@@ -21,7 +24,7 @@ const ForgotPassword = () => {
             if (response.ok) {
                 setSuccess(true);
                 setError('');
-                navigate('/check-your-email'); // Redirige a ResetPage
+                navigate('/check-your-email'); // Redirige a la página de verificación ResetPage
             } else {
                 const errorData = await response.json();
                 setSuccess(false);
@@ -31,6 +34,8 @@ const ForgotPassword = () => {
             console.error('Error:', error);
             setSuccess(false);
             setError('Error en el servidor. Intenta nuevamente.');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -38,14 +43,18 @@ const ForgotPassword = () => {
         <div>
             <h2>Recuperar Contraseña</h2>
             <form onSubmit={handleSubmit}>
+                <label htmlFor="email">Correo Electrónico:</label>
                 <input
+                    id="email"
                     type="email"
                     placeholder="Correo Electrónico"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <button type="submit">Enviar Correo de Recuperación</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? 'Enviando...' : 'Enviar Correo de Recuperación'}
+                </button>
             </form>
             {success && <p>Correo de recuperación enviado. Por favor revisa tu correo.</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}

@@ -23,8 +23,13 @@ const SignAndLog = () => {
 	const handleSubmitRegister = async (e) => {
 		e.preventDefault();
 	
-		if (!username || !email || !password) {
+		if (!username || !email || !password || !confirm) {
 			alert('Por favor, completa todos los campos antes de continuar.');
+			return;
+		}
+
+		if (password !== confirm) {
+			alert('Las contraseñas no coinciden.');
 			return;
 		}
 	
@@ -32,14 +37,21 @@ const SignAndLog = () => {
 			const response = await fetch('http://localhost:3001/user', {
 				method: 'POST',
 				headers: {
-					'Content-Type': 'application/json'
+					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ username, email, password })
+				body: JSON.stringify({ username, email, password }),
 			});
 	
 			if (response.ok) {
 				const data = await response.json();
-				alert(`Usuario registrado con éxito. ¡Bienvenido a pudupedia!\nDatos: ${JSON.stringify(data)}`);
+	
+				// Almacena el token en localStorage
+				localStorage.setItem('accessToken', data.accessToken);
+	
+				alert(`Usuario registrado con éxito. ¡Bienvenido a Pudupedia!\nDatos: ${JSON.stringify(data)}`);
+	
+				// Redirige al usuario a la página de inicio
+				navigate('/'); 
 			} else {
 				const errorData = await response.json();
 				alert(`Error al crear el usuario: ${errorData.error}`);
@@ -53,7 +65,6 @@ const SignAndLog = () => {
 
 	const handleSubmitLogin = async (e) => {
 		e.preventDefault();
-		const navigate = useNavigate();
 	
 		if (!username || !password) {
 			alert('Por favor, ingresa tu nombre de usuario y contraseña.');
@@ -71,6 +82,7 @@ const SignAndLog = () => {
 	
 			if (response.ok) {
 				const data = await response.json();
+				localStorage.setItem('accessToken', data.accessToken);
 				alert('Sesión iniciada con éxito. ¡Bienvenido de nuevo!');
 				navigate('/'); // Redirige a la landingPage
 			} else {
