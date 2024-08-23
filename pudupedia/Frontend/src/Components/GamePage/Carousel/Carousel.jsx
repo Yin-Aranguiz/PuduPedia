@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import './Carousel.scss';
+import './Carousel.css';
 
 const Application = () => {
     const [items] = useState([
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page1' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page2' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page3' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page4' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page5' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page6' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page7' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page8' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: 'https://example.com/page9' }
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/trivia' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/memopudu' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/puduGame' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/trivia' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/memopudu' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/puduGame' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/trivia' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/memopudu' },
+        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/puduGame' }
     ]);
     const [active, setActive] = useState(0);
     const [direction, setDirection] = useState('');

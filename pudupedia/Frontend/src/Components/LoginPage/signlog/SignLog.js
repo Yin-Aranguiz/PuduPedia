@@ -5,6 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const SignAndLog = () => {
 	const [isSignUp, setIsSignUp] = useState(false);
+	const navigate = useNavigate(); // Definir useNavigate
 
 	const handleSignUpClick = () => {
 		setIsSignUp(true);
@@ -18,7 +19,6 @@ const SignAndLog = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirm, setConfirm] = useState('');
-
 
 	const handleSubmitRegister = async (e) => {
 		e.preventDefault();
@@ -44,14 +44,9 @@ const SignAndLog = () => {
 	
 			if (response.ok) {
 				const data = await response.json();
-	
-				// Almacena el token en localStorage
 				localStorage.setItem('accessToken', data.accessToken);
-	
 				alert(`Usuario registrado con éxito. ¡Bienvenido a Pudupedia!\nDatos: ${JSON.stringify(data)}`);
-	
-				// Redirige al usuario a la página de inicio
-				navigate('/'); 
+				navigate('/'); // Redirige al usuario a la página de inicio
 			} else {
 				const errorData = await response.json();
 				alert(`Error al crear el usuario: ${errorData.error}`);
@@ -84,7 +79,7 @@ const SignAndLog = () => {
 				const data = await response.json();
 				localStorage.setItem('accessToken', data.accessToken);
 				alert('Sesión iniciada con éxito. ¡Bienvenido de nuevo!');
-				navigate('/'); // Redirige a la landingPage
+				navigate('/'); // Redirige a la página de inicio
 			} else {
 				const errorData = await response.json();
 				alert(`Error al ingresar a la cuenta: ${errorData.error}`);
@@ -101,17 +96,14 @@ const SignAndLog = () => {
 			<Header />
 			<div className={`container ${isSignUp ? 'rightPanelActive' : ''}`}>
 				<div className="formContainer signUpContainer">
-					<form action="#" method='get'>
+					<form onSubmit={handleSubmitRegister}>
 						<h1>Crea una Cuenta</h1>
-						<span></span>
 						<input
 							type="text"
 							name="username"
 							id="username"
 							value={username}
-							onChange={(e) =>
-								setUsername(e.target.value)
-							}
+							onChange={(e) => setUsername(e.target.value)}
 							placeholder="Nombre de Usuario"
 							required
 						/>
@@ -120,9 +112,7 @@ const SignAndLog = () => {
 							name="email"
 							id="email"
 							value={email}
-							onChange={(e) =>
-								setEmail(e.target.value)
-							}
+							onChange={(e) => setEmail(e.target.value)}
 							placeholder="Email"
 							required
 						/>
@@ -131,9 +121,7 @@ const SignAndLog = () => {
 							name="password"
 							id="password"
 							value={password}
-							onChange={(e) =>
-								setPassword(e.target.value)
-							}
+							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Contraseña"
 							required
 						/>
@@ -142,33 +130,23 @@ const SignAndLog = () => {
 							name="confirmPassword"
 							id="confirmPassword"
 							value={confirm}
-							onChange={(e) =>
-								setConfirm(e.target.value)
-							}
+							onChange={(e) => setConfirm(e.target.value)}
 							placeholder="Confirmar Contraseña"
 							required
 						/>
-						<button
-							className="signUp"
-							type="submit"
-							value="submit"
-							onClick={(e) => handleSubmitRegister(e)}
-						>Crear Cuenta</button>
+						<button className="signUp" type="submit">Crear Cuenta</button>
 					</form>
 				</div>
 				<div className="formContainer signInContainer">
-					<form action="#" method='get'>
+					<form onSubmit={handleSubmitLogin}>
 						<h1>Ingresa</h1>
-						<span></span>
 						<input
-							type="email"
-							name="email"
-							id="email"
-							value={email}
-							onChange={(e) =>
-								setEmail(e.target.value)
-							}
-							placeholder="Email"
+							type="text" // Cambiar de email a text si usas nombre de usuario
+							name="username"
+							id="username"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+							placeholder="Nombre de Usuario o Email"
 							required
 						/>
 						<input
@@ -176,19 +154,12 @@ const SignAndLog = () => {
 							name="password"
 							id="password"
 							value={password}
-							onChange={(e) =>
-								setPassword(e.target.value)
-							}
+							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Contraseña"
 							required
 						/>
 						<Link to="/forgot-password">¿Olvidaste tu Contraseña?</Link>
-						<button
-							className="signIn"
-							type="submit"
-							value="submit"
-							onClick={(e) => handleSubmitLogin(e)}
-						>Ingresar</button>
+						<button className="signIn" type="submit">Ingresar</button>
 					</form>
 				</div>
 				<div className="overlayContainer">
