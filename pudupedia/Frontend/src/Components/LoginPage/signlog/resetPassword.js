@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const ResetPassword = () => {
     const { token } = useParams();
-    const navigate = useNavigate(); // Usa navigate para redirigir
+    const navigate = useNavigate(); 
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [success, setSuccess] = useState(false);
@@ -27,7 +27,7 @@ const ResetPassword = () => {
             if (response.ok) {
                 setSuccess(true);
                 setError('');
-                // Redirige a la página de inicio
+                // Redirige a la landingPage
                 navigate('/');
             } else {
                 const errorData = await response.json();

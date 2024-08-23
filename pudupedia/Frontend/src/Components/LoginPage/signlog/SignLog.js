@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SignLog.css';
 import Header from '../../LandingPage/Header/Header';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignAndLog = () => {
 	const [isSignUp, setIsSignUp] = useState(false);
@@ -22,52 +22,66 @@ const SignAndLog = () => {
 
 	const handleSubmitRegister = async (e) => {
 		e.preventDefault();
-		try{
+	
+		if (!username || !email || !password) {
+			alert('Por favor, completa todos los campos antes de continuar.');
+			return;
+		}
+	
+		try {
 			const response = await fetch('http://localhost:3001/user', {
 				method: 'POST',
 				headers: {
-					'Content-Type' : 'application/json'
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({ username, email, password })
 			});
-			// usar useHistory para redirigir a la landingPage luego del registro
-			if (response.ok){
+	
+			if (response.ok) {
 				const data = await response.json();
-				alert('Usuario registrado con éxito. ¡Bienvenido a pudupedia!', `Datos: ${data}`);
-			} else{
+				alert(`Usuario registrado con éxito. ¡Bienvenido a pudupedia!\nDatos: ${JSON.stringify(data)}`);
+			} else {
 				const errorData = await response.json();
-				alert('Error al crear al usuario', `Error: ${errorData.error}`)
+				alert(`Error al crear el usuario: ${errorData.error}`);
 			}
-
-		}catch(error){
-			console.error('Error al crear al usuario', error);
+	
+		} catch (error) {
+			console.error('Error al crear el usuario', error);
+			alert('Hubo un error al intentar crear el usuario. Por favor, intenta de nuevo.');
 		}
 	};
 
 	const handleSubmitLogin = async (e) => {
 		e.preventDefault();
-
-		try{
+		const navigate = useNavigate();
+	
+		if (!username || !password) {
+			alert('Por favor, ingresa tu nombre de usuario y contraseña.');
+			return;
+		}
+	
+		try {
 			const response = await fetch('http://localhost:3001/user/login', {
 				method: 'POST',
 				headers: {
-					'Content-Type' : 'application/json'
+					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({ username, email, password })
+				body: JSON.stringify({ username, password })
 			});
-
-			if (response.ok){
+	
+			if (response.ok) {
 				const data = await response.json();
-				alert('Sesión iniciada', `Datos: ${data}`);
-			} else{
+				alert('Sesión iniciada con éxito. ¡Bienvenido de nuevo!');
+				navigate('/'); // Redirige a la landingPage
+			} else {
 				const errorData = await response.json();
-				alert('Error al ingresar a la cuenta', `Error: ${errorData.error}`)
+				alert(`Error al ingresar a la cuenta: ${errorData.error}`);
 			}
-			
-		}catch(error){
+	
+		} catch (error) {
 			console.error('Error al iniciar sesión', error);
+			alert('Hubo un error al intentar iniciar sesión. Por favor, intenta de nuevo.');
 		}
-
 	};
 
 	return (

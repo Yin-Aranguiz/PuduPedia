@@ -5,7 +5,7 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // Usa navigate en lugar de history
+    const navigate = useNavigate(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ const ForgotPassword = () => {
             if (response.ok) {
                 setSuccess(true);
                 setError('');
-                navigate('/check-your-email'); // Redirige a CheckYourEmail
+                navigate('/check-your-email'); // Redirige a ResetPage
             } else {
                 const errorData = await response.json();
                 setSuccess(false);
