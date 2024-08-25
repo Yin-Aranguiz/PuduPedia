@@ -45,7 +45,7 @@ const SignAndLog = () => {
 			if (response.ok) {
 				const data = await response.json();
 				localStorage.setItem('accessToken', data.accessToken);
-				alert(`Usuario registrado con éxito. ¡Bienvenido a Pudupedia!\nDatos: ${JSON.stringify(data)}`);
+				alert(`Usuario registrado con éxito. ¡Bienvenido a Pudupedia!`);
 				navigate('/'); // Redirige al usuario a la página de inicio
 			} else {
 				const errorData = await response.json();

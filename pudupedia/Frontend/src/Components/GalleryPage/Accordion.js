@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Accordion.css';
 
+// Componente para cada ítem del acordeón
 const AccordionItem = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -22,17 +24,29 @@ const AccordionItem = ({ title, content }) => {
     );
 };
 
-const Accordion = ({ animal }) => {
+// Componente Accordion
+const Accordion = () => {
+    const location = useLocation();
+    const { animal } = location.state || {};
+
+    if (!animal || !animal.name) {
+        return <p>No hay información disponible</p>;
+    }
+
     return (
         <div className="accordion">
-            <div className='titulo'><p>{animal.nombre.toUpperCase()}</p></div>
-            {animal.info.map((item, index) => (
-                <AccordionItem 
-                    key={index}
-                    title={item.title}
-                    content={item.content}
-                />
-            ))}
+            <div className='titulo'><p>{animal.name.toUpperCase()}</p></div>
+            {animal.info.length > 0 ? (
+                animal.info.map((item, index) => (
+                    <AccordionItem 
+                        key={index}
+                        title={item.title}
+                        content={item.content}
+                    />
+                ))
+            ) : (
+                <p>No hay información adicional disponible.</p>
+            )}
         </div>
     );
 };
