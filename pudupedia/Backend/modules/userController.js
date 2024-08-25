@@ -19,11 +19,11 @@ const registerUser = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const user = { username, email, user_password: hashedPassword };
         await addUser(user);
-        res.status(201).send('Usuario creado con éxito');
+        res.status(201).json({ message: 'Usuario creado con éxito' });
 
     } catch (error) {
         console.error('Error al crear el usuario:', error);
-        res.status(500).send('Error al crear el usuario');
+        res.status(500).json({ error: 'Error al crear el usuario' });
     }
 };
 
@@ -31,38 +31,35 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
 
-    // Verifica si se proporcionó el nombre de usuario y la contraseña
     if (!email || !password) {
-        return res.status(400).send('Se requiere usuario y contraseña');
+        return res.status(400).json({ error: 'Se requiere email y contraseña' });
     }
 
     try {
-        // Busca al usuario por nombre de usuario
         const user = await findUser(email);
         if (!user) {
-            return res.status(400).send('No se encuentra el usuario en la base de datos');
+            return res.status(401).json({ error: 'No se encuentra el usuario en la base de datos' });
         }
 
-        // Compara la contraseña proporcionada con la almacenada
         const valid = await bcrypt.compare(password, user.user_password);
         if (!valid) {
-            return res.status(403).send('Credenciales inválidas');
+            return res.status(403).json({ error: 'Credenciales inválidas' });
         }
 
-        // Genera el token de acceso, 
-        // El servidor verifica el token cuando se recibe en futuras solicitudes mediante la clave secreta (JWT_SECRET).
         const accessToken = jwt.sign(
             { email: user.email },
             process.env.JWT_SECRET || 'default_secret_key',
             { expiresIn: '1h' }
         );
+        console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
-        // Devuelve el token de acceso en la respuesta
-        res.json({ accessToken });
+        res.status(200).json({ accessToken });
     } catch (error) {
-        res.status(500).send('Error al iniciar sesión');
+        console.error('Error al iniciar sesión:', error);
+        res.status(500).json({ error: `Error al iniciar sesión: ${error.message}` });
     }
 };
+
 
 // // Controlador para solicitud de recuperación de contraseña
 // const forgotPassword = async (req, res) => {

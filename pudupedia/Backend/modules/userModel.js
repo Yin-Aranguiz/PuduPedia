@@ -13,6 +13,16 @@ const pool = new Pool({
 // Función para añadir el usuario a la base de datos
 const addUser = async (user) => {
     const { email, user_password, username } = user;
+    // Verifica si el nombre de usuario ya existe
+    const checkUserQuery = 'SELECT * FROM users WHERE username = $1';
+    const checkUserValues = [username];
+    
+    const existingUser = await pool.query(checkUserQuery, checkUserValues);
+
+    if (existingUser.rows.length > 0) {
+        throw new Error('El nombre de usuario ya está en uso.');
+    }
+    // Si el nombre de usuario no existe, inserta el nuevo usuario:
     // Realizar la consulta
     const query = 'INSERT INTO users (email, user_password, username) VALUES ($1, $2, $3) RETURNING *';
     const values = [email, user_password, username]; // Usa 'user_password'
@@ -27,7 +37,9 @@ const findUser = async (email) => {
     const query = 'SELECT * FROM users WHERE email = $1';
     // Ejecutar la consulta
     const result = await pool.query(query, [email]);
+    console.log(result.rows)
     return result.rows[0];
+    
 };
 
 // // Función para actualizar los datos del usuario en la base de datos

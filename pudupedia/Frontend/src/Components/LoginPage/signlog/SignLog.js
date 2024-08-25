@@ -50,6 +50,7 @@ const SignAndLog = () => {
 			} else {
 				const errorData = await response.json();
 				alert(`Error al crear el usuario: ${errorData.error}`);
+				console.log(errorData);
 			}
 	
 		} catch (error) {
@@ -61,8 +62,8 @@ const SignAndLog = () => {
 	const handleSubmitLogin = async (e) => {
 		e.preventDefault();
 	
-		if (!username || !password) {
-			alert('Por favor, ingresa tu nombre de usuario y contraseña.');
+		if (!email || !password) {
+			alert('Por favor, ingresa tu email y contraseña.');
 			return;
 		}
 	
@@ -72,19 +73,24 @@ const SignAndLog = () => {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({ username, password })
+				body: JSON.stringify({ email, password })
 			});
 	
-			if (response.ok) {
-				const data = await response.json();
-				localStorage.setItem('accessToken', data.accessToken);
-				alert('Sesión iniciada con éxito. ¡Bienvenido de nuevo!');
-				navigate('/'); // Redirige a la página de inicio
-			} else {
-				const errorData = await response.json();
-				alert(`Error al ingresar a la cuenta: ${errorData.error}`);
-			}
+			const contentType = response.headers.get('Content-Type');
 	
+			if (contentType && contentType.includes('application/json')) {
+				const data = await response.json();
+				if (response.ok) {
+					localStorage.setItem('accessToken', data.accessToken);
+					alert('Sesión iniciada con éxito. ¡Bienvenido de nuevo!');
+					navigate('/'); // Redirige a la página de inicio
+				} else {
+					alert(`Error al ingresar a la cuenta: ${data.error}`);
+				}
+			} else {
+				const text = await response.text(); // Lee la respuesta como texto
+				alert(`Error inesperado: ${text}`);
+			}
 		} catch (error) {
 			console.error('Error al iniciar sesión', error);
 			alert('Hubo un error al intentar iniciar sesión. Por favor, intenta de nuevo.');
@@ -141,12 +147,12 @@ const SignAndLog = () => {
 					<form onSubmit={handleSubmitLogin}>
 						<h1>Ingresa</h1>
 						<input
-							type="text" // Cambiar de email a text si usas nombre de usuario
-							name="username"
-							id="usernameLogin"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-							placeholder="Nombre de Usuario o Email"
+							type="email" 
+							name="email"
+							id="emailLogin"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+							placeholder="Ingresa tu Email"
 							required
 						/>
 						<input

@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 //     removePlantSeen,
 //     addParkVisited,
 //     removeParkVisited
-//   } = require('./db/userModel');
+//   } = require('./modules/userModel'); 
 
 // // Obtener lista de animales
 // app.get('/api/animals', async (req, res) => {
