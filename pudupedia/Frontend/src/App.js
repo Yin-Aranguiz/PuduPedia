@@ -12,7 +12,10 @@ import SignLog from './components/LoginPage/signlog/SignLog';
 import ParksPage from './components/ParksPage/ParksPage';
 import ResetPassword from './components/LoginPage/signlog/resetPassword';
 import ForgotPassword from './components/LoginPage/signlog/forgotPassword';
-import ResetPage from './components/LoginPage/ResetPage';
+import ResetPage from './components/LoginPage/ResetPage/ResetPage';
+import Accordion from './components/GalleryPage/Accordion';
+
+
 
 function App() {
     return (
@@ -31,6 +34,9 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/check-your-email" element={<ResetPage />} />
+            <Route path="/accordion/:animal" element={<Accordion />} />
+            <Route path="/accordion" element={<Accordion />} />
+
         </Routes>
     </Router>
     

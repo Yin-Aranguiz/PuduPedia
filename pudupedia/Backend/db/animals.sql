@@ -36,6 +36,11 @@ VALUES ('Zorro culpeo (Lycalopex culpaeus)', 'Omnívoro', 'Bosques y zonas arbus
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Misti (Ctenomys mendocinus)', 'Herbívoro', 'Zonas rocosas y arbustivas', 'Norte', 'Vivíparo', 'Casi Amenazado');
 
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Zorro Chilla', 'Omnívoro', 'Bosques y matorrales', 'Norte', 'Vivíparo', 'Menos preocupación');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Chinchilla', 'Herbívoro', 'Zonas rocosas y áreas secas', 'Norte', 'Vivíparo', 'En peligro crítico');
 
 -- MACROZONA CENTRO
 
@@ -47,6 +52,12 @@ VALUES ('Cisne de cuello negro', 'Herbívoro', 'Lagos y ríos', 'Centro', 'Ovíp
 
 
 -- MACROZONA CENTRO SUR
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Guiña', 'Carnívoro', 'Bosques y matorrales', 'Centro sur', 'Vivíparo', 'Casi amenazado');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Chungungo', 'Carnívoro', 'Zonas costeras rocosas y estuarios', 'Centro-Sur', 'Ovíparo', 'En peligro');
 
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Zorro de Chile', 'Omnívoro', 'Bosques y matorrales', 'Centro Sur', 'Vivíparo', 'Poco Preocupante');
@@ -78,8 +89,22 @@ VALUES ('Ratón de Bío Bío', 'Omnívoro', 'Bosques y matorrales', 'Centro Sur'
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Zorro de Bío Bío', 'Carnívoro', 'Zonas arbustivas y bosques', 'Centro Sur', 'Vivíparo', 'Casi Amenazado');
 
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Rana del Biobío', 'Insectívora', 'Bosques y riberas de ríos', 'Centro sur', 'Ovíparo', 'En peligro');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Rana del Maule', 'Insectívora', 'Bosques y zonas húmedas', 'Centro sur', 'Ovíparo', 'En peligro');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Colibrí pico curiño', 'Néctar y pequeños insectos', 'Bosques y jardines', 'Centro sur', 'Ovíparo', 'Preocupación menor');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Monito del monte', 'Frugívoro', 'Bosques húmedos y selvas', 'Centro sur', 'Vivíparo', 'En peligro de extinción');
 
 -- MACROZONA SUR
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Zorro Culpeo', 'Carnívoro', 'Bosques, matorrales y zonas abiertas', 'Sur', 'Vivíparo', 'Preocupación menor');
 
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Pudú', 'Hervíboro', 'Bosque', 'Sur', 'Vivíparo', 'Casi Amenazado');
@@ -131,3 +156,12 @@ VALUES ('Zorro de los Andes', 'Omnívoro', 'Bosques y montañas', 'Austral', 'Vi
 
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Ratón de los Andes', 'Omnívoro', 'Bosques y matorrales', 'Austral', 'Vivíparo', 'Vulnerable');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Cóndor Andino', 'Carroñero', 'Montañas y valles altos', 'Norte', 'Ovíparo', 'En peligro crítico');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Guanaco', 'Herbívoro', 'Áreas abiertas y estepas', 'Centro-Sur', 'Ovíparo', 'Preocupación menor');
+
+INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
+VALUES ('Huemul', 'Herbívoro', 'Bosques andinos y subantárticos', 'Sur', 'Ovíparo', 'En peligro');
