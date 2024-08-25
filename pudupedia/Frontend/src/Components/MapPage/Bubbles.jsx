@@ -53,7 +53,7 @@ const Bubbles = () => {
       { id: 25, src: animals.pinguinoMagallanes.image, name: 'Pingüino de Magallanes' }
     ]
   };
-  
+
   const macrozoneImagesFlora = {
     norte: [
       { id: 1, src: ananuca, name: 'Ananuca' },
@@ -125,7 +125,7 @@ const Bubbles = () => {
           image: images[i].src,
           key: `${macrozone}-${i}`,
           animal: {
-            name: animals.name,
+            name: images[i].name,
             info: animals.info
           }
         });
@@ -159,15 +159,16 @@ const Bubbles = () => {
   };
 
   const handleBubbleClick = (bubble) => {
-    console.log('Animal data:', bubble.animal);
-    // Redirige a la página de detalles del acordeón
-    navigate('/accordion', { state: { animal: bubble.animal } });
-  };  
+    navigate('/accordion', {
+      state: { animalName: bubble.animal.name },
+      pathname: `/accordion/${encodeURIComponent(bubble.animal.name)}`
+    });
+  };
 
   return (
     <div className="radial-menu">
       <div className='bubble'>
-        <h1 className="macrozone-name">RUTA ENDÉMICA </h1>
+        <h1 className="macrozone-name">RUTA ENDÉMICA</h1>
         <Map onMacrozoneClick={handleMacrozoneClick} />
         <div className={`larger-area ${visibility ? 'active' : ''}`}>
           {visibility && (
@@ -179,13 +180,13 @@ const Bubbles = () => {
                   style={{
                     left: `${bubble.x}px`,
                     top: `${bubble.y}px`,
-                    animationDelay: `${index * 100}ms`, // Aplica un retardo de 500ms por burbuja
+                    animationDelay: `${index * 100}ms`,
                   }}
                   onClick={() => handleBubbleClick(bubble)}
                 >
                   <img
                     src={bubble.image}
-                    alt={`Imagen ${index + 1}`}
+                    alt={bubble.animal.name} // Usa el nombre del animal para el alt
                     style={{
                       transform: hoveredIndex === index ? 'scale(1.5)' : 'scale(1)',
                       transition: 'transform 0.3s ease-in-out',
@@ -199,9 +200,9 @@ const Bubbles = () => {
             </>
           )}
         </div>
-        <div class="backg"></div>
-        <div class="backg backg2"></div>
-        <div class="backg backg3"></div>
+        <div className="backg"></div>
+        <div className="backg backg2"></div>
+        <div className="backg backg3"></div>
         <Buttons onToggle={toggleFaunaFlora} />
       </div>
       <InfoMap />

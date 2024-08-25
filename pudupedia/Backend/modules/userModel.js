@@ -42,14 +42,18 @@ const findUser = async (email) => {
     
 };
 
-// // Función para actualizar los datos del usuario en la base de datos
-// const updateUser = async (user) => {
-//     const { email, user_password } = user;
-//     const query = 'UPDATE users SET user_password = $1 WHERE email = $2 RETURNING *'; // Usa 'user_password'
-//     const values = [user_password, email]; // Usa 'user_password'
-//     const result = await pool.query(query, values);
-//     return result.rows[0];
-// };
+// Función para actualizar los datos del usuario en la base de datos
+const updateUser = async (user) => {
+    const { email, user_password, reset_password_token } = user;
+    const query = `
+        UPDATE users
+        SET user_password = $1, reset_password_token = $2
+        WHERE email = $3
+        RETURNING *`;
+    const values = [user_password, reset_password_token || null, email];
+    const result = await pool.query(query, values);
+    return result.rows[0];
+};
 
 // // Función para eliminar un usuario de la base de datos por su ID
 // const deletedUser = async (userId) => {
@@ -131,7 +135,7 @@ module.exports = {
     addUser,
     findUser,
     pool,
-    // updateUser,
+    updateUser,
     // deletedUser,
     // addAnimalSeen,
     // removeAnimalSeen,

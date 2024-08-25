@@ -34,6 +34,7 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/check-your-email" element={<ResetPage />} />
+            <Route path="/accordion/:animal" element={<Accordion />} />
             <Route path="/accordion" element={<Accordion />} />
 
         </Routes>
