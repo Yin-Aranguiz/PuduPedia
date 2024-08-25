@@ -12,7 +12,7 @@ import SignLog from './components/LoginPage/signlog/SignLog';
 import ParksPage from './components/ParksPage/ParksPage';
 import ResetPassword from './components/LoginPage/signlog/resetPassword';
 import ForgotPassword from './components/LoginPage/signlog/forgotPassword';
-import ResetPage from './components/LoginPage/ResetPage';
+import ResetPage from './components/LoginPage/ResetPage/ResetPage';
 
 function App() {
     return (

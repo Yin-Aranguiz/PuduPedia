@@ -1,1 +1,1 @@
-CREATE DATABASE PuduPedia;
+CREATE DATABASE pudupedia;

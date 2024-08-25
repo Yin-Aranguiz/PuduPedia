@@ -101,7 +101,7 @@ const SignAndLog = () => {
 						<input
 							type="text"
 							name="username"
-							id="username"
+							id="usernameRegister"
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 							placeholder="Nombre de Usuario"
@@ -119,7 +119,7 @@ const SignAndLog = () => {
 						<input
 							type="password"
 							name="password"
-							id="password"
+							id="passwordRegister"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Contraseña"
@@ -143,7 +143,7 @@ const SignAndLog = () => {
 						<input
 							type="text" // Cambiar de email a text si usas nombre de usuario
 							name="username"
-							id="username"
+							id="usernameLogin"
 							value={username}
 							onChange={(e) => setUsername(e.target.value)}
 							placeholder="Nombre de Usuario o Email"
@@ -152,7 +152,7 @@ const SignAndLog = () => {
 						<input
 							type="password"
 							name="password"
-							id="password"
+							id="passwordLogin"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Contraseña"
