@@ -70,34 +70,34 @@ const forgotPassword = async (req, res) => {
         if (!user) {
             return res.status(400).json({ message: 'No se encontró un usuario con ese correo electrónico.' });
         }
-
+        // Genera un token de restablecimiento de contraseña
         const resetPasswordToken = jwt.sign(
             { email: user.email },
             process.env.JWT_SECRET || 'default_secret_key',
             { expiresIn: '1h' }
         );
-
+        // Asigna el token de restablecimiento de contraseña al usuario y actualiza la base de datos
         user.reset_password_token = resetPasswordToken;
         await updateUser(user); 
-
+        // Configura el transporte de correo usando nodemailer
         const transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASSWORD
+                user: process.env.EMAIL_USER, // Correo electrónico del remitente desde el archivo .env
+                pass: process.env.EMAIL_PASSWORD // Contraseña del correo electrónico del remitente desde el archivo .env
             }
         });
-
+        // Configura las opciones del correo electrónico
         const mailOptions = {
             to: user.email,
-            from: 'no-reply@pudupedia.com',
+            from: process.env.EMAIL_USER,
             subject: 'Recuperación de contraseña',
             text: `Recibiste este correo porque tú (u otra persona) solicitó un restablecimiento de contraseña para tu cuenta.\n\n` +
                 `Haz clic en el siguiente enlace o pégalo en tu navegador para completar el proceso:\n\n` +
                 `http://localhost:3000/reset-password/${resetPasswordToken}\n\n` +
                 `Si no solicitaste esto, por favor ignora este correo y tu contraseña permanecerá sin cambios.\n`
         };
-
+        // Envía el correo electrónico con el enlace de restablecimiento de contraseña
         await transporter.sendMail(mailOptions);
         res.status(200).json({ message: 'Correo de recuperación enviado con éxito.' });
     } catch (error) {
@@ -107,21 +107,24 @@ const forgotPassword = async (req, res) => {
 
 // Controlador para restablecer la contraseña usando el token
 const resetPassword = async (req, res) => {
+    // Extrae el token de la URL y la nueva contraseña del cuerpo de la solicitud
     const { token } = req.params;
     const { password } = req.body;
 
     try {
+        // Verifica el token usando JWT y la clave secreta
         const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret_key');
+        // Busca al usuario en la base de datos usando el correo electrónico decodificado del token
         const user = await findUser(decoded.email);
-
+        // Verifica si el usuario existe y si el token coincide con el guardado en el usuario
         if (!user || user.reset_password_token !== token) {
             return res.status(400).json({ message: 'Token inválido o caducado.' });
         }
-
+        // Hashea la nueva contraseña antes de guardarla en la base de datos
         const hashedPassword = await bcrypt.hash(password, 10);
         user.user_password = hashedPassword;
         user.reset_password_token = null; // Borrar el token después de usarlo
-
+        // Guarda los cambios en la base de datos
         await updateUser(user);
         res.status(200).json({ message: 'Contraseña restablecida con éxito.' });
     } catch (error) {

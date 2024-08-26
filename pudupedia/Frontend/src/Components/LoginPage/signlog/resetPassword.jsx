@@ -12,8 +12,8 @@ const ResetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (password.length < 8) {
-            setError('La contraseña debe tener al menos 8 caracteres.');
+        if (password.length < 4) {
+            setError('La contraseña debe tener al menos 4 caracteres.');
             return;
         }
 
