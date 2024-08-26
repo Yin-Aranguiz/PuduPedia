@@ -1,0 +1,35 @@
+.park-detail {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .map-container {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .park-item {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .park-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  .park-button:hover {
+    background-color: #0056b3;
+  }
+  

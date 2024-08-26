@@ -1,0 +1,19 @@
+.geolocation-map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .geolocation-map-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .geolocation-map-container {
+    width: 100%;
+    height: 400px; /* Ajusta según sea necesario */
+    position: relative;
+  }
+  

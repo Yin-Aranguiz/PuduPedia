@@ -1,0 +1,21 @@
+.scroll-indicator {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+.scroll-dot {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 50%;
+}
+
+.scroll-dot.active {
+    background-color: rgb(0, 230, 210);
+}
