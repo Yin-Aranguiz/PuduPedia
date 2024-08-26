@@ -1,13 +1,10 @@
 import React from 'react';
-import './UserPage.css'
-import monito from './monito-del-monte.jpg';
-import { Outlet, Link } from "react-router-dom";
+import './HelpTab.css'
+import { Link } from "react-router-dom";
 
-const UserPage = () => {
+const HelpPage = () => {
   return ( 
-    
     <div className='fullPage'>
-            <Outlet />
       <div className='sideTab'>
         <div className='sideBoxesFirst'>
           <div className='userNameBox'>
@@ -36,16 +33,12 @@ const UserPage = () => {
       </div>
       <div className='shownTab'>
         <div className='topTab'>
-          <div className='topTabName'>Tu perfil</div>
+          <div className='topTabName'>Ayuda</div>
         </div>
         <div className='contentTab'>
         <div className='nameOfTab'>
-            • Nombre de Usuario
-            • Email
-            • Cambiar Contraseña
-        </div>
-        <div>
-        <img src={monito} alt="monito del monte" className="imagePic"></img>
+            • Dudas
+            • Contáctanos
         </div>
         </div>
       </div>
@@ -53,4 +46,4 @@ const UserPage = () => {
    );
 }
  
-export default UserPage;
+export default HelpPage;

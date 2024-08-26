@@ -4,11 +4,8 @@
 	font-family: "Open Sans", sans-serif;
 }
 body {
+  
   background-image: url(park.jpg);
-}
-.linkToPages {
-  color: #fff;
-  text-decoration: none;
 }
 .fullPage {
   display: flex;

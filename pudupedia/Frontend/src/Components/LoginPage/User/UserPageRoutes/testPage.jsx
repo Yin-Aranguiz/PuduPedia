@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from './SeenForm'; 
+import './testPage.css'
 
 const ProfilePage = () => {
     const [formType, setFormType] = useState('');
@@ -40,9 +41,13 @@ const ProfilePage = () => {
     };
   
     return (
-      <div>
-        <h1>Perfil del Usuario</h1>
-  
+      <div className='fullPage'>
+        
+      <div className='sideTab'>
+      <h1>Perfil del Usuario</h1>
+      </div>
+      
+        <div className='contentTab'>
         <button onClick={() => handleButtonClick('animal')}>Añadir Animal Visto</button>
         <button onClick={() => handleButtonClick('plant')}>Añadir Planta Vista</button>
         <button onClick={() => handleButtonClick('park')}>Añadir Parque Visitado</button>
@@ -50,6 +55,7 @@ const ProfilePage = () => {
         {formType && (
           <Form type={formType} onSubmit={handleFormSubmit} />
         )}
+        </div>
       </div>
     );
   };

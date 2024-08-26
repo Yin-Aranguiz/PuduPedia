@@ -4,11 +4,8 @@
 	font-family: "Open Sans", sans-serif;
 }
 body {
+  
   background-image: url(park.jpg);
-}
-.linkToPages {
-  color: #fff;
-  text-decoration: none;
 }
 .fullPage {
   display: flex;
@@ -34,6 +31,20 @@ body {
   padding-top: 25px;
   margin-left: 20px;
   color: #fff;
+  display: flex;
+}
+.editFaves {
+  color: #fff;
+  font-size: x-large;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-inline-start: auto;
+  margin-right: 15px;
+  margin-top: -25px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .sideBoxesFirst {
   /*background-color: rgb(104, 143, 177);*/

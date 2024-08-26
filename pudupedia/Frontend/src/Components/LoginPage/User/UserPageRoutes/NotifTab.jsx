@@ -1,13 +1,10 @@
 import React from 'react';
-import './UserPage.css'
-import monito from './monito-del-monte.jpg';
-import { Outlet, Link } from "react-router-dom";
+import './NotifTab.css'
+import { Link } from "react-router-dom";
 
-const UserPage = () => {
+const NotifPage = () => {
   return ( 
-    
     <div className='fullPage'>
-            <Outlet />
       <div className='sideTab'>
         <div className='sideBoxesFirst'>
           <div className='userNameBox'>
@@ -25,27 +22,23 @@ const UserPage = () => {
         <Link to="/faves" className='linkToPages'>Favoritos</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/history" className='linkToPages'>Historial</Link>
+        <Link to="/history">Historial</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/settings" className='linkToPages'>Configuración</Link>
+        <Link to="/settings">Configuración</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/help" className='linkToPages'>Ayuda</Link>
+        <Link to="/help">Ayuda</Link>
         </button>
       </div>
       <div className='shownTab'>
         <div className='topTab'>
-          <div className='topTabName'>Tu perfil</div>
+          <div className='topTabName'>Notificaciones</div>
         </div>
         <div className='contentTab'>
         <div className='nameOfTab'>
-            • Nombre de Usuario
-            • Email
-            • Cambiar Contraseña
-        </div>
-        <div>
-        <img src={monito} alt="monito del monte" className="imagePic"></img>
+            • Actividad Reciente
+            • Logros
         </div>
         </div>
       </div>
@@ -53,4 +46,4 @@ const UserPage = () => {
    );
 }
  
-export default UserPage;
+export default NotifPage;
