@@ -1,7 +1,8 @@
 import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import './Accordion.css';
-import { animals } from './animals'; // Asegúrate de que esta ruta sea correcta
+import { animals } from './animals';
+import { plants } from './plants';
 
 const AccordionItem = ({ title, content }) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -22,25 +23,33 @@ const AccordionItem = ({ title, content }) => {
 
 const Accordion = () => {
     const location = useLocation();
-    const params = useParams();
-    
-    // Intenta obtener el nombre del animal del estado o de los parámetros de la URL
-    const animalName = location.state?.animalName || params.animal;
-    
-    // Busca la información del animal en el objeto animals
-    const animalInfo = Object.values(animals).find(
-        animal => animal.name.toLowerCase() === decodeURIComponent(animalName).toLowerCase()
-    );
+    const { itemName, isFauna } = location.state || {}; // Obtiene el nombre del ítem y si es fauna o flora
 
-    if (!animalInfo) {
-        return <p>No se encontró información para este animal: {animalName}</p>;
+    if (!itemName || isFauna === undefined) {
+        return <p>No se encontró información para este ítem: {itemName}</p>;
+    }
+
+    // Determina si se trata de un animal o una planta y busca la información adecuada
+    let itemInfo;
+    if (isFauna) {
+        itemInfo = Object.values(animals).find(
+            animal => animal.name.toLowerCase() === decodeURIComponent(itemName).toLowerCase()
+        );
+    } else {
+        itemInfo = Object.values(plants).find(
+            plant => plant.name.toLowerCase() === decodeURIComponent(itemName).toLowerCase()
+        );
+    }
+
+    if (!itemInfo) {
+        return <p>No se encontró información para este ítem: {itemName}</p>;
     }
 
     return (
         <div className="accordion">
-            <h2>{animalInfo.name}</h2>
-            <img src={animalInfo.image} alt={animalInfo.name} style={{maxWidth: '100%', height: 'auto'}} />
-            {animalInfo.info.map((item, index) => (
+            <h2>{itemInfo.name}</h2>
+            <img src={itemInfo.image} alt={itemInfo.name} style={{ maxWidth: '100%', height: 'auto' }} />
+            {itemInfo.info.map((item, index) => (
                 <AccordionItem key={index} title={item.title} content={item.content} />
             ))}
         </div>

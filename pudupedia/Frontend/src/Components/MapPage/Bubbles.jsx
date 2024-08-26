@@ -123,9 +123,11 @@ const Bubbles = () => {
           y,
           image: images[i].src,
           key: `${macrozone}-${i}`,
-          animal: {
+          // animal: {
+          item: {
             name: images[i].name,
-            info: animals.info
+            // info: animals.info
+            info: isFauna ? animals.info : plants.info
           }
         });
       }
@@ -159,8 +161,11 @@ const Bubbles = () => {
 
   const handleBubbleClick = (bubble) => {
     navigate('/accordion', {
-      state: { animalName: bubble.animal.name },
-      pathname: `/accordion/${encodeURIComponent(bubble.animal.name)}`
+      state: { 
+        itemName: bubble.item.name, 
+        isFauna: isFauna // Pasar explícitamente si es fauna o flora
+      },
+      pathname: `/accordion/${encodeURIComponent(bubble.item.name)}`
     });
   };
 
@@ -185,7 +190,7 @@ const Bubbles = () => {
                 >
                   <img
                     src={bubble.image}
-                    alt={bubble.animal.name} // Usa el nombre del animal para el alt
+                    alt={bubble.item.name} 
                     style={{
                       transform: hoveredIndex === index ? 'scale(1.5)' : 'scale(1)',
                       transition: 'transform 0.3s ease-in-out',
