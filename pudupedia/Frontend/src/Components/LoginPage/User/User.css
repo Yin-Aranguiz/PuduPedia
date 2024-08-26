@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+}
+body {
+  background-image: url(park.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 300px;
+  height: 530px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  margin-top: 30px;
+}
+.picAndName {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+}
+.imagePic {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 150px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.circle {
+  width: 115px;
+  height: 115px;
+  background-color: #3e8e41;
+  align-items: center;
+  justify-content: center;
+  border-radius: 150px;
+  margin: auto;
+  padding-top: 8px;
+  padding-left: 2px;
+}
+.editIcon {
+  background-color: #3e8e41;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  margin-top: -30px;
+  margin-right: 95px;
+}
+.username {
+  background-color: #3e8e41;
+  border-radius: 20px;
+  width: 150px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  color: #fff;
+  font-size: larger;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  border: none;
+  margin-bottom: 7px;
+}
+.closing {
+  display: block;
+  align-items: center;
+  justify-content: center;
+	border-radius: 20px;
+  margin: auto;
+  margin-top: 10px;
+  border: none;
+	background-color: #3e8e41;
+  font-size: larger;
+	color: #FFFFFF;
+	padding-top: 4px;
+  padding-bottom: 5px;
+  width: 150px;
+  font-family: 'Open Sans', sans-serif;
+}
+.closing:hover {
+	cursor: pointer;
+	background-color: #04AA6D;
+	border: none;
+	transition: 0.3s ease;
+}
+
+.closing:focus {
+	outline: none;
+}
+.dropButton {
+  background-color: #3e8e41;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 300px;
+  text-align: left;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: block;
+}
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 300px;
+  right: 100%;
+  top: 0px;
+  border-radius: 5px 0 0 5px ;
+}
+.dropdownContent a {
+  color: black;
+  padding: 16px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdownContent a:hover {
+  background-color: #ddd;
+  border-radius: 5px 0 0 5px;
+}
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+.dropdown:hover .dropButton {
+  background-color: #04AA6D;
+}

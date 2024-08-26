@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+.infoboxContainer {
+    display: flex;
+    justify-content: space-between;
+    /* Para distribuir el espacio entre las infoboxes */
+    align-items: flex-start;
+    /* Para alinear las infoboxes al inicio */
+    /* Espacio entre las infoboxes */
+    padding: 200px;
+    position: absolute;
+    margin-top: -50vh;
+
+}
+
+.infobox {
+    flex: 1;
+    /* Para que todas las infoboxes tengan el mismo ancho */
+    max-width: 30%;
+    /* Ajusta el porcentaje según tus necesidades */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.107);
+    position: relative;
+}
+
+.infobox h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding-left: 20px;
+    /* Para espacio entre el texto y la línea */
+    position: relative;
+    /* Necesario para la pseudo-clase */
+    text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+    color: #ffffff 
+    
+}
+
+.infobox h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 76%;
+    transform: translateY(-80%);
+    width: 5px;
+    /* Ancho de la línea */
+    height: 70%;
+    /* Altura de la línea */
+    background-color: #ffffff;
+    /* Color de la línea */
+}
+
+
+.infobox p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 8px rgba(0, 5, 29, 0.922);
+    color: #ffffff;
+        /* color del parrafo */
+}
+
