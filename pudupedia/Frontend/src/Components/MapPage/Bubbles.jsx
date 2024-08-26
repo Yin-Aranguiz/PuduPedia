@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Bubbles.css';
 import Map from './Map';
-import picoDeLoro from './picoDeLoro.jpg';
-import ananuca from './ananuca.jpg';
 import { animals } from '../GalleryPage/animals';
+import { plants } from '../GalleryPage/plants';
 import Buttons from './Buttons'
 import InfoMap from './InfoMap';
 
@@ -56,39 +55,39 @@ const Bubbles = () => {
 
   const macrozoneImagesFlora = {
     norte: [
-      { id: 1, src: ananuca, name: 'Ananuca' },
-      { id: 2, src: ananuca, name: 'Ananuca' },
-      { id: 3, src: ananuca, name: 'Ananuca' },
-      { id: 4, src: ananuca, name: 'Ananuca' },
-      { id: 5, src: ananuca, name: 'Ananuca' }
+      { id: 1, src: plants.chagual.image, name: 'Chagual' },
+      { id: 2, src: plants.cactusArica.image, name: 'Cactus de Arica' },
+      { id: 3, src: plants.llareta.image, name: 'Llareta' },
+      { id: 4, src: plants.cebollaMar.image, name: 'Cebolla de Mar' },
+      { id: 5, src: plants.mato.image, name: 'Mato' }
     ],
     centro: [
-      { id: 6, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 7, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 8, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 9, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 10, src: picoDeLoro, name: 'Pico de Loro' }
+      { id: 6, src: plants.sieteCamisas.image, name: 'Siete Camisas' },
+      { id: 7, src: plants.palmaChilena.image, name: 'Palma Chilena' },
+      { id: 8, src: plants.quillay.image, name: 'Quillay' },
+      { id: 9, src: plants.florHuerto.image, name: 'Flor del Huerto' },
+      { id: 10, src: plants.espinoCoquimbo.image, name: 'Espino de Coquimbo' }
     ],
     centroSur: [
-      { id: 11, src: ananuca, name: 'Ananuca' },
-      { id: 12, src: ananuca, name: 'Ananuca' },
-      { id: 13, src: ananuca, name: 'Ananuca' },
-      { id: 14, src: ananuca, name: 'Ananuca' },
-      { id: 15, src: ananuca, name: 'Ananuca' }
+      { id: 11, src: plants.peumo.image, name: 'Peumo' },
+      { id: 12, src: plants.arrayan.image, name: 'Arrayán' },
+      { id: 13, src: plants.nalca.image, name: 'Nalca' },
+      { id: 14, src: plants.rosaMosqueta.image, name: 'Rosa Mosqueta' },
+      { id: 15, src: plants.ruil.image, name: 'Ruil' }
     ],
     sur: [
-      { id: 16, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 17, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 18, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 19, src: picoDeLoro, name: 'Pico de Loro' },
-      { id: 20, src: picoDeLoro, name: 'Pico de Loro' }
+      { id: 16, src: plants.araucaria.image, name: 'Araucaria' },
+      { id: 17, src: plants.canelo.image, name: 'Canelo' },
+      { id: 18, src: plants.coihue.image, name: 'Coihue' },
+      { id: 19, src: plants.maqui.image, name: 'Maqui' },
+      { id: 20, src: plants.alerce.image, name: 'Alerce' }
     ],
     austral: [
-      { id: 21, src: ananuca, name: 'Ananuca' },
-      { id: 22, src: ananuca, name: 'Ananuca' },
-      { id: 23, src: ananuca, name: 'Ananuca' },
-      { id: 24, src: ananuca, name: 'Ananuca' },
-      { id: 25, src: ananuca, name: 'Ananuca' }
+      { id: 21, src: plants.lenga.image, name: 'Lenga' },
+      { id: 22, src: plants.tepa.image, name: 'Tepa' },
+      { id: 23, src: plants.nirre.image, name: 'Ñirre' },
+      { id: 24, src: plants.coihueMagallanes.image, name: 'Coihue de Magallanes' },
+      { id: 25, src: plants.cipresLasGuaitecas.image, name: 'Ciprés de las Guaitecas' }
     ]
   };
 
