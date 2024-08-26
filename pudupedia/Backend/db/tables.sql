@@ -77,4 +77,8 @@ CREATE TABLE achievements_obtained (
 );
 
 ALTER TABLE users
-ADD COLUMN reset_password_token VARCHAR(255);
+ADD COLUMN security_question TEXT,
+ADD COLUMN security_answer TEXT;
+
+
+

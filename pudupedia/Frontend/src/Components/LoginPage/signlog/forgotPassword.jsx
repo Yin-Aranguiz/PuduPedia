@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import './ForgotPassword.css';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -13,22 +16,22 @@ const ForgotPassword = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:3001/forgot-password', {
+            const response = await fetch('http://localhost:3001/user/change-password', {  // Cambia la URL según sea necesario
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email }),
+                body: JSON.stringify({ email, currentPassword, newPassword }),
             });
 
             if (response.ok) {
                 setSuccess(true);
                 setError('');
-                navigate('/check-your-email'); // Redirige a la página de verificación ResetPage
+                navigate('/'); 
             } else {
                 const errorData = await response.json();
                 setSuccess(false);
-                setError(errorData.message || 'Error al enviar el correo de recuperación.');
+                setError(errorData.message || 'Error al cambiar la contraseña.');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -40,11 +43,12 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div>
-            <h2>Recuperar Contraseña</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="email">Correo Electrónico:</label>
+        <div className='forgot-password-container'>
+            <h2 className='forgot-password-title'>Cambiar Contraseña</h2>
+            <form className='forgot-password-form' onSubmit={handleSubmit}>
+                <label className='forgot-password-label' htmlFor="email">Correo Electrónico:</label>
                 <input
+                    className='forgot-password-input'
                     id="email"
                     type="email"
                     placeholder="Correo Electrónico"
@@ -52,13 +56,33 @@ const ForgotPassword = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <button type="submit" disabled={loading}>
-                    {loading ? 'Enviando...' : 'Enviar Correo de Recuperación'}
+                <label className='forgot-password-label' htmlFor="currentPassword">Contraseña Actual:</label>
+                <input
+                    className='forgot-password-input'
+                    id="currentPassword"
+                    type="password"
+                    placeholder="Contraseña Actual"
+                    value={currentPassword}
+                    onChange={(e) => setCurrentPassword(e.target.value)}
+                    required
+                />
+                <label className='forgot-password-label' htmlFor="newPassword">Nueva Contraseña:</label>
+                <input
+                    className='forgot-password-input'
+                    id="newPassword"
+                    type="password"
+                    placeholder="Nueva Contraseña"
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
+                    required
+                />
+                <button className='forgot-password-button' type="submit" disabled={loading}>
+                    {loading ? 'Enviando...' : 'Cambiar Contraseña'}
                 </button>
             </form>
-            {success && <p>Correo de recuperación enviado. Por favor revisa tu correo.</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <Link to="/">Volver a la página de inicio</Link>
+            {success && <p className='forgot-password-success'>Contraseña cambiada con éxito.</p>}
+            {error && <p className='forgot-password-error'>{error}</p>}
+            <Link className='forgot-password-link' to="/">Volver a la página de inicio</Link>
         </div>
     );
 };

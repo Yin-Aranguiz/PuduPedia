@@ -12,6 +12,7 @@ app.use(cors(
     { origin: 'http://localhost:3000' }
 ));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Middleware para manejar datos URL-encoded
 
 // Usar las rutas de usuario
 app.use('/user', userRoutes);

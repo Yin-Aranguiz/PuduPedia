@@ -12,7 +12,7 @@ const pool = new Pool({
 
 // Función para añadir el usuario a la base de datos
 const addUser = async (user) => {
-    const { email, user_password, username } = user;
+    const { email, user_password, username, security_question, security_answer } = user;
     // Verifica si el nombre de usuario ya existe
     const checkUserQuery = 'SELECT * FROM users WHERE username = $1';
     const checkUserValues = [username];
@@ -24,8 +24,8 @@ const addUser = async (user) => {
     }
     // Si el nombre de usuario no existe, inserta el nuevo usuario:
     // Realizar la consulta
-    const query = 'INSERT INTO users (email, user_password, username) VALUES ($1, $2, $3) RETURNING *';
-    const values = [email, user_password, username]; // Usa 'user_password'
+    const query = 'INSERT INTO users (email, user_password, username, security_question, security_answer) VALUES ($1, $2, $3, $4, $5) RETURNING *';
+    const values = [email, user_password, username, security_question, security_answer]; 
     // Ejecutar la consulta
     const result = await pool.query(query, values);
     return result.rows[0];
@@ -44,13 +44,13 @@ const findUser = async (email) => {
 
 // Función para actualizar los datos del usuario en la base de datos
 const updateUser = async (user) => {
-    const { email, user_password, reset_password_token } = user;
+    const { email, user_password } = user;
     const query = `
         UPDATE users
-        SET user_password = $1, reset_password_token = $2
+        SET user_password = $1 = $2
         WHERE email = $3
         RETURNING *`;
-    const values = [user_password, reset_password_token || null, email];
+    const values = [user_password || null, email];
     const result = await pool.query(query, values);
     return result.rows[0];
 };

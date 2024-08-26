@@ -1,45 +1,36 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './ResetPassword.css';
 
 const ResetPassword = () => {
-    const { token } = useParams();
-    const navigate = useNavigate(); 
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [success, setSuccess] = useState(false);
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [answer, setAnswer] = useState('');
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (password.length < 4) {
-            setError('La contraseña debe tener al menos 4 caracteres.');
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            setError('Las contraseñas no coinciden.');
-            return;
-        }
-
         try {
-            const response = await fetch(`http://localhost:3001/reset-password/${token}`, {
+            const response = await fetch('http://localhost:3001/user/forgot-password-security', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ password }),
+                body: JSON.stringify({ email, username, answer }),
             });
 
             if (response.ok) {
                 setSuccess(true);
                 setError('');
-                // Redirige a la página de inicio
-                navigate('/');
+                alert('Respuesta correcta. Ahora puedes cambiar tu contraseña.');
+                navigate('/reset-password'); // Redirige a la página para restablecer la contraseña
             } else {
                 const errorData = await response.json();
                 setSuccess(false);
-                setError(errorData.message || 'Error al restablecer la contraseña.');
+                setError(errorData.message || 'Error al verificar la información.');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -49,28 +40,41 @@ const ResetPassword = () => {
     };
 
     return (
-        <div>
-            <h2>Restablecer Contraseña</h2>
+        <div className="forgot-password-security">
+            <h2>Recuperar Contraseña</h2>
             <form onSubmit={handleSubmit}>
+                <label htmlFor="email">Correo Electrónico:</label>
                 <input
-                    type="password"
-                    placeholder="Nueva Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    id="email"
+                    type="email"
+                    placeholder="Correo Electrónico"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
-                    minLength="8"
                 />
+
+                <label htmlFor="username">Nombre de Usuario:</label>
                 <input
-                    type="password"
-                    placeholder="Confirmar Contraseña"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    id="username"
+                    type="text"
+                    placeholder="Nombre de Usuario"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
-                    minLength="8"
                 />
-                <button type="submit">Restablecer Contraseña</button>
+
+                <label htmlFor="answer">Respuesta a la Pregunta de Seguridad:</label>
+                <input
+                    id="answer"
+                    type="text"
+                    placeholder="Respuesta a la Pregunta de Seguridad"
+                    value={answer}
+                    onChange={(e) => setAnswer(e.target.value)}
+                    required
+                />
+
+                <button type="submit">Verificar</button>
             </form>
-            {success && <p>Contraseña restablecida exitosamente. Puedes iniciar sesión con tu nueva contraseña.</p>}
             {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>
     );
