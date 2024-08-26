@@ -18,7 +18,7 @@ const SideBar = ({ isOpen, scrollPosition }) => {
       <div className="navBarItems">
         <Link to="/"><div className="circle"><img src={home}/></div>Inicio</Link>
         <Link to="/chile"><div className="circle"><img src={news}/></div>Noticias</Link>
-        <Link to="/vida-silvestre"><div className="circle"><img src={puma}/></div>Vida Silvestre</Link>
+        <Link to="/vida-silvestre"><div className="circle"><img src={puma}/></div>Ruta Endémica</Link>
         <Link to="/parques"><div className="circle"><img src={tree}/></div>Parques</Link>
         <Link to="/juegos"><div className="circle"><img src={game}/></div>Juegos</Link>
         <Link to="/quienes-somos"><div className="circle"><img src={about}/></div>Quienes Somos</Link>
