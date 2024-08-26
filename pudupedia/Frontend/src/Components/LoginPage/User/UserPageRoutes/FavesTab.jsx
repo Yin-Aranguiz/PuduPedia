@@ -41,8 +41,8 @@ const FavesPage = () => {
       <div className='shownTab'>
         <div className='topTab'>
           <div className='topTabName'>Favoritos</div>
-          <Link to="editfaves" className='editFaves'><FontAwesomeIcon icon={faPenToSquare} /></Link>
-        </div>
+          <Link to="/editfaves" className='editFaves'><FontAwesomeIcon icon={faPenToSquare} /></Link>
+          </div>
         <div className='contentTab'>
           <div className='nameOfTab'>
             • Flora

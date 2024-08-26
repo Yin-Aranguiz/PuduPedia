@@ -6,7 +6,7 @@
 body {
   background-image: url(park.jpg);
 }
-.fullPage {
+.fullPageFaves {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ body {
   background-color: #0aa07a;
   backdrop-filter: blur(5px);
 }
-.sideTab {
+.sideTabFaves {
   /*background-color: rgb(67, 84, 99);*/
   background-color: rgba(255, 255, 255, 0.5);
   width: 250px;
@@ -26,57 +26,70 @@ body {
   margin-inline-end: auto;
   border-radius: 10px 0px 0px 10px;
 }
-.userNameBox, .topTabName {
+.userNameBoxFaves, .topTabNameFaves {
   text-align: left;
   padding-top: 25px;
   margin-left: 20px;
-  color: #000000;
+  color: #ffffff;
   display: flex;
 }
-
-.sideBoxesFirst {
+.sideBoxesFirstFaves:hover {
+  background-color: #04AA6D;
+}
+.sideBoxesFirstFaves {
   /*background-color: rgb(104, 143, 177);*/
   background-color: rgba(22, 107, 36, 0.842);
   width: 250px;
   height: 70px;
   border-radius: 10px 0px 0px 0px;
 }
-button {
+.addContainerFaves {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addingFaves {
   background-color: #3e8e41;
-  width: 200px;
-  height: 60px;
+  width: 180px;
+  height: 40px;
   color: white;
-  padding: 16px;
+  padding: 5px;
   font-size: 16px;
   text-align: left;
   border: none;
   cursor: pointer;
+  margin-left: 25px;
+  margin-right: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
-.sideBoxes:hover {
+.sideBoxesFaves:hover, .addingFaves:hover {
   background-color: #04AA6D;
 }
-.shownTab {
+.shownTabFaves {
   background-color: rgba(255, 255, 255, 0.7);
   width: 750px;
   height: 500px;
   margin-inline-start: auto;
   border-radius: 0 10px 10px 0;
 }
-.topTab {
+.topTabFaves {
   background-color: #04AA6D;
   width: 750px;
   height: 70px;
   border-radius: 0 10px 0 0;
 }
-.contentTab {
-  background-color: #04AA6D;
+.contentTabFaves {
+  /*background-color: #325f34;*/
   width: 700px;
   height: 390px;
   align-items: center;
   justify-content: center;
   margin: 20px auto;
 }
-.nameOfTab {
+.nameOfTabFaves {
   margin-bottom: 10px;
   font-weight: 500;
 }

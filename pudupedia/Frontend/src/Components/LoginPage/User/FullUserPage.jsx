@@ -8,6 +8,7 @@ import SettingsPage from "./UserPageRoutes/SettingsTab";
 import HelpPage from "./UserPageRoutes/HelpTab";
 import ProfilePage from "./UserPageRoutes/testPage";
 
+
 export default function FullUserPage() {
   return (
     <BrowserRouter>
@@ -15,7 +16,7 @@ export default function FullUserPage() {
           <Route path="/" element={<UserPage/>}/>
           <Route path="notifs" element={<NotifPage />} />
           <Route path="faves" element={<FavesPage />}/>
-          <Route path="editfaves" element={<ProfilePage/>}/>
+          <Route path="editfaves" element={<ProfilePage />}/>
           <Route path="history" element={<HistoryPage />} />
           <Route path="settings" element={<SettingsPage />} />
           <Route path="help" element={<HelpPage />} />

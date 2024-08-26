@@ -22,13 +22,13 @@ const NotifPage = () => {
         <Link to="/faves" className='linkToPages'>Favoritos</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/history">Historial</Link>
+        <Link to="/history" className='linkToPages'>Historial</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/settings">Configuración</Link>
+        <Link to="/settings" className='linkToPages'>Configuración</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/help">Ayuda</Link>
+        <Link to="/help" className='linkToPages'>Ayuda</Link>
         </button>
       </div>
       <div className='shownTab'>

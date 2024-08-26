@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './SeenForm.css'
 
 const Form = ({ type, onSubmit, onCancel }) => {
   const [items, setItems] = useState([]);
@@ -43,29 +44,33 @@ const Form = ({ type, onSubmit, onCancel }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="item">Selecciona {type === 'animal' ? 'un animal' : type === 'plant' ? 'una planta' : 'un parque'}:</label>
-      <select name="item" id="item" onChange={handleChange} value={formData.item}>
-        <option value="">Selecciona una opción</option>
+    <form onSubmit={handleSubmit} className='addForm'>
+      <label htmlFor="item" className='selectAdd'>• Selecciona {type === 'animal' ? 'un animal' : type === 'plant' ? 'una planta' : 'un parque'}:</label>
+      <br/>
+      <select name="item" id="item" onChange={handleChange} value={formData.item} className='selectFaves'>
+        <option value="" className='optionAdd'>Selecciona una opción</option>
         {items.map((item) => (
           <option key={item.id} value={item.id}>
             {type === 'animal' ? item.animal : type === 'plant' ? item.plant : item.park}
           </option>
         ))}
       </select>
-
-      <label htmlFor="description">Descripción:</label>
+      <br/>
+      <label htmlFor="description" className='labelDesc'>• Descripción:</label> <br/>
       <input
         type="text"
         name="description"
         id="description"
+        className='inputDesc'
         onChange={handleChange}
         value={formData.description}
         placeholder="Descripción del ítem"
       />
-
-      <button type="submit">Agregar</button>
-      <button type="button" onClick={handleCancel}>Cancelar</button>
+     <br/>
+     <div className='addButtons'>
+      <button type="submit" className='submitAdd'>Agregar</button>
+      <button type="button" onClick={handleCancel} className='cancelAdd'>Cancelar</button>
+     </div>
     </form>
   );
 };

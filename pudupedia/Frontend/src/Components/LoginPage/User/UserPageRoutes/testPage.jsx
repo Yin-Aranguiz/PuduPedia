@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from './SeenForm'; 
 import './testPage.css'
+import { Link } from 'react-router-dom';
 
 const ProfilePage = () => {
     const [formType, setFormType] = useState('');
@@ -41,23 +42,36 @@ const ProfilePage = () => {
     };
   
     return (
-      <div className='fullPage'>
-        
-      <div className='sideTab'>
-      <h1>Perfil del Usuario</h1>
+      <div className='fullPageFaves'>
+      <div className='sideTabFaves'>
+        <div className='sideBoxesFirstFaves'>
+          <div className='userNameBoxFaves'>
+        <Link to="/faves" className='linkToPages'>« Volver a Favoritos</Link>
+
+          </div>
+        </div>
       </div>
-      
-        <div className='contentTab'>
-        <button onClick={() => handleButtonClick('animal')}>Añadir Animal Visto</button>
-        <button onClick={() => handleButtonClick('plant')}>Añadir Planta Vista</button>
-        <button onClick={() => handleButtonClick('park')}>Añadir Parque Visitado</button>
-  
+      <div className='shownTabFaves'>
+        <div className='topTabFaves'>
+          <div className='topTabNameFaves'>Avistamientos</div>
+        </div>
+        <div className='contentTabFaves'>
+        <div className='nameOfTabFaves'>
+        <div className='addContainerFaves'>
+        <button onClick={() => handleButtonClick('animal')} className='addingFaves'>Añadir Fauna</button>
+        <button onClick={() => handleButtonClick('plant')} className='addingFaves'>Añadir Flora</button>
+        <button onClick={() => handleButtonClick('park')} className='addingFaves'>Añadir Parque</button>
+        </div>
         {formType && (
           <Form type={formType} onSubmit={handleFormSubmit} />
         )}
+       
+      
+        </div>
         </div>
       </div>
-    );
+    </div>
+   );
   };
   
-  export default ProfilePage;
+export default ProfilePage;
