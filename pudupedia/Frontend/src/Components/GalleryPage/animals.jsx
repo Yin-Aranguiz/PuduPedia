@@ -127,18 +127,17 @@ export const animals = {
 
     // MACROZONA CENTRO SUR
 
-
-
-
-
-
-
-
-
-
-
-
-
+    ratonNuble: {
+        name: "Ratón de Ñuble",
+        image: "https://laderasur.com/wp-content/uploads/2021/07/degus-juveniles-cvicente-valdes-1.jpeg",
+        info: [
+            { title: "- Vive en", content: "Zonas boscosas y áreas agrícolas en la región de Ñuble, Chile" },
+            { title: "- Reproducción", content: "El ratón se reproduce en primavera, con camadas de varios crías" },
+            { title: "- Alimentación", content: "Omnívoro, se alimenta de semillas, frutas, y pequeños invertebrados" },
+            { title: "- Hábitat", content: "Prefiere hábitats con vegetación densa y suelos blandos para excavar madrigueras" },
+            { title: "- Peligro de la especie", content: "Amenazado por la expansión agrícola y la pérdida de su hábitat natural" }
+        ]
+    },
 
     ranaMaule: {
         name: "Rana del Maule",

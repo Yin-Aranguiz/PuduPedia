@@ -67,7 +67,7 @@ VALUES ('Ratón de Chile', 'Omnívoro', 'Bosques y matorrales', 'Centro Sur', 'V
 
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Leopardus colocola', 'Carnívoro', 'Bosques y matorrales', 'Centro Sur', 'Vivíparo', 'Poco Preocupante');
-
+ 
 INSERT INTO animals (animal, diet, habitat, macrozone, reproduction, danger_extintion_level) 
 VALUES ('Rana de Maule', 'Insectívoro', 'Bosques húmedos', 'Centro Sur', 'Ovíparo', 'En Peligro Crítico');
 

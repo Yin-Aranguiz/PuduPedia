@@ -1,23 +1,25 @@
+require('dotenv').config();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const nodemailer = require('nodemailer');
 const { addUser, findUser,
-    updateUser, 
+    updateUser,
     // deletedUser 
 } = require('./userModel');
 
 // Controlador para registro de usuario
 const registerUser = async (req, res) => {
-    const { email, password, username } = req.body;
+    const { email, password, username, securityQuestion, securityAnswer } = req.body;
     // Verifica si se proporcionó el nombre de usuario, el email y la contraseña
-    if (!username || !email || !password) {
+    if (!username || !email || !password || !securityQuestion || !securityAnswer) {
         return res.status(400).send('Se requiere usuario, email y contraseña');
     }
 
     try {
         // hashea la contraseña y añade al usuario a la base de datos
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = { username, email, user_password: hashedPassword };
+        const hashedSecurityAnswer = await bcrypt.hash(securityAnswer, 10);
+        const user = { username, email, user_password: hashedPassword, security_question: securityQuestion,
+            security_answer: hashedSecurityAnswer };
         await addUser(user);
         res.status(201).json({ message: 'Usuario creado con éxito' });
 
@@ -61,9 +63,78 @@ const loginUser = async (req, res) => {
 };
 
 
-// Controlador para solicitud de recuperación de contraseña
+// Controlador para cambiar la contraseña
+const changePassword = async (req, res) => {
+    const { email, currentPassword, newPassword } = req.body;
+
+    try {
+        // Busca al usuario en la base de datos usando el correo electrónico
+        const user = await findUser(email);
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado.' });
+        }
+
+        // Verifica si la contraseña actual es correcta
+        const isMatch = await bcrypt.compare(currentPassword, user.user_password);
+        if (!isMatch) {
+            return res.status(401).json({ message: 'Contraseña actual incorrecta.' });
+        }
+
+        // Hashea la nueva contraseña
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        // Actualiza la contraseña del usuario en la base de datos
+        user.user_password = hashedPassword;
+        await updateUser(user);
+
+        res.status(200).json({ message: 'Contraseña cambiada con éxito.' });
+    } catch (error) {
+        console.error('Error al cambiar la contraseña:', error);
+        res.status(500).json({ message: 'Error en el servidor', error });
+    }
+};
+// Controlador para validar la respuesta de seguridad
+const validateSecurityAnswer = async (req, res) => {
+    const { email, username, securityAnswer } = req.body;
+
+    // Verifica que todos los campos requeridos estén presentes
+    if (!email || !username || !securityAnswer) {
+        return res.status(400).json({ message: 'Faltan datos requeridos.' });
+    }
+
+    try {
+        // Busca al usuario en la base de datos
+        const user = await findUser(email);
+        if (!user || user.username !== username) {
+            return res.status(400).json({ message: 'Usuario no encontrado o nombre de usuario incorrecto.' });
+        }
+
+        // Compara la respuesta de seguridad
+        const isMatch = await bcrypt.compare(securityAnswer, user.security_answer);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Respuesta de seguridad incorrecta.' });
+        }
+
+        // Si la respuesta es correcta, envía una respuesta positiva
+        res.status(200).json({ message: 'Respuesta correcta. Puedes proceder a cambiar la contraseña.' });
+    } catch (error) {
+        console.error('Error al validar la respuesta de seguridad:', error);
+        res.status(500).json({ message: 'Error en el servidor', error });
+    }
+};
+
+// Controlador para restablecer la contraseña
 const forgotPassword = async (req, res) => {
-    const { email } = req.body;
+    const { email, newPassword, confirmPassword } = req.body;
+
+    if (!email || !newPassword || !confirmPassword) {
+        return res.status(400).json({ message: 'Faltan datos requeridos.' });
+    }
+
+    // Verifica que la nueva contraseña y la confirmación coincidan
+    if (newPassword !== confirmPassword) {
+        return res.status(400).json({ message: 'Las contraseñas no coinciden.' });
+    }
 
     try {
         const user = await findUser(email);
@@ -71,63 +142,17 @@ const forgotPassword = async (req, res) => {
             return res.status(400).json({ message: 'No se encontró un usuario con ese correo electrónico.' });
         }
 
-        const resetPasswordToken = jwt.sign(
-            { email: user.email },
-            process.env.JWT_SECRET || 'default_secret_key',
-            { expiresIn: '1h' }
-        );
-
-        user.reset_password_token = resetPasswordToken;
-        await updateUser(user); 
-
-        const transporter = nodemailer.createTransport({
-            service: 'Gmail',
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASSWORD
-            }
-        });
-
-        const mailOptions = {
-            to: user.email,
-            from: 'no-reply@pudupedia.com',
-            subject: 'Recuperación de contraseña',
-            text: `Recibiste este correo porque tú (u otra persona) solicitó un restablecimiento de contraseña para tu cuenta.\n\n` +
-                `Haz clic en el siguiente enlace o pégalo en tu navegador para completar el proceso:\n\n` +
-                `http://localhost:3000/reset-password/${resetPasswordToken}\n\n` +
-                `Si no solicitaste esto, por favor ignora este correo y tu contraseña permanecerá sin cambios.\n`
-        };
-
-        await transporter.sendMail(mailOptions);
-        res.status(200).json({ message: 'Correo de recuperación enviado con éxito.' });
-    } catch (error) {
-        res.status(500).json({ message: 'Error en el servidor', error });
-    }
-};
-
-// Controlador para restablecer la contraseña usando el token
-const resetPassword = async (req, res) => {
-    const { token } = req.params;
-    const { password } = req.body;
-
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret_key');
-        const user = await findUser(decoded.email);
-
-        if (!user || user.reset_password_token !== token) {
-            return res.status(400).json({ message: 'Token inválido o caducado.' });
-        }
-
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
         user.user_password = hashedPassword;
-        user.reset_password_token = null; // Borrar el token después de usarlo
-
         await updateUser(user);
-        res.status(200).json({ message: 'Contraseña restablecida con éxito.' });
+
+        res.status(200).json({ message: 'Contraseña cambiada con éxito.' });
     } catch (error) {
+        console.error('Error al cambiar la contraseña:', error);
         res.status(500).json({ message: 'Error en el servidor', error });
     }
 };
+
 
 // // Controlador para eliminar cuenta de usuario
 // const deleteUser = async (req, res) => {
@@ -161,7 +186,7 @@ const resetPassword = async (req, res) => {
 //         res.status(500).json({ message: 'Error en el servidor al intentar eliminar la cuenta.' });
 //     }
 // };
-
+// Controlador para cerrar sesión
 // const handleLogout = () => {
 //     // Elimina el token de localStorage
 //     localStorage.removeItem('accessToken');
@@ -179,7 +204,7 @@ const resetPassword = async (req, res) => {
 //     addParkVisited,
 //     removeParkVisited
 //   } = require('./userModel');
-  
+
 //   // Añadir Animal Visto
 //   const addAnimalSeenController = async (req, res) => {
 //       const { userId, animalId } = req.body;
@@ -190,7 +215,7 @@ const resetPassword = async (req, res) => {
 //           res.status(500).json({ error: err.message });
 //       }
 //   };
-  
+
 //   // Eliminar Animal Visto
 //   const removeAnimalSeenController = async (req, res) => {
 //       const { userId, animalId } = req.body;
@@ -201,7 +226,7 @@ const resetPassword = async (req, res) => {
 //           res.status(500).json({ error: err.message });
 //       }
 //   };
-  
+
 //   // Añadir Planta Vista
 //   const addPlantSeenController = async (req, res) => {
 //       const { userId, plantId } = req.body;
@@ -212,7 +237,7 @@ const resetPassword = async (req, res) => {
 //           res.status(500).json({ error: err.message });
 //       }
 //   };
-  
+
 //   // Eliminar Planta Vista
 //   const removePlantSeenController = async (req, res) => {
 //       const { userId, plantId } = req.body;
@@ -223,7 +248,7 @@ const resetPassword = async (req, res) => {
 //           res.status(500).json({ error: err.message });
 //       }
 //   };
-  
+
 //   // Añadir Parque Visitado
 //   const addParkVisitedController = async (req, res) => {
 //       const { userId, parkId } = req.body;
@@ -234,7 +259,7 @@ const resetPassword = async (req, res) => {
 //           res.status(500).json({ error: err.message });
 //       }
 //   };
-  
+
 //   // Eliminar Parque Visitado
 //   const removeParkVisitedController = async (req, res) => {
 //       const { userId, parkId } = req.body;
@@ -252,8 +277,8 @@ const resetPassword = async (req, res) => {
 module.exports = {
     registerUser,
     loginUser,
-    forgotPassword,
-    resetPassword,
+    changePassword,
+    forgotPassword
     // deleteUser,
     // handleLogout,
     // addAnimalSeenController,

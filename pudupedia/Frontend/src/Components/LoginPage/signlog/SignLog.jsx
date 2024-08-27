@@ -5,7 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const SignAndLog = () => {
 	const [isSignUp, setIsSignUp] = useState(false);
-	const navigate = useNavigate(); // Definir useNavigate
+	const navigate = useNavigate();
 
 	const handleSignUpClick = () => {
 		setIsSignUp(true);
@@ -19,11 +19,13 @@ const SignAndLog = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirm, setConfirm] = useState('');
+	const [securityQuestion, setSecurityQuestion] = useState('');
+	const [securityAnswer, setSecurityAnswer] = useState('');
 
 	const handleSubmitRegister = async (e) => {
 		e.preventDefault();
 	
-		if (!username || !email || !password || !confirm) {
+		if (!username || !email || !password || !confirm || !securityQuestion || !securityAnswer) {
 			alert('Por favor, completa todos los campos antes de continuar.');
 			return;
 		}
@@ -39,7 +41,7 @@ const SignAndLog = () => {
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ username, email, password }),
+				body: JSON.stringify({ username, email, password, securityQuestion, securityAnswer }),
 			});
 	
 			if (response.ok) {
@@ -140,6 +142,24 @@ const SignAndLog = () => {
 							placeholder="Confirmar Contraseña"
 							required
 						/>
+						<input
+							type="text"
+							name="securityQuestion"
+							id="securityQuestion"
+							value={securityQuestion}
+							onChange={(e) => setSecurityQuestion(e.target.value)}
+							placeholder="Pregunta de Seguridad"
+							required
+						/>
+						<input
+							type="text"
+							name="securityAnswer"
+							id="securityAnswer"
+							value={securityAnswer}
+							onChange={(e) => setSecurityAnswer(e.target.value)}
+							placeholder="Respuesta de Seguridad"
+							required
+						/>
 						<button className="signUp" type="submit">Crear Cuenta</button>
 					</form>
 				</div>
@@ -164,7 +184,7 @@ const SignAndLog = () => {
 							placeholder="Contraseña"
 							required
 						/>
-						<Link to="/forgot-password">¿Olvidaste tu Contraseña?</Link>
+						<Link to="/forgot-password-security">¿Olvidaste tu Contraseña?</Link>
 						<button className="signIn" type="submit">Ingresar</button>
 					</form>
 				</div>

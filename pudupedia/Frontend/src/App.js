@@ -10,10 +10,9 @@ import NavBar from './components/LandingPage/Navbar/NavBar';
 import AboutUs from './components/AboutUsPage/AboutUs';
 import SignLog from './components/LoginPage/signlog/SignLog';
 import ParksPage from './components/ParksPage/ParksPage';
-import ResetPassword from './components/LoginPage/signlog/resetPassword';
-import ForgotPassword from './components/LoginPage/signlog/forgotPassword';
-import ResetPage from './components/LoginPage/ResetPage/ResetPage';
+import ForgotPassword from './components/LoginPage/signlog/ForgotPassword';
 import Accordion from './components/GalleryPage/Accordion';
+import ResetPassword from './components/LoginPage/signlog/ResetPassword';
 
 
 
@@ -31,11 +30,10 @@ function App() {
             <Route path="/memopudu" element={<Memopudu />} />
             <Route path='/quienes-somos' element={<AboutUs />} />
             <Route path="/signlog" element={<SignLog />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/check-your-email" element={<ResetPage />} />
+            <Route path="/change-password" element={<ForgotPassword />} />
             <Route path="/accordion/:animal" element={<Accordion />} />
             <Route path="/accordion" element={<Accordion />} />
+            <Route path="/forgot-password-security" element={<ResetPassword />} />
 
         </Routes>
     </Router>

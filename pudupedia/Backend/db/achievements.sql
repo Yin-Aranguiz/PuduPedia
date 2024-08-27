@@ -1,4 +1,4 @@
-INSERT INTO achievements (achievement, achievement_description) VALUES
+INSERT INTO achievements (achievement, achievement_description) VALUES 
 ('Primer Animal Avistado', 'Has avistado tu primer animal.'),
 ('Primera Planta Avistada', 'Has avistado tu primera planta.'),
 ('Primer Parque Visitado', 'Has visitado tu primer parque nacional.'),
