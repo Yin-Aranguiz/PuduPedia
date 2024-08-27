@@ -1,0 +1,21 @@
+.share-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .share-button {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .share-facebook { background-color: #3b5998; } /* Color azul de Facebook */
+  .share-twitter { background-color: #1da1f2; } /* Color azul de Twitter */
+  .share-reddit { background-color: #ff4500; } /* Color naranja de Reddit */
+  .share-linkedin { background-color: #0077b5; } /* Color azul de LinkedIn */
+  

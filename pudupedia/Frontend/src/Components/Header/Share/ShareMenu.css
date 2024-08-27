@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff; /* Color de fondo blanco */
+    border: 1px solid #000000; /* Borde negro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 10px;
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    font-family: 'Open Sans', sans-serif; /* Tipografía principal */
+    position: absolute; /* Posicionamiento absoluto para colocar debajo del botón */
+    top: 100%; /* Coloca el menú justo debajo del botón */
+    left: 0; /* Alinea el menú con el borde izquierdo del botón */
+    display: none; /* Oculta el menú por defecto */
+    z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+  }
+  
+  .share-menu-visible {
+    display: flex; /* Muestra el menú cuando la clase 'share-menu-visible' está presente */
+  }
+  
+  .share-button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #ffffff; /* Texto blanco */
+    font-weight: 600; /* Peso de la fuente */
+    font-size: 16px; /* Tamaño de la fuente */
+  }
+  
+  .share-button:hover {
+    opacity: 0.8; /* Efecto al pasar el ratón */
+  }
+  
+  .share-facebook {
+    background: #4074ff; /* Color de fondo para Facebook */
+  }
+  
+  .share-twitter {
+    background: #30bd95; /* Color de fondo para Twitter */
+  }
+  
+  .share-reddit {
+    background: #ff4500; /* Color de fondo para Reddit (opcional) */
+  }
+  
+  .share-linkedin {
+    background: #0077b5; /* Color de fondo para LinkedIn (opcional) */
+  }
+  
