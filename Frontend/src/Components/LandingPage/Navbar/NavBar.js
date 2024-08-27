@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  // Asegúrate de importar Link
 import './NavBar.css';
 
 const NavBar = () => {
@@ -13,26 +13,25 @@ const NavBar = () => {
     };
 
     const fondo = (state) => {
-        if (state === false) {
-            return 'none';
-        } else if (state === true) {
-            return 'background';
-        }
+        return state ? 'background' : 'none';
     };
 
     return (
         <div className={`allItemsNavBar ${fondo(visible)}`}>
-            <button className='button'
+            <button
+                className='button'
                 onMouseEnter={isVisible}
-                onMouseLeave={notVisible}>
+                onMouseLeave={notVisible}
+            >
+                {/* Botón para activar/desactivar el menú */}
             </button>
 
             {visible && (
                 <div className="navBarItems" onMouseEnter={isVisible} onMouseLeave={notVisible}>
                     <Link to="/"><div className="circle"></div>Inicio</Link>
-                    <Link to="/chile"><div className="circle"></div>Chile</Link>
+                    <Link to="/noticias"><div className="circle"></div>Noticias</Link> {/* Enlace actualizado a Noticias */}
                     <Link to="/vida-silvestre"><div className="circle"></div>Vida Silvestre</Link>
-                    <Link to="/parques"><div className="circle"></div>Parques</Link> {/* Enlace a la ruta de parques */}
+                    <Link to="/parques"><div className="circle"></div>Parques</Link>
                     <Link to="/juegos"><div className="circle"></div>Juegos</Link>
                     <Link to="/quienes-somos"><div className="circle"></div>Quienes Somos</Link>
                 </div>

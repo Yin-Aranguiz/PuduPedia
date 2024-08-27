@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.login * {
+	box-sizing: border-box;
+	font-family: "Open sans", sans-serif;
+}
+.login { 
+	background-image: url(park.jpg);
+	object-fit: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Open sans', sans-serif;
+	height: 110vh;
+	margin: -20px 0 0px;
+}
+
+.login h1 {
+	font-weight: bold;
+	margin: 0;
+	color: #ffffff;
+	text-shadow: 2px 3px 6px rgb(8, 39, 23);
+}
+.question {
+	color: #FFFFFF;
+	margin-bottom: 10px;
+	text-shadow: 0 5px 10px rgb(8, 39, 23);
+}
+
+.login span {
+	font-size: 12px;
+}
+
+.login a {
+	color: #ffffff;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+.login a:hover {
+	text-decoration: underline;
+}
+
+.login button {
+	border-radius: 20px;
+	border: 1px solid rgb(21, 75, 48);
+	background-color: rgb(21, 75, 48);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.login button:active {
+	transform: scale(0.95);
+}
+
+.login button:focus {
+	outline: none;
+}
+
+.login button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+	box-shadow: 0 5px 10px rgb(8, 39, 23);
+}
+.login button:hover {
+	cursor: pointer;
+	background-color: rgb(37, 133, 85);
+	border: 1px solid rgb(37, 133, 85);
+	transition: 0.3s ease;
+}
+.signUp, .signIn, .ghost {
+	border-radius: 20px;
+	border: 1px solid rgb(21, 75, 48);
+	background-color: rgb(21, 75, 48);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	margin-top: 10px;
+	box-shadow: 0 3px 6px rgb(8, 39, 23);
+}
+
+.signUp:active {
+	transform: scale(0.95);
+}
+
+.signUp:focus {
+	outline: none;
+}
+
+.signUp.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+.login form {
+	background-image: url(anagallis\ arvensishue.jpg);
+	background-color: #70c4a1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+}
+
+.login input {
+	background-color: #ffffff;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.container {
+	background-image: url(anagallis\ arvensishue.jpg);
+
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;	
+}
+
+.formContainer {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.signInContainer {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.rightPanelActive .signInContainer {
+	transform: translateX(100%);
+}
+
+.signUpContainer {
+	left: 0;
+	width: 50%;
+	opacity: 0; 
+	z-index: 1;
+}
+
+.container.rightPanelActive .signUpContainer {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
+	}
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.overlayContainer {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.rightPanelActive .overlayContainer{
+	transform: translateX(-100%);
+}
+
+.overlay {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #FFFFFF;
+    position: relative;
+    left: -100%;
+    height: 100%;     
+    width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.rightPanelActive .overlay {
+  	transform: translateX(50%);
+}
+
+.overlayPanel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlayLeft {
+	background-image: url(pudu_left_square.jpg);
+	transform: translateX(-20%);
+}
+
+.container.rightPanelActive .overlayLeft {
+	transform: translateX(0);
+}
+
+.overlayRight {
+	background-image: url(sietecolores2.jpg);
+	object-fit: cover;
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.rightPanelActive .overlayRight {
+	transform: translateX(20%);
+} 
+
+
