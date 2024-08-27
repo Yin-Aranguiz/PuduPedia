@@ -5,7 +5,7 @@ import './ResetPassword.css';
 const ResetPassword = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
-    const [answer, setAnswer] = useState('');
+    const [securityAnswer, setSecurityAnswer] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
@@ -19,14 +19,14 @@ const ResetPassword = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, username, answer }),
+                body: JSON.stringify({ email, username, securityAnswer }),
             });
 
             if (response.ok) {
                 setSuccess(true);
                 setError('');
                 alert('Respuesta correcta. Ahora puedes cambiar tu contraseña.');
-                navigate('/reset-password'); // Redirige a la página para restablecer la contraseña
+                navigate('/change-password-reset'); // Redirige a la página para restablecer la contraseña
             } else {
                 const errorData = await response.json();
                 setSuccess(false);
@@ -68,8 +68,8 @@ const ResetPassword = () => {
                     id="answer"
                     type="text"
                     placeholder="Respuesta a la Pregunta de Seguridad"
-                    value={answer}
-                    onChange={(e) => setAnswer(e.target.value)}
+                    value={securityAnswer}
+                    onChange={(e) => setSecurityAnswer(e.target.value)}
                     required
                 />
 
