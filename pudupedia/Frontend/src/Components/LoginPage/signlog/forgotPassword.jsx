@@ -45,7 +45,7 @@ const ForgotPassword = () => {
 
     return (
         <div>
-            <Header/> 
+          <Header/> 
         <div className='wholeSecurity'>
         <div className='forgotPasswordSecurity'>
         <div className='securityTitle'><p className='forgot-password-title'>Cambiar Contraseña</p>
