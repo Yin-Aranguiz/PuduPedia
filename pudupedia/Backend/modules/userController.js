@@ -93,35 +93,62 @@ const changePassword = async (req, res) => {
         res.status(500).json({ message: 'Error en el servidor', error });
     }
 };
-// Controlador para cuando el usuario olvida su contraseña
-const forgotPassword = async (req, res) => {
-    const { email, securityAnswer, newPassword } = req.body;
+// Controlador para validar la respuesta de seguridad
+const validateSecurityAnswer = async (req, res) => {
+    const { email, username, securityAnswer } = req.body;
+
+    // Verifica que todos los campos requeridos estén presentes
+    if (!email || !username || !securityAnswer) {
+        return res.status(400).json({ message: 'Faltan datos requeridos.' });
+    }
 
     try {
-        // Verifica si el usuario existe
+        // Busca al usuario en la base de datos
+        const user = await findUser(email);
+        if (!user || user.username !== username) {
+            return res.status(400).json({ message: 'Usuario no encontrado o nombre de usuario incorrecto.' });
+        }
+
+        // Compara la respuesta de seguridad
+        const isMatch = await bcrypt.compare(securityAnswer, user.security_answer);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Respuesta de seguridad incorrecta.' });
+        }
+
+        // Si la respuesta es correcta, envía una respuesta positiva
+        res.status(200).json({ message: 'Respuesta correcta. Puedes proceder a cambiar la contraseña.' });
+    } catch (error) {
+        console.error('Error al validar la respuesta de seguridad:', error);
+        res.status(500).json({ message: 'Error en el servidor', error });
+    }
+};
+
+// Controlador para restablecer la contraseña
+const forgotPassword = async (req, res) => {
+    const { email, newPassword, confirmPassword } = req.body;
+
+    if (!email || !newPassword || !confirmPassword) {
+        return res.status(400).json({ message: 'Faltan datos requeridos.' });
+    }
+
+    // Verifica que la nueva contraseña y la confirmación coincidan
+    if (newPassword !== confirmPassword) {
+        return res.status(400).json({ message: 'Las contraseñas no coinciden.' });
+    }
+
+    try {
         const user = await findUser(email);
         if (!user) {
             return res.status(400).json({ message: 'No se encontró un usuario con ese correo electrónico.' });
         }
 
-        // Normaliza la respuesta de seguridad para compararla
-        const normalizedStoredAnswer = user.security_answer.trim().toLowerCase();
-        const normalizedInputAnswer = securityAnswer.trim().toLowerCase();
-
-        // Verifica la pregunta y respuesta de seguridad
-        if (normalizedStoredAnswer !== normalizedInputAnswer) {
-            console.log(`Respuesta correcta: ${normalizedStoredAnswer}, Respuesta ingresada: ${normalizedInputAnswer}`);
-            return res.status(400).json({ message: 'Respuesta de seguridad incorrecta.' });
-        }
-
-        // Hashea la nueva contraseña y actualiza el usuario
         const hashedPassword = await bcrypt.hash(newPassword, 10);
         user.user_password = hashedPassword;
         await updateUser(user);
 
-        res.status(200).json({ message: 'Contraseña restablecida con éxito.' });
+        res.status(200).json({ message: 'Contraseña cambiada con éxito.' });
     } catch (error) {
-        console.error('Error al restablecer la contraseña:', error);
+        console.error('Error al cambiar la contraseña:', error);
         res.status(500).json({ message: 'Error en el servidor', error });
     }
 };
