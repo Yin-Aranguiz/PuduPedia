@@ -2,167 +2,271 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 .AboutUsPage * {
-  font-family: "Inter", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
-  color: #fff;
+  color: #ffffff;
+  text-align: justify;
 }
+
+.AboutUsPage {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -10vh;
+}
+
+
 .aboutUsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
+
 .whoAreWe {
   margin-right: 10px;
   margin-left: -280px;
-  font-size: x-large;
-  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
-  padding-top: 25px;
+  padding-top: 55px;
   padding-left: 50px;
   border-radius: 10px;
-  height: 435px;
-  width: 700px;
+  height: 480px;
+  width: 450px;
   margin-bottom: 130px;
+  background-color: rgba(0, 0, 0, 0.200);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.185);
+
 }
 .whoAreWe:hover {
-  box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
+  box-shadow: rgb(255, 255, 255) 0.7px 0.9px 4px 4px;
 }
 .misionAndVision {
   margin-right: -300px;
-  margin-bottom: 130px;
+  margin-bottom: 140px;
+  text-align: justify;
 }
 .mision {
-  padding-bottom: 20px;
+  height: 200px;
+  width: 400px;
   padding: 20px 30px;
   border-radius: 10px;
-  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
-  margin-bottom: 10px;
-}
-.mision:hover {
-  box-shadow: rgb(0, 179, 134) 0.2px 0.5px 3px 3px;
-}
-.vision {
-  padding: 20px 30px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+  background-color: rgba(0, 0, 0, 0.142);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
-  background: linear-gradient(to bottom right, rgb(0, 0, 0), rgba(0, 0, 0, .6));
-}
-.vision:hover {
-  box-shadow: rgb(0, 179, 134) 0.2px 0.5px 3px 3px;
-}
-.boxTitle {
-  font-size: xx-large;
-}
-.content {
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 5px;
-}
-.contentBit {
-  font-family: 'Open Sans', sans-serif;
-}
-.subtitles {
-  font-size: larger;
-  margin-bottom: 7px;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.185);
 }
 
+.mision:hover {
+  box-shadow: rgb(255, 255, 255) 0.2px 0.5px 3px 3px;
+}
+
+
+.vision {
+  padding: 20px 30px;
+  width: 400px;
+  border-radius: 10px;
+  margin-left: 30px;
+  background-color: rgba(0, 0, 0, 0.142);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.185);
+}
+
+.vision:hover {
+  box-shadow: rgb(255, 255, 255) 0.2px 0.5px 3px 3px;
+}
+
+.boxTitle {
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.349);
+}
+
+.content {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 20px;
+  margin-right: 60px;
+  text-align: justify;
+  font-size: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.651);
+  text-align: justify;
+  
+}
+
+.contentBit {
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.651);
+}
+.subtitles {
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.651);
+}
 .teamTitle {
-  margin-top: 120px;
-  margin-bottom: 50px;
+  margin-top: 250px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
+
 .title {
-  font-size: xx-large;
-  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.475);
+  font-size: 35px;
+  color: #ffffff;
+  font-weight: 700;
 }
+
 .teamContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .memberContainer .Icon {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 100%;
   background-color: #fff;
 }
+
 .memberContainer {
   display: block;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0.1));
   border-radius: 10px;
   text-align: center;
-  width: 240px;
-  height: 350px;
+  width: 220px;
+  height: 330px;
   margin: 10px 5px;
   padding-top: 30px;
-  margin-bottom: 130px;
+  margin-bottom: 130px;    
+  background: linear-gradient(180deg, #30bd9588, #4073ffd1);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.185); /* Sombra */
 }
+
 .memberContainer:hover {
   transform: scale(1.03);
   transition: transform 0.5s ease;
-  box-shadow: 0.2px -1px 3px 3px rgb(0, 179, 134)
+  box-shadow: 0.5px -1px 3px 3px rgba(255, 255, 255, 0.503)
 }
+
 .name {
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open sans', sans-serif;
+  font-size: 18px;
   margin-top: 10px;
   margin-bottom: 30px;
+  font-weight: 550;
+  text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
 }
+
 .Linked {
-  width: 35px;
-  height: 35px;
-  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px; 
 }
+
 .GitHub {
-  width: 35px;
-  height: 35px;
-  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px; 
+  margin-left: -10px;
 }
-.links a, .linkName {
+
+.links {
+  display: flex; /* Usa flexbox para alinear los elementos verticalmente */
+  flex-direction: column; /* Coloca los elementos en una columna */
+  align-items: center; /* Alinea los íconos y el texto horizontalmente al centro */
+}
+
+.links a {
+  display: flex; /* Usa flexbox en los enlaces para alinear el contenido */
+  align-items: center; /* Alinea los íconos y el texto verticalmente */
   color: #fff;
-  text-decoration: none;
-  display: block;
-  align-items: center;
-  justify-content: left;
-  text-align: left;
-  margin-left: 30px;
+  text-decoration: none; /* Quita el subrayado */
+  margin-bottom: -35px; 
 }
+
 .linkName {
-  margin-left: 45px;
-  margin-top: -31px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
 .linkName:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);;
 }
 
 .bg {
   animation:slide 7s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, rgb(21, 122, 63) 50%, rgb(7, 88, 49) 50%);
-  bottom:0;
+  background-image: linear-gradient(-60deg, rgb(21, 122, 95) 50%, rgb(7, 88, 49) 50%);
   left:-50%;
-  opacity:.3;
-  position:fixed;
+  opacity:0.3;
+  position: absolute;
   right:-50%;
   top:0;
-  z-index:-1;
+  z-index:-5;
+}
+
+.aboutUsBackground {
+  position: absolute;
+  background-image: url(https://caminandesagencia.com/wp-content/uploads/2023/05/IMG_20190914_144512-scaled.jpg);
+  background-size: 110%; /* Ajusta la imagen para cubrir todo el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center;
+  z-index: -10;
+  left: 0;
+  width: 100%;
+  height: 212%;
 }
 
 .bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:14s;
+  animation-direction: alternate-reverse;
+  animation-duration: 14s;
+  position: absolute;
+  z-index: -5;
 }
 
 .bg3 {
-  animation-duration:15s;
+  animation-duration: 15s;
+  position: absolute;
+  z-index: -5;
 }
 
 .AboutUsPage {
-  margin-bottom: -20vh;
-  
+  margin-bottom: -10vh; 
 }
+
+
+/* Cambiar la anchura de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+/* Cambiar el color de fondo de la barra de desplazamiento holi c: yey*/
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0); /* Color de la pista (fondo de la barra) */
+}
+/* Cambiar el color y estilo del 'thumb' de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(105deg, #30bd9599, #4073ffa2); /* Color del 'thumb' con gradiente */
+  border-radius: 1px;
+}
+/* Cambiar el color del 'thumb' al pasar el mouse por encima */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(105deg, #30bd95, #4073ff); /* Más claro al hacer hover */
+}
+
 
 @keyframes slide {
   0% {
