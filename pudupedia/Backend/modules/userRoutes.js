@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { registerUser, loginUser,
-    changePassword, forgotPassword
+    changePassword, forgotPassword, validateSecurityAnswer
 } = require('./userController');
 // const {
 //     addAnimalSeenController,
@@ -21,7 +21,11 @@ router.post('/login', loginUser);
 // // Ruta para solicitud de recuperación de contraseña:
 router.post('/change-password', changePassword);
 
-router.post('/forgot-password-security', forgotPassword);
+// Ruta para validar la respuesta de seguridad
+router.post('/forgot-password-security', validateSecurityAnswer);
+
+// Ruta para cambiar la contraseña
+router.post('/change-password-reset', forgotPassword);
 
 // // Rutas para manejar los animales vistos
 // router.post('/animals-seen', addAnimalSeenController);
