@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './LandingPage.css';
 import Footer from './Footer/Footer';
 import Infoboxes from './Infoboxes/Infoboxes';
-import NavBar from './Navbar/NavBar';
 import Header from './Header/Header';
 
 // importa las imágenes desde la misma carpeta
@@ -80,7 +79,7 @@ const LandingPage = () => {
         </div>
         {/* Añadido el contenedor de puntos */}
       </div>
-      <NavBar />
+      
       <div className="section section-2">
         <img src={image2} alt='image2' className='static-image' />
         <Infoboxes />
@@ -91,3 +90,4 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
