@@ -38,7 +38,13 @@ const HistoryPage = () => {
         <div className='contentTab'>
         <div className='nameOfTab'>
             • Partidas
+            <div>
+              <p className='noNotifsYet'>No has jugado aún</p>
+            </div>
             • Puntajes
+            <div>
+              <p className='noNotifsYet'>No has jugado aún</p>
+            </div>
         </div>
         </div>
       </div>

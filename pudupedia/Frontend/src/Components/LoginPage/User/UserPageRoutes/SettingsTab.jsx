@@ -38,6 +38,11 @@ const SettingsPage = () => {
         <div className='contentTab'>
         <div className='nameOfTab'>
             • Perfil
+            <div>
+              <p className='profileOptions'>Cambiar Contraseña</p>
+              <p className='profileOptions'>Cambiar Email</p>
+              <p className='deleteAccOpt'>Eliminar Cuenta</p>
+            </div>
             • Privacidad
         </div>
         </div>

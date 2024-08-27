@@ -47,15 +47,15 @@ const FavesPage = () => {
           <div className='nameOfTab'>
             • Flora
             <div className='floraElements'>
-              <img src={pdloro}/>
-              <img src={ananuca}/>
+              <img src={pdloro} className='favPic'/>
+              <img src={ananuca} className='favPic'/>
             </div>
           </div>
           <div className='nameOfTab'>
             • Fauna
             <div className='faunaElements'>
-              <img src={chucao}/>
-              <img src={guina}/>
+              <img src={chucao} className='favPic'/>
+              <img src={guina} className='favPic'/>
             </div>
           </div>
           <div className='nameOfTab'>
@@ -67,10 +67,10 @@ const FavesPage = () => {
           <div className='nameOfTab'>
             • Todo
             <div className='allElements'>
-              <img src={pdloro}/>
-              <img src={ananuca}/>
-              <img src={chucao}/>
-              <img src={guina}/>
+              <img src={pdloro} className='favPic'/>
+              <img src={ananuca} className='favPic'/>
+              <img src={chucao} className='favPic'/>
+              <img src={guina} className='favPic'/>
             </div>
           </div>
         </div>

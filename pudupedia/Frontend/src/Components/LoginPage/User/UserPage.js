@@ -2,6 +2,8 @@ import React from 'react';
 import './UserPage.css'
 import monito from './monito-del-monte.jpg';
 import { Outlet, Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen} from '@fortawesome/free-solid-svg-icons'
 
 const UserPage = () => {
   return ( 
@@ -41,11 +43,17 @@ const UserPage = () => {
         <div className='contentTab'>
         <div className='nameOfTab'>
             • Nombre de Usuario
+            <div className='userData'>
+              <p>Username</p>
+            </div> 
             • Email
-            • Cambiar Contraseña
+            <div className='userData'>
+              <p>pudupedia@gmail.com</p>
+              </div>
         </div>
-        <div>
+        <div className='profilePicCorner'>
         <img src={monito} alt="monito del monte" className="imagePic"></img>
+        <p className='editPic'><FontAwesomeIcon icon={faPen} /></p>
         </div>
         </div>
       </div>

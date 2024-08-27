@@ -38,6 +38,9 @@ const NotifPage = () => {
         <div className='contentTab'>
         <div className='nameOfTab'>
             • Actividad Reciente
+            <div>
+              <p className='noNotifsYet'>No tienes actividad reciente</p>
+            </div>
             • Logros
         </div>
         </div>

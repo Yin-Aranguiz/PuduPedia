@@ -38,6 +38,9 @@ const HelpPage = () => {
         <div className='contentTab'>
         <div className='nameOfTab'>
             • Dudas
+            <div>
+            <p className='noFavesYet'>Preguntas Frecuentes</p>
+            </div>
             • Contáctanos
         </div>
         </div>
