@@ -18,8 +18,10 @@ const registerUser = async (req, res) => {
         // hashea la contraseña y añade al usuario a la base de datos
         const hashedPassword = await bcrypt.hash(password, 10);
         const hashedSecurityAnswer = await bcrypt.hash(securityAnswer, 10);
-        const user = { username, email, user_password: hashedPassword, security_question: securityQuestion,
-            security_answer: hashedSecurityAnswer };
+        const user = {
+            username, email, user_password: hashedPassword, security_question: securityQuestion,
+            security_answer: hashedSecurityAnswer
+        };
         await addUser(user);
         res.status(201).json({ message: 'Usuario creado con éxito' });
 
@@ -62,10 +64,13 @@ const loginUser = async (req, res) => {
     }
 };
 
-
 // Controlador para cambiar la contraseña
 const changePassword = async (req, res) => {
     const { email, currentPassword, newPassword } = req.body;
+
+    if (!newPassword || newPassword.length < 6) {
+        return res.status(400).json({ message: 'La nueva contraseña debe tener al menos 6 caracteres.' });
+    }
 
     try {
         // Busca al usuario en la base de datos usando el correo electrónico
@@ -278,6 +283,7 @@ module.exports = {
     registerUser,
     loginUser,
     changePassword,
+    validateSecurityAnswer,
     forgotPassword
     // deleteUser,
     // handleLogout,
