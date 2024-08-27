@@ -16,7 +16,7 @@ const ForgotPassword = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:3001/user/change-password', {  // Cambia la URL según sea necesario
+            const response = await fetch('http://localhost:3001/user/change-password', {  
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,6 +27,7 @@ const ForgotPassword = () => {
             if (response.ok) {
                 setSuccess(true);
                 setError('');
+                alert('Contraseña cambiada con éxito.')
                 navigate('/'); 
             } else {
                 const errorData = await response.json();
