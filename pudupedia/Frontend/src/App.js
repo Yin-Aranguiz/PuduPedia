@@ -1,25 +1,27 @@
 import React from 'react';
-import TriviaGame from './components/GamePage/TriviaGame/TriviaGame';
-import Memopudu from './components/GamePage/MemoPudu/Memopudu';
-import PuduHierbaPuma from './components/GamePage/PuHiPuGame/PuduHierbaPuma';
-import Bubbles from './components/MapPage/Bubbles';
+import TriviaGame from './Components/GamePage/TriviaGame/TriviaGame';
+import Memopudu from './Components/GamePage/MemoPudu/Memopudu';
+import PuduHierbaPuma from './Components/GamePage/PuHiPuGame/PuduHierbaPuma';
+import Bubbles from './Components/MapPage/Bubbles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './components/LandingPage/LandingPage';
-import GamePage from './components/GamePage/GamePage';
-import NavBar from './components/LandingPage/Navbar/NavBar';
-import AboutUs from './components/AboutUsPage/AboutUs';
-import SignLog from './components/LoginPage/signlog/SignLog';
-import ParksPage from './components/ParksPage/ParksPage';
-import ForgotPassword from './components/LoginPage/signlog/ForgotPassword';
-import Accordion from './components/GalleryPage/Accordion';
-import ResetPassword from './components/LoginPage/signlog/ResetPassword';
+import LandingPage from './Components/LandingPage/LandingPage';
+import GamePage from './Components/GamePage/GamePage';
+import AboutUs from './Components/AboutUsPage/AboutUs';
+import SignLog from './Components/LoginPage/signlog/SignLog';
+import ParksPage from './Components/ParksPage/ParksPage';
+import ForgotPassword from './Components/LoginPage/signlog/forgotPassword';
+import Accordion from './Components/GalleryPage/Accordion';
+import ResetPassword from './Components/LoginPage/signlog/resetPassword';
+import NewNavbar from './Components/LandingPage/Navbar/NewNavbar';
+import ResetPage from './Components/LoginPage/signlog/ResetPage';
+
 
 
 
 function App() {
     return (
         <Router>
-        <NavBar />
+        <NewNavbar />
         <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/juegos" element={<GamePage />} />
@@ -34,7 +36,7 @@ function App() {
             <Route path="/accordion/:animal" element={<Accordion />} />
             <Route path="/accordion" element={<Accordion />} />
             <Route path="/forgot-password-security" element={<ResetPassword />} />
-
+            <Route path="/change-password-reset" element={<ResetPage />} />
         </Routes>
     </Router>
     
