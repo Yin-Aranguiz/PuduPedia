@@ -7,7 +7,7 @@ import HistoryPage from "./UserPageRoutes/HistoryTab";
 import SettingsPage from "./UserPageRoutes/SettingsTab";
 import HelpPage from "./UserPageRoutes/HelpTab";
 import ProfilePage from "./UserPageRoutes/testPage";
-import Header from "../../LandingPage/Header/Header";
+import Header from "../../LandingPage/Header/header";
 import NavBar from "../../LandingPage/Navbar/newNavbar";
 
 
@@ -15,7 +15,7 @@ export default function FullUserPage() {
   return (
     <BrowserRouter>
     <Header/>
-    <NavBar/>
+    <Navbar/>
       <Routes>
           <Route path="/" element={<UserPage/>}/>
           <Route path="notifs" element={<NotifPage />} />

@@ -10,9 +10,9 @@ import NavBar from './components/LandingPage/Navbar/NavBar';
 import AboutUs from './components/AboutUsPage/AboutUs';
 import SignLog from './components/LoginPage/signlog/SignLog';
 import ParksPage from './components/ParksPage/ParksPage';
-import ForgotPassword from './components/LoginPage/signlog/ForgotPassword';
+import ForgotPassword from './components/LoginPage/signlog/forgotPassword';
 import Accordion from './components/GalleryPage/Accordion';
-import ResetPassword from './components/LoginPage/signlog/ResetPassword';
+import ResetPassword from './components/LoginPage/signlog/resetPassword';
 
 
 

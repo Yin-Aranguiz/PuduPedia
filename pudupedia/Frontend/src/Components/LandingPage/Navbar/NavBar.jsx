@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 
-const NavBar = () => {
+const NavBarOld = () => {
     const [visible, setVisible] = useState(false)
 
     const isVisible = () => {
@@ -43,4 +43,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default NavBarOld;
