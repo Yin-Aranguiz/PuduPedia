@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ResetPassword.css';
+import Header from '../../LandingPage/Header/Header';
 
 const ResetPassword = () => {
     const [email, setEmail] = useState('');
@@ -40,9 +41,12 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className="forgot-password-security">
-            <h2>Recuperar Contraseña</h2>
-            <form onSubmit={handleSubmit}>
+        <div>
+            <Header/>
+        <div className='wholeSecurity'>
+        <div className="forgotPasswordSecurity">
+            <div className='securityTitle'><p>Recuperar Contraseña</p></div>
+            <div className='securityForm'><form onSubmit={handleSubmit}>
                 <label htmlFor="email">Correo Electrónico:</label>
                 <input
                     id="email"
@@ -74,8 +78,10 @@ const ResetPassword = () => {
                 />
 
                 <button type="submit">Verificar</button>
-            </form>
+            </form> </div>
             {error && <p style={{ color: 'red' }}>{error}</p>}
+        </div>
+        </div>
         </div>
     );
 };
