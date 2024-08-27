@@ -19,7 +19,12 @@
 }
 
 .headerContainer {
-  background: linear-gradient(to top, rgba(7, 15, 11, 0), rgb(4, 8, 8));
+  background: linear-gradient(
+  to top, 
+  rgba(255, 255, 255, 0) 0%,  /* Transparente en la parte inferior */
+   
+  rgb(0, 49, 67) 100%  /* Completamente negro en la parte superior */
+);
   display: flex;
   align-items: center; /* Ajustado para centrar verticalmente */
   max-width: 100%;
@@ -33,7 +38,7 @@
 }
 
 /* Estilos de íconos */
-.shareIcon, .searchIcon {
+.shareIcon {
   width: 25px;
   height: 25px;
 }
@@ -59,54 +64,15 @@
   display: flex;
   padding-right: 50px;
   margin-top: 6px;
-  transition: transform 0.3s ease; /* Añade una transición suave */
 }
 
-/* Contenedor del botón de búsqueda */
-.searchContainer {
-  position: relative;
-  display: inline-block;
-}
-
-/* Estilo del botón de búsqueda */
-.searchButton {
-  display: flex;
-  align-items: center;
-  padding-right: 50px;
-  margin-top: 6px;
-}
-
-/* Estilo del ícono de búsqueda */
-.searchIcon {
-  width: 24px;
-  height: auto;
-  cursor: pointer;
-}
-
-/* Estilo del cuadro de búsqueda */
-.searchInput {
-  position: absolute;
-  right: calc(100% + 10px); /* Ajusta la posición del input para que esté a la izquierda del ícono */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 200px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-/* Mostrar el cuadro de búsqueda y mover el botón de compartir al pasar el mouse sobre el contenedor de botones */
-.buttonsWrapper:hover .searchInput {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(-10px); /* Ajusta la posición del input */
-}
-
-.buttonsWrapper:hover .shareButton {
-  transform: translateX(-210px); /* Ajusta el desplazamiento del shareButton */
+.shareButton::after {
+  content: "COMPARTIR";
+  margin-left: 15px; /* Texto antes del contenido del elemento */
+  display: block;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 2px;
 }
 
 /* Otros estilos para los elementos */
@@ -133,6 +99,7 @@
 .loginTab p {
   padding-top: 8px;
   padding-right: 8px;
+  font-weight: 400;
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
 }
@@ -142,12 +109,13 @@
   padding-right: 8px;
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
+  font-weight: 400;
 }
 
 .logoContainer {
   display: flex;
   margin-left: 50px;
-  margin-top: 28px;
+  margin-top: 5px;
   z-index: 10;
 }
 
@@ -158,7 +126,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.logoContainer:hover, .languageToggle:hover, .loginTab:hover, .shareButton:hover, .searchButton:hover {
+.logoContainer:hover, .languageToggle:hover, .loginTab:hover, .shareButton:hover {
   cursor: pointer;
 }
 
