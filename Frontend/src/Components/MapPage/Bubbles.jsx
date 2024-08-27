@@ -7,6 +7,7 @@ import ananuca from './ananuca.jpg';
 import { animals } from '../GalleryPage/animals';
 import Buttons from './Buttons'
 import InfoMap from './InfoMap';
+import Header from '../LandingPage/Header/Header'
 
 const Bubbles = () => {
   const [activeMacrozone, setActiveMacrozone] = useState(null);
@@ -167,6 +168,7 @@ const Bubbles = () => {
 
   return (
     <div className="radial-menu">
+       <Header/>
       <div className='bubble'>
         <h1 className="macrozone-name">RUTA ENDÉMICA</h1>
         <Map onMacrozoneClick={handleMacrozoneClick} />

@@ -12,7 +12,7 @@
 .AboutUsPage {
   position: relative;
   z-index: 1;
-  margin-bottom: -10vh;
+  
 }
 
 
@@ -117,11 +117,12 @@
  
 }
 
-.title {
+.dtitle {
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.475);
   font-size: 35px;
   color: #ffffff;
   font-weight: 700;
+  margin-top: -5vh;
 }
 
 .teamContainer {

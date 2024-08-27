@@ -7,18 +7,18 @@
   position: relative;
   border-radius: 5em;
   cursor: pointer;
-  width: 175px;
+  width: 220px;
   height: 80px;
   overflow: hidden;
   scale: 0.7;
   transition: all 0.5s;
   margin-top: 300vh;
-  margin-left: 150vh;
+  margin-left: 160vh;
   z-index: 1000;
 }
 
 .button .back {
-  background-image: linear-gradient(147deg, #402565 40% , #30be96  );
+  background-image: linear-gradient(5deg, #4074ff 40% , #30bd95 );
   position: absolute;
   width: 100%;
   height: 100%;
@@ -32,8 +32,7 @@
 }
 
 .button .checkbox:checked ~ .back {
-  background-image: linear-gradient(147deg, #402565 , #30be96 60%);
-
+  background-image: linear-gradient(5deg, #4074ff , #30bd95 80%);
 }
 
 .button .checkbox:checked ~ .animals {
@@ -60,12 +59,32 @@
 
 .button .plants {
   position: absolute;
-  left: 97px;
+  left: 140px;
   top: 20px;
   height: 53px;
   fill: #ffffff;
   transition: 1s;
   opacity: 0;
   overflow: visible;
+}
+
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.button-text::before {
+  margin-top: 80px;
+  font-size: 90px;
+  color: #333;
+  text-align: center;
+}
+
+
+button-text {
+  color: aliceblue;
 }
 

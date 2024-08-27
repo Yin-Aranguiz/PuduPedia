@@ -13,7 +13,7 @@ const AboutUs = () => {
       <div className='aboutUsBackground'>
         <Header />
         <div className='teamTitle'>
-          <p className='title'>E Q U I P O &nbsp; D E &nbsp; D E S A R R O L L A D O R E S</p>
+          <p className='dtitle'>E Q U I P O &nbsp; D E &nbsp; D E S A R R O L L A D O R E S</p>
         </div>
         <div className='teamContainer'>
           <div className='memberContainer'>

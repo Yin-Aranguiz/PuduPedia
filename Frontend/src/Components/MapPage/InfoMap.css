@@ -1,7 +1,7 @@
 
 .info-map {
     background-color: rgba(59, 56, 56, 0.175);
-    margin: 50px auto 100px auto;
+    margin: 110px auto 100px auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.185);
@@ -16,7 +16,7 @@
 }
 
 .info-map h2 {
-    margin-top: 0;
+    margin-top: 5;
     text-align: center;
     width: 100%;
     color: #d8f5f3;

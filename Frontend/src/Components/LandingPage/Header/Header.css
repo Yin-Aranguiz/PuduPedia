@@ -158,10 +158,6 @@
   padding-right: 8px;
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
-<<<<<<<< HEAD:Frontend/src/Components/LandingPage/Header/Header.css
-  font-weight: 400;
-========
->>>>>>>> 06bdcbb741ff01c1c501a0fa876fd02a7b584979:pudupedia/Frontend/src/Components/LandingPage/Header/Header.css
 }
 
 .logoContainer {
@@ -190,6 +186,6 @@
 }
 
 .backOff {
-  transform: translateY(148px) translateX(-70vh);
+  transform: translateY(22vh) translateX(-70vh);
   width: 191.5vh;
 }

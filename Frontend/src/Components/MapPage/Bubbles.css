@@ -71,8 +71,8 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: -455vh;
-    margin-left: 105vh;
+    margin-bottom: -550vh;
+    margin-left: 135vh;
 }
 
 /* Estilo para las imágenes dentro de los elementos del menú */
@@ -145,17 +145,13 @@
 
 .macrozone-name {
     position: absolute;
-    font-size: 2rem;
-    /* Ajusta el tamaño de la fuente */
-    color: #381269;
+    color: #ffffff;
     /* Cambia el color según tu diseño */
-    margin-top: 40vh;
-    margin-left: 65vh;
+    margin-top: 42vh;
+    margin-left: 80vh;
     font-family: 'Open Sans', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-shadow:
-        4px 2px 0 #8530bee1,
-        -1px -1px 0 #6423a1,
-        1px -1px 0 #000907,
-        -1px 1px 0 #000302;
+        4px 3px 3px #0003024c;
+    letter-spacing: 5px;
 }

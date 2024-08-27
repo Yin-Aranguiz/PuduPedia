@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Map.css';
-import Header from '../LandingPage/Header/Header';
+
 
 const Map = ({ onMacrozoneClick}) => {
     const [hoveredMacrozone, setHoveredMacrozone] = useState(null);
@@ -34,13 +34,13 @@ const Map = ({ onMacrozoneClick}) => {
 
     return (
         <div className="map-container">
-            <Header className={'backOff'}/>
             <svg
                 onClick={(e) => handleClick('macrozone', e)}
                 version="1.1"
                 id="map"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 161.1 707.5"
+                
             >
 
                
@@ -50,8 +50,11 @@ const Map = ({ onMacrozoneClick}) => {
                     onMouseEnter={() => handleMouseEnter('norte')}
                     onMouseLeave={handleMouseLeave}
                     onClick={(e) => handleClick('norte', e)}
+                    
+                    
                 >
                     <path
+                    
                         d="M99.6,21.2h-2.2L96,22.6l-0.2,1.6l-2.2,0.3l-2.2-1.7h-3.9l-2.2,1.7L83,25.9L80.7,26l0,0v-0.6l0.2-0.4v-0.6l-0.7-4L80,19.8l-0.2-2.9l0.1-0.9l0.4-2.1l-0.4-0.5L79.5,13L79,12.6h-0.1l0.2-0.2l0.3-0.2h0.5l1.1,0.1h0.7H82l0.7-0.1l2-0.8l0.5-0.3l1.3-1.4l0.3-0.4l0.7-1.4l0.3-0.8l0.1-0.5l-0.6-2.2l-0.1-0.3L87,3.9l-0.2-0.3L86.9,3l0.2-0.4l0.3-0.4L88,2.3l1.2,0.1L91.8,0L92,1.9l1.6,1.4l0.3,0.3l0.4,0.8l0.1,0.4v1l0.1,0.5l0.1,0.4l0.2,0.4L97,7.8l0.9,0.1v0.4l-0.1,0.3l-0.5,0.3L97,9.2l-0.1,0.4l0.2,0.4l0.3,0.3l0.3,0.4l0.2,2.4l0.2,0.3l0.3,0.4l0.1,0.3l0.1,0.4v0.4l-0.1,0.8v0.8l0.1,0.7l0.3,1.3l0.7,1.5l0.3,0.5L99.6,21.2z"
                         id="macrozona-norte-region1"
 
@@ -71,7 +74,7 @@ const Map = ({ onMacrozoneClick}) => {
                         id="macrozona-norte-region4"
 
                     />
-                    
+                            <text x="80" y="-150" className="macrozone-title" writing-mode="horizontal-tb">NORTE</text>
                 </g>
               
                 {/* Macrozona Centro */}
@@ -96,6 +99,7 @@ const Map = ({ onMacrozoneClick}) => {
                         id="macrozona-centro-region3"
 
                     />
+                    <text x="205" y="-120" className="macrozone-title" writing-mode="horizontal-tb">CENTRO</text>
                 </g>
 
                 {/* Macrozona Centro-Sur */}
@@ -104,6 +108,7 @@ const Map = ({ onMacrozoneClick}) => {
                     onMouseEnter={() => handleMouseEnter('centroSur')}
                     onMouseLeave={handleMouseLeave}
                     onClick={(e) => handleClick('centroSur', e)}
+                    
                 >
                     <path
                         d="M61.3,258.8l1.4,0.6l2.3-0.2l0.9,1.7l1.8,0.8l1.2,1.7l0,0h1.4l1.2-0.3v-0.7l0.1-0.4l1.9-2.2l1.2-0.7l0.4,0.1l1-0.1l0.6-0.4l1.7-0.6h0.5l0.5,0.2l0.3,0.3l0.6,1.9l-0.1,0.9l1,0.3l0.3-0.1l0.4-0.3h0.4l0.2,0.2l0.2,0.7v1.1l0.1,0.4l0.5,0.5l0.7,0.3l0.4,0.3l0.1,0.3v0.4l0,0l-0.1,0.2v1l0.1,0.8l-1.5,2.2l-1.2,2.2l-0.9,3.3l-0.9,2.5l0,0h-0.1l-0.8-0.1l-2.6-0.3l-1.6-1.2l-0.6-0.6l-0.3-0.2l-4-1.2l-0.5-0.1h-0.4l-2.5,0.2l-1.2,1v0.4l0.1,0.6l-2.2-0.4l-2.2-0.1l-1.5-0.4l-2-0.8l-0.5-0.7l-0.8-1l-0.3-0.2l-0.4-0.2l0,0l0.1-0.7l0.2-2.3l-0.1-1v-0.7l0.3-0.5l0.5-0.3l0.1-0.4v-0.9l-0.1-1.3l-0.3-0.4l-0.1-0.3V263l1.7-3.1l0.4-0.5l0,0H59l0.4,0.3l0.5,0.1l0.5,0.1l0.5-0.6l0,0L61.3,258.8z"
@@ -125,6 +130,7 @@ const Map = ({ onMacrozoneClick}) => {
                         id="macrozona-centrosur-region4"
 
                     />
+                    <text x="275" y="-105" className="macrozone-title" writing-mode="horizontal-tb">CENTRO-SUR</text>
                 </g>
 
                 {/* Macrozona Sur */}
@@ -149,6 +155,8 @@ const Map = ({ onMacrozoneClick}) => {
                         id="macrozona-sur-region3"
 
                     />
+
+                <text x="375" y="-80" className="macrozone-title" writing-mode="horizontal-tb">SUR</text>
                 </g>
 
                 {/* Macrozona Austral */}
@@ -169,6 +177,8 @@ const Map = ({ onMacrozoneClick}) => {
                         id="macrozona-austral-region2"
 
                     />
+                    
+                <text x="520" y="-80" className="macrozone-title" writing-mode="horizontal-tb">AUSTRAL</text>
                 </g>
             </svg>
         </div>

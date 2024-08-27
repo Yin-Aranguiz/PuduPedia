@@ -110,11 +110,11 @@ const PuduHierbaPuma = () => {
                         <p>Puma</p>
                     </button>
                     <button className="choice-button" onClick={() => playGame('hierba venenosa')}>
-<<<<<<<< HEAD:Frontend/src/Components/GamePage/PuHiPuGame/PuduHierbaPuma.jsx
+
                         <img src={hands.hierba} alt="Hierba" width="100" />
-========
+
                         <img className='imageChoice' src={hands['hierba venenosa']} alt="Hierba venenosa" width="100" />
->>>>>>>> 06bdcbb741ff01c1c501a0fa876fd02a7b584979:pudupedia/Frontend/src/Components/GamePage/PuHiPuGame/PuduHierbaPuma.jsx
+
                         <p>Hierba venenosa</p>
                     </button>
                     <button className="choice-button" onClick={() => playGame('pudu')}>
