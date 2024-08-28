@@ -8,8 +8,8 @@ const AccordionItem = ({ title, content }) => {
     const [isOpen, setIsOpen] = React.useState(false);
     
     return (
-        <div className="accordion-item">
-            <button className="accordion-button" onClick={() => setIsOpen(!isOpen)}>
+        <div className="accordionItem">
+            <button className="accordionButton" onClick={() => setIsOpen(!isOpen)}>
                 {title}
             </button>
             {isOpen && (
@@ -46,13 +46,19 @@ const Accordion = () => {
     }
 
     return (
+        
         <div className="accordion">
-            <h2>{itemInfo.name}</h2>
-            <img src={itemInfo.image} alt={itemInfo.name} style={{ maxWidth: '100%', height: 'auto' }} />
-            {itemInfo.info.map((item, index) => (
-                <AccordionItem key={index} title={item.title} content={item.content} />
-            ))}
+            <div className='accordionTitleAbove'>
+            <p className='accordionTitle'  style={{width: '480px'}}>{itemInfo.name}</p>
+            </div>
+            <div className='imagePositionAccordion'>
+            <img src={itemInfo.image} alt={itemInfo.name} style={{ width: '450px', height: '450px', objectFit: 'cover' }} className='accordionImg'/>
+            </div>
+            <div className='accordionItem'>{itemInfo.info.map((item, index) => (
+                <AccordionItem key={index} title={item.title} content={item.content}/> 
+            ))}</div>
         </div>
+        
     );
 };
 
