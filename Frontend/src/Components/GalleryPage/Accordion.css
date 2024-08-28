@@ -1,50 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+.background-accordion {
+    background-image: url(https://i.imgur.com/Pa65W5E.jpeg);
+    background-size: cover;
+    overflow-y: hidden;
+    background-position: center; /* Centra la imagen de fondo */
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 100vh; /* Ocupa todo el alto de la ventana */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina padding */
+}
+
 .accordion {
-  background: linear-gradient(135deg, #a8e063 0%, #56ab2f 100%);
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  width: 320px;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 28vh;
+    margin-left: 18vw;
+    background-color: rgba(150, 150, 150, 0.274);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 65vw;
+    height: 60vh;
+    color: #ffffff;
+    padding: 10px;
+}
+.accordionImg {
+  display: block;
+  margin-top: -2vh;
+  margin-left: -63.5vh;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: -5px 5px 7px rgba(0, 0, 0, 0.2);
 }
 
-.titulo {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 10px 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 16px 16px 0 0;
+
+.accordion-content-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
-.accordion-item {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.accordionTitle {
+    position: relative; /* Permite ajustar la posición */
+    z-index: 10; /* Asegura que esté por encima de otros elementos */
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10.5px 15px;
+    margin-top: -10vh;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 16px 0 0 0;
+    margin-left: -20px;
+    text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+    text-transform: uppercase;
 }
 
-.accordion-button {
-  background: rgba(0, 0, 0, 0.15);
-  border: none;
-  padding: 15px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  transition: background 0.3s ease;
+
+.accordionItem {
+    width: 38vw; /* Ajusta según el tamaño deseado */
+
 }
 
-.accordion-button:hover {
-  background: rgba(0, 0, 0, 0.25);
+.accordionButton {
+    background: rgba(33, 87, 45, 0);
+    border-radius: 10px;
+    margin-left: 1vw;
+    margin-top: 3vh;
+    border: none;
+    height: 7.5vh;
+    width: 34vw;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+    transition: background 0.3s ease;
+}
+
+.accordionButton:hover {
+    background: rgba(75, 195, 211, 0.575);
+    border-radius: 10px;
 }
 
 .accordion-content {
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.2);
-
+    background-color: rgba(0, 197, 33, 0);
+    margin-right: 70px;
 }
 
 .accordion-content p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
+    margin-left: 3vw;
+    font-size: 1rem;
+    margin-bottom: -10px;
+    margin-top: 2px;
+    font-weight: 500;
+    text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+
 }

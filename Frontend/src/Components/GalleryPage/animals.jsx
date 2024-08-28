@@ -6,11 +6,11 @@ export const animals = {
         name: "Zorro Chilla",
         image: "https://bcfiguer.cl/wp-content/uploads/2023/04/zorro-chilla-3-scaled.jpg",
         info: [
-            { title: "- Vive en", content: "Bosques y matorrales del centro de Chile" },
-            { title: "- Reproducción", content: "La hembra da a luz a una camada de crías después de un período de gestación de aproximadamente 60-70 días" },
-            { title: "- Alimentación", content: "Carnívoro, se alimenta de pequeños mamíferos, aves y frutas" },
-            { title: "- Hábitat", content: "Bosques y áreas de matorrales" },
-            { title: "- Peligro de la especie", content: "Menos preocupación, según la UICN" }
+            { title: "⏷ Vive en", content: "Bosques y matorrales del centro de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una camada de crías después de un período de gestación de aproximadamente 60-70 días" },
+            { title: "⏷ Alimentación", content: "Carnívoro, se alimenta de pequeños mamíferos, aves y frutas" },
+            { title: "⏷ Hábitat", content: "Bosques y áreas de matorrales" },
+            { title: "⏷ Peligro de la especie", content: "Menos preocupación, según la UICN" }
         ]
     },
 
@@ -18,11 +18,11 @@ export const animals = {
         name: "Chinchilla",
         image: "https://cuivet.cl/wp-content/uploads/2023/07/chinchilla-lanigera-roedoresdomesticos.jpg",
         info: [
-            { title: "- Vive en", content: "Zonas rocosas y áridas en el norte de Chile" },
-            { title: "- Reproducción", content: "La hembra da a luz a una cría después de un período de gestación de aproximadamente 111 días" },
-            { title: "- Alimentación", content: "Plantas, hojas, y brotes" },
-            { title: "- Hábitat", content: "Zonas rocosas y áreas secas" },
-            { title: "- Peligro de la especie", content: "En peligro crítico, según la UICN" }
+            { title: "⏷ Vive en", content: "Zonas rocosas y áridas en el norte de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una cría después de un período de gestación de aproximadamente 111 días" },
+            { title: "⏷ Alimentación", content: "Plantas, hojas, y brotes" },
+            { title: "⏷ Hábitat", content: "Zonas rocosas y áreas secas" },
+            { title: "⏷ Peligro de la especie", content: "En peligro crítico, según la UICN" }
         ]
     },
 
@@ -30,11 +30,11 @@ export const animals = {
         name: "Lagarto de Tarapacá",
         image: "https://i.imgur.com/HazGKg8.jpeg",
         info: [
-            { title: "- Vive en", content: "Zonas áridas y semiáridas del norte de Chile" },
-            { title: "- Reproducción", content: "La hembra pone huevos en un nido subterráneo" },
-            { title: "- Alimentación", content: "Insectívoro, se alimenta de insectos y pequeños invertebrados" },
-            { title: "- Hábitat", content: "Desiertos y zonas áridas" },
-            { title: "- Peligro de la especie", content: "Menos preocupación, según la UICN" }
+            { title: "⏷ Vive en", content: "Zonas áridas y semiáridas del norte de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra pone huevos en un nido subterráneo" },
+            { title: "⏷ Alimentación", content: "Insectívoro, se alimenta de insectos y pequeños invertebrados" },
+            { title: "⏷ Hábitat", content: "Desiertos y zonas áridas" },
+            { title: "⏷ Peligro de la especie", content: "Menos preocupación, según la UICN" }
         ]
     },
 
@@ -42,11 +42,11 @@ export const animals = {
         name: "Gato Andino",
         image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2Ncv9RBo33A6SgX16mthEYAZJrxQ8FmsOt29k5ZNMtKvWD1KciFYQTafgRfZxXE8P2SZ7K7CjwGXBKxcaYoLHumllpu0g7jTrJsWct4xcsNkXTT1r7Mj55m-91n9DS7h8JRnzl47cXus/s1600/Gato+Andino+u7.jpg",
         info: [
-            { title: "- Vive en", content: "Regiones montañosas de los Andes" },
-            { title: "- Reproducción", content: "La hembra da a luz a una o dos crías después de una gestación de 70-75 días" },
-            { title: "- Alimentación", content: "Carnívoro, se alimenta de pequeños mamíferos y aves" },
-            { title: "- Hábitat", content: "Bosques y áreas montañosas" },
-            { title: "- Peligro de la especie", content: "En peligro, según la UICN" }
+            { title: "⏷ Vive en", content: "Regiones montañosas de los Andes" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una o dos crías después de una gestación de 70-75 días" },
+            { title: "⏷ Alimentación", content: "Carnívoro, se alimenta de pequeños mamíferos y aves" },
+            { title: "⏷ Hábitat", content: "Bosques y áreas montañosas" },
+            { title: "⏷ Peligro de la especie", content: "En peligro, según la UICN" }
         ]
     },
 
@@ -54,25 +54,25 @@ export const animals = {
         name: "Curiquinge",
         image: "https://i.imgur.com/aHIdR6g.jpeg",
         info: [
-            { title: "- Vive en", content: "Áreas áridas del norte de Chile" },
-            { title: "- Reproducción", content: "La hembra da a luz a una camada de crías después de una gestación de aproximadamente 50 días" },
-            { title: "- Alimentación", content: "Herbívoro, se alimenta de hojas y brotes" },
-            { title: "- Hábitat", content: "Desiertos y zonas áridas" },
-            { title: "- Peligro de la especie", content: "Menos preocupación, según la UICN" }
+            { title: "⏷ Vive en", content: "Áreas áridas del norte de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una camada de crías después de una gestación de aproximadamente 50 días" },
+            { title: "⏷ Alimentación", content: "Herbívoro, se alimenta de hojas y brotes" },
+            { title: "⏷ Hábitat", content: "Desiertos y zonas áridas" },
+            { title: "⏷ Peligro de la especie", content: "Menos preocupación, según la UICN" }
         ]
     },
 
     // MACROZONA CENTRO
 
     leopardusColocola: {
-        name: "Leopardus colocolo",
+        name: "Leopardus colocola",
         image: "https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=1200,height=1200,fit=cover/article/main-picture/6075a697ba84b495272383.jpg",
         info: [
-            { title: "- Vive en", content: "Bosques y áreas abiertas del centro de Chile" },
-            { title: "- Reproducción", content: "La hembra da a luz a una o dos crías después de una gestación de aproximadamente 70 días" },
-            { title: "- Alimentación", content: "Carnívoro, se alimenta de pequeños mamíferos y aves" },
-            { title: "- Hábitat", content: "Bosques y áreas abiertas" },
-            { title: "- Peligro de la especie", content: "Menos preocupación, según la UICN" }
+            { title: "⏷ Vive en", content: "Bosques y áreas abiertas del centro de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una o dos crías después de una gestación de aproximadamente 70 días" },
+            { title: "⏷ Alimentación", content: "Carnívoro, se alimenta de pequeños mamíferos y aves" },
+            { title: "⏷ Hábitat", content: "Bosques y áreas abiertas" },
+            { title: "⏷ Peligro de la especie", content: "Menos preocupación, según la UICN" }
         ]
     },
 
@@ -80,11 +80,11 @@ export const animals = {
         name: "Cisne de Cuello Negro",
         image: "https://www.diarioelcentro.cl/wp-content/uploads/2023/01/Cisnes-Cuello-Negro.webp",
         info: [
-            { title: "- Vive en", content: "Regiones de agua dulce del norte de Chile" },
-            { title: "- Reproducción", content: "La hembra pone de 4 a 8 huevos en un nido en el suelo cerca del agua" },
-            { title: "- Alimentación", content: "Herbívoro, se alimenta de plantas acuáticas" },
-            { title: "- Hábitat", content: "Lagos, ríos y humedales" },
-            { title: "- Peligro de la especie", content: "Menos preocupación, según la UICN" }
+            { title: "⏷ Vive en", content: "Regiones de agua dulce del norte de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra pone de 4 a 8 huevos en un nido en el suelo cerca del agua" },
+            { title: "⏷ Alimentación", content: "Herbívoro, se alimenta de plantas acuáticas" },
+            { title: "⏷ Hábitat", content: "Lagos, ríos y humedales" },
+            { title: "⏷ Peligro de la especie", content: "Menos preocupación, según la UICN" }
         ]
     },
 

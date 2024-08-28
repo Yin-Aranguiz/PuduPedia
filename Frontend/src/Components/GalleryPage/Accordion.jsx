@@ -1,15 +1,14 @@
-import React from 'react';
-import { useLocation} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Accordion.css';
 import { animals } from './animals';
 import { plants } from './plants';
+import Header from '../LandingPage/Header/Header';
 
-const AccordionItem = ({ title, content }) => {
-    const [isOpen, setIsOpen] = React.useState(false);
-    
+const AccordionItem = ({ title, content, isOpen, onClick }) => {
     return (
-        <div className="accordion-item">
-            <button className="accordion-button" onClick={() => setIsOpen(!isOpen)}>
+        <div className="accordionItem">
+            <button className="accordionButton" onClick={onClick}>
                 {title}
             </button>
             {isOpen && (
@@ -22,14 +21,14 @@ const AccordionItem = ({ title, content }) => {
 };
 
 const Accordion = () => {
+    const [openIndex, setOpenIndex] = useState(null); // Estado para rastrear qué item está abierto
     const location = useLocation();
-    const { itemName, isFauna } = location.state || {}; // Obtiene el nombre del ítem y si es fauna o flora
+    const { itemName, isFauna } = location.state || {};
 
     if (!itemName || isFauna === undefined) {
         return <p>No se encontró información para este ítem: {itemName}</p>;
     }
 
-    // Determina si se trata de un animal o una planta y busca la información adecuada
     let itemInfo;
     if (isFauna) {
         itemInfo = Object.values(animals).find(
@@ -45,13 +44,32 @@ const Accordion = () => {
         return <p>No se encontró información para este ítem: {itemName}</p>;
     }
 
+    const handleItemClick = (index) => {
+        setOpenIndex(index === openIndex ? null : index); // Alterna entre abrir y cerrar
+    };
+
     return (
-        <div className="accordion">
-            <h2>{itemInfo.name}</h2>
-            <img src={itemInfo.image} alt={itemInfo.name} style={{ maxWidth: '100%', height: 'auto' }} />
-            {itemInfo.info.map((item, index) => (
-                <AccordionItem key={index} title={item.title} content={item.content} />
-            ))}
+        <div className='background-accordion'>
+            <div className="accordion">
+                <div className='accordionTitleAbove'>
+                    <p className='accordionTitle' style={{ width: '470px' }}>{itemInfo.name}</p>
+                </div>
+                <div className='imagePositionAccordion'>
+                    <img src={itemInfo.image} alt={itemInfo.name} style={{ width: '450px', height: '450px', objectFit: 'cover' }} className='accordionImg' />
+                </div>
+                <div className='accordionItem'>
+                    {itemInfo.info.map((item, index) => (
+                        <AccordionItem
+                            key={index}
+                            title={item.title}
+                            content={item.content}
+                            isOpen={index === openIndex}
+                            onClick={() => handleItemClick(index)}
+                        />
+                    ))}
+                </div>
+            </div>
+            <Header />
         </div>
     );
 };
