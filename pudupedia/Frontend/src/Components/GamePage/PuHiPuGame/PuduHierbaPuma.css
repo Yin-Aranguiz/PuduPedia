@@ -6,30 +6,36 @@
     align-items: center; /* Centra horizontalmente el contenido */
     text-align: center;
     padding: 20px;
-    background: linear-gradient(to right, #0d8559 0%, #06f5ad 50%, #1081ae 100%);
-    border: 5px solid #0f0000; /* Black border for the main container */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none; /* Black border for the main container */
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    width: 800px; /* Fixed width to prevent resizing */
-    margin-top: 20vh;
+    border-radius: 10px;
+    width: 700px; /* Fixed width to prevent resizing */
     font-family: Arial, sans-serif;
-    margin-left: 40vh;
+    margin: auto;
+    margin-top: 15vh;
 }
-
+.puhipuTitle {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-top: -2px;
+    text-shadow: 2px 5px 10px rgba(5, 77, 49, 0.7);
+}
 .choice-button {
-    padding: 10px 20px;
+    padding: 10px 10px;
     margin: 10px;
     font-size: 16px;
     cursor: pointer; /* Cursor changes to a hand on hover */
-    background-color: #021628;
+    background-color: #175f35;
     color: white;
     border: none;
-    border-radius: 10%;
+    border-radius: 10px;
     text-align: center; /* Center content inside button */
+    box-shadow: 2px 5px 10px rgba(5, 77, 49, 0.5);
 }
 
 .choice-button:hover {
-    background-color: #0692c9;
+    background-color: #04AA6D;
 }
 
 #results {
@@ -45,24 +51,30 @@
 }
 
 #result-container {
-    margin: 20px;
-    margin-left: 200px;
-    background-color: #a549b782;
-    border: 3px solid #0f0000; /* Black border for the result container */
+    margin-top: -10px;
+    margin-left: -110px;
+    border: none; /* Black border for the result container */
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left; /* Align text more to the left */
 }
-
+#hands-resultsActive {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-left: -320px;
+}
 #hands-results {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
+    margin-top: -50px;
 }
 
 #result-text {
     text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 5px 10px rgba(5, 77, 49, 0.7);
 }
 
 #choices {
@@ -76,12 +88,19 @@
     margin: 0 auto; /* Center the image inside the button */
     width: 150px;
     height: 150px;
+    object-fit: cover;
     margin-bottom: 10px;
     border-radius: 10px;
 }
-
+.replayButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -320px;
+    margin-top: -160px;
+}
 #play-again {
-    background-color: #021628b3;
+    background-color: #175f35;
     color: white;
     border: none;
     border-radius: 5px;
@@ -93,7 +112,7 @@
 }
 
 #play-again:hover {
-    background-color: #10ae99; /* Change color on hover */
+    background-color: #04AA6D; /* Change color on hover */
 }
 
 .imageChoice {
@@ -102,5 +121,7 @@
     width: 200px;
     height: 200px;
     border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 2px 5px 10px rgba(5, 77, 49, 0.5);
 }
 

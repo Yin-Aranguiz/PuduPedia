@@ -102,7 +102,7 @@ const PuduHierbaPuma = () => {
         <div id="game-container">
             <Header />
             
-            <h1>¡Pudú, Hierba o Puma!</h1>
+            <p className='puhipuTitle'>¡Pudú, Hierba o Puma!</p>
             {!animating && result === null ? (
                 <div id="choices">
                     <button className="choice-button" onClick={() => playGame('puma')}>
@@ -121,7 +121,7 @@ const PuduHierbaPuma = () => {
             ) : (
                 <div id="results">
                     {animating ? (
-                        <div id="hands-results">
+                        <div id="hands-resultsActive">
                             <div id="user-hand">
                                 <img className='imageChoice' src={hands[userChoice]} width="100" alt="Elección del Usuario" />
                             </div>
@@ -140,17 +140,17 @@ const PuduHierbaPuma = () => {
                                 </div>
                             </div>
                             <div id="result-text">
-                                <p><b>Elegiste: {userChoice}</b></p>
-                                <p><b>La computadora eligió: {computerChoice}</b></p>
-                                <p><b>Resultado: {result}</b></p>
+                                <p>Elegiste: {userChoice}</p>
+                                <p>La computadora eligió: {computerChoice}</p>
+                                <p>Resultado: {result}</p>
                             </div>
                         </div>
                     )}
-                    {result && !animating && (
+                    <div className='replayButton'>{result && !animating && (
                         <button className="choice-button" id="play-again" onClick={resetGame}>
                             Jugar nuevamente
                         </button>
-                    )}
+                    )}</div>
                 </div>
             )}
         </div>
