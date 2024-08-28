@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  transition: background-image 1s ease-in-out;
+  transition: background-image 1s ease-in;
 }
 
 .section.section-2 {
@@ -30,8 +30,8 @@
 }
 
 .title-image {
-  width: 1500px;
-  height: 800px;
+  margin-top: 20vh;
+  width: 180vh;
   
 }
 
@@ -54,11 +54,11 @@
   width: 15px; /* Tamaño del punto */
   height: 15px;
   border-radius: 50%; /* Hace el punto redondo */
-  background-color: rgb(84, 83, 83); /* Color del punto */
+  background-color: rgba(0, 0, 0, 0.575); /* Color del punto */
   cursor: pointer; /* Cambia el cursor cuando se pasa sobre el punto */
   transition: background-color 0.3s; /* Transición suave para el color */
 }
 
 .dot.active {
-  background-color: rgb(255, 252, 252); /* Color del punto cuando está activo */
+  background-color: rgb(0, 230, 210); /* Color del punto cuando está activo */
 }

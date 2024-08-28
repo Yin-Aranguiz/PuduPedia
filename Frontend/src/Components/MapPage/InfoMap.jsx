@@ -12,7 +12,7 @@ const InfoMap = () => {
 
     return (
         <div className="info-map">
-            <h2>Animales Endémicos por Macrozona</h2>
+            <h2>ANIMALES ENDÉMICOS POR MACROZONA</h2>
             <ul>
                 <h3>Norte</h3>
                 <li><a href="#norte" onClick={handleAnimalClick('Zorro Chilla')}>Zorro Chilla</a></li>
@@ -29,6 +29,7 @@ const InfoMap = () => {
                 <li><a href="#centro" onClick={handleAnimalClick('Colibrí de Pico Curiño')}>Colibrí de Pico Curiño</a></li>
                 <br />
                 <h3>Centro-Sur</h3>
+                <li><a href="#centro-sur" onClick={handleAnimalClick('Ratón de Ñuble')}>Ratón de Ñuble</a></li>
                 <li><a href="#centro-sur" onClick={handleAnimalClick('Rana del Maule')}>Rana del Maule</a></li>
                 <li><a href="#centro-sur" onClick={handleAnimalClick('Rana de Bío Bío')}>Rana de Bío Bío</a></li>
                 <li><a href="#centro-sur" onClick={handleAnimalClick('Monito del Monte')}>Monito del Monte</a></li>

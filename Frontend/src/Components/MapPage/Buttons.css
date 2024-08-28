@@ -18,7 +18,7 @@
 }
 
 .button .back {
-  background-image: linear-gradient(5deg, #4074ff 40% , #30bd95 );
+  background-image: linear-gradient(0deg, #1366ff 70% , #00aeff );
   position: absolute;
   width: 100%;
   height: 100%;
@@ -32,7 +32,7 @@
 }
 
 .button .checkbox:checked ~ .back {
-  background-image: linear-gradient(5deg, #4074ff , #30bd95 80%);
+  background-image: linear-gradient(0deg, #00c090 70%, #00fff2 );
 }
 
 .button .checkbox:checked ~ .animals {
@@ -85,6 +85,6 @@
 
 
 button-text {
-  color: aliceblue;
+  color: rgb(13, 134, 240);
 }
 

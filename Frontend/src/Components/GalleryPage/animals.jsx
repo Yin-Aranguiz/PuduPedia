@@ -4,7 +4,7 @@ export const animals = {
 
     zorroChilla: {
         name: "Zorro Chilla",
-        image: "https://i.pinimg.com/564x/a2/ea/7e/a2ea7e0554f445df1df0b9de2f41ff58.jpg",
+        image: "https://bcfiguer.cl/wp-content/uploads/2023/04/zorro-chilla-3-scaled.jpg",
         info: [
             { title: "- Vive en", content: "Bosques y matorrales del centro de Chile" },
             { title: "- Reproducción", content: "La hembra da a luz a una camada de crías después de un período de gestación de aproximadamente 60-70 días" },
@@ -28,7 +28,7 @@ export const animals = {
 
     lagartoTarapaca: {
         name: "Lagarto de Tarapacá",
-        image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBmpVSVFPtzyNAuAeXeDSnPG-RohNLd_xhpN_6iaAL7Y_TQLCYGX1bJ8L6KCeMToGi1g2kPfLvKCob4LUJQtEYrtHMdX3egKPQw5k2bxYKqE97DrWr43Oz1fEzQF_SMQC9zRKb9YI71-aU/s1600/17190396_1910108592609241_218426032207062991_n.jpg",
+        image: "https://i.imgur.com/HazGKg8.jpeg",
         info: [
             { title: "- Vive en", content: "Zonas áridas y semiáridas del norte de Chile" },
             { title: "- Reproducción", content: "La hembra pone huevos en un nido subterráneo" },
@@ -52,7 +52,7 @@ export const animals = {
 
     curiquinge: {
         name: "Curiquinge",
-        image: "https://thumbs.dreamstime.com/b/p%C3%A1jaro-andino-de-curiquinge-en-el-parque-nacional-de-cotopaxi-en-ecuador-56384009.jpg",
+        image: "https://i.imgur.com/aHIdR6g.jpeg",
         info: [
             { title: "- Vive en", content: "Áreas áridas del norte de Chile" },
             { title: "- Reproducción", content: "La hembra da a luz a una camada de crías después de una gestación de aproximadamente 50 días" },
@@ -65,8 +65,8 @@ export const animals = {
     // MACROZONA CENTRO
 
     leopardusColocola: {
-        name: "Leopardus colocola",
-        image: "https://inaturalist-open-data.s3.amazonaws.com/photos/156027880/original.jpg",
+        name: "Leopardus colocolo",
+        image: "https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=1200,height=1200,fit=cover/article/main-picture/6075a697ba84b495272383.jpg",
         info: [
             { title: "- Vive en", content: "Bosques y áreas abiertas del centro de Chile" },
             { title: "- Reproducción", content: "La hembra da a luz a una o dos crías después de una gestación de aproximadamente 70 días" },
@@ -78,7 +78,7 @@ export const animals = {
 
     cisneCuelloNegro: {
         name: "Cisne de Cuello Negro",
-        image: "https://cdn.download.ams.birds.cornell.edu/api/v2/asset/115365701/1200",
+        image: "https://www.diarioelcentro.cl/wp-content/uploads/2023/01/Cisnes-Cuello-Negro.webp",
         info: [
             { title: "- Vive en", content: "Regiones de agua dulce del norte de Chile" },
             { title: "- Reproducción", content: "La hembra pone de 4 a 8 huevos en un nido en el suelo cerca del agua" },
@@ -90,7 +90,7 @@ export const animals = {
 
     puma: {
         name: "Puma",
-        image: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Puma_-_49044464307.jpg",
+        image: "https://pagina19.cl/wp-content/uploads/2023/07/leah-huyghe-umWPg1Adts-unsplash-2-scaled.jpg",
         info: [
             { title: "- Vive en", content: "Bosques templados del sur de Chile, desde la región de Los Ríos hasta Aysén" },
             { title: "- Reproducción", content: "La hembra da a luz a una cría después de un período de gestación de aproximadamente 210 días" },
@@ -127,18 +127,17 @@ export const animals = {
 
     // MACROZONA CENTRO SUR
 
-
-
-
-
-
-
-
-
-
-
-
-
+    ratonNuble: {
+        name: "Ratón de Ñuble",
+        image: "https://laderasur.com/wp-content/uploads/2021/07/degus-juveniles-cvicente-valdes-1.jpeg",
+        info: [
+            { title: "- Vive en", content: "Zonas boscosas y áreas agrícolas en la región de Ñuble, Chile" },
+            { title: "- Reproducción", content: "El ratón se reproduce en primavera, con camadas de varios crías" },
+            { title: "- Alimentación", content: "Omnívoro, se alimenta de semillas, frutas, y pequeños invertebrados" },
+            { title: "- Hábitat", content: "Prefiere hábitats con vegetación densa y suelos blandos para excavar madrigueras" },
+            { title: "- Peligro de la especie", content: "Amenazado por la expansión agrícola y la pérdida de su hábitat natural" }
+        ]
+    },
 
     ranaMaule: {
         name: "Rana del Maule",
@@ -194,7 +193,7 @@ export const animals = {
 
     pudu: {
         name: "Pudú",
-        image: "https://www.chileanimal.cl/wp-content/uploads/2022/04/WhatsApp-image2021-01-15-at-10.22.45.jpeg",
+        image: "https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg",
         info: [
             { title: "- Vive en", content: "Bosques templados del sur de Chile, desde la región de Los Ríos hasta Aysén" },
             { title: "- Reproducción", content: "La hembra da a luz a una cría después de un período de gestación de aproximadamente 210 días" },
@@ -242,7 +241,7 @@ export const animals = {
 
     chungungo: {
         name: "Chungungo",
-        image: "https://www.diarioelheraldo.cl/imagees/hab25c6ebcfa7264db2cd.jpg",
+        image: "https://codexverde.cl/wp-content/uploads/2024/03/chungungo-copia.jpg",
         info: [
             { title: "- Vive en", content: "Costas rocosas y áreas marinas del sur de Chile y Argentina" },
             { title: "- Reproducción", content: "La hembra da a luz a una camada de crías después de una gestación de aproximadamente 60 días" },
@@ -268,7 +267,7 @@ export const animals = {
 
     guanaco: {
         name: "Guanaco",
-        image: "https://static.wikia.nocookie.net/reinoanimalia/image/6/6e/Patagonia-Photo-Safari-23-L.jpg/revision/latest?cb=20181018050347&path-prefix=es",
+        image: "https://www.artesanoglobal.com/wp-content/uploads/2017/06/guanacoblog.jpg",
         info: [
             { title: "- Vive en", content: "Áreas abiertas y pastizales del norte de Chile" },
             { title: "- Reproducción", content: "La hembra da a luz una cría después de un período de gestación de aproximadamente 11 meses" },

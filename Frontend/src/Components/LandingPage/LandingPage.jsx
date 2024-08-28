@@ -8,7 +8,8 @@ import Header from './Header/Header';
 import image1 from './landingpage1.jpg';
 import image2 from './landingpage2.jpg';
 import image3 from './landingpage3.jpg';
-import imageTitle from './landingtitle.svg';
+import image4 from './landingpage4.jpg';
+import imageTitle from './landingtitle.png';
 
 
 
@@ -80,7 +81,7 @@ const LandingPage = () => {
         {/* Añadido el contenedor de puntos */}
       </div>
       <div className="section section-2">
-        <img src={image2} alt='image2' className='static-image' />
+        <img src={image4} alt='image4' className='static-image' />
         <Infoboxes />
         <Footer />
       </div> 

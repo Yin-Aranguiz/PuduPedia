@@ -1,6 +1,6 @@
 
 .info-map {
-    background-color: rgba(59, 56, 56, 0.175);
+    background-color: rgba(0, 0, 0, 0.175);
     margin: 110px auto 100px auto;
     padding: 20px;
     border-radius: 10px;
@@ -16,16 +16,13 @@
 }
 
 .info-map h2 {
-    margin-top: 5;
+    margin-top: 5vh;
     text-align: center;
-    width: 100%;
-    color: #d8f5f3;
-    font-size: 2rem;
-    text-shadow: 
-        -1px -1px 0 rgb(204, 242, 240), /* Sombra superior izquierda */
-        1px -1px 0 rgb(3, 56, 50),  /* Sombra superior derecha */
-        -1px 1px 0 rgb(0, 0, 0),  /* Sombra inferior izquierda */
-        2px 2px 0 rgb(7, 71, 48);   /* Sombra inferior derecha */
+    color: #ffffff;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 1px rgb(0, 0, 0),  /* Sombra inferior izquierda */
+   
 }
 
 .info-map ul {
@@ -44,14 +41,14 @@
     width: 100%;
     font-size: 1.1rem;
     padding: 10px;
-    background-color: rgba(173, 237, 212, 0.678);
+    background-color: rgba(167, 230, 255, 0.63);
     border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, background-color 0.2s;
 }
 
 .info-map li:hover {
-    transform: scale(1.02);
+    transform: scale(1.08);
     background-color: rgba(255, 255, 255, 0.908);
 }
 
@@ -61,7 +58,7 @@
 }
 
 .info-map li a:hover {
-    color: #0c4e44;
+    color: #151616;
     text-decoration: none;
 }
 
@@ -70,9 +67,8 @@
     margin-bottom: 10px;
     text-align: left;
     width: auto;
-    
     font-size: 1.4rem;
-    color: #d8f5f3;
-    border-bottom: 1px solid #ccc;
+    color: #ffffff;
+    border-bottom: 2px solid #e7e7e7c2;
     padding-bottom: 5px;
 }

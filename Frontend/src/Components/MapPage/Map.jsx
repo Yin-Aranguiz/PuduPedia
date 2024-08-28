@@ -179,6 +179,9 @@ const Map = ({ onMacrozoneClick}) => {
                     />
                     
                 <text x="520" y="-80" className="macrozone-title" writing-mode="horizontal-tb">AUSTRAL</text>
+
+                <text x="650" y="90" className="button-title" writing-mode="horizontal-tb">FAUNA</text>
+                <text x="702" y="90" className="button-title" writing-mode="horizontal-tb">FLORA</text>
                 </g>
             </svg>
         </div>

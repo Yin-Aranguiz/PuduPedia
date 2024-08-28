@@ -6,11 +6,13 @@
     cursor: pointer;
     width: 100%;
     overflow: hidden;
+    background-image: url(https://i.imgur.com/cDspwLM.jpeg);
+    background-size: 100vw;
 }
 
 .backg {
     animation:slide 7s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, rgb(21, 122, 63) 50%, rgb(7, 88, 49) 50%);
+    background-image: linear-gradient(-60deg, rgba(21, 122, 63, 0.342) 50%, rgba(7, 88, 49, 0.293) 50%);
     bottom:0;
     left:-50%;
     opacity:.3;
@@ -29,14 +31,7 @@
     animation-duration:15s;
   }
   
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
-    }
-    100% {
-      transform:translateX(25%);
-    }
-  }
+ 
   
 /* Estilo para el área más grande que contiene el menú */
 .larger-area {
@@ -52,33 +47,33 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    /* Inicialmente oculto */
     opacity: 0;
-    /* Inicialmente oculto por opacidad */
-    transition: opacity 0.3s ease-in-out;
-    /* Transición para la opacidad */
-    transition: transform 0.3s ease-in-out;
-    opacity: 0;
-    /* Inicialmente ocultas */
-    transform: translateY(-50px) scale(0.5);
+    transition: all 0.3s ease-in-out;
+    transform: translateY(40px) scale(0.5);
+  }
 
-}
 
 /* Estilo para las imágenes dentro de los elementos del menú */
 .menu-item img {
     object-position: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: -550vh;
-    margin-left: 135vh;
+    overflow-anchor: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: -542vh;
+    margin-left: 90vh;
+    color:blue;
+    border: 4px solid rgb(255, 255, 255); 
+   
 }
+
+.bubble-name
 
 /* Estilo para las imágenes dentro de los elementos del menú */
 .larger-area.active .menu-item:hover {
-    transform: scale(1.2);
-    transition: transform 1s ease-in-out;
+    transform: scale(1.5);
+    transition: transform 1s ease-in;
     /* Transición para el hover */
 }
 
@@ -88,6 +83,7 @@
     /* Mostrar cuando se activa */
     opacity: 1;
     /* Mostrar cuando se activa por opacidad */
+    
 }
 
 /* Animación de rebote para los elementos del menú */
@@ -126,19 +122,19 @@
 @keyframes bounceIn {
     0% {
         opacity: 0;
-        transform: translateY(-50px) scale(0.5);
+        transform: translateY(200vh) scale(0.5);
         /* Posición inicial fuera de pantalla y más pequeña */
     }
 
     60% {
         opacity: 1;
-        transform: translateY(15px) scale(1.05);
+        transform: translateY(120vh) scale(1.01);
         /* Rebote hacia arriba, cerca de la posición final */
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1.0);
         /* Posición final */
     }
 }
@@ -147,10 +143,10 @@
     position: absolute;
     color: #ffffff;
     /* Cambia el color según tu diseño */
-    margin-top: 42vh;
-    margin-left: 80vh;
+    margin-top: 47vh;
+    margin-left: 83vh;
     font-family: 'Open Sans', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     text-shadow:
         4px 3px 3px #0003024c;
     letter-spacing: 5px;
