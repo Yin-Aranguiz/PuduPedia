@@ -92,11 +92,11 @@ export const animals = {
         name: "Puma",
         image: "https://pagina19.cl/wp-content/uploads/2023/07/leah-huyghe-umWPg1Adts-unsplash-2-scaled.jpg",
         info: [
-            { title: "- Vive en", content: "Bosques templados del sur de Chile, desde la región de Los Ríos hasta Aysén" },
-            { title: "- Reproducción", content: "La hembra da a luz a una cría después de un período de gestación de aproximadamente 210 días" },
-            { title: "- Alimentación", content: "Hojas, cortezas, frutas y brotes de arbustos y árboles" },
-            { title: "- Hábitat", content: "Bosques templados lluviosos y densos, con abundante vegetación" },
-            { title: "- Peligro de la especie", content: "Vulnerable, según la UICN" }
+            { title: "⏷ Vive en", content: "Bosques templados del sur de Chile, desde la región de Los Ríos hasta Aysén" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una cría después de un período de gestación de aproximadamente 210 días" },
+            { title: "⏷ Alimentación", content: "Hojas, cortezas, frutas y brotes de arbustos y árboles" },
+            { title: "⏷ Hábitat", content: "Bosques templados lluviosos y densos, con abundante vegetación" },
+            { title: "⏷ Peligro de la especie", content: "Vulnerable, según la UICN" }
         ]
     },
 
@@ -104,11 +104,11 @@ export const animals = {
         name: "Zorro Chileno",
         image: "https://upload.wikimedia.org/wikipedia/commons/3/30/Pseudalopex_fulvipes-primer_plano.jpg",
         info: [
-            { title: "- Vive en", content: "Zonas abiertas y boscosas del norte de Chile" },
-            { title: "- Reproducción", content: "La hembra da a luz a una camada de crías después de una gestación de aproximadamente 60-70 días" },
-            { title: "- Alimentación", content: "Omnívoro, se alimenta de pequeños mamíferos, aves y frutos" },
-            { title: "- Hábitat", content: "Bosques y áreas abiertas" },
-            { title: "- Peligro de la especie", content: "Menos preocupación, según la UICN" }
+            { title: "⏷ Vive en", content: "Zonas abiertas y boscosas del norte de Chile" },
+            { title: "⏷ Reproducción", content: "La hembra da a luz a una camada de crías después de una gestación de aproximadamente 60-70 días" },
+            { title: "⏷ Alimentación", content: "Omnívoro, se alimenta de pequeños mamíferos, aves y frutos" },
+            { title: "⏷ Hábitat", content: "Bosques y áreas abiertas" },
+            { title: "⏷ Peligro de la especie", content: "Menos preocupación, según la UICN" }
         ]
     },
 
