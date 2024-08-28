@@ -15,13 +15,13 @@ import ForgotPassword from './Components/LoginPage/signlog/forgotPassword';
 import ResetPassword from './Components/LoginPage/signlog/resetPassword';
 import ResetPage from './Components/LoginPage/signlog/ResetPage';
 import Accordion from './Components/GalleryPage/Accordion';
-// import FullUserPage from './Components/LoginPage/User/FullUserPage';
 import UserPage from './Components/LoginPage/User/UserPageRoutes/UserPage';
 import NotifPage from './Components/LoginPage/User/UserPageRoutes/NotifTab';
 import FavesPage from './Components/LoginPage/User/UserPageRoutes/FavesTab';
 import SettingsPage from './Components/LoginPage/User/UserPageRoutes/SettingsTab';
 import HelpPage from './Components/LoginPage/User/UserPageRoutes/HelpTab';
 import Header from './Components/LandingPage/Header/Header';
+import FullUserPage from './Components/LoginPage/User/FullUserPage';
 
 function App() {
   return (
@@ -44,8 +44,8 @@ function App() {
           <Route path="/accordion" element={<Accordion />} />
           <Route path="/forgot-password-security" element={<ResetPassword />} />
           <Route path="/change-password-reset" element={<ResetPage />} />
-          <Route path="/user/*" element={<UserPage />}>
-            
+          <Route path="/user/*" element={<FullUserPage />}>
+            <Route path='prof' element={<UserPage />} />
             <Route path="notifs" element={<NotifPage />} />
             <Route path="faves" element={<FavesPage />} />
             <Route path="settings" element={<SettingsPage />} />
