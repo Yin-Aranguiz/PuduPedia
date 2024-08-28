@@ -87,7 +87,7 @@ const TriviaGame = () => {
         },
         {
             question: "¿Qué marsupial endémico de Chile es conocido por su habilidad para escalar y vivir en árboles?",
-            options: ["Opossum", "Koala", "Monito del monte", "Wombat"],
+            options: ["Zarigüeya", "Koala", "Monito del monte", "Wombat"],
             answer: "Monito del monte"
         },
         {
@@ -217,10 +217,11 @@ const TriviaGame = () => {
     };
 
     return (
+        <div className='backgroundTrivia'>
         <div className='TriviaGame'>
             <Header className="color" />
             <div className='trivia'>
-            <h1 className='title'>TRIVIA SOBRE ANIMALES ENDÉMICOS DE CHILE</h1>
+            <p className='title'>TRIVIA <br/>Animales Endémicos de Chile</p>
             <img src={imagePudu} alt='Pudu' width={200} className='Pudu'></img>
             <button onClick={toggleMusic} className='buttonTrivia'>
                 {musicPlaying ? 'Parar Música' : 'Reproducir Música'}
@@ -236,6 +237,9 @@ const TriviaGame = () => {
             {startGame && !finished && (
                 <div className='questions'>
                     <h3>{questions[actualQuestion].question}</h3>
+                    <div className='paragraph'>
+                        <p className='gameScoreActive'>Puntuación: {score}</p>
+                    </div>
                     <div className='options'>
                         {questions[actualQuestion].options.map((option, index) => (
                             <button
@@ -247,20 +251,19 @@ const TriviaGame = () => {
                             </button>
                         ))}
                     </div>
-                    <div className='paragraph'>
-                        <p>Puntuación: {score}</p>
-                    </div>
+                    
                 </div>
             )}
             {finished && (
                 <div className='paragraph'>
-                    <h3>Juego finalizado</h3>
-                    <p>Resultados: {winMessage}</p>
-                    <p>Puntuación: {score}</p>
+                    <p className='finishedGame'>Juego finalizado</p>
+                    <p className='gameResults'>Resultados: {winMessage}</p>
+                    <p className='gameScore'>Puntuación: {score}</p>
                     <button onClick={StartGame} className='buttonTrivia'>Jugar de nuevo</button>
                 </div>
             )}
            </div>
+        </div>
         </div>
     );
 };
