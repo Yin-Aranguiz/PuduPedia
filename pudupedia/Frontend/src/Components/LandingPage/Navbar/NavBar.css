@@ -1,0 +1,90 @@
+
+.allItemsNavBar {
+    position: absolute; /* Fija la posición al borde de la ventana */
+    top: 0px; /* Empuja el contenedor hacia el borde superior */
+    left: 0px; /* Empuja el contenedor hacia el borde izquierdo */
+    width: 240px; /* Ajusta el ancho según sea necesario */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding-left: 10px; /* Espaciado opcional a la izquierda */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del tamaño del contenedor */
+    z-index: 1000;
+  }
+.allItemsNavBar button {
+    height: 50px;
+    width: 50px;
+<<<<<<< HEAD
+    background: linear-gradient(105deg, #4074ff, #30bd95);
+    /*background-color: rgba(48, 47, 47, 0.158);*/
+=======
+    background-color: rgba(48, 47, 47, 0.158);
+>>>>>>> 65affb200a762f7e0f8aa3dad4ad8fe9e0300356
+    border-radius: 50%;
+}
+.button-navbar::after {
+  content: '>';
+  color: #ddd;
+  font-size: 2rem;
+}
+
+.button-navbar:hover{
+    cursor: pointer;
+<<<<<<< HEAD
+    /*background-color: rgba(106, 102, 102, 0.308);*/
+    background: linear-gradient(105deg, #4074ff, #30bd95);
+}
+.allItemsNavBar.background{
+    cursor: pointer;
+    /*background-color: rgba(1, 4, 2, 0.63);*/
+    background: linear-gradient(105deg, #4074ff, #30bd95);
+=======
+    background-color: rgba(106, 102, 102, 0.308);
+}
+.allItemsNavBar.background{
+    cursor: pointer;
+    background-color: rgba(1, 4, 2, 0.63);
+>>>>>>> 65affb200a762f7e0f8aa3dad4ad8fe9e0300356
+    width: 45vh;
+    left: 0;
+}
+
+.navBarItems {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    cursor: pointer;
+    margin-top: 50px;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    
+  }
+  
+  .navBarItems:hover{
+    
+    transition: background-color 0.5s ease;
+  }
+
+.navBarItems a {
+    margin-bottom: 50px; /* Espacio entre los enlaces */ 
+    margin-left: 60px;
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: white; 
+}
+.navBarItems a:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+    transform-origin: left;
+}
+/*.circle {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.318);
+  border-radius: 50%;
+  margin-right: 0px;
+  margin-left: -37px;
+  position: absolute;
+<<<<<<< HEAD
+}*/
+
+=======
+}
+>>>>>>> 65affb200a762f7e0f8aa3dad4ad8fe9e0300356
