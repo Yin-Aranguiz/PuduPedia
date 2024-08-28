@@ -40,7 +40,7 @@ const Header = ({ className = '' }) => {
           </div>
           {isAuthenticated ? (
             <>
-              <Link className="loginTab" to="/user">
+              <Link className="loginTab" to="/user/prof">
                 <p>P E R F I L</p>
               </Link>
               <Link className="loginTab" to="/user">
