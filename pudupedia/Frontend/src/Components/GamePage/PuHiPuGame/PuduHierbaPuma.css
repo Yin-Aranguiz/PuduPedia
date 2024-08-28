@@ -1,0 +1,106 @@
+/* Configura el contenedor principal para usar flexbox y centrar el contenido */
+#game-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #0d8559 0%, #06f5ad 50%, #1081ae 100%);
+    border: 5px solid #0f0000; /* Black border for the main container */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    width: 800px; /* Fixed width to prevent resizing */
+    margin-top: 20vh;
+    font-family: Arial, sans-serif;
+    margin-left: 40vh;
+}
+
+.choice-button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer; /* Cursor changes to a hand on hover */
+    background-color: #021628;
+    color: white;
+    border: none;
+    border-radius: 10%;
+    text-align: center; /* Center content inside button */
+}
+
+.choice-button:hover {
+    background-color: #0692c9;
+}
+
+#results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#results img {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+
+#result-container {
+    margin: 20px;
+    margin-left: 200px;
+    background-color: #a549b782;
+    border: 3px solid #0f0000; /* Black border for the result container */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text more to the left */
+}
+
+#hands-results {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+#result-text {
+    text-align: center;
+}
+
+#choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#choices .choice-button img {
+    display: block;
+    margin: 0 auto; /* Center the image inside the button */
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#play-again {
+    background-color: #021628b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px; /* Added padding to improve button size */
+    cursor: pointer; /* Changes cursor to hand on hover */
+    margin-top: 500px; /* Adjusted top margin to separate button from results */
+    width: auto; /* Adjusts width automatically according to content */
+    margin-right: 30px;
+}
+
+#play-again:hover {
+    background-color: #10ae99; /* Change color on hover */
+}
+
+.imageChoice {
+    /* /* display: block;  */
+    /* Elimina el espacio adicional que puede causar el texto alternativo */ 
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
