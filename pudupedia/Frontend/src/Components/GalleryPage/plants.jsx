@@ -78,7 +78,7 @@ export const plants = {
         info: [
             { title: "⏷ Vive en", content: "Valles costeros de la zona central de Chile" },
             { title: "⏷ Reproducción", content: "Se reproduce a través de semillas" },
-            { title: "⏷ Usos", content: "Tradicionalmente utilizada para construcción y como ornamental" },
+            { title: "⏷ Usos", content: "Tradicionalmente utilizada para construcción y ornamento" },
             { title: "⏷ Hábitat", content: "Valles y laderas" },
             { title: "⏷ Peligro de la especie", content: "En peligro crítico por sobreexplotación para obtención de miel de palma" }
         ]
@@ -176,7 +176,7 @@ export const plants = {
         info: [
             { title: "⏷ Vive en", content: "Bosques húmedos del centro-sur de Chile" },
             { title: "⏷ Reproducción", content: "Se reproduce por semillas" },
-            { title: "⏷ Usos", content: "La madera se utiliza en la construcción y para la fabricación de muebles; también se usa en reforestación" },
+            { title: "⏷ Usos", content: "Su madera se utiliza para construir y fabricar muebles" },
             { title: "⏷ Hábitat", content: "Bosques húmedos y quebradas" },
             { title: "⏷ Peligro de la especie", content: "En peligro crítico debido a la deforestación y la fragmentación del hábitat" }
         ]
@@ -224,7 +224,7 @@ export const plants = {
         info: [
             { title: "⏷ Vive en", content: "Bosques templados y áreas abiertas del sur de Chile" },
             { title: "⏷ Reproducción", content: "Se reproduce a través de semillas dispersadas por aves" },
-            { title: "⏷ Usos", content: "Frutos utilizados en medicina tradicional y como superalimento" },
+            { title: "⏷ Usos", content: "Frutos utilizados en medicina y como superalimento" },
             { title: "⏷ Hábitat", content: "Bosques, matorrales y bordes de caminos" },
             { title: "⏷ Peligro de la especie", content: "No está en peligro, pero la sobreexplotación para la producción de superalimentos puede ser una amenaza futura" }
         ]
@@ -249,7 +249,7 @@ export const plants = {
         name: "Lenga",
         image: "https://www.culturademontania.org.ar/ccam/upload/lenga_tierras_patagonicas_26.jpg",
         info: [
-            { title: "⏷ Vive en", content: "Bosques subantárticos y montañosos de la región austral de Chile" },
+            { title: "⏷ Vive en", content: "Región austral de Chile" },
             { title: "⏷ Reproducción", content: "Se reproduce a través de semillas dispersadas por el viento" },
             { title: "⏷ Usos", content: "Madera utilizada en la construcción y para la fabricación de muebles" },
             { title: "⏷ Hábitat", content: "Bosques subantárticos y laderas montañosas" },
@@ -273,10 +273,10 @@ export const plants = {
         name: "Ñirre",
         image: "https://i.pinimg.com/736x/aa/62/5c/aa625c4a6607ea6f3a9e4af77befc435.jpg",
         info: [
-            { title: "⏷ Vive en", content: "Bosques subantárticos y áreas montañosas de la región austral de Chile" },
+            { title: "⏷ Vive en", content: "Región austral de Chile" },
             { title: "⏷ Reproducción", content: "Se reproduce por semillas y rebrotes" },
-            { title: "⏷ Usos", content: "Madera utilizada en la construcción y para la fabricación de muebles" },
-            { title: "⏷ Hábitat", content: "Bosques subantárticos y áreas abiertas" },
+            { title: "⏷ Usos", content: "Madera usada para construir y fabricar muebles" },
+            { title: "⏷ Hábitat", content: "Bosques subantárticos y áreas montañosas abiertas" },
             { title: "⏷ Peligro de la especie", content: "Vulnerable debido a la sobreexplotación forestal y el cambio climático" }
         ]
     },
@@ -296,10 +296,10 @@ export const plants = {
         name: "Ciprés de las Guaitecas",
         image: "https://upload.wikimedia.org/wikipedia/commons/0/09/Pilgerodendron_uviferum.jpg",
         info: [
-            { title: "⏷ Vive en", content: "Bosques costeros y áreas montañosas de la región austral de Chile" },
+            { title: "⏷ Vive en", content: "Región austral de Chile" },
             { title: "⏷ Reproducción", content: "Se reproduce por semillas dispersadas por el viento" },
-            { title: "⏷ Usos", content: "Madera utilizada en la construcción y la fabricación de muebles" },
-            { title: "⏷ Hábitat", content: "Bosques templados costeros" },
+            { title: "⏷ Usos", content: "Su madera se utiliza para construir y fabricar muebles" },
+            { title: "⏷ Hábitat", content: "Bosques templados costeros y áreas montañosas" },
             { title: "⏷ Peligro de la especie", content: "En peligro crítico debido a la tala ilegal y la fragmentación del hábitat" }
         ]
     }
