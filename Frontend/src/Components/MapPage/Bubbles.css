@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Estilo base para el menú radial */
+.radial-menu {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(https://i.imgur.com/cDspwLM.jpeg);
+    background-size: 100vw;
+}
+
+.backg {
+    animation:slide 7s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgba(21, 122, 63, 0.342) 50%, rgba(7, 88, 49, 0.293) 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.3;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .backg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:14s;
+  }
+  
+  .backg3 {
+    animation-duration:15s;
+  }
+  
+ 
+  
+/* Estilo para el área más grande que contiene el menú */
+.larger-area {
+    position: absolute;
+}
+
+/* Estilo para los elementos del menú */
+.menu-item {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(40px) scale(0.5);
+  }
+
+
+/* Estilo para las imágenes dentro de los elementos del menú */
+.menu-item img {
+    object-position: center;
+    object-fit: cover;
+    overflow-anchor: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: -542vh;
+    margin-left: 90vh;
+    color:blue;
+    border: 4px solid rgb(255, 255, 255); 
+   
+}
+
+.bubble-name
+
+/* Estilo para las imágenes dentro de los elementos del menú */
+.larger-area.active .menu-item:hover {
+    transform: scale(1.5);
+    transition: transform 1s ease-in;
+    /* Transición para el hover */
+}
+
+/* Estilo cuando el menú se activa */
+.larger-area.active .menu-item {
+    visibility: visible;
+    /* Mostrar cuando se activa */
+    opacity: 1;
+    /* Mostrar cuando se activa por opacidad */
+    
+}
+
+/* Animación de rebote para los elementos del menú */
+.larger-area.active .menu-item.bounce {
+    animation: bounceIn 1s ease forwards;
+    /* Aplicar animación de rebote */
+}
+
+/* Retrasos para los efectos secuenciales */
+.menu-item:nth-child(1) {
+    animation-delay: 0.1s;
+    /* Retraso para el efecto secuencial */
+}
+
+.menu-item:nth-child(2) {
+    animation-delay: 0.2s;
+    /* Retraso para el efecto secuencial */
+}
+
+.menu-item:nth-child(3) {
+    animation-delay: 0.3s;
+    /* Retraso para el efecto secuencial */
+}
+
+.menu-item:nth-child(4) {
+    animation-delay: 0.4s;
+    /* Retraso para el efecto secuencial */
+}
+
+.menu-item:nth-child(5) {
+    animation-delay: 0.5s;
+    /* Retraso para el efecto secuencial */
+}
+
+/* Definición de la animación bounceIn */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(200vh) scale(0.5);
+        /* Posición inicial fuera de pantalla y más pequeña */
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(120vh) scale(1.01);
+        /* Rebote hacia arriba, cerca de la posición final */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1.0);
+        /* Posición final */
+    }
+}
+
+.macrozone-name {
+    position: absolute;
+    color: #ffffff;
+    /* Cambia el color según tu diseño */
+    margin-top: 47vh;
+    margin-left: 83vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.1rem;
+    text-shadow:
+        4px 3px 3px #0003024c;
+    letter-spacing: 5px;
+}

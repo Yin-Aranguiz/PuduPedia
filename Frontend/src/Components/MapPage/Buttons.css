@@ -1,0 +1,89 @@
+.button {
+  --dark-sky: #313032;
+  --moon: #aeaaae;
+  --light-sky: #8f44fd;
+  --sun: #f7f7f7;
+  display: inline-block;
+  position: relative;
+  border-radius: 5em;
+  cursor: pointer;
+  width: 220px;
+  height: 80px;
+  overflow: hidden;
+  scale: 0.7;
+  transition: all 0.5s;
+  margin-top: 300vh;
+  margin-left: 160vh;
+  z-index: 1000;
+}
+
+.button .back {
+  background-image: linear-gradient(0deg, #1366ff 70% , #00aeff );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.button .checkbox {
+  opacity: 0;
+}
+
+.button .checkbox:checked ~ .back {
+  background-image: linear-gradient(0deg, #00c090 70%, #00fff2 );
+}
+
+.button .checkbox:checked ~ .animals {
+  transform: translateX(24px);
+  opacity: 0;
+}
+
+.button .checkbox:checked ~ .plants {
+  transform: translateX(24px);
+
+  opacity: 1;
+}
+
+.button .animals {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+
+  height: 60px;
+  fill: #ffffff;
+  transition: 1s;
+  overflow: visible;
+}
+
+.button .plants {
+  position: absolute;
+  left: 140px;
+  top: 20px;
+  height: 53px;
+  fill: #ffffff;
+  transition: 1s;
+  opacity: 0;
+  overflow: visible;
+}
+
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.button-text::before {
+  margin-top: 80px;
+  font-size: 90px;
+  color: #333;
+  text-align: center;
+}
+
+
+button-text {
+  color: rgb(13, 134, 240);
+}

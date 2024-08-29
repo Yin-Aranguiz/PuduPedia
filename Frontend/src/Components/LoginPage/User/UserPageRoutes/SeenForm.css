@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.addForm * {
+  font-family: 'Open Sans', sans-serif;
+}
+.addForm {
+  display: block;
+  align-items: center;
+  justify-content: left;
+  margin: auto;
+}
+.selectAdd, .selectFaves {
+  margin-right: 5px;
+  margin-bottom: 50px;
+}
+.labelDesc, .inputDesc {
+  margin-right: 5px;
+  margin-bottom: 40px;
+}
+.submitAdd, .cancelAdd {
+  background-color: #3e8e41;
+  width: 180px;
+  height: 40px;
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.submitAdd:hover, .cancelAdd:hover {
+  background-color: #04AA6D;
+}
+.submitAdd {
+  margin-left: 150px;
+}
+.selectFaves, .option {
+  border: 1px solid #3e8e41;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 320px;
+}
+.selectFaves:active {
+  border: 1px solid #3e8e41;
+}
+.inputDesc {
+  border: 1px solid #3e8e41;
+  border-radius: 5px;
+  width: 320px;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+.selectFaves {
+  margin-left: 20px;
+  margin-top: 5px;
+}

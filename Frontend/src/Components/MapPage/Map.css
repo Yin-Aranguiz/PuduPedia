@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+/* Estilo base para el contenedor del mapa */
+.map-container {
+    position: relative;
+    margin-left: 70vh;
+    margin-right: 70vh;
+    margin-bottom: -350vh;
+    margin-top: -26vh;
+}
+
+/* Estilo para el SVG del mapa */
+#map {
+    transform: rotate(270deg);
+    height: 150vh;
+    width: 60vh;
+    overflow: visible;
+    margin-bottom: 60px;
+    margin-left: 30px;
+}
+
+.macrozone-title {
+    font-size: 9px;
+    transform: rotate(90deg);
+    font-weight: 600;
+    stroke: none;
+    letter-spacing: 1px;
+    fill: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    
+    }
+
+.button-title {
+    font-size: 7px;
+    transform: rotate(90deg);
+    font-weight: 700;
+    stroke: none;
+    letter-spacing: 1px;
+    fill: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow:1px 1px 2px rgba(0, 40, 77, 0.473);
+
+}
+
+
+.macrozone-title:hover {
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255); /* Cambia el color a un amarillo brillante */
+    transition: fill 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Estilo base para las rutas del mapa (paths) */
+.highlight {
+    fill: #00c2fd;  /* Color de relleno por defecto */
+    stroke: #a5eaff; /* Color del borde */
+    stroke-width: 1px; /* Grosor del borde */
+    transition: fill 0.3s ease, stroke-width 0.3s ease; /* Transición suave para el cambio de color y borde */
+}
+
+/* Estilos adicionales para el mapa */
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    fill: #2f5bb7; 
+    stroke: #045396; /* Color del borde */
+    stroke-width: 0.5px; 
+}
+/* Opcional: Estilo para etiquetas o nombres de las zonas */
+.text-label {
+    font-size: 12px;
+    text-anchor: middle;
+
+}
