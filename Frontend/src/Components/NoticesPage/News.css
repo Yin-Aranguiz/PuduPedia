@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-body {
+/* body {
     background-image: url('https://media.discordapp.net/attachments/1257448476111933557/1278743369979269193/img.png?ex=66d1ea11&is=66d09891&hm=bac6bec16b038c2adcc7b93717c5c1185b7b439c6bb252291853dcba02598a94&=&format=webp&quality=lossless&width=398&height=964');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-}
+} */
 .news-container{
     display: flex;
     margin-top: 150px;

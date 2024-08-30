@@ -29,7 +29,7 @@
   margin-bottom: 10vh;
 }
 .section3:hover{
-  box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
+  box-shadow: rgb(254, 255, 255) 0.7px 0.9px 4px 4px;
 }
 
 .boxStyle {
@@ -71,7 +71,7 @@
 }
 
 .section1:hover{
-  box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
+  box-shadow: rgb(255, 255, 255) 0.7px 0.9px 4px 4px;
 }
 
 .section2 {
@@ -94,7 +94,7 @@
 }
 
 .section2:hover{
-  box-shadow: rgb(0, 179, 134) 0.7px 0.9px 4px 4px;
+  box-shadow: rgb(255, 255, 255) 0.7px 0.9px 4px 4px;
 }
 
 

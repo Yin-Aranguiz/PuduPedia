@@ -95,6 +95,10 @@
 .loginTab {
   display: flex;
   padding-right: 5px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .loginTab img {

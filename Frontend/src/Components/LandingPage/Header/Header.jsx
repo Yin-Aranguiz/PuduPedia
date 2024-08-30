@@ -19,7 +19,7 @@ const Header = ({ className = '' }) => {
 
   const handleLogout = () => {
     logout();
-    // Redirige al usuario a la página de inicio de sesión o página principal
+    // Redirige al usuario a la página de inicio de sesión 
     navigate('/signlog'); 
   };
 
@@ -41,19 +41,19 @@ const Header = ({ className = '' }) => {
           {isAuthenticated ? (
             <>
               <Link className="loginTab" to="/user/prof">
-                <p>P E R F I L</p>
+                <p>PERFIL</p>
               </Link>
               <Link className="loginTab" to="/user">
                 <img src={user_icon} alt="user_icon" className="userIcon"></img>
               </Link>
-              <button onClick={handleLogout} className="logoutButton">
-                C E R R A R  S E S I Ó N
-              </button>
+              <p onClick={handleLogout} className="logoutButton">
+                CERRAR &nbsp; SESIÓN
+              </p>
             </>
           ) : (
             <>
               <Link className="loginTab" to="/signlog">
-                <p>I N G R E S A R</p>
+                <p>INGRESAR</p>
               </Link>
               <Link className="loginTab" to="/signlog">
                 <img src={user_icon} alt="user_icon" className="userIcon"></img>

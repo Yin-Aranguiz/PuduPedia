@@ -3,13 +3,16 @@
 .allGame {
   min-height: 220vh;
   margin-top: -30vh;
+  background-image: url('https://imgur.com/OWYiTNQ.png');
+  background-size: cover;
+  overflow: hidden;
 }
 
 .gameTitle {
   margin-left: 80vh;
   padding-top: 42vh;
   width: 600px;
-  color: rgba(163, 242, 217, 0.805);
+  color: rgba(255, 255, 255, 0.805);
   text-shadow:
     4px 2px 0 #1f8a6c93,
     -1px -1px 0 #178d6ca9,
@@ -17,34 +20,38 @@
     -1px 1px 0 #043326;
   font-size: 4rem;
   font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+  font-weight: 600;
+  letter-spacing: 2px
 }
 
 .backg {
-  animation:slide 7s ease-in-out infinite alternate;
+  animation: slide 7s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(21, 122, 63) 50%, rgb(7, 88, 49) 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.3;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
+  bottom: 0;
+  left: -50%;
+  opacity: .3;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
 }
 
 .backg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:14s;
+  animation-direction: alternate-reverse;
+  animation-duration: 14s;
 }
 
 .backg3 {
-  animation-duration:15s;
+  animation-duration: 15s;
 }
 
 @keyframes slide {
   0% {
-    transform:translateX(-25%);
+    transform: translateX(-25%);
   }
+
   100% {
-    transform:translateX(25%);
+    transform: translateX(25%);
   }
 }

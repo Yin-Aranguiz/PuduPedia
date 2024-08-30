@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-* {
+body {
 	box-sizing: border-box;
 	font-family: "Open Sans", sans-serif;
+    background-image: url('https://imgur.com/toKI7PX.png');
+    background-size: cover;
+    
 }
 .TriviaGame {
     font-family: 'Open Sans', sans-serif;
@@ -10,6 +13,9 @@
     padding: 30px;
     max-width: 600px;
     max-height: auto;
+    /* box-sizing: border-box; */
+	font-family: "Open Sans", sans-serif;
+    
 }
 
 .trivia {

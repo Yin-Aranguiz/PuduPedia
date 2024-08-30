@@ -182,21 +182,21 @@ const getProfile = async (req, res) => {
   const user = req.user; // req.user contiene la información del usuario después de la autenticación
 
   if (!user) {
-    return res.status(401).json({ message: 'Unauthorized' });
+    return res.status(401).json({ message: 'No autorizado' });
   }
 
   try {
     // Obtener más detalles del usuario desde la base de datos usando su email
-    const userDetails = await findUser(user.email); // Asumiendo que `req.user` tiene el campo `email`
+    const userDetails = await findUser(user.email); 
 
     if (!userDetails) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
     res.json(userDetails);
   } catch (error) {
-    console.error('Error fetching user details:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.error('Error obteniendo los detalles del usuario:', error);
+    res.status(500).json({ message: 'Error interno del servidor' });
   }
 };
 
@@ -353,16 +353,23 @@ const getParks = async (req, res) => {
 // Controlador para mostrar los animales vistos por el usuario desde la base de datos
 const getAnimalsSeenController = async (req, res) => {
   const userId = req.user.id;
+  if (!userId) {
+    return res.status(400).json({ error: 'User ID is required.' });
+  }
   try {
     const animals = await getAnimalsSeen(userId);
     res.json(animals);
   } catch (error) {
+    console.error('Error fetching animals seen:', error);
     res.status(500).json({ error: error.message });
   }
 };
 //   Controlador para mostrar las plantas vistas por el usuario desde la base de datos
 const getPlantsSeenController = async (req, res) => {
   const userId = req.user.id;
+  if (!userId) {
+    return res.status(400).json({ error: 'User ID is required.' });
+  }
   try {
     const plants = await getPlantsSeen(userId);
     res.json(plants);
@@ -373,6 +380,9 @@ const getPlantsSeenController = async (req, res) => {
 //   Controlador para mostrar los parques que ha visitado el usuario desde la base de datos
 const getParksVisitedController = async (req, res) => {
   const userId = req.user.id;
+  if (!userId) {
+    return res.status(400).json({ error: 'User ID is required.' });
+  }
   try {
     const parks = await getParksVisited(userId);
     res.json(parks);

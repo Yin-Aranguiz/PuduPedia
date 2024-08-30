@@ -25,7 +25,7 @@ router.post('/', registerUser); //funciona
 router.post('/login', loginUser); //funciona
 
 // // Ruta para solicitud de recuperación de contraseña:
-router.post('/change-password', changePassword);
+router.post('/change-password', changePassword); //funciona
 
 // Ruta para validar la respuesta de seguridad
 router.post('/forgot-password-security', validateSecurityAnswer); //funciona

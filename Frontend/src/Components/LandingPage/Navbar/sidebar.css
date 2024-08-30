@@ -17,7 +17,8 @@
 .sidebarToggle {
   position: absolute;
   top: 20%;
-  right: 1285px;
+  /* right: 1285px; */
+  right: 95vw;
   height: 50px;
   width: 50px;
   z-index: 6;
@@ -41,7 +42,8 @@
   transition: left 0.3s ease-in-out;
 }
 .sidebar.open ~ .sidebarToggle {
-  right: 1127px;
+  /* right: 1127px; */
+  right: 84vw;
   transition: right 0.3s ease-in-out;
 }
 .navBarItems {

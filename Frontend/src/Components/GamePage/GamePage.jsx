@@ -1,6 +1,6 @@
 import React from 'react';
 
-import InfoGame from './InfoGame/InfoGame';
+
 import '../LandingPage/Footer/Footer.css';
 import Carousel from './Carousel/Carousel';
 import './GamePage.css';
@@ -17,7 +17,7 @@ const GamePage = () => {
             
             <h1 className='gameTitle'>JUEGOS</h1>
             <Carousel />
-            <InfoGame />
+            
         </div>
     );
 }
