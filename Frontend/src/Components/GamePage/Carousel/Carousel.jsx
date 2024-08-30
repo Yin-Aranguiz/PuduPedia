@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import './Carousel.css';
+import triviaGame from './triviaGame.jpeg';
+import PuHiPu from './PuHiPu.jpeg';
+import memopuduGame from './memopuduGame.jpeg';
 
 const Application = () => {
     const [items] = useState([
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/trivia' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/memopudu' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/puduGame' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/trivia' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/memopudu' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/puduGame' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/trivia' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/memopudu' },
-        { src: 'https://pbs.twimg.com/media/D6eRwvQX4AARoU5.jpg', url: '/puduGame' }
+        { src: triviaGame, url: '/trivia' },
+        { src: memopuduGame, url: '/memopudu' },
+        { src: PuHiPu, url: '/puduGame' },
+        { src: triviaGame, url: '/trivia' },
+        { src: memopuduGame, url: '/memopudu' },
+        { src: PuHiPu, url: '/puduGame' },
+        { src: triviaGame, url: '/trivia' },
+        { src: memopuduGame, url: '/memopudu' },
+        { src: PuHiPu, url: '/puduGame' }
     ]);
     const [active, setActive] = useState(0);
     const [direction, setDirection] = useState('');

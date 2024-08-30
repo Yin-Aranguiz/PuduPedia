@@ -38,10 +38,21 @@ const NotifPage = () => {
         <div className='contentTab'>
         <div className='nameOfTab'>
             • Logros
+            <ul>
+        <li><strong>Primer Animal Avistado:</strong> Has avistado tu primer animal.</li>
+        <li><strong>Primera Planta Avistada:</strong> Has avistado tu primera planta.</li>
+        <li><strong>Primer Parque Visitado:</strong> Has visitado tu primer parque nacional.</li>
+        <li><strong>3 Animales Avistados:</strong> Has avistado 3 animales endémicos.</li>
+        <li><strong>3 Plantas Avistadas:</strong> Has avistado 3 plantas endémicas.</li>
+        <li><strong>3 Parques Visitados:</strong> Has visitado 3 parques nacionales.</li>
+        <li><strong>5 Animales Avistados:</strong> Has avistado 5 animales endémicos.</li>
+        <li><strong>5 Plantas Avistadas:</strong> Has avistado 5 plantas endémicas.</li>
+
+      </ul>
+    </div>
         </div>
         </div>
       </div>
-    </div>
    );
 }
  

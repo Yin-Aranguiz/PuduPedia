@@ -13,6 +13,7 @@ const FavesPage = () => {
   const [formAction, setFormAction] = useState('');
   const { user } = useAuth();
   console.log(user);
+  
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     if (!user) return;
@@ -175,4 +176,4 @@ const FavesPage = () => {
   );
 }
 
-export default FavesPage;
+export default FavesPage; 

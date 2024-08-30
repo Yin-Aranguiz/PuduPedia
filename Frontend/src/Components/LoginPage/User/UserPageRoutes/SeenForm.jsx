@@ -7,7 +7,7 @@ const Form = ({ formType, formAction, onSubmit, onCancel }) => {
   const [formData, setFormData] = useState({
     item: '',
   });
-  const { user } = useAuth(); // Use the useAuth hook to get the user object
+  const { user } = useAuth(); 
 
   useEffect(() => {
     const fetchData = async () => {
