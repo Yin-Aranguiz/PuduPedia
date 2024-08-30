@@ -6,13 +6,13 @@ const DeleteAccount = () => {
 
   const handleDelete = () => {
     if (window.confirm('¿Estás seguro de que quieres eliminar tu cuenta? Esta acción es irreversible.')) {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem('accessToken');
 
       fetch('http://localhost:3001/user/delete-account', {
         method: 'DELETE',
         headers: {
-          'Authorization': token,
-          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json', 
         },
       })
         .then(response => response.json())

@@ -8,7 +8,7 @@ function authenticateToken(req, res, next) {
     const token = authHeader && authHeader.split(' ')[1];
 
     if (token == null) return res.sendStatus(401); // No se envió token
-
+    console.log('Token recibido:', token);
     jwt.verify(token, process.env.JWT_SECRET || 'default_secret_key', (err, user) => {
         if (err) return res.sendStatus(403); // Token no válido
 

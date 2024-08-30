@@ -58,7 +58,7 @@ router.get('/plants', getPlants); //funciona
 router.get('/parks', getParks); //funciona
 
 // Ruta para eliminar cuenta
-router.delete('/delete-account', authenticateToken, deleteUser);
+router.delete('/delete-account', authenticateToken, deleteUser); //funciona
 
 // Rutas para actualizar lista de vistos o visitados que se muestran en el front
 router.put('/animals-seen/:id', authenticateToken, updateAnimalSeenController); //funciona

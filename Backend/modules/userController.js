@@ -14,7 +14,8 @@ const { addUser, findUser,
   removeParkVisited,
   getAnimalsSeen,
   getPlantsSeen,
-  getParksVisited
+  getParksVisited,
+  findUserById
 } = require('./userModel');
 
 // Controlador para registro de usuario
@@ -61,6 +62,7 @@ const loginUser = async (req, res) => {
     if (!valid) {
       return res.status(403).json({ error: 'Credenciales inválidas' });
     }
+    console.log('JWT_SECRET al generar token:', process.env.JWT_SECRET);
     // Token de acceso
     const accessToken = jwt.sign(
       { id: user.id, email: user.email },
@@ -205,18 +207,18 @@ const deleteUser = async (req, res) => {
     return res.status(401).json({ success: false, message: 'Token de autenticación no proporcionado.' });
   }
 
-  const token = authHeader; // Usa el token directamente
+  const token = authHeader && authHeader.split(' ')[1].trim(); 
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET || 'default_secret_key');
     const userId = decoded.id;
 
-    const user = await findUser(userId);
+    const user = await findUserById(userId);
     if (!user) {
       return res.status(404).json({ success: false, message: 'Usuario no encontrado.' });
     }
 
-    await deleteUserFromDB(userId); // Asegúrate de que la función sea correcta
+    await deleteUserFromDB(userId); 
 
     res.status(200).json({ success: true, message: 'Cuenta de usuario eliminada con éxito.' });
   } catch (error) {
