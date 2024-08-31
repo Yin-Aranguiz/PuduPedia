@@ -19,8 +19,7 @@ const DeleteAccount = () => {
         .then(data => {
           if (data.success) {
             alert('Cuenta eliminada con éxito.');
-            // Redirigir a la página de inicio
-            navigate('/');
+            navigate('/signlog');
           } else {
             alert(data.message || 'Error eliminando la cuenta.');
           }

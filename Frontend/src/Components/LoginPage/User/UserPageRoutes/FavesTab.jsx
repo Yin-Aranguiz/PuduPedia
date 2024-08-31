@@ -12,7 +12,7 @@ const FavesPage = () => {
   const [formType, setFormType] = useState('');
   const [formAction, setFormAction] = useState('');
   const { user } = useAuth();
-  console.log(user);
+  
   
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
@@ -101,7 +101,9 @@ const FavesPage = () => {
   };
 
   if (!user) {
+     
     return <div className='shownTab'>Cargando desde la base de datos...</div>;
+    
   }
 
 
@@ -168,7 +170,7 @@ const FavesPage = () => {
         </div>
       </div>
       {showForm && (
-        <div className='formContainer'>
+        <div className='formContainer2'>
           <Form formType={formType} formAction={formAction} onSubmit={handleFormSubmit} onCancel={handleFormCancel} />
         </div>
       )}

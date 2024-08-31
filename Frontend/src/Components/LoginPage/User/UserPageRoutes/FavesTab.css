@@ -14,13 +14,19 @@
  
 }
 
-.formContainer{
-  margin-top: 30vh;
-  margin-left: 30vh;
+.formContainer2 {
+  margin-top: 10vh;
+  margin-left: -87vh;
   background-color: white;
   height: 30vh;
   border-radius: 10px;
   padding: 5vh;
+}
+
+.formContainer2 button{
+  margin-top: -5vh;
+  width: 50vh;
+  margin-left: 10vh;
 }
 
 .addButton{

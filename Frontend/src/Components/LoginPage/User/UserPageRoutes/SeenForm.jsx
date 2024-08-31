@@ -58,19 +58,19 @@ const Form = ({ formType, formAction, onSubmit, onCancel }) => {
         method = formAction === 'add' ? 'POST' : 'DELETE';
         body = method === 'POST' ? JSON.stringify({ userId: user.id, animalId: item, seen: true }) : null;
         break;
-
+    
       case 'plant':
         url = formAction === 'add' ? 'http://localhost:3001/user/plants-seen' : `http://localhost:3001/user/plants-seen/${item}`;
         method = formAction === 'add' ? 'POST' : 'DELETE';
         body = method === 'POST' ? JSON.stringify({ userId: user.id, plantId: item, seen: true }) : null;
         break;
-
+    
       case 'park':
         url = formAction === 'add' ? 'http://localhost:3001/user/parks-visited' : `http://localhost:3001/user/parks-visited/${item}`;
         method = formAction === 'add' ? 'POST' : 'DELETE';
         body = method === 'POST' ? JSON.stringify({ userId: user.id, parkId: item, visited: true }) : null;
         break;
-
+    
       default:
         alert('Tipo de formulario no reconocido.');
         return;
@@ -93,6 +93,8 @@ const Form = ({ formType, formAction, onSubmit, onCancel }) => {
       }
 
       const result = await response.json();
+      alert('Operación realizada con éxito.');
+      window.location.reload(); // Recarga la página automáticamente
       onSubmit(result);
     } catch (error) {
       console.error('Error:', error);

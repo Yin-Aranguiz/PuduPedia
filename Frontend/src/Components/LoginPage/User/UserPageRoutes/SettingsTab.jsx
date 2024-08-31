@@ -34,7 +34,7 @@ const SettingsPage = () => {
       navigate('/signlog');
     } catch (error) {
       console.error(error);
-      alert('Ocurrió un error al eliminar la cuenta');
+      
     }
     setShowDeleteAccount(!showDeleteAccount);
     setShowChangePassword(false);
