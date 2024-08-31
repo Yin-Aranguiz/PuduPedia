@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { AuthProvider } from './Components/LoginPage/signlog/AuthContext/AuthContext';
 import NewNavbar from './Components/LandingPage/Navbar/NewNavbar';
 import LandingPage from './Components/LandingPage/LandingPage';
 import GamePage from './Components/GamePage/GamePage';
@@ -59,6 +58,7 @@ function App() {
           
         </Routes>
       </Router>
+      
   
   );
 }

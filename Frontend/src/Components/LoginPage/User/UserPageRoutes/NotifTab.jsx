@@ -12,7 +12,7 @@ const NotifPage = () => {
         <div className='sideBoxesFirst'>
           <div className='userNameBox'>
           <nav>
-          <Link to="/user/prof" className='linkToPages'>Perfil de usuario</Link>
+          <Link to="/user/prof" className='linkToPages'>Perfil de Usuario</Link>
           </nav>
           </div>
         </div>

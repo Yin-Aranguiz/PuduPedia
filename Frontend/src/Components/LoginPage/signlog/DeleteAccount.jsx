@@ -31,8 +31,8 @@ const DeleteAccount = () => {
 
   return (
     <div className='deleteAccount'>
-      <h3>Eliminar Cuenta</h3>
-      <button onClick={handleDelete}>Eliminar</button>
+      <h3>Eliminar la Cuenta de usuario: cuidado, esta acción es irreversible</h3>
+      <button onClick={handleDelete}>Eliminar Cuenta</button>
     </div>
   );
 };

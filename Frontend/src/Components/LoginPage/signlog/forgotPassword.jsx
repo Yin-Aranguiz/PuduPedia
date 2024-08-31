@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './ForgotPassword.css';
 
 const ForgotPassword = () => {
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
 
     return (
         <div className='forgot-password-container'>
-            <h2 className='forgot-password-title'>Cambiar Contraseña</h2>
+            {/* <h2 className='forgot-password-title'>Cambiar Contraseña</h2> */}
             <form className='forgot-password-form' onSubmit={handleSubmit}>
                 <label className='forgot-password-label' htmlFor="email">Correo Electrónico:</label>
                 <input
@@ -83,7 +83,7 @@ const ForgotPassword = () => {
             </form>
             {success && <p className='forgot-password-success'>Contraseña cambiada con éxito.</p>}
             {error && <p className='forgot-password-error'>{error}</p>}
-            <Link className='forgot-password-link' to="/">Volver a la página de inicio</Link>
+            {/* <Link className='forgot-password-link' to="/">Volver a la página de inicio</Link> */}
         </div>
     );
 };

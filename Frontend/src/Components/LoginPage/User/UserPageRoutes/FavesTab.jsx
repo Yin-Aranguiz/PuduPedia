@@ -111,7 +111,7 @@ const FavesPage = () => {
         <div className='sideBoxesFirst'>
           <div className='userNameBox'>
             <nav>
-              <Link to="/user/prof" className='linkToPages'>Perfil de usuario</Link>
+              <Link to="/user/prof" className='linkToPages'>Perfil de Usuario</Link>
             </nav>
           </div>
         </div>
@@ -139,9 +139,9 @@ const FavesPage = () => {
             • Flora
             <div className='floraElements'>
               {renderList(plants, 'Plantas')}
-              <button onClick={() => handleAddFavorite('plant')}>Añadir a Vistos</button>
+              <button className='addButton' onClick={() => handleAddFavorite('plant')}>Añadir a Vistos</button>
               {plants.some(plant => plant.seen) && (
-                <button onClick={() => handleRemoveFavorite('plant')}>Eliminar de Vistos</button>
+                <button className='addButton' onClick={() => handleRemoveFavorite('plant')}>Eliminar de Vistos</button>
               )}
             </div>
           </div>
@@ -149,9 +149,9 @@ const FavesPage = () => {
             • Fauna
             <div className='faunaElements'>
               {renderList(animals, 'Animales')}
-              <button onClick={() => handleAddFavorite('animal')}>Añadir a Vistos</button>
+              <button className='addButton' onClick={() => handleAddFavorite('animal')}>Añadir a Vistos</button>
               {animals.some(animal => animal.seen) && (
-                <button onClick={() => handleRemoveFavorite('animal')}>Eliminar de Vistos</button>
+                <button className='addButton' onClick={() => handleRemoveFavorite('animal')}>Eliminar de Vistos</button>
               )}
             </div>
           </div>
@@ -159,9 +159,9 @@ const FavesPage = () => {
             • Parques
             <div className='parkElements'>
               {renderList(parks, 'Parques')}
-              <button onClick={() => handleAddFavorite('park')}>Añadir a Visitados</button>
+              <button className='addButton' onClick={() => handleAddFavorite('park')}>Añadir a Visitados</button>
               {parks.some(park => park.visited) && (
-                <button onClick={() => handleRemoveFavorite('park')}>Eliminar de Visitados</button>
+                <button className='addButton' onClick={() => handleRemoveFavorite('park')}>Eliminar de Visitados</button>
               )}
             </div>
           </div>

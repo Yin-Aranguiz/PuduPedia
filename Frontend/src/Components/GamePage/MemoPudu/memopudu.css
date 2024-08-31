@@ -1,6 +1,14 @@
+/* body {
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+    background-image: url('https://imgur.com/toKI7PX.png');
+    background-size: cover;
+    
+} */
+
 .memopudu {
     background-color: rgba(255, 255, 255, 0.253);
-    margin: 20vh auto;
+    margin: 30vh auto;
     padding: 0;
     border-radius: 10px;
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.185);
@@ -9,6 +17,7 @@
     position: relative; 
     width: 80%; 
     height: 80%;
+   
 }
 
 .card {
@@ -17,8 +26,10 @@
     background-size: cover;
     cursor: pointer;
     position: relative;
+    /* right: 315vh; */
     z-index: 1;
     perspective: 1000px;
+   
 }
 
 .flipped .card-front {
@@ -42,7 +53,7 @@
 }
 
 .card-front {
-    background: url('casillaGirada.jpeg') no-repeat center center;
+    background: url('../Carousel/memopuduGame.jpeg') no-repeat center center;
     background-size: cover;
     transform: rotateY(0deg);
 }
@@ -144,15 +155,19 @@
 
 .title {
     display: flex;
-    color: rgba(7, 255, 193, 0.747);
+    color: #ffff;
     -webkit-text-stroke: 0.1px rgb(5, 126, 91);
     justify-content: center;
     margin: 0;
     margin-top: -70px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 80px;
     position: relative;
     z-index: 2;
+    font-size: 4rem;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 8px rgba(0, 9, 53, 0.892);
+    font-weight: 600;
+    letter-spacing: 2px
 }
 
 #tiempo {
@@ -192,7 +207,7 @@
 }
 
 .controls button:hover {
-    background: linear-gradient(145deg, rgb(30, 2, 52), rgb(125, 80, 237));
+    background: linear-gradient(145deg, rgb(2, 52, 38), rgb(4, 199, 140));
 }
 
 .difficulty-buttons {

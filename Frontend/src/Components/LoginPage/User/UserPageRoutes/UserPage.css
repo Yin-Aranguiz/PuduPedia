@@ -1,101 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-.fullPage * {
-	box-sizing: border-box;
-	font-family: "Open Sans", sans-serif;
-  background-image: url(park.jpg);
-}
+
 
 .linkToPages {
   color: #fff;
   text-decoration: none;
 }
 .fullPage {
-
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
   margin-left: 250px;
   width: 1000px;
-  height: 500px;
+  height: 600px;
   border-radius: 10px;
   backdrop-filter: blur(5px);
-}
-.sideTab {
-  /*background-color: rgb(67, 84, 99);*/
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 250px;
-  height: 500px;
-  margin-inline-end: auto;
-  border-radius: 10px 0px 0px 10px;
-}
-.userNameBox, .topTabName {
-  text-align: left;
-  padding-top: 25px;
-  margin-left: 20px;
-  color: #fff;
-}
-.sideBoxesFirst {
-  /*background-color: rgb(104, 143, 177);*/
-  background-color: rgba(22, 107, 36, 0.842);
-  width: 250px;
-  height: 70px;
-  border-radius: 10px 0px 0px 0px;
-}
-.sideBoxes {
-  background-color: #3e8e41;
-  width: 250px;
-  height: 60px;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  text-align: left;
-  border: none;
-  cursor: pointer;
-}
-.sideBoxes:hover {
-  background-color: #04AA6D;
-}
-.shownTab {
-  background-color: rgba(255, 255, 255, 0.7);
-  width: 750px;
-  height: 500px;
-  margin-inline-start: auto;
-  border-radius: 0 10px 10px 0;
-}
-.topTab {
-  background-color: #04AA6D;
-  width: 750px;
-  height: 70px;
-  border-radius: 0 10px 0 0;
-}
-.contentTab {
-  width: 700px;
-  height: 390px;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-}
-.profilePicCorner img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  margin-top: 10px;
-  margin-left: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-  transition: transform 0.5s ease-in-out;
-}
-.profilePicCorner img:hover {
-  transform: scale(1.2);
-  transition: transform 0.5s ease;
-  cursor: pointer;
-  box-shadow: 2px 2px 5px rgb(11, 150, 69);
-}
-.nameOfTab {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-.noFavesYet {
-  color: #717472;
-  margin-left: 20px;
 }

@@ -41,7 +41,7 @@ const ResetPassword = () => {
 
     return (
         <div className="forgot-password-container">
-            <h2>Recuperar Contraseña</h2>
+            <h2>Recuperar Contraseña</h2> <br/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Correo Electrónico:</label>
                 <input
