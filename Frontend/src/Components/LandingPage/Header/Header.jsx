@@ -47,7 +47,7 @@ const Header = ({ className = '' }) => {
                 <img src={user_icon} alt="user_icon" className="userIcon"></img>
               </Link>
               <p onClick={handleLogout} className="logoutButton">
-                CERRAR &nbsp; SESIÓN
+                SALIR
               </p>
             </>
           ) : (

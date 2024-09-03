@@ -248,7 +248,8 @@ const addAnimalSeenController = async (req, res) => {
 // Eliminar Animal Visto
 const removeAnimalSeenController = async (req, res) => {
   const userId = req.user.id;
-  const { id: animalId } = req.body;
+  const { animalId } = req.params; // Desestructurando 'animalId' del cuerpo de la solicitud
+
   try {
     const success = await removeAnimalSeen(userId, animalId);
     res.json({ success });
@@ -277,7 +278,7 @@ const addPlantSeenController = async (req, res) => {
 // Eliminar Planta Vista
 const removePlantSeenController = async (req, res) => {
   const userId = req.user.id; // Esto viene del token JWT
-  const { plant_id: plantId } = req.body;
+  const { plantId } = req.params; // Desestructurando 'plantId' del cuerpo de la solicitud
 
   console.log('Removing plant seen for userId:', userId, 'and plantId:', plantId);
 
@@ -312,7 +313,8 @@ const addParkVisitedController = async (req, res) => {
 // Eliminar Parque Visitado
 const removeParkVisitedController = async (req, res) => {
   const userId = req.user.id;
-  const { id: parkId } = req.body;
+  const { parkId } = req.params; // Desestructurando 'parkId' del cuerpo de la solicitud
+
   try {
     const success = await removeParkVisited(userId, parkId);
     res.json({ success });

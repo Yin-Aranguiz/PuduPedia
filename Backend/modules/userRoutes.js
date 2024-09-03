@@ -38,17 +38,17 @@ router.get('/profile', authenticateToken, getProfile); //funciona
 
 // Rutas para manejar los animales vistos
 router.post('/animals-seen', authenticateToken, addAnimalSeenController); //funciona
-router.delete('/animals-seen/:id', authenticateToken, removeAnimalSeenController); //funciona
+router.delete('/animals-seen/:animalId', authenticateToken, removeAnimalSeenController); //funciona
 router.get('/animals-seen', authenticateToken, getAnimalsSeenController); //funciona
 
 // Rutas para manejar las plantas vistas
 router.post('/plants-seen', authenticateToken, addPlantSeenController); //funciona
-router.delete('/plants-seen/:id', authenticateToken, removePlantSeenController); //funciona
+router.delete('/plants-seen/:plantId', authenticateToken, removePlantSeenController); //funciona
 router.get('/plants-seen', authenticateToken, getPlantsSeenController); //funciona
 
 // Rutas para manejar los parques visitados
 router.post('/parks-visited', authenticateToken, addParkVisitedController); //funciona
-router.delete('/parks-visited/:id', authenticateToken, removeParkVisitedController); //funciona
+router.delete('/parks-visited/:parkId', authenticateToken, removeParkVisitedController); //funciona
 router.get('/parks-visited', authenticateToken, getParksVisitedController); //funciona
 
 

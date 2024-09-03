@@ -37,9 +37,10 @@
 }
 
 /* Estilos de íconos */
-.shareIcon, .searchIcon {
+.shareIcon {
   width: 25px;
   height: 25px;
+  cursor: pointer;
 }
 
 /* Contenedor de elementos en el header */
@@ -83,15 +84,6 @@
 }
 
 
-/* Otros estilos para los elementos */
-.languageToggle {
-  display: flex;
-  padding-right: 50px;
-  padding-top: 7px;
-  font-family: "Open Sans", sans-serif;
-  font-style: italic;
-}
-
 .loginTab {
   display: flex;
   padding-right: 5px;
@@ -106,6 +98,7 @@
   width: 45px;
   height: 45px;
   margin-top: -6px;
+  margin-right: 6px;
 }
 
 .loginTab p {
@@ -114,6 +107,7 @@
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   text-decoration: none;
+  
 }
 
 .loginTab a {
@@ -135,9 +129,10 @@
   height: 60px;
   font-size: large;
   font-family: "Inter", sans-serif;
+  
 }
 
-.logoContainer:hover, .languageToggle:hover, .loginTab:hover, .shareButton:hover, .searchButton:hover {
+.logoContainer:hover, .languageToggle:hover, .loginTab:hover, .shareButton:hover {
   cursor: pointer;
 }
 
@@ -151,4 +146,9 @@
 .backOff {
   transform: translateY(22vh) translateX(-70vh);
   width: 191.5vh;
+}
+.logoutButton{
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 2px;
 }
