@@ -16,7 +16,6 @@ import img13Example from './chincol.jpg';
 import img14Example from './pudu.jpg';
 import img15Example from './puma.jpg';
 import musicGame from './memoPuduMusic.mp3';
-// import Header from '../../LandingPage/Header/Header'
 
 const Memopudu = () => {
     const [time, setTime] = useState(60);
@@ -324,7 +323,6 @@ const handleCardClick = (e) => {
 
     return (
         <div className='memopudu'>
-            {/* <Header /> */}
             <h1 className='title'>Memopudú</h1>
             <h3 id="tiempo">Tiempo: 01:00</h3>
             <h2 className='description'>¡Encuentra todos los pares antes de que pase 1 minuto!</h2>
@@ -344,7 +342,7 @@ const handleCardClick = (e) => {
                 {animalImages.map((animal, index) => (
                     <div
                         key={index}
-                        className={`card ${lockBoard ? 'lock' : ''}`}
+                        className={`card1 ${lockBoard ? 'lock' : ''}`}
                         data-animal={animal}
                         onClick={handleCardClick}
                     >

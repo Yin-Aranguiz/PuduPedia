@@ -1,10 +1,3 @@
-/* body {
-	box-sizing: border-box;
-	font-family: "Open Sans", sans-serif;
-    background-image: url('https://imgur.com/toKI7PX.png');
-    background-size: cover;
-    
-} */
 
 .memopudu {
     background-color: rgba(255, 255, 255, 0.253);
@@ -20,7 +13,7 @@
    
 }
 
-.card {
+.card1 {
     width: 100px;
     height: 100px;
     background-size: cover;
@@ -65,7 +58,7 @@
     align-items: center;
 }
 
-.card img {
+.card1 img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
@@ -75,11 +68,11 @@
     visibility: hidden;
 }
 
-.card.matched {
+.card1 .matched {
     transform: rotateY(0deg);
 }
 
-.card img:hover {
+.card1 img:hover {
     transform: scale(1.2);
 }
 
@@ -149,7 +142,7 @@
     }
 }
 
-.card.hide {
+.card1 .hide {
     animation: hideCard 0.5s forwards;
 }
 
