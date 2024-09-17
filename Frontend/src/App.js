@@ -43,6 +43,7 @@ function App() {
           <Route path="/signlog" element={<SignLog />} />
           <Route path="/change-password" element={<ForgotPassword />} />
           <Route path="/accordion/:animal" element={<Accordion />} />
+          <Route path="/accordion/:item" element={<Accordion />} />
           <Route path="/accordion" element={<Accordion />} />
           <Route path="/forgot-password-security" element={<ResetPassword />} />
           <Route path="/change-password-reset" element={<ResetPage />} />

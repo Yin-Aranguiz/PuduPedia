@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-
+import Header from '../LandingPage/Header/Header';
 
 import userIcon from './user-icon-placeholder.png';
 import LinkedLogo from './LinkedIn_logo.png';
@@ -11,9 +11,9 @@ const AboutUs = () => {
   return (
     <div className='all'>
       <div className='aboutUsBackground'>
-        
+        <Header />
         <div className='teamTitle'>
-          <p className='title'>E Q U I P O &nbsp; D E &nbsp; D E S A R R O L L A D O R E S</p>
+          <p className='dtitle'>E Q U I P O &nbsp; D E &nbsp; D E S A R R O L L A D O R E S</p>
         </div>
         <div className='teamContainer'>
           <div className='memberContainer'>
@@ -23,11 +23,11 @@ const AboutUs = () => {
             </div>
             <div className='links'>
               <a href='https://www.linkedin.com/in/bianca-de-petris/' target='blank'>
-                <img src={LinkedLogo} className='Linked' alt='linkedin'></img>
+                <img src={LinkedLogo} className='Linked'></img>
                 <p className='linkName'>LinkedIn</p>
               </a> <br></br>
               <a href='https://github.com/Biank123' target='blank'>
-                <img src={GitHubLogo} className='GitHub' alt='github'></img>
+                <img src={GitHubLogo} className='GitHub'></img>
                 <p className='linkName'>GitHub</p>
               </a>
             </div>
@@ -39,11 +39,11 @@ const AboutUs = () => {
             </div>
             <div className='links'>
               <a href='https://www.linkedin.com/in/martin-aranguiz-morales/' target='blank'>
-                <img src={LinkedLogo} className='Linked' alt='linkedin'></img>
+                <img src={LinkedLogo} className='Linked'></img>
                 <p className='linkName'>LinkedIn</p>
               </a> <br></br>
               <a href='https://github.com/Yin-Aranguiz' target='blank'>
-                <img src={GitHubLogo} className='GitHub' alt='github'></img>
+                <img src={GitHubLogo} className='GitHub'></img>
                 <p className='linkName'>GitHub</p>
               </a>
             </div>
@@ -55,11 +55,11 @@ const AboutUs = () => {
             </div>
             <div className='links'>
               <a href='https://www.linkedin.com/in/loreto-esp-pez/' target='blank'>
-                <img src={LinkedLogo} className='Linked' alt='linkedin'></img>
+                <img src={LinkedLogo} className='Linked'></img>
                 <p className='linkName'>LinkedIn</p>
               </a> <br></br>
               <a href='https://github.com/larkemiz' target='blank'>
-                <img src={GitHubLogo} className='GitHub' alt='github'></img>
+                <img src={GitHubLogo} className='GitHub'></img>
                 <p className='linkName'>GitHub</p>
               </a>
             </div>
@@ -71,11 +71,11 @@ const AboutUs = () => {
             </div>
             <div className='links'>
               <a href='https://www.linkedin.com/in/c-venegas-ruiz' target='blank'>
-                <img src={LinkedLogo} className='Linked' alt='linkedin'></img>
+                <img src={LinkedLogo} className='Linked'></img>
                 <p className='linkName'>LinkedIn</p>
               </a> <br></br>
               <a href='https://github.com/Cvenru' target='blank'>
-                <img src={GitHubLogo} className='GitHub' alt='github'></img>
+                <img src={GitHubLogo} className='GitHub'></img>
                 <p className='linkName'>GitHub</p>
               </a>
             </div>
@@ -87,11 +87,11 @@ const AboutUs = () => {
             </div>
             <div className='links'>
               <a href='https://www.linkedin.com/in/lorenzo-ignacio-guzman-orellana/' target='blank'>
-                <img src={LinkedLogo} className='Linked' alt='linkedin'></img>
+                <img src={LinkedLogo} className='Linked'></img>
                 <p className='linkName'>LinkedIn</p>
               </a> <br></br>
               <a href='https://github.com/ghiraghira' className='linkText' target='blank'>
-                <img src={GitHubLogo} className='GitHub' alt='github'></img>
+                <img src={GitHubLogo} className='GitHub'></img>
                 <p className='linkName'>GitHub</p>
               </a>
             </div>

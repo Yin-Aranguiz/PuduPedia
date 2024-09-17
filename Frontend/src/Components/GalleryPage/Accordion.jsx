@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import './Accordion.css';
 import { animals } from './animals';
 import { plants } from './plants';
-import Header from '../LandingPage/Header/Header';
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => {
     return (
@@ -69,7 +68,7 @@ const Accordion = () => {
                     ))}
                 </div>
             </div>
-            <Header />
+            
         </div>
     );
 };
