@@ -1,5 +1,6 @@
 Pudupedia 🦌🌿
 Pudupedia es una plataforma interactiva dedicada a las especies endémicas de Chile, con recursos educativos, juegos, y un catálogo de parques nacionales.
+![image](https://github.com/user-attachments/assets/622fc338-4940-4b53-8405-09f6fed0e332)
 
 Funcionalidades principales
 Mapa interactivo:
