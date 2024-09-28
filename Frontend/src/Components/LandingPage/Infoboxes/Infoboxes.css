@@ -9,8 +9,9 @@
     /* Espacio entre las infoboxes */
     padding: 200px;
     position: absolute;
-    margin-top: -25vh;
-    width: 210vh;
+    margin-top: -20vh;
+    margin-bottom: 20vh;
+    width: 190vh;
 }
 
 .infobox {

@@ -25,21 +25,14 @@ const Footer = ({ className }) => {
         </div>
         <div className='Contact-item'>
           <img src={phoneLogoUrl} alt="Teléfono" className='Contact-logo' />
-          <p>+569 1234 5678</p>
+          <p>+569 9007 9068</p>
         </div>
       </div>
       <div className='Logo'>
         <h1>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-            <img src={logoUrl} alt="Logo" style={{ width: '250px', height: 'auto' }} />
-          </a>
+            <img src={logoUrl} alt="Logo" style={{ width: '200px', height: 'auto', marginTop: '50px'}} />
         </h1>
-        <button className='Footer-button'>
-          <div className='Share-button'>
-            <img src={shareIcon} alt='Share' style={{ width: '24px', height: 'auto' }} />
-            <p>C O M P A R T E</p>
-          </div>
-        </button>
+       
       </div>
     </div>
   );

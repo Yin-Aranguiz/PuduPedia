@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   width: auto;
-  height: auto;
+  height: 150vh;
   position: relative;
   /* Permite que los infoboxes se posicionen encima de la sección */
   z-index: 1;

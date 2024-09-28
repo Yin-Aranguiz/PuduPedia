@@ -18,7 +18,7 @@ const AboutUs = () => {
         <div className='teamContainer'>
           <div className='memberContainer'>
             <div className='picAndName'>
-              <img src={userIcon} className='Icon'alt='user'></img>
+              <img src="https://media.licdn.com/dms/image/v2/D4E03AQHOEcVMcRBW5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727273001421?e=1732752000&v=beta&t=s09y_JOKUfn6LbwiTqFMzbCmeQPlUrFvDygl-T8CnTs" className='Icon'alt='user'></img>
               <p className='name'>Bianca De Petris</p>
             </div>
             <div className='links'>
@@ -34,7 +34,7 @@ const AboutUs = () => {
           </div>
           <div className='memberContainer'>
             <div className='picAndName'>
-              <img src={userIcon} className='Icon'></img>
+              <img src="https://media.licdn.com/dms/image/v2/D4E35AQHPpMEeEFc5rg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1725293603905?e=1728147600&v=beta&t=ak6_Jj2mJXGic5iZaZ-1JQyV3Fq4aq_NElDOuOEp38Y" className='Icon'></img>
               <p className='name'>Martín Aránguiz</p>
             </div>
             <div className='links'>
@@ -50,7 +50,7 @@ const AboutUs = () => {
           </div>
           <div className='memberContainer'>
             <div className='picAndName'>
-              <img src={userIcon} className='Icon'></img>
+              <img src="https://media.licdn.com/dms/image/v2/D4E03AQFukowgLwAQnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706586115252?e=1732752000&v=beta&t=JvbMwKfebvWCbOJPOxdzo_0ZDzhJvwu7A3pTMXVrbfc" className='Icon'></img>
               <p className='name'>Loreto Espinoza</p>
             </div>
             <div className='links'>
@@ -82,7 +82,7 @@ const AboutUs = () => {
           </div>
           <div className='memberContainer'>
             <div className='picAndName'>
-              <img src={userIcon} className='Icon'></img>
+              <img src="https://media.licdn.com/dms/image/v2/D4E03AQF-gYDn46GbPA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1724514735886?e=1732752000&v=beta&t=DRX9e7xplIgdJEoNvPNUWgyjboThdEkPu5lMhVddtv4" className='Icon'></img>
               <p className='name'>Lorenzo Guzman</p>
             </div>
             <div className='links'>
