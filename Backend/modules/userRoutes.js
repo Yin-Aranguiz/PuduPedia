@@ -17,6 +17,7 @@ const { registerUser, loginUser,
     updateParkVisitedController
 } = require('./userController');
 const authenticateToken = require('./autenticateToken');
+const { getAchievements } = require('../modules/achievementsFunction');
 
 // Ruta para registro de usuario:
 router.post('/', registerUser); //funciona
@@ -65,5 +66,7 @@ router.put('/animals-seen/:id', authenticateToken, updateAnimalSeenController); 
 router.put('/plants-seen/:id', authenticateToken, updatePlantSeenController); //funciona
 router.put('/parks-visited/:id', authenticateToken, updateParkVisitedController); //funciona
 
+// Ruta para obtener logros de un usuario
+router.get('/achievements/:userId', authenticateToken, getAchievements);
 
 module.exports = router;

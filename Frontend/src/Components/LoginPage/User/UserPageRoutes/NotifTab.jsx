@@ -1,34 +1,74 @@
-import React from 'react';
-import './NotifTab.css'
+import React, { useEffect, useState } from 'react';
+import './NotifTab.css';
 import { Link } from "react-router-dom";
+import { useAuth } from '../../signlog/AuthContext/AuthContext';
 
 const NotifPage = () => {
+  const [achievements, setAchievements] = useState([]);
+  const { user } = useAuth(); // Obtiene el objeto user
 
-  // conectar con ruta del back para mostrar los logros de db
+  const fetchAchievements = async (userId) => {
+    try {
+      // Obtener el token de localStorage
+      const token = localStorage.getItem('accessToken');
+      
+      const response = await fetch(`http://localhost:3001/user/achievements/${userId}`, {
+        headers: {
+          'Authorization': `Bearer ${token}`, // Incluir el token en la cabecera
+        },
+      });
   
-  return ( 
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await response.json();
+      console.log('Data fetched:', data);
+  
+      if (Array.isArray(data) && data.length > 0) {
+        setAchievements(data);
+      } else {
+        console.log('No achievements found or data is not an array.');
+        setAchievements([]); 
+      }
+    } catch (error) {
+      console.error('Error fetching achievements:', error);
+    }
+  };
+
+  useEffect(() => {
+    if (user && user.id) { // Verifica que user y user.id existan
+      console.log('Fetching achievements for user ID:', user.id);
+      fetchAchievements(user.id);
+    } else {
+      console.error('No user ID found');
+    }
+  }, [user]);
+
+
+  return (
     <div className='fullPage3'>
       <div className='sideTab'>
         <div className='sideBoxesFirst'>
           <div className='userNameBox'>
-          <nav>
-          <Link to="/user/prof" className='linkToPages'>Perfil de Usuario</Link>
-          </nav>
+            <nav>
+              <Link to="/user/prof" className='linkToPages'>Perfil de Usuario</Link>
+            </nav>
           </div>
         </div>
         <button className='sideBoxes'>
-        <nav>
-        <Link to="/user/notifs" className='linkToPages'>Logros</Link>
-        </nav>
+          <nav>
+            <Link to="/user/notifs" className='linkToPages'>Logros</Link>
+          </nav>
         </button>
         <button className='sideBoxes'>
-        <Link to="/user/faves" className='linkToPages'>Avistamientos</Link>
+          <Link to="/user/faves" className='linkToPages'>Avistamientos</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/user/settings" className='linkToPages'>Configuración</Link>
+          <Link to="/user/settings" className='linkToPages'>Configuración</Link>
         </button>
         <button className='sideBoxes'>
-        <Link to="/user/help" className='linkToPages'>Ayuda</Link>
+          <Link to="/user/help" className='linkToPages'>Ayuda</Link>
         </button>
       </div>
       <div className='shownTab'>
@@ -36,24 +76,24 @@ const NotifPage = () => {
           <div className='topTabName'>Logros</div>
         </div>
         <div className='contentTab'>
-        <div className='nameOfTab'>
+          <div className='nameOfTab'>
             • Logros
             <ul>
-        <li><strong>Primer Animal Avistado:</strong> Has avistado tu primer animal.</li>
-        <li><strong>Primera Planta Avistada:</strong> Has avistado tu primera planta.</li>
-        <li><strong>Primer Parque Visitado:</strong> Has visitado tu primer parque nacional.</li>
-        <li><strong>3 Animales Avistados:</strong> Has avistado 3 animales endémicos.</li>
-        <li><strong>3 Plantas Avistadas:</strong> Has avistado 3 plantas endémicas.</li>
-        <li><strong>3 Parques Visitados:</strong> Has visitado 3 parques nacionales.</li>
-        <li><strong>5 Animales Avistados:</strong> Has avistado 5 animales endémicos.</li>
-        <li><strong>5 Plantas Avistadas:</strong> Has avistado 5 plantas endémicas.</li>
-
-      </ul>
-    </div>
-        </div>
+              {achievements.length > 0 ? (
+                achievements.map((achievement) => (
+                  <li key={achievement.id}>
+                    {achievement.achievement} <strong>{achievement.achievement_description}</strong>
+                  </li>
+                ))
+              ) : (
+                <li>No hay logros disponibles.</li>
+              )}
+            </ul>
+          </div>
         </div>
       </div>
-   );
-}
- 
+    </div>
+  );
+};
+
 export default NotifPage;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NewNavbar from './Components/LandingPage/Navbar/NewNavbar';
 import LandingPage from './Components/LandingPage/LandingPage';
@@ -26,6 +26,7 @@ import News from './Components/NoticesPage/News';
 
 
 function App() {
+  
   return (
  
       <Router>

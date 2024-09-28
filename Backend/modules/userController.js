@@ -17,6 +17,7 @@ const { addUser, findUser,
   getParksVisited,
   findUserById
 } = require('./userModel');
+const { checkAchievements } = require('./achievementsFunction');
 
 // Controlador para registro de usuario
 const registerUser = async (req, res) => {
@@ -238,6 +239,9 @@ const addAnimalSeenController = async (req, res) => {
 
   try {
     const result = await addOrUpdateAnimalSeen(userId, animalId, seen);
+    // Verificar logros después de añadir el avistamiento
+    await checkAchievements(userId);
+
     res.status(200).json({ message: 'Registro añadido o actualizado con éxito.', data: result });
   } catch (error) {
     console.error('Error al añadir o actualizar el animal visto:', error);
@@ -252,6 +256,9 @@ const removeAnimalSeenController = async (req, res) => {
 
   try {
     const success = await removeAnimalSeen(userId, animalId);
+    // Verificar logros después de eliminar el avistamiento
+    await checkAchievements(userId);
+
     res.json({ success });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -268,6 +275,9 @@ const addPlantSeenController = async (req, res) => {
 
   try {
     const result = await addOrUpdatePlantSeen(userId, plantId, seen);
+    // Verificar logros después de añadir el avistamiento
+    await checkAchievements(userId);
+
     res.status(200).json(result);
   } catch (error) {
     console.error('Error al añadir o actualizar la planta vista:', error);
@@ -284,6 +294,9 @@ const removePlantSeenController = async (req, res) => {
 
   try {
     const success = await removePlantSeen(userId, plantId);
+    // Verificar logros después de eliminar el avistamiento
+    await checkAchievements(userId);
+
     console.log('Remove operation success:', success);
     res.json({ success });
   } catch (error) {
@@ -303,6 +316,9 @@ const addParkVisitedController = async (req, res) => {
 
   try {
     const result = await addOrUpdateParkVisited(userId, parkId, visited);
+    // Verificar logros después de añadir la visita
+    await checkAchievements(userId);
+
     res.status(200).json(result);
   } catch (error) {
     console.error('Error al añadir o actualizar el parque visitado:', error);
@@ -317,6 +333,9 @@ const removeParkVisitedController = async (req, res) => {
 
   try {
     const success = await removeParkVisited(userId, parkId);
+    // Verificar logros después de eliminar la visita
+    await checkAchievements(userId);
+
     res.json({ success });
   } catch (error) {
     res.status(500).json({ error: error.message });

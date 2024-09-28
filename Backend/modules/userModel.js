@@ -298,6 +298,7 @@ module.exports = {
   addUser,
   findUser,
   pool,
+  query: (text, params) => pool.query(text, params),
   updateUser,
   deleteUserFromDB,
   addOrUpdatePlantSeen,

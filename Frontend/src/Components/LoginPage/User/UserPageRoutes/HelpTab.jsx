@@ -39,7 +39,7 @@ const HelpPage = () => {
             • Dudas <br/>
             <p>En esta sección, respondemos a las preguntas más comunes sobre las especies endémicas de Chile. Si tienes preguntas sobre cómo identificar estas especies, sus hábitats, o los esfuerzos de conservación para protegerlas, aquí encontrarás información útil y detallada. No dudes en contactarnos si tienes más preguntas o necesitas información adicional.</p>
             • Contáctanos <br/>
-            <p>pudupedia@gmail.com</p><br/>
+            <p>noreply.pudupedia@gmail.com</p><br/>
         </div>
         </div>
       </div>
