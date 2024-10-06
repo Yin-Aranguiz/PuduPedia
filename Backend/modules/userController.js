@@ -228,18 +228,16 @@ const deleteUser = async (req, res) => {
   }
 };
 
-// Añadir Animal Visto
+// Añadir o actualizar un avistamiento de animal
 const addAnimalSeenController = async (req, res) => {
   const { userId, animalId, seen } = req.body;
 
-  // Validar que todos los valores necesarios están presentes
   if (userId == null || animalId == null || seen == null) {
     return res.status(400).json({ error: 'Faltan datos en la solicitud.' });
   }
 
   try {
     const result = await addOrUpdateAnimalSeen(userId, animalId, seen);
-    // Verificar logros después de añadir el avistamiento
     await checkAchievements(userId);
 
     res.status(200).json({ message: 'Registro añadido o actualizado con éxito.', data: result });
@@ -249,14 +247,13 @@ const addAnimalSeenController = async (req, res) => {
   }
 };
 
-// Eliminar Animal Visto
+// Eliminar un avistamiento de animal
 const removeAnimalSeenController = async (req, res) => {
   const userId = req.user.id;
-  const { animalId } = req.params; // Desestructurando 'animalId' del cuerpo de la solicitud
+  const { animalId } = req.params;
 
   try {
     const success = await removeAnimalSeen(userId, animalId);
-    // Verificar logros después de eliminar el avistamiento
     await checkAchievements(userId);
 
     res.json({ success });
@@ -265,7 +262,7 @@ const removeAnimalSeenController = async (req, res) => {
   }
 };
 
-// Añadir Planta Vista
+// Añadir o actualizar una planta vista
 const addPlantSeenController = async (req, res) => {
   const { userId, plantId, seen } = req.body;
 
@@ -275,8 +272,7 @@ const addPlantSeenController = async (req, res) => {
 
   try {
     const result = await addOrUpdatePlantSeen(userId, plantId, seen);
-    // Verificar logros después de añadir el avistamiento
-    await checkAchievements(userId);
+    await checkAchievements(userId);  
 
     res.status(200).json(result);
   } catch (error) {
@@ -285,28 +281,22 @@ const addPlantSeenController = async (req, res) => {
   }
 };
 
-// Eliminar Planta Vista
+// Eliminar una planta vista
 const removePlantSeenController = async (req, res) => {
-  const userId = req.user.id; // Esto viene del token JWT
-  const { plantId } = req.params; // Desestructurando 'plantId' del cuerpo de la solicitud
-
-  console.log('Removing plant seen for userId:', userId, 'and plantId:', plantId);
+  const userId = req.user.id;
+  const { plantId } = req.params;
 
   try {
     const success = await removePlantSeen(userId, plantId);
-    // Verificar logros después de eliminar el avistamiento
     await checkAchievements(userId);
 
-    console.log('Remove operation success:', success);
     res.json({ success });
   } catch (error) {
-    console.error('Error in removePlantSeenController:', error);
     res.status(500).json({ error: error.message });
   }
 };
 
-
-// Añadir Parque Visitado
+// Añadir o actualizar una visita a parque
 const addParkVisitedController = async (req, res) => {
   const { userId, parkId, visited } = req.body;
 
@@ -316,7 +306,6 @@ const addParkVisitedController = async (req, res) => {
 
   try {
     const result = await addOrUpdateParkVisited(userId, parkId, visited);
-    // Verificar logros después de añadir la visita
     await checkAchievements(userId);
 
     res.status(200).json(result);
@@ -326,14 +315,13 @@ const addParkVisitedController = async (req, res) => {
   }
 };
 
-// Eliminar Parque Visitado
+// Eliminar una visita a parque
 const removeParkVisitedController = async (req, res) => {
   const userId = req.user.id;
-  const { parkId } = req.params; // Desestructurando 'parkId' del cuerpo de la solicitud
+  const { parkId } = req.params;
 
   try {
     const success = await removeParkVisited(userId, parkId);
-    // Verificar logros después de eliminar la visita
     await checkAchievements(userId);
 
     res.json({ success });

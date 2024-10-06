@@ -12,12 +12,16 @@ const FavesPage = () => {
   const [formType, setFormType] = useState('');
   const [formAction, setFormAction] = useState('');
   const { user } = useAuth();
-  
+  const [userAchievements, setUserAchievements] = useState([]);
+
+  const handleFormCancel = () => {
+    setShowForm(false);  // Esto cierra el formulario
+  };
   
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
     if (!user) return;
-
+  
     const fetchData = async (url, setter) => {
       try {
         const response = await fetch(url, {
@@ -25,25 +29,28 @@ const FavesPage = () => {
         });
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
-        setter(data);
+        setter(data); // Actualiza el estado con los datos obtenidos
       } catch (error) {
         console.error(`Error fetching data from ${url}:`, error);
       }
     };
-
+  
+    // Llamadas para obtener avistamientos
     fetchData('http://localhost:3001/user/animals-seen', setAnimals);
     fetchData('http://localhost:3001/user/plants-seen', setPlants);
     fetchData('http://localhost:3001/user/parks-visited', setParks);
   }, [user]);
 
   const handleAddFavorite = (type) => {
+    console.log('Add favorite of type:', type); // Verifica el tipo
     if (!user) return;
     setFormType(type);
     setFormAction('add');
     setShowForm(true);
   };
-
+  
   const handleRemoveFavorite = (type) => {
+    console.log('Remove favorite of type:', type); // Verifica el tipo
     if (!user) return;
     setFormType(type);
     setFormAction('remove');
@@ -71,12 +78,80 @@ const FavesPage = () => {
     }
   };
 
-  const handleFormSubmit = (data) => {
-    updateFavorites(data);
-    setShowForm(false);
-  };
+  // const handleFormSubmit = async (data) => {
+  //   const token = localStorage.getItem('accessToken');
+  //   const urlMap = {
+  //     animal: 'http://localhost:3001/user/animals-seen',
+  //     plant: 'http://localhost:3001/user/plants-seen',
+  //     park: 'http://localhost:3001/user/parks-visited'
+  //   };
+  
+  //   const url = urlMap[formType];
+  //   const method = formAction === 'add' ? 'POST' : 'DELETE'; // Puedes usar PUT/PATCH si prefieres
+  
+  //   try {
+  //     const response = await fetch(url, {
+  //       method: method,
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': `Bearer ${token}`
+  //       },
+  //       body: JSON.stringify(data) // Asegúrate de enviar los datos correctos
+  //     });
+  
+  //     if (!response.ok) throw new Error('Error in request');
+      
+  //     const updatedData = await response.json();
+      
+  //     // Actualiza el estado en el frontend una vez el backend confirme el cambio
+  //     updateFavorites(updatedData);
+  
+  //   } catch (error) {
+  //     console.error('Error updating favorites:', error);
+  //   }
+  
+  //   setShowForm(false); // Ocultar el formulario después de la solicitud
+  // };
 
-  const handleFormCancel = () => {
+  // const handleFormCancel = () => {
+  //   setShowForm(false);
+  // };
+
+  const handleFormSubmit = async (data) => {
+    const token = localStorage.getItem('accessToken');
+    const urlMap = {
+      animal: 'http://localhost:3001/user/animals-seen',
+      plant: 'http://localhost:3001/user/plants-seen',
+      park: 'http://localhost:3001/user/parks-visited'
+    };
+  
+    const url = urlMap[formType];
+    const method = formAction === 'add' ? 'POST' : 'DELETE';
+  
+    try {
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(data)
+      });
+  
+      if (!response.ok) throw new Error('Error in request');
+  
+      const { achievements, message } = await response.json();
+  
+      // Actualizar el estado de los avistamientos
+      updateFavorites(data);
+  
+      // Actualizar los logros con los datos recalculados
+      setUserAchievements(achievements); // Asegúrate de tener este estado en el frontend para mostrar los logros
+  
+    } catch (error) {
+      console.error('Error updating favorites:', error);
+    }
+  
     setShowForm(false);
   };
 

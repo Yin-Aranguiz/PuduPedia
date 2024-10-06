@@ -67,6 +67,7 @@ router.put('/plants-seen/:id', authenticateToken, updatePlantSeenController); //
 router.put('/parks-visited/:id', authenticateToken, updateParkVisitedController); //funciona
 
 // Ruta para obtener logros de un usuario
-router.get('/achievements/:userId', authenticateToken, getAchievements);
+router.get('/achievements/:userId', authenticateToken, getAchievements); //Funciona
+
 
 module.exports = router;
