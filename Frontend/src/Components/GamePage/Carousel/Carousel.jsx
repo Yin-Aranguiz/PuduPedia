@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Carousel.css';
+import { Link } from 'react-router-dom';
+
 import triviaGame from './triviaGame.jpeg';
 import PuHiPu from './PuHiPu.jpeg';
 import memopuduGame from './memopuduGame.jpeg';
@@ -63,9 +65,9 @@ const Item = ({ src, url, level }) => {
     const className = `item level${level}`;
     return (
         <div className={className}>
-            <a href={url} target="_blank" rel="noopener noreferrer">
+            <Link to={url}>
                 <img src={src} alt={`Item ${level}`} />
-            </a>
+            </Link>
         </div>
     );
 };

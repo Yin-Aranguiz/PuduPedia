@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://biank123.github.io/Pupupedia/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +24,8 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "nth-check": "^2.1.1",
     "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
