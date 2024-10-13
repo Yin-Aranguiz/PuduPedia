@@ -75,4 +75,3 @@ Ejecuta el frontend:
 cd frontend
 npm start
 Accede al proyecto desde http://localhost:3000.
-

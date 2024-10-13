@@ -27,7 +27,7 @@ const Header = ({ className = '' }) => {
     <div className={`Header ${className}`}>
       <div className="headerContainer">
         <div className="logoContainer">
-          <Link to="/Pupupedia">
+          <Link to="/Pudupedia">
             <img src={pudupedia_logo_sized2} alt='pudu_logo' className='puduLogo'></img>
           </Link>
         </div>

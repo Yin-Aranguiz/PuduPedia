@@ -30,7 +30,7 @@ const NavBar = () => {
             </button>
 
             {visible && <div className="navBarItems" onMouseEnter={isVisible} onMouseLeave={notVisible}>
-                <Link to="/Pupupedia"><div className="circle"></div>Inicio</Link>
+                <Link to="/Pudupedia"><div className="circle"></div>Inicio</Link>
                 <Link to="/chile"><div className="circle"></div>Chile</Link>
                 <Link to="/vida-silvestre"><div className="circle"></div>Vida Silvestre</Link>
                 <Link to="/parques"><div className="circle"></div>Parques</Link>
