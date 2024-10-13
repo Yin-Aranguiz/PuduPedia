@@ -1,6 +1,5 @@
 {
   "name": "pudupedia",
-  "homepage": "https://biank123.github.io/Pupupedia/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -63,5 +62,6 @@
     "gh-pages": "^6.1.1",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.77.8"
-  }
+  },
+  "homepage": "https://biank123.github.io/Pupupedia/"
 }

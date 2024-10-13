@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NewNavbar from './Components/LandingPage/Navbar/NewNavbar';
 import LandingPage from './Components/LandingPage/LandingPage';
@@ -29,11 +29,11 @@ function App() {
   
   return (
  
-      <Router basename="/Pudupedia">
+      <Router basename="">
         <Header />
         <NewNavbar />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/Pupupedia" element={<LandingPage />} />
           <Route path="/juegos" element={<GamePage />} />
           <Route path="/trivia" element={<TriviaGame />} />
           <Route path="/vida-silvestre" element={<Bubbles />} />
